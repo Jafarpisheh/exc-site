@@ -1,0 +1,241 @@
+╔════════════════════════════════════════════════════════════════════════════╗
+║                  🏗️ EXCAVATORHUB - WEBSITE STRUCTURE                      ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                              HOME PAGE (index.html)                          │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                               │
+│  ┌─────────────────────────────────────────────────────────────────────┐   │
+│  │  HEADER - Navigation & Logo                                        │   │
+│  │  ┌─────────────────────┐                                           │   │
+│  │  │ 🏗️ ExcavatorHub    │  [Home] [Products] [Contact]             │   │
+│  │  │ Premium Equipment   │                                           │   │
+│  │  └─────────────────────┘                                           │   │
+│  └─────────────────────────────────────────────────────────────────────┘   │
+│                                                                               │
+│  ┌─────────────────────────────────────────────────────────────────────┐   │
+│  │  HERO SECTION                                                       │   │
+│  │                                                                      │   │
+│  │  "Premium Excavators for Every Project"                            │   │
+│  │  Reliable, Durable, and Powerful Equipment                         │   │
+│  │                 [View Products ↓]                                   │   │
+│  └─────────────────────────────────────────────────────────────────────┘   │
+│                                                                               │
+│  ┌─────────────────────────────────────────────────────────────────────┐   │
+│  │  PRODUCTS GRID                                                      │   │
+│  │                                                                      │   │
+│  │  ┌──────────────────┐        ┌──────────────────┐                  │   │
+│  │  │  XC-12 Preview   │        │  XC-18 Preview   │                  │   │
+│  │  │ [Image Preview]  │        │ [Image Preview]  │                  │   │
+│  │  │                  │        │                  │                  │   │
+│  │  │ Compact & Efficient        Heavy-duty XC-18                      │   │
+│  │  │ Small to medium projects   Large operations  │                  │   │
+│  │  │ [View Details →]  │        │ [View Details →] │                  │   │
+│  │  └──────────────────┘        └──────────────────┘                  │   │
+│  └─────────────────────────────────────────────────────────────────────┘   │
+│                                                                               │
+│  ┌─────────────────────────────────────────────────────────────────────┐   │
+│  │  CONTACT SECTION                                                    │   │
+│  │  Get in Touch - Have questions? Contact us for more info           │   │
+│  │  📧 sales@excavatorhub.com | 📞 +1 (555) 123-4567                 │   │
+│  └─────────────────────────────────────────────────────────────────────┘   │
+│                                                                               │
+│  ┌─────────────────────────────────────────────────────────────────────┐   │
+│  │  FOOTER - © 2026 ExcavatorHub                                      │   │
+│  └─────────────────────────────────────────────────────────────────────┘   │
+│                                                                               │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│               PRODUCT DETAIL PAGE (product-detail.html)                      │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                               │
+│  ← Back to Products                                                         │
+│                                                                               │
+│  ┌──────────────────────────────────┐  ┌──────────────────────────────────┐ │
+│  │                                  │  │                                  │ │
+│  │  LEFT SIDE - MEDIA               │  │  RIGHT SIDE - INFO               │ │
+│  │                                  │  │                                  │ │
+│  │  ┌────────────────────────────┐  │  │  XC-12 EXCAVATOR                │ │
+│  │  │                            │  │  │                                  │ │
+│  │  │   MAIN IMAGE VIEWER        │  │  │  📋 SPECIFICATIONS              │ │
+│  │  │   [Large Product Image]    │  │  │  ┌──────────────────────────┐  │ │
+│  │  │                            │  │  │  │ Model: XC-12 Excavator   │  │ │
+│  │  │                            │  │  │  │ Weight: 12 Tons          │  │ │
+│  │  │                            │  │  │  │ Depth: 4.2m              │  │ │
+│  │  │                            │  │  │  │ Power: 85 kW             │  │ │
+│  │  │                            │  │  │  │ Status: In Stock         │  │ │
+│  │  └────────────────────────────┘  │  │  └──────────────────────────┘  │ │
+│  │                                  │  │                                  │ │
+│  │  ┌─────┐ ┌─────┐ ┌─────┐       │  │  📄 Full PDF Specs Available →   │ │
+│  │  │[1]  │ │[2]  │ │[3]  │ ...  │  │                                  │ │
+│  │  └─────┘ └─────┘ └─────┘       │  │  📧 SEND INQUIRY                 │ │
+│  │  Thumbnail Gallery              │  │  ┌──────────────────────────┐   │ │
+│  │                                  │  │  │ Name: [___________]      │   │ │
+│  │  🎬 PRODUCT VIDEO                │  │  │ Email: [___________]     │   │ │
+│  │  ┌────────────────────────────┐  │  │  │ Phone: [___________]     │   │ │
+│  │  │  [Play Video Controls] ▶   │  │  │  │ Company: [___________]   │   │ │
+│  │  │  Embedded MP4 Player       │  │  │  │ Message: [___________]   │   │ │
+│  │  │                            │  │  │  │          [___________]   │   │ │
+│  │  │                            │  │  │  │ [Send Inquiry]           │   │ │
+│  │  └────────────────────────────┘  │  │  └──────────────────────────┘   │ │
+│  │                                  │  │                                  │ │
+│  └──────────────────────────────────┘  └──────────────────────────────────┘ │
+│                                                                               │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │  FOOTER - © 2026 ExcavatorHub                                       │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│                                                                               │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+
+═══════════════════════════════════════════════════════════════════════════════
+                            DATA FLOW DIAGRAM
+═══════════════════════════════════════════════════════════════════════════════
+
+USER VISITS HOME PAGE
+        ↓
+   index.html
+        ↓
+   app.js: loadProducts()
+        ↓
+   Loop through products array
+        ↓
+   Load first image from each product folder
+        ↓
+   Display product cards on screen
+        ↓
+   USER CLICKS "View Details"
+        ↓
+   Navigate to product-detail.html?product=xc-12
+        ↓
+   product-detail.js: loadProductDetails()
+        ↓
+   ├─ Load all images (1.jpg - 5.jpg)
+   ├─ Load video (1.mp4)
+   ├─ Display specs from product info
+   ├─ Link to specs.pdf
+   └─ Setup inquiry form
+        ↓
+   USER BROWSES PRODUCT
+        ↓
+   USER SUBMITS INQUIRY
+        ↓
+   Form Data Collected
+        ↓
+   Stored in Browser's localStorage
+        ↓
+   Success Message Shown
+        ↓
+   Admin can access data via browser console
+
+
+═══════════════════════════════════════════════════════════════════════════════
+                         FILE DEPENDENCIES
+═══════════════════════════════════════════════════════════════════════════════
+
+index.html
+├── styles.css (styling)
+└── app.js (product loading)
+
+product-detail.html
+├── styles.css (styling)
+├── app.js (product data)
+└── product-detail.js (detail page logic)
+
+styles.css (standalone - no dependencies)
+
+app.js (standalone - defines products array)
+
+product-detail.js
+├── app.js (uses getProductById function)
+└── (accesses products from app.js)
+
+products/
+├── xc-12/
+│   ├── images/1.jpg through 5.jpg
+│   ├── videos/1.mp4
+│   └── specs.pdf
+└── xc-18/
+    ├── images/1.jpg through 6.jpg
+    ├── videos/1.mp4
+    └── specs.pdf
+
+
+═══════════════════════════════════════════════════════════════════════════════
+                         INQUIRY STORAGE
+═══════════════════════════════════════════════════════════════════════════════
+
+Each Inquiry Contains:
+┌─────────────────────────────────────────┐
+│ {                                       │
+│   productId: "xc-12",                   │
+│   productName: "XC-12 Excavator",       │
+│   name: "John Doe",                     │
+│   email: "john@example.com",            │
+│   phone: "+1-555-123-4567",             │
+│   company: "ABC Construction",          │
+│   message: "Interested in...",          │
+│   timestamp: "2026-03-14T10:30:00Z"     │
+│ }                                       │
+└─────────────────────────────────────────┘
+
+Storage Location: Browser's localStorage
+Key: "inquiries"
+Value: JSON array of all inquiry objects
+
+
+═══════════════════════════════════════════════════════════════════════════════
+                           DESIGN COLORS
+═══════════════════════════════════════════════════════════════════════════════
+
+Primary Blue:        #1e3a8a (Dark Blue)
+Secondary Blue:      #2563eb (Bright Blue)
+Accent Yellow:       #fbbf24 (Golden)
+Light Yellow:        #f59e0b (Darker Gold)
+
+Light Backgrounds:   #f9f9f9, #f9fafb
+Light Blue BG:       #eff6ff, #dbeafe
+Success Green:       #22c55e, #dcfce7
+Warning Yellow:      #fbbf24, #fef3c7
+
+Text Dark:           #333333
+Text Gray:           #666666
+Text Light:          white
+
+
+═══════════════════════════════════════════════════════════════════════════════
+                        RESPONSIVE BREAKPOINTS
+═══════════════════════════════════════════════════════════════════════════════
+
+Desktop:   1200px+  (Full layout with 2-column product grid)
+Tablet:    768px+   (Adjusted spacing, 1-column product grid)
+Mobile:    480px+   (Single column, optimized touch targets)
+Extra Mobile: 320px (Full mobile support)
+
+
+═══════════════════════════════════════════════════════════════════════════════
+                              FEATURES MATRIX
+═══════════════════════════════════════════════════════════════════════════════
+
+Feature                 | Status  | Location
+─────────────────────────────────────────────
+Product Gallery         | ✅ Done | product-detail.html
+Image Thumbnails        | ✅ Done | product-detail.html
+Video Player            | ✅ Done | product-detail.html
+Specifications          | ✅ Done | product-detail.js
+PDF Link                | ✅ Done | product-detail.js
+Contact Form            | ✅ Done | product-detail.html
+Form Validation         | ✅ Done | product-detail.js
+Data Storage            | ✅ Done | localStorage
+Success Notification    | ✅ Done | product-detail.js
+Responsive Design       | ✅ Done | styles.css
+Mobile Friendly         | ✅ Done | styles.css
+SEO Ready               | ✅ Done | html files
+Accessible             | ✅ Done | semantic HTML
+Cross-browser          | ✅ Done | tested
+
+
+═══════════════════════════════════════════════════════════════════════════════

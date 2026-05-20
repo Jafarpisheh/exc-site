@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produktdetails - ExcavatorHub</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Kopfzeile -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>🏗️ ExcavatorHub</h1>
+                <p>Premium-Lösungen für schwere Baumaschinen</p>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html">Startseite</a></li>
+                    <li><a href="index.html#products">Produkte</a></li>
+                    <li><a href="index.html#contact">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Produktdetails -->
+    <section class="product-detail">
+        <div class="container">
+            <a href="index.html#products" class="back-link">← Zurück zu den Produkten</a>
+            
+            <div class="product-detail-content">
+                <!-- Linke Seite: Bilder und Videos -->
+                <div class="product-media">
+                    <!-- Hauptbild-Galerie -->
+                    <div class="gallery-container">
+                        <div class="main-image" id="mainImageContainer">
+                            <img id="mainImage" src="" alt="Produktbild">
+                            <button class="gallery-nav-btn prev" id="prevBtn" aria-label="Vorheriges Bild">❮</button>
+                            <button class="gallery-nav-btn next" id="nextBtn" aria-label="Nächstes Bild">❯</button>
+                            <button class="gallery-expand-btn" id="expandBtn" aria-label="Bild vergrößern">⛶</button>
+                        </div>
+                        <div class="thumbnails" id="thumbnailContainer">
+                            <!-- Thumbnails will be loaded dynamically -->
+                        </div>
+                    </div>
+                    
+                    <!-- Videos Section -->
+                    <div id="videosSection" class="videos-section" style="display: none;">
+                        <h3>Produktvideos</h3>
+                        <div class="videos-container" id="videosContainer">
+                            <!-- Videos werden dynamisch geladen -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right side: Info and Specs -->
+                <div class="product-info">
+                    <h2 id="productName"></h2>
+                    
+                    <div class="product-specs" id="specsContainer">
+                        <!-- Technische Daten erscheinen hier; PDF dient nur zum Download -->
+                    </div>
+
+                    <!-- Inquiry Form -->
+                    <div class="inquiry-section">
+                        <h3>Produktanfrage senden</h3>
+                        <form id="inquiryForm" class="inquiry-form">
+                            <div class="form-group">
+                                <label for="name">Name *</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">E-Mail *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone">Telefon *</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="company">Firma</label>
+                                <input type="text" id="company" name="company">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">Nachricht *</label>
+                                <textarea id="message" name="message" rows="5" placeholder="Beschreiben Sie Ihre Anfrage..." required></textarea>
+                            </div>
+
+                            <button type="submit" class="submit-btn">Anfrage senden</button>
+                            <p class="form-note">* Pflichtfelder</p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Image Modal/Lightbox -->
+    <div id="imageModal" class="image-modal" style="display: none;">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose" aria-label="Schließen">✕</button>
+            <button class="modal-nav-btn prev" id="modalPrevBtn" aria-label="Vorheriges Bild">❮</button>
+            <div class="modal-image-container">
+                <img id="modalImage" src="" alt="Produktbild vergrößert">
+                <div class="image-counter" id="imageCounter"></div>
+            </div>
+            <button class="modal-nav-btn next" id="modalNextBtn" aria-label="Nächstes Bild">❯</button>
+            <div class="modal-thumbnails" id="modalThumbnails">
+                <!-- Thumbnails will be loaded dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 ExcavatorHub. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+    <script src="product-detail.js"></script>
+</body>
+</html>

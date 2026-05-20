@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Debug</title>
+</head>
+<body>
+    <h1>Media Items Debug</h1>
+    <div id="output"></div>
+    <script src="app.js"></script>
+    <script>
+        const products = [
+            {
+                id: 'xc-12',
+                name: 'XC-12 Excavator',
+                description: 'Compact and efficient excavator perfect for small to medium construction projects.',
+                folder: 'products/xc-12',
+                imageCount: 5,
+                hasVideo: true
+            },
+            {
+                id: 'xc-18',
+                name: 'XC-18 Excavator',
+                description: 'Heavy-duty excavator built for large-scale mining and construction operations.',
+                folder: 'products/xc-18',
+                imageCount: 6,
+                hasVideo: true
+            }
+        ];
+
+        const product = products[1]; // xc-18
+        let mediaItems = [];
+        
+        // Add images
+        for (let i = 1; i <= product.imageCount; i++) {
+            mediaItems.push({
+                type: 'image',
+                path: `${product.folder}/images/${i}.jpg`,
+                index: i
+            });
+        }
+        
+        // Add video if available
+        if (product.hasVideo) {
+            mediaItems.push({
+                type: 'video',
+                path: `${product.folder}/videos/1.mp4`
+            });
+        }
+        
+        const output = document.getElementById('output');
+        output.innerHTML = '<pre>' + JSON.stringify(mediaItems, null, 2) + '</pre>';
+        console.log('Media Items:', mediaItems);
+    </script>
+</body>
+</html>
