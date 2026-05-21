@@ -244,7 +244,7 @@ To View Customer Inquiries:
 
 To Customize Company Name:
   1. Open index.html
-  2. Find "ExcavatorHub"
+  2. Find "BW-Bagger"
   3. Replace with your company name
   4. Save and refresh
 
@@ -329,7 +329,7 @@ Documentation Guide:   DOCUMENTATION_INDEX.txt
 ════════════════════════════════════════════════════════════════════════════════
 
                         THANK YOU FOR CHOOSING
-                              EXCAVATORHUB
+                              BW-Bagger
 
                   Your professional excavator sales website
                         is now ready to use! 🎉

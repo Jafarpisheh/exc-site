@@ -116,7 +116,7 @@ app.post('/api/inquiries', (req, res) => {
     // Send to admin
     transporter.sendMail({
         from: 'your-email@gmail.com',
-        to: 'sales@excavatorhub.com',
+        to: 'sales@BW-Bagger.com',
         subject: `New inquiry for ${inquiry.productName}`,
         html: `
             <h2>New Product Inquiry</h2>
@@ -139,7 +139,7 @@ app.post('/api/inquiries', (req, res) => {
             <p>Hi ${inquiry.name},</p>
             <p>Thank you for your interest in our ${inquiry.productName}.</p>
             <p>We will contact you soon at ${inquiry.phone}.</p>
-            <p>Best regards,<br>ExcavatorHub Team</p>
+            <p>Best regards,<br>BW-Bagger Team</p>
         `
     });
     

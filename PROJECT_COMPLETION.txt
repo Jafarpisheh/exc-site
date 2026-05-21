@@ -4,7 +4,7 @@
 ║                     ✅ PROJECT COMPLETION CERTIFICATE ✅                     ║
 ║                                                                              ║
 ║                                                                              ║
-║                    EXCAVATORHUB SALES WEBSITE - COMPLETE                     ║
+║                    BW-Bagger SALES WEBSITE - COMPLETE                     ║
 ║                                                                              ║
 ║                                                                              ║
 ╚════════════════════════════════════════════════════════════════════════════╝
@@ -421,7 +421,7 @@ Start the server and begin showcasing your excavators to customers! 🏗️
 
 For questions, refer to the comprehensive documentation provided.
 
-Thank you for using ExcavatorHub! 🎉
+Thank you for using BW-Bagger! 🎉
 
 
 ═══════════════════════════════════════════════════════════════════════════════

@@ -187,8 +187,8 @@ exc-site/
 
 ### Change Company Info
 Edit `index.html` and `product-detail.html`:
-- Company name: "ExcavatorHub"
-- Email: sales@excavatorhub.com
+- Company name: "BW-Bagger"
+- Email: sales@BW-Bagger.com
 - Phone: +1 (555) 123-4567
 - Address: 123 Construction Ave, Industrial City, IC 12345
 

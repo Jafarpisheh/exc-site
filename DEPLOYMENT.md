@@ -1,4 +1,4 @@
-# 🚀 Deployment Guide - ExcavatorHub Website
+# 🚀 Deployment Guide - BW-Bagger Website
 
 ## Local Development (Current Setup)
 
@@ -58,12 +58,12 @@ Visit: http://localhost:8888
 
 1. **Create S3 bucket**
    ```bash
-   aws s3 mb s3://excavatorhub-website
+   aws s3 mb s3://BW-Bagger-website
    ```
 
 2. **Upload files**
    ```bash
-   aws s3 sync . s3://excavatorhub-website --exclude ".git*"
+   aws s3 sync . s3://BW-Bagger-website --exclude ".git*"
    ```
 
 3. **Enable static website hosting**
@@ -170,7 +170,7 @@ app.post('/api/inquiries', async (req, res) => {
         // Send to admin
         await transporter.sendMail({
             from: process.env.EMAIL_USER,
-            to: 'sales@excavatorhub.com',
+            to: 'sales@BW-Bagger.com',
             subject: `New inquiry for ${productName}`,
             html: `
                 <h2>New Product Inquiry</h2>
@@ -188,12 +188,12 @@ app.post('/api/inquiries', async (req, res) => {
         await transporter.sendMail({
             from: process.env.EMAIL_USER,
             to: email,
-            subject: 'We received your inquiry - ExcavatorHub',
+            subject: 'We received your inquiry - BW-Bagger',
             html: `
                 <p>Hi ${name},</p>
                 <p>Thank you for your interest in our ${productName}.</p>
                 <p>We will contact you soon at ${phone}.</p>
-                <p>Best regards,<br>ExcavatorHub Team</p>
+                <p>Best regards,<br>BW-Bagger Team</p>
             `
         });
         
@@ -219,7 +219,7 @@ app.listen(process.env.PORT || 3000);
 ### 2. CORS Headers
 ```javascript
 // If using backend
-res.header('Access-Control-Allow-Origin', 'https://excavatorhub.com');
+res.header('Access-Control-Allow-Origin', 'https://BW-Bagger.com');
 res.header('Access-Control-Allow-Methods', 'POST, GET, OPTIONS');
 ```
 
@@ -290,7 +290,7 @@ Update in `index.html` and `product-detail.html`:
 ```html
 <meta name="description" content="Premium excavators for construction. XC-12 and XC-18 models available.">
 <meta name="keywords" content="excavators, construction equipment, heavy machinery">
-<meta property="og:title" content="ExcavatorHub - Premium Excavators">
+<meta property="og:title" content="BW-Bagger - Premium Excavators">
 <meta property="og:description" content="Professional excavators for your project">
 <meta property="og:image" content="path-to-image.jpg">
 ```
@@ -301,17 +301,17 @@ Create `sitemap.xml`:
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://excavatorhub.com/index.html</loc>
+    <loc>https://BW-Bagger.com/index.html</loc>
     <lastmod>2026-03-14</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://excavatorhub.com/product-detail.html?product=xc-12</loc>
+    <loc>https://BW-Bagger.com/product-detail.html?product=xc-12</loc>
     <lastmod>2026-03-14</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://excavatorhub.com/product-detail.html?product=xc-18</loc>
+    <loc>https://BW-Bagger.com/product-detail.html?product=xc-18</loc>
     <lastmod>2026-03-14</lastmod>
     <priority>0.8</priority>
   </url>
@@ -325,7 +325,7 @@ User-agent: *
 Allow: /
 Disallow: /admin/
 
-Sitemap: https://excavatorhub.com/sitemap.xml
+Sitemap: https://BW-Bagger.com/sitemap.xml
 ```
 
 ---
@@ -373,7 +373,7 @@ imagemin images/ --out-dir=images/ --plugin=jpegtran
 ### Service Worker for Caching
 Create `sw.js`:
 ```javascript
-const CACHE_NAME = 'excavatorhub-v1';
+const CACHE_NAME = 'BW-Bagger-v1';
 const urls = [
   '/',
   '/index.html',

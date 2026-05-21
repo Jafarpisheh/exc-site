@@ -1,4 +1,4 @@
-# ExcavatorHub - Your Excavator Sales Website
+# BW-Bagger - Your Excavator Sales Website
 
 A fully functional, professional website for selling excavators with detailed product pages, image galleries, video playback, and customer inquiry system.
 
@@ -102,7 +102,7 @@ exc-site/
 
 ### Edit Company Information
 Open `index.html` and `product-detail.html` and update:
-- Company name (currently "ExcavatorHub")
+- Company name (currently "BW-Bagger")
 - Contact email
 - Phone number
 - Address
@@ -177,7 +177,7 @@ fetch('/api/inquiries', {
 
 ## License
 
-Created for ExcavatorHub - All Rights Reserved 2026
+Created for BW-Bagger - All Rights Reserved 2026
 
 ---
 

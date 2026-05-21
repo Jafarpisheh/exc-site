@@ -1,6 +1,6 @@
 ╔════════════════════════════════════════════════════════════════════════════╗
 ║                                                                              ║
-║                     🏗️  EXCAVATORHUB - START HERE 🏗️                       ║
+║                     🏗️  BW-Bagger - START HERE 🏗️                       ║
 ║                                                                              ║
 ║                    Your excavator sales website is ready!                    ║
 ║                                                                              ║
@@ -186,8 +186,8 @@ For Everything:
 
 Change Company Name:
   1. Open index.html
-  2. Find "ExcavatorHub" and replace with your name
-  3. Find sales@excavatorhub.com and update email
+  2. Find "BW-Bagger" and replace with your name
+  3. Find sales@BW-Bagger.com and update email
   4. Find phone/address and update contact info
 
 Change Colors:

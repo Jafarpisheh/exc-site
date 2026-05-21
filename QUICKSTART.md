@@ -1,4 +1,4 @@
-# 🏗️ ExcavatorHub - Quick Start Guide
+# 🏗️ BW-Bagger - Quick Start Guide
 
 ## What I've Created for You
 
@@ -99,7 +99,7 @@ console.log(JSON.parse(localStorage.getItem('inquiries')))
 ## 🔧 Customization
 
 ### Change Company Name/Contact Info
-Edit these files and search for "ExcavatorHub":
+Edit these files and search for "BW-Bagger":
 - `index.html` - Company name, contact email/phone
 - `product-detail.html` - Company name, contact email/phone
 
