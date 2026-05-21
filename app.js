@@ -89,3 +89,56 @@ function getBasicSpecs(product) {
 document.addEventListener('DOMContentLoaded', () => {
     loadProducts();
 });
+
+// Setup site-wide inquiry form (used on index.html)
+function setupSiteInquiryForm() {
+    const form = document.getElementById('inquiryForm');
+    if (!form) return;
+
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const formData = {
+            productId: null,
+            productName: null,
+            name: document.getElementById('name').value,
+            email: document.getElementById('email').value,
+            phone: document.getElementById('phone').value,
+            company: document.getElementById('company').value,
+            message: document.getElementById('message').value,
+            timestamp: new Date().toISOString()
+        };
+
+        let inquiries = JSON.parse(localStorage.getItem('inquiries') || '[]');
+        inquiries.push(formData);
+        localStorage.setItem('inquiries', JSON.stringify(inquiries));
+
+        siteShowSuccessMessage();
+
+        form.reset();
+        console.log('Site inquiry submitted:', formData);
+    });
+}
+
+function siteShowSuccessMessage() {
+    let successMessage = document.querySelector('.success-message');
+
+    if (!successMessage) {
+        successMessage = document.createElement('div');
+        successMessage.className = 'success-message';
+        successMessage.innerHTML = '✓ Vielen Dank! Ihre Anfrage wurde erfolgreich gesendet. Wir melden uns in Kürze bei Ihnen.';
+        const inquirySection = document.querySelector('.inquiry-section');
+        if (inquirySection) inquirySection.insertBefore(successMessage, inquirySection.querySelector('.inquiry-form'));
+    }
+
+    successMessage.classList.add('show');
+
+    setTimeout(() => {
+        successMessage.classList.remove('show');
+    }, 5000);
+}
+
+// Initialize site inquiry form if present
+document.addEventListener('DOMContentLoaded', () => {
+    setupSiteInquiryForm();
+});

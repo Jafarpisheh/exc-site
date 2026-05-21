@@ -45,11 +45,39 @@
     <section id="contact" class="contact">
         <div class="container">
             <h2>Kontakt</h2>
-            <p>Haben Sie Fragen? Kontaktieren Sie uns direkt für weitere Informationen zu unseren Produkten.</p>
-            <div class="contact-info">
-                <p>📧 E-Mail: <a href="mailto:sales@excavatorhub.com">sales@excavatorhub.com</a></p>
-                <p>📞 Telefon: +1 (555) 123-4567</p>
-                <p>🏢 Adresse: 123 Construction Ave, Industrial City, IC 12345</p>
+            <p>Haben Sie Fragen? Schreiben Sie uns Ihre Anfrage über das Formular.</p>
+
+            <div class="inquiry-section">
+                <h3>Anfrage senden</h3>
+                <form id="inquiryForm" class="inquiry-form">
+                    <div class="form-group">
+                        <label for="name">Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">E-Mail *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Telefon *</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="company">Firma</label>
+                        <input type="text" id="company" name="company">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Nachricht *</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Beschreiben Sie Ihre Anfrage..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Anfrage senden</button>
+                    <p class="form-note">* Pflichtfelder</p>
+                </form>
             </div>
         </div>
     </section>
