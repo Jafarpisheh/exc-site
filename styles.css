@@ -12,6 +12,14 @@ html {
     scroll-behavior: smooth;
 }
 
+img,
+picture,
+video,
+iframe {
+    max-width: 100%;
+    height: auto;
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
@@ -53,8 +61,7 @@ body {
     align-items: flex-start;
     gap: 20px;
     max-width: 100%; /* allow full-width usage inside header */
-    padding-left: 40px;
-    padding-right: 40px;
+    padding: 0 20px;
 }
 
 .logo {
@@ -64,8 +71,9 @@ body {
 }
 
 .site-logo {
-    height: 120px;
-    max-height: 140px;
+    height: 110px;
+    max-height: 120px;
+    width: auto;
     display: block;
     object-fit: contain;
     margin-top: 6px;
@@ -1038,6 +1046,7 @@ body {
         flex-direction: column;
         text-align: center;
         gap: 15px;
+        padding: 0 16px;
     }
 
     .nav ul {
@@ -1047,33 +1056,45 @@ body {
     }
 
     .nav a {
-        padding: 6px 12px;
-        font-size: 13px;
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+
+    .hero {
+        padding: 80px 16px 60px;
     }
 
     .hero-content h2 {
-        font-size: 32px;
+        font-size: 30px;
     }
 
     .hero-content p {
-        font-size: 16px;
+        font-size: 15px;
     }
 
     .products-grid {
         grid-template-columns: 1fr;
     }
 
-    .product-detail-content {
-        grid-template-columns: 1fr;
-        gap: 30px;
+    .product-detail {
+        padding: 30px 16px;
     }
 
     .product-detail-content {
         grid-template-columns: 1fr;
+        gap: 24px;
     }
 
     .thumbnails {
         grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+    }
+
+    .main-image {
+        min-height: 260px;
+    }
+
+    .pdf-viewer {
+        min-height: 320px;
     }
 
     .inquiry-section {
@@ -1100,12 +1121,21 @@ body {
 }
 
 @media (max-width: 480px) {
-    .logo h1 {
-        font-size: 20px;
+    .header {
+        padding: 16px 0 8px;
     }
 
-    .logo p {
-        display: none;
+    .header .container {
+        gap: 12px;
+    }
+
+    .site-logo {
+        height: 90px;
+        max-height: 100px;
+    }
+
+    .hero {
+        padding: 60px 14px 40px;
     }
 
     .hero-content h2 {
@@ -1117,16 +1147,30 @@ body {
         font-size: 24px;
     }
 
-    .cta-button {
-        padding: 12px 30px;
-        font-size: 14px;
-    }
-
     .product-card-content h3 {
         font-size: 18px;
     }
 
     .product-info h2 {
         font-size: 24px;
+    }
+
+    .product-detail {
+        padding: 22px 14px;
+    }
+
+    .product-detail-fullwidth,
+    .product-detail-content,
+    .contact .inquiry-section,
+    .inquiry-section {
+        gap: 18px;
+    }
+
+    .pdf-viewer {
+        min-height: 280px;
+    }
+
+    .contact .inquiry-section {
+        padding: 22px;
     }
 }
