@@ -5,12 +5,6 @@ let galleryState = {
     product: null
 };
 
-// Erste Debug-Meldung - Script geladen
-const debugLoaded = document.createElement('div');
-debugLoaded.style.cssText = 'position:fixed;top:0;left:0;background:red;color:white;padding:10px;z-index:99999;font-size:14px;font-weight:bold;';
-debugLoaded.textContent = 'PRODUCT-DETAIL.JS GELADEN!';
-document.body.appendChild(debugLoaded);
-
 // Produkt-ID aus der URL lesen
 function getProductIdFromUrl() {
     const params = new URLSearchParams(window.location.search);
@@ -21,15 +15,6 @@ function getProductIdFromUrl() {
 async function loadProductDetails() {
     const productId = getProductIdFromUrl();
     const product = getProductById(productId);
-    
-    // Add debug box showing product loading
-    let debugBox = document.createElement('div');
-    debugBox.style.cssText = 'position:fixed;top:0;right:0;background:orange;color:black;padding:15px;z-index:10000;border:3px solid blue;font-size:12px;max-width:400px;';
-    debugBox.innerHTML = `<strong>PRODUKT-LADE-DEBUG:</strong><br>Produkt-ID: ${productId}<br>Produkt gefunden: ${product ? 'JA' : 'NEIN'}<br>`;
-    if (product) {
-        debugBox.innerHTML += `Produktname: ${product.name}<br>Hat Video: ${product.hasVideo}<br>Anzahl Bilder: ${product.imageCount}<br>`;
-    }
-    document.body.appendChild(debugBox);
     
     if (!product) {
         document.body.innerHTML = '<div class="container" style="text-align: center; padding: 50px;"><h2>Produkt nicht gefunden</h2><a href="index.html">Zurück zur Startseite</a></div>';
@@ -42,7 +27,7 @@ async function loadProductDetails() {
     document.getElementById('productName').textContent = product.name;
     
     // Bilder und Videos laden
-    loadProductMedia(product);
+    await loadProductMedia(product);
     
     // Spezifikationen laden
     loadProductSpecs(product);
@@ -52,37 +37,40 @@ async function loadProductDetails() {
 }
 
 // Produktbilder und Videos laden
-function loadProductMedia(product) {
+async function loadProductMedia(product) {
     const thumbnailContainer = document.getElementById('thumbnailContainer');
-    
-    console.log('loadProductMedia called with product:', product);
     
     // Medienarray erstellen (Bilder und Videos)
     galleryState.mediaItems = [];
     
-    // Bilder hinzufügen
-    for (let i = 1; i <= product.imageCount; i++) {
-        galleryState.mediaItems.push({
-            type: 'image',
-            path: `${product.folder}/images/${i}.jpg`,
-            index: i
+    // Bilder ermitteln und hinzufügen
+    const imagePaths = await getProductImagePaths(product);
+    if (imagePaths.length > 0) {
+        imagePaths.forEach((imagePath, index) => {
+            galleryState.mediaItems.push({
+                type: 'image',
+                path: imagePath,
+                index: index + 1
+            });
         });
+    } else if (product.imageCount) {
+        // Fallback, falls der Server kein Verzeichnislisting liefert
+        for (let i = 1; i <= product.imageCount; i++) {
+            galleryState.mediaItems.push({
+                type: 'image',
+                path: `${product.folder}/images/${i}.jpg`,
+                index: i
+            });
+        }
     }
-    
-    console.log('After adding images, mediaItems length:', galleryState.mediaItems.length);
     
     // Video hinzufügen, falls vorhanden
     if (product.hasVideo) {
-        console.log('Product has video, adding to mediaItems');
         galleryState.mediaItems.push({
             type: 'video',
             path: `${product.folder}/videos/1.mp4`
         });
-    } else {
-        console.log('Product does NOT have video');
     }
-    
-    console.log('Final mediaItems:', galleryState.mediaItems);
     
     // Setze erstes Bild als Hauptbild
     if (galleryState.mediaItems.length > 0) {
@@ -97,27 +85,39 @@ function loadProductMedia(product) {
     setupGalleryNavigation();
 }
 
+async function getProductImagePaths(product) {
+    const imagesFolderUrl = `${product.folder}/images/`;
+    const acceptedExtensions = ['.jpg', '.jpeg', '.png', '.gif', '.webp', '.svg'];
+
+    try {
+        const response = await fetch(imagesFolderUrl, { cache: 'no-store' });
+        if (!response.ok) {
+            throw new Error(`Unable to load image folder listing: ${response.status}`);
+        }
+
+        const html = await response.text();
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(html, 'text/html');
+        const anchors = Array.from(doc.querySelectorAll('a[href]'));
+
+        const imageHrefs = anchors
+            .map(a => a.getAttribute('href'))
+            .filter(href => href && acceptedExtensions.some(ext => href.toLowerCase().endsWith(ext)))
+            .map(href => new URL(href, window.location.origin + '/' + imagesFolderUrl).href);
+
+        const uniquePaths = [...new Set(imageHrefs)];
+        uniquePaths.sort((a, b) => a.localeCompare(b, undefined, { numeric: true, sensitivity: 'base' }));
+        return uniquePaths;
+    } catch (error) {
+        console.warn('Could not read product images from folder listing:', error);
+        return [];
+    }
+}
+
 // Miniaturansichten erstellen
 function createThumbnails(container) {
     container.innerHTML = '';
-    
-    // Create debug info and inject into page
-    let debugInfo = `<div style="position:fixed;top:0;right:0;background:yellow;color:black;padding:15px;z-index:10000;border:2px solid red;font-size:12px;max-width:400px;"><strong>THUMBNAIL-DEBUG:</strong><br>Gesamtanzahl Einträge: ${galleryState.mediaItems.length}<br>`;
-    
-    galleryState.mediaItems.forEach((item, index) => {
-        debugInfo += `${index}: ${item.type} - ${item.path}<br>`;
-    });
-    
-    debugInfo += `</div>`;
-    
-    // Add to page
-    if (!document.getElementById('debugBox')) {
-        const debugBox = document.createElement('div');
-        debugBox.id = 'debugBox';
-        debugBox.innerHTML = debugInfo;
-        document.body.appendChild(debugBox);
-    }
-    
+
     galleryState.mediaItems.forEach((item, index) => {
         const thumbnail = document.createElement('div');
         thumbnail.className = 'thumbnail';
@@ -130,17 +130,13 @@ function createThumbnails(container) {
             thumbnail.innerHTML = `<div class="video-thumbnail">🎬 Video</div>`;
             thumbnail.style.border = '3px solid red'; // Make video thumbnail clearly visible
         }
-        
-        // Add click handler with alert for debugging
-        thumbnail.addEventListener('click', (e) => {
-            const itemLabel = item.type === 'image' ? 'Bild' : 'Video';
-            alert(`Sie haben auf ${itemLabel} an Position ${index} geklickt`);
-            console.log('Thumbnail click event fired');
+
+        thumbnail.addEventListener('click', () => {
             galleryState.currentIndex = index;
             updateMainImage();
             updateActiveThumb();
         });
-        
+
         container.appendChild(thumbnail);
     });
     
@@ -162,6 +158,7 @@ function createThumbnails(container) {
         thumbnail.addEventListener('click', () => {
             galleryState.currentIndex = index;
             updateMainImage();
+            updateModalImage();
             updateActiveThumb();
             updateImageCounter();
         });
@@ -175,32 +172,20 @@ function updateMainImage() {
     const mainImage = document.getElementById('mainImage');
     const item = galleryState.mediaItems[galleryState.currentIndex];
     
-    console.log('updateMainImage called. Index:', galleryState.currentIndex, 'Total items:', galleryState.mediaItems.length);
-    console.log('Item:', item);
-    
     if (!item) {
-        console.log('Item is null or undefined');
         return;
     }
     
-    console.log('Item type check - item.type =', item.type, '(type of:', typeof item.type, ')');
-    
     if (item.type === 'image') {
-        console.log('Matched IMAGE branch');
         mainImage.src = item.path;
         mainImage.style.display = 'block';
-        // Video-Player ausblenden, falls sichtbar
         const videoPlayer = document.getElementById('videoPlayer');
         if (videoPlayer) videoPlayer.style.display = 'none';
     } else if (item.type === 'video') {
-        console.log('Matched VIDEO branch');
-        // Hide the image
         mainImage.style.display = 'none';
         
-        // Video-Player erstellen oder anzeigen
         let videoPlayer = document.getElementById('videoPlayer');
         if (!videoPlayer) {
-            console.log('Creating new video player');
             const mainImageContainer = document.getElementById('mainImageContainer');
             videoPlayer = document.createElement('video');
             videoPlayer.id = 'videoPlayer';
@@ -209,16 +194,11 @@ function updateMainImage() {
             videoPlayer.style.width = '100%';
             videoPlayer.style.height = 'auto';
             videoPlayer.style.display = 'block';
-            // Insert video before the first button so buttons stay on top
             const firstButton = mainImageContainer.querySelector('.gallery-nav-btn');
             mainImageContainer.insertBefore(videoPlayer, firstButton);
-            console.log('Video player created and inserted');
         }
         videoPlayer.src = item.path;
         videoPlayer.style.display = 'block';
-        console.log('Video source set to:', item.path);
-    } else {
-        console.log('No matching branch - item.type is:', item.type);
     }
 }
 
@@ -243,6 +223,22 @@ function updateImageCounter() {
     }
 }
 
+function updateModalImage() {
+    const modalImage = document.getElementById('modalImage');
+    const item = galleryState.mediaItems[galleryState.currentIndex];
+    if (!modalImage || !item) return;
+
+    if (item.type === 'image') {
+        modalImage.src = item.path;
+        modalImage.alt = `Produktbild ${item.index}`;
+        modalImage.style.display = 'block';
+    } else {
+        modalImage.src = '';
+        modalImage.alt = '';
+        modalImage.style.display = 'none';
+    }
+}
+
 // Galerie navigieren
 function navigateGallery(direction) {
     const newIndex = galleryState.currentIndex + direction;
@@ -250,6 +246,7 @@ function navigateGallery(direction) {
     if (newIndex >= 0 && newIndex < galleryState.mediaItems.length) {
         galleryState.currentIndex = newIndex;
         updateMainImage();
+        updateModalImage();
         updateActiveThumb();
         updateImageCounter();
     }
@@ -259,11 +256,24 @@ function navigateGallery(direction) {
 function setupGalleryNavigation() {
     const prevBtn = document.getElementById('prevBtn');
     const nextBtn = document.getElementById('nextBtn');
-    const expandBtn = document.getElementById('expandBtn');
+    const mainImageContainer = document.getElementById('mainImageContainer');
     
     prevBtn.addEventListener('click', () => navigateGallery(-1));
     nextBtn.addEventListener('click', () => navigateGallery(1));
-    expandBtn.addEventListener('click', openImageModal);
+    
+    if (mainImageContainer) {
+        mainImageContainer.style.cursor = 'zoom-in';
+        mainImageContainer.addEventListener('click', (event) => {
+            const item = galleryState.mediaItems[galleryState.currentIndex];
+            if (item?.type === 'image') {
+                const target = event.target;
+                if (target.closest('.gallery-nav-btn')) {
+                    return;
+                }
+                openImageModal();
+            }
+        });
+    }
     
     // Setup modal navigation
     const modalPrevBtn = document.getElementById('modalPrevBtn');
@@ -295,6 +305,7 @@ function setupGalleryNavigation() {
 // Bild-Modal öffnen
 function openImageModal() {
     const modal = document.getElementById('imageModal');
+    updateModalImage();
     modal.style.display = 'flex';
     document.body.style.overflow = 'hidden';
     updateImageCounter();
@@ -328,15 +339,95 @@ function loadProductSpecs(product) {
         `;
     });
     
-    // PDF-Download ankündigen
-    specsHTML += `
-        <div class="pdf-notice">
-            <strong>📄 PDF nur zum Download</strong><br>
-            <a href="${product.folder}/specs.pdf" target="_blank" download>Deutschsprachige Spezifikationen als PDF herunterladen</a>
+    specsContainer.innerHTML = specsHTML;
+    renderPdfViewer(product);
+}
+
+function renderPdfViewer(product) {
+    const viewer = document.getElementById('pdfViewerContainer');
+    const pdfUrl = `${product.folder}/specs.pdf`;
+    
+    if (!viewer) return;
+
+    viewer.innerHTML = `
+        <div class="pdf-viewer-box">
+            <h3>Spezifikationen</h3>
+            <div class="pdf-viewer" id="pdfImageViewer">
+                <div class="pdf-loading">Lade Spezifikationen...</div>
+            </div>
         </div>
     `;
-    
-    specsContainer.innerHTML = specsHTML;
+
+    const container = document.getElementById('pdfImageViewer');
+    if (!window.pdfjsLib) {
+        loadPdfJs(pdfUrl, () => renderPdfPages(pdfUrl, container, product.name));
+    } else {
+        renderPdfPages(pdfUrl, container, product.name);
+    }
+}
+
+function loadPdfJs(pdfUrl, callback) {
+    if (window.pdfjsLib) {
+        callback();
+        return;
+    }
+
+    const script = document.createElement('script');
+    script.src = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js';
+    script.onload = () => {
+        if (window.pdfjsLib) {
+            pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js';
+        }
+        callback();
+    };
+    script.onerror = () => {
+        const viewer = document.getElementById('pdfImageViewer');
+        if (viewer) {
+            viewer.innerHTML = `
+                <div class="pdf-error">
+                    Die Spezifikation konnte nicht geladen werden. Öffnen Sie sie in einem neuen Tab.
+                </div>
+            `;
+        }
+    };
+    document.head.appendChild(script);
+}
+
+async function renderPdfPages(pdfUrl, container, productName) {
+    if (!container) return;
+
+    try {
+        const loadingTask = pdfjsLib.getDocument(pdfUrl);
+        const pdf = await loadingTask.promise;
+
+        container.innerHTML = '';
+
+        for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
+            const page = await pdf.getPage(pageNum);
+            const scale = 1.4;
+            const viewport = page.getViewport({ scale });
+            const canvas = document.createElement('canvas');
+            const context = canvas.getContext('2d');
+
+            canvas.width = viewport.width;
+            canvas.height = viewport.height;
+            canvas.setAttribute('aria-label', `${productName} Spezifikationsseite`);
+
+            const pageContainer = document.createElement('div');
+            pageContainer.className = 'pdf-page-image';
+            pageContainer.appendChild(canvas);
+            container.appendChild(pageContainer);
+
+            await page.render({ canvasContext: context, viewport }).promise;
+        }
+    } catch (error) {
+        console.error('Spezifikationendarstellung fehlgeschlagen:', error);
+        container.innerHTML = `
+            <div class="pdf-error">
+                Die Spezifikation konnte nicht geladen werden. Öffnen Sie sie in einem neuen Tab.
+            </div>
+        `;
+    }
 }
 
 // Basisdaten je nach Produkt ermitteln
@@ -369,14 +460,23 @@ function getBasicSpecs(product) {
 // Anfrageformular einrichten
 function setupInquiryForm(product) {
     const form = document.getElementById('inquiryForm');
-    
-    form.addEventListener('submit', (e) => {
+    if (!form) return;
+
+    const productIdInput = form.querySelector('[name="productId"]');
+    const productNameInput = form.querySelector('[name="productName"]');
+    const sourcePageInput = form.querySelector('[name="sourcePage"]');
+
+    if (productIdInput) productIdInput.value = product.id;
+    if (productNameInput) productNameInput.value = product.name;
+    if (sourcePageInput) sourcePageInput.value = 'product-detail';
+
+    form.addEventListener('submit', async (e) => {
         e.preventDefault();
         
-        // Formular-Daten sammeln
-        const formData = {
+        const formDataObject = {
             productId: product.id,
             productName: product.name,
+            sourcePage: 'product-detail',
             name: document.getElementById('name').value,
             email: document.getElementById('email').value,
             phone: document.getElementById('phone').value,
@@ -385,27 +485,29 @@ function setupInquiryForm(product) {
             timestamp: new Date().toISOString()
         };
         
-        // In localStorage speichern (Backend-Simulation)
         let inquiries = JSON.parse(localStorage.getItem('inquiries') || '[]');
-        inquiries.push(formData);
+        inquiries.push(formDataObject);
         localStorage.setItem('inquiries', JSON.stringify(inquiries));
         
-        // Erfolgsmeldung anzeigen
-        showSuccessMessage();
-        
-        // Formular zurücksetzen
-        form.reset();
-        
-        // Zur Demo in die Konsole schreiben
-        console.log('Inquiry submitted:', formData);
-        
-        // In einer echten Anwendung würden diese Daten an einen Server gesendet werden
-        // Beispiel:
-        // fetch('/api/inquiries', {
-        //     method: 'POST',
-        //     headers: { 'Content-Type': 'application/json' },
-        //     body: JSON.stringify(formData)
-        // })
+        try {
+            await submitInquiryEmail(form);
+            showSuccessMessage();
+            form.reset();
+            console.log('Product inquiry submitted:', formDataObject);
+        } catch (error) {
+            console.error('E-Mail-Versand fehlgeschlagen:', error);
+            alert('Ihre Anfrage konnte nicht per E-Mail gesendet werden. Bitte versuchen Sie es später erneut.');
+        }
+    });
+}
+
+// Product page nav button auf der Produktseite deaktivieren
+function disableProductNavButton() {
+    const productNavButton = document.querySelector('nav a[href="index.html#products"]');
+    if (!productNavButton) return;
+
+    productNavButton.addEventListener('click', (event) => {
+        event.preventDefault();
     });
 }
 
@@ -431,6 +533,7 @@ function showSuccessMessage() {
 // Initialisierung beim Laden der Seite
 document.addEventListener('DOMContentLoaded', () => {
     loadProductDetails();
+    disableProductNavButton();
 });
 
 // Versuche sofort, falls DOM bereits geladen ist
@@ -439,4 +542,5 @@ if (document.readyState === 'loading') {
 } else {
     // DOM is already loaded
     loadProductDetails();
+    disableProductNavButton();
 }

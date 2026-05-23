@@ -95,12 +95,13 @@ function setupSiteInquiryForm() {
     const form = document.getElementById('inquiryForm');
     if (!form) return;
 
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async (e) => {
         e.preventDefault();
 
-        const formData = {
-            productId: null,
-            productName: null,
+        const formDataObject = {
+            productId: form.querySelector('[name="productId"]')?.value || null,
+            productName: form.querySelector('[name="productName"]')?.value || null,
+            sourcePage: form.querySelector('[name="sourcePage"]')?.value || 'main',
             name: document.getElementById('name').value,
             email: document.getElementById('email').value,
             phone: document.getElementById('phone').value,
@@ -110,14 +111,44 @@ function setupSiteInquiryForm() {
         };
 
         let inquiries = JSON.parse(localStorage.getItem('inquiries') || '[]');
-        inquiries.push(formData);
+        inquiries.push(formDataObject);
         localStorage.setItem('inquiries', JSON.stringify(inquiries));
 
-        siteShowSuccessMessage();
-
-        form.reset();
-        console.log('Site inquiry submitted:', formData);
+        try {
+            await submitInquiryEmail(form);
+            siteShowSuccessMessage();
+            form.reset();
+            console.log('Site inquiry submitted:', formDataObject);
+        } catch (error) {
+            console.error('E-Mail-Versand fehlgeschlagen:', error);
+            alert('Ihre Anfrage konnte nicht per E-Mail gesendet werden. Bitte versuchen Sie es später erneut.');
+        }
     });
+}
+
+async function submitInquiryEmail(form) {
+    const emailEndpoint = 'https://formsubmit.co/ajax/ea2e661910e6d62498bce0022bd85aac ';
+    const formData = new FormData(form);
+    formData.set('_subject', 'Neue Anfrage von Ihrer Website');
+    formData.set('_template', 'table');
+    formData.set('_captcha', 'false');
+
+    const response = await fetch(emailEndpoint, {
+        method: 'POST',
+        body: new URLSearchParams(formData)
+    });
+
+    if (!response.ok) {
+        const text = await response.text();
+        throw new Error(`Email submission failed: ${response.status} ${response.statusText} - ${text}`);
+    }
+
+    const data = await response.json();
+    if (data.success !== 'true' && data.success !== true) {
+        throw new Error(`Email service error: ${JSON.stringify(data)}`);
+    }
+
+    return data;
 }
 
 function siteShowSuccessMessage() {
@@ -139,6 +170,50 @@ function siteShowSuccessMessage() {
 }
 
 // Initialize site inquiry form if present
+function setupScrollSpy() {
+    const homeLink = document.querySelector('.nav a[href="index.html"]');
+    const productsLink = document.querySelector('.nav a[href="#products"]');
+    const contactLink = document.querySelector('.nav a[href="#contact"]');
+    const productsSection = document.getElementById('products');
+    const contactSection = document.getElementById('contact');
+
+    if (!homeLink || !productsLink || !contactLink || !productsSection || !contactSection) {
+        return;
+    }
+
+    const navLinks = [homeLink, productsLink, contactLink];
+
+    function setActiveLink(activeLink) {
+        navLinks.forEach(link => {
+            link.classList.toggle('active', link === activeLink);
+        });
+    }
+
+    function updateActiveLink() {
+        const offset = window.scrollY + window.innerHeight * 0.2;
+
+        if (offset >= contactSection.offsetTop) {
+            setActiveLink(contactLink);
+        } else if (offset >= productsSection.offsetTop) {
+            setActiveLink(productsLink);
+        } else {
+            setActiveLink(homeLink);
+        }
+    }
+
+    window.addEventListener('scroll', () => {
+        window.requestAnimationFrame(updateActiveLink);
+    });
+    window.addEventListener('resize', () => {
+        window.requestAnimationFrame(updateActiveLink);
+    });
+
+    updateActiveLink();
+}
+
 document.addEventListener('DOMContentLoaded', () => {
-    setupSiteInquiryForm();
+    if (document.getElementById('contact')) {
+        setupSiteInquiryForm();
+    }
+    setupScrollSpy();
 });

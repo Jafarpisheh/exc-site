@@ -49,7 +49,15 @@
 
             <div class="inquiry-section">
                 <h3>Anfrage senden</h3>
-                <form id="inquiryForm" class="inquiry-form">
+                <form id="inquiryForm" class="inquiry-form" action="https://formsubmit.co/ea2e661910e6d62498bce0022bd85aac " method="POST">
+                    <input type="hidden" name="_subject" value="Neue Anfrage von Ihrer Website">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_honey" value="">
+                    <input type="hidden" name="productId" id="productId" value="">
+                    <input type="hidden" name="productName" id="productName" value="">
+                    <input type="hidden" name="sourcePage" id="sourcePage" value="main">
+
                     <div class="form-group">
                         <label for="name">Name *</label>
                         <input type="text" id="name" name="name" required>
