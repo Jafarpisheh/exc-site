@@ -53,6 +53,11 @@ body {
     box-shadow: 0 6px 24px rgba(0,0,0,0.5);
     border-bottom: 6px solid rgba(0,0,0,0.15);
     min-height: 150px; /* ensure header area is tall so logo sits at top and nav can sit at bottom */
+    transition: top 0.3s ease;
+}
+
+.header.hidden {
+    top: -160px;
 }
 
 .header .container {
