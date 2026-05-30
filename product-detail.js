@@ -318,7 +318,7 @@ function closeImageModal() {
     document.body.style.overflow = 'auto';
 }
 
-// Produktspezifikationen laden (Basisdaten und PDF-Link anzeigen)
+// Produktspezifikationen laden
 function loadProductSpecs(product) {
     const specsContainer = document.getElementById('specsContainer');
     
@@ -340,118 +340,46 @@ function loadProductSpecs(product) {
     });
     
     specsContainer.innerHTML = specsHTML;
-    renderPdfViewer(product);
-}
-
-function renderPdfViewer(product) {
-    const viewer = document.getElementById('pdfViewerContainer');
-    const pdfUrl = `${product.folder}/specs.pdf`;
-    
-    if (!viewer) return;
-
-    viewer.innerHTML = `
-        <div class="pdf-viewer-box">
-            <h3>Spezifikationen</h3>
-            <div class="pdf-viewer" id="pdfImageViewer">
-                <div class="pdf-loading">Lade Spezifikationen...</div>
-            </div>
-        </div>
-    `;
-
-    const container = document.getElementById('pdfImageViewer');
-    if (!window.pdfjsLib) {
-        loadPdfJs(pdfUrl, () => renderPdfPages(pdfUrl, container, product.name));
-    } else {
-        renderPdfPages(pdfUrl, container, product.name);
-    }
-}
-
-function loadPdfJs(pdfUrl, callback) {
-    if (window.pdfjsLib) {
-        callback();
-        return;
-    }
-
-    const script = document.createElement('script');
-    script.src = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js';
-    script.onload = () => {
-        if (window.pdfjsLib) {
-            pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js';
-        }
-        callback();
-    };
-    script.onerror = () => {
-        const viewer = document.getElementById('pdfImageViewer');
-        if (viewer) {
-            viewer.innerHTML = `
-                <div class="pdf-error">
-                    Die Spezifikation konnte nicht geladen werden. Öffnen Sie sie in einem neuen Tab.
-                </div>
-            `;
-        }
-    };
-    document.head.appendChild(script);
-}
-
-async function renderPdfPages(pdfUrl, container, productName) {
-    if (!container) return;
-
-    try {
-        const loadingTask = pdfjsLib.getDocument(pdfUrl);
-        const pdf = await loadingTask.promise;
-
-        container.innerHTML = '';
-
-        for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
-            const page = await pdf.getPage(pageNum);
-            const scale = 1.4;
-            const viewport = page.getViewport({ scale });
-            const canvas = document.createElement('canvas');
-            const context = canvas.getContext('2d');
-
-            canvas.width = viewport.width;
-            canvas.height = viewport.height;
-            canvas.setAttribute('aria-label', `${productName} Spezifikationsseite`);
-
-            const pageContainer = document.createElement('div');
-            pageContainer.className = 'pdf-page-image';
-            pageContainer.appendChild(canvas);
-            container.appendChild(pageContainer);
-
-            await page.render({ canvasContext: context, viewport }).promise;
-        }
-    } catch (error) {
-        console.error('Spezifikationendarstellung fehlgeschlagen:', error);
-        container.innerHTML = `
-            <div class="pdf-error">
-                Die Spezifikation konnte nicht geladen werden. Öffnen Sie sie in einem neuen Tab.
-            </div>
-        `;
-    }
 }
 
 // Basisdaten je nach Produkt ermitteln
 function getBasicSpecs(product) {
     const specs = {
         'Modell': product.name,
-        'Typ': 'Hydraulikbagger',
+        'Typ': 'Mähroboter',
         'Status': 'Verfügbar',
         'Verfügbarkeit': 'Auf Lager'
     };
     
     // Modellabhängige Spezifikationen hinzufügen
-    if (product.id === 'xc-12') {
-        specs['Betriebsgewicht'] = '12 Tonnen';
-        specs['Schaufelkapazität'] = '0.58 m³';
-        specs['Maximale Grabtiefe'] = '4.2 m';
-        specs['Leistung'] = '85 kW / 115 PS';
-        specs['Am besten für'] = 'Kleine bis mittlere Projekte';
-    } else if (product.id === 'xc-18') {
-        specs['Betriebsgewicht'] = '18 Tonnen';
-        specs['Schaufelkapazität'] = '0.85 m³';
-        specs['Maximale Grabtiefe'] = '5.1 m';
-        specs['Leistung'] = '125 kW / 168 PS';
-        specs['Am besten für'] = 'Großflächige Einsätze';
+    if (product.id === 'i600') {
+        specs['Arbeitsfläche'] = 'Bis 600 m²';
+        specs['Schnittbreite'] = '20 cm';
+        specs['Schnitthöhe'] = '30 – 60 mm (einstellbar)';
+        specs['Max. Steigung'] = '35 %';
+        specs['Akku'] = '5,0 Ah';
+        specs['Motor'] = 'Bürstenlos (leise & langlebig)';
+        specs['Verbindung'] = 'WLAN & Bluetooth';
+        specs['Display'] = 'LED';
+        specs['Vision AI'] = 'Ja – automatische Hinderniserkennung';
+        specs['OTA-Updates'] = 'Ja – immer auf dem neuesten Stand';
+        specs['Fernsteuerung'] = 'Ja – bequem per App von überall';
+    } else if (product.id === 'n1000') {
+        specs['Arbeitsfläche'] = 'Bis 3.000 m²';
+        specs['Neigungswinkel'] = '±45 % (24°)';
+        specs['Anzahl Klingen'] = '3 Stück';
+        specs['Akku'] = 'Lithium 21,6V / 6,4 Ah';
+        specs['Ladezeit'] = '120 Minuten';
+        specs['Laufzeit'] = '150 Minuten';
+        specs['Flächenleistung'] = '200 m²/Stunde';
+        specs['Begrenzung'] = 'Kein Begrenzungsdraht – elektronischer Zaun';
+        specs['Ladestation'] = '28V / 3Ah';
+        specs['Navigation'] = 'RTK GPS';
+        specs['Mähmuster'] = 'Geordnet (systematische Bahnen)';
+        specs['Hinderniserkennung'] = 'Vision (Kamera)';
+        specs['Regentauglich'] = 'Ja';
+        specs['Abmessungen'] = '66 × 47 × 32 cm';
+        specs['Gewicht'] = '13 kg';
     }
     
     return specs;

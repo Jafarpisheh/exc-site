@@ -1,18 +1,18 @@
 // Produktkatalog
 const products = [
     {
-        id: 'xc-12',
-        name: 'XC-12 Bagger',
-        description: 'Kompakter und effizienter Bagger, ideal für kleine bis mittlere Bauprojekte.',
-        folder: 'products/xc-12',
+        id: 'i600',
+        name: 'i600',
+        description: 'Intelligenter Mähroboter mit Vision AI – mäht bis 600 m² Fläche, kein Begrenzungsdraht nötig.',
+        folder: 'products/i600',
         imageCount: 5,
         hasVideo: true
     },
     {
-        id: 'xc-18',
-        name: 'XC-18 Bagger',
-        description: 'Robuster Bagger für großflächige Bergbau- und Bauprojekte.',
-        folder: 'products/xc-18',
+        id: 'n1000',
+        name: 'n1000',
+        description: 'RTK GPS gesteuerter Mähroboter – mäht bis 3.000 m² mit zentimetergenauer Navigation.',
+        folder: 'products/n1000',
         imageCount: 6,
         hasVideo: true
     }
@@ -70,16 +70,16 @@ function getBasicSpecs(product) {
     const specs = {};
     
     // Modellabhängige Spezifikationen hinzufügen
-    if (product.id === 'xc-12') {
-        specs['Gewicht'] = '12 Tonnen';
-        specs['Schaufel'] = '0.58 m³';
-        specs['Tiefe'] = '4.2 m';
-        specs['Leistung'] = '85 kW';
-    } else if (product.id === 'xc-18') {
-        specs['Gewicht'] = '18 Tonnen';
-        specs['Schaufel'] = '0.85 m³';
-        specs['Tiefe'] = '5.1 m';
-        specs['Leistung'] = '125 kW';
+    if (product.id === 'i600') {
+        specs['Arbeitsfläche'] = 'Bis 600 m²';
+        specs['Akku'] = '5,0 Ah';
+        specs['Hinderniserkennung'] = 'Vision AI';
+        specs['Neigung'] = '35 %';
+    } else if (product.id === 'n1000') {
+        specs['Arbeitsfläche'] = 'Bis 3.000 m²';
+        specs['Akku'] = '21,6V / 6,4 Ah';
+        specs['Hinderniserkennung'] = 'Vision (Kamera)';
+        specs['Neigung'] = '±45 % (24°)';
     }
     
     return specs;

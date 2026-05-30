@@ -76,8 +76,8 @@ body {
 }
 
 .site-logo {
-    height: 110px;
-    max-height: 120px;
+    height: 120px;
+    max-height: 200px;
     width: auto;
     display: block;
     object-fit: contain;
@@ -293,22 +293,10 @@ body {
     color: inherit;
 }
 
-.product-detail-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px;
-    align-items: start;
-}
-
-.product-detail-fullwidth {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    margin-top: 40px;
-}
-
-.product-detail-fullwidth .inquiry-section {
-    margin-top: 0;
+.product-detail .container > h2 {
+    color: var(--color-dark-blue);
+    font-size: 32px;
+    margin: 30px 0;
 }
 
 .product-media {
@@ -400,101 +388,11 @@ body {
 
 /* Product Info */
 
-.product-info h2 {
-    color: var(--color-dark-blue);
-    font-size: 32px;
-    margin-bottom: 30px;
-}
-
 .product-specs {
     background-color: #f9fafb;
     padding: 20px;
     border-radius: 12px;
-    margin-bottom: 20px;
-}
-
-.pdf-info-notice {
-    background-color: #fefce8;
-    border-left: 4px solid #f59e0b;
-    padding: 15px;
-    border-radius: 8px;
-    margin-top: 20px;
-}
-
-.pdf-info-notice strong {
-    display: inline-block;
-    margin-bottom: 6px;
-    color: var(--color-dark-blue);
-}
-
-.pdf-viewer-wrapper {
-    background-color: #ffffff;
-    padding: 22px;
-    border-radius: 16px;
-    border: 1px solid rgba(37, 99, 235, 0.12);
-    box-shadow: 0 20px 40px rgba(37, 99, 235, 0.08);
     margin-bottom: 30px;
-}
-
-.pdf-viewer-box h3 {
-    color: var(--color-dark-blue);
-    font-size: 20px;
-    margin-bottom: 18px;
-}
-
-.pdf-viewer {
-    width: 100%;
-    min-height: 520px;
-    border-radius: 16px;
-    overflow: hidden;
-    background-color: #f3f4f6;
-    box-shadow: inset 0 0 0 1px rgba(15, 23, 42, 0.05);
-}
-
-.pdf-viewer iframe {
-    width: 100%;
-    height: 520px;
-    border: none;
-    display: block;
-}
-
-.pdf-viewer canvas {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-.pdf-page-image {
-    margin-bottom: 24px;
-}
-
-.pdf-page-label {
-    margin-bottom: 12px;
-    font-weight: 700;
-    color: var(--color-dark-blue);
-}
-
-.pdf-error {
-    padding: 18px;
-    background: #fef2f2;
-    color: #b91c1c;
-    border-radius: 12px;
-}
-
-.pdf-fallback {
-    margin-top: 16px;
-    color: var(--color-grey);
-    font-size: 14px;
-}
-
-.pdf-fallback a {
-    color: var(--color-dark-blue);
-    text-decoration: none;
-    font-weight: 600;
-}
-
-.pdf-fallback a:hover {
-    text-decoration: underline;
 }
 
 .spec-item {
@@ -515,24 +413,6 @@ body {
 
 .spec-value {
     color: var(--color-grey);
-}
-
-.pdf-notice {
-    background-color: #fef3c7;
-    border-left: 4px solid #f59e0b;
-    padding: 15px;
-    border-radius: 6px;
-    margin-bottom: 20px;
-}
-
-.pdf-notice a {
-    color: var(--color-dark-blue);
-    font-weight: 600;
-    text-decoration: none;
-}
-
-.pdf-notice a:hover {
-    text-decoration: underline;
 }
 
 /* Inquiry Form */
@@ -1085,21 +965,12 @@ body {
         padding: 30px 16px;
     }
 
-    .product-detail-content {
-        grid-template-columns: 1fr;
-        gap: 24px;
-    }
-
     .thumbnails {
         grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
     }
 
     .main-image {
         min-height: 260px;
-    }
-
-    .pdf-viewer {
-        min-height: 320px;
     }
 
     .inquiry-section {
@@ -1135,8 +1006,8 @@ body {
     }
 
     .site-logo {
-        height: 90px;
-        max-height: 100px;
+        height: 140px;
+        max-height: 160px;
     }
 
     .hero {
@@ -1171,9 +1042,6 @@ body {
         gap: 18px;
     }
 
-    .pdf-viewer {
-        min-height: 280px;
-    }
 
     .contact .inquiry-section {
         padding: 22px;

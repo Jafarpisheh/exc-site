@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Produktdetails - BW-Bagger</title>
+    <title>Produktdetails - BW-Mähroboter</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -11,7 +11,7 @@
     <header class="header">
         <div class="container">
             <div class="logo">
-                <a href="index.html"><img src="logo/Logo.png" alt="BW-Bagger" class="site-logo"></a>
+                <a href="index.html"><img src="logo/Logo.png" alt="BW-Mähroboter" class="site-logo"></a>
             </div>
         </div>
     </header>
@@ -21,85 +21,73 @@
         <div class="container">
             <a href="index.html#products" class="back-link">← Zurück zu den Produkten</a>
             
-            <div class="product-detail-content">
-                <!-- Linke Seite: Bilder und Videos -->
-                <div class="product-media">
-                    <!-- Hauptbild-Galerie -->
-                    <div class="gallery-container">
-                        <div class="main-image" id="mainImageContainer">
-                            <img id="mainImage" src="" alt="Produktbild">
-                            <button class="gallery-nav-btn prev" id="prevBtn" aria-label="Vorheriges Bild">❮</button>
-                            <button class="gallery-nav-btn next" id="nextBtn" aria-label="Nächstes Bild">❯</button>
-                        </div>
-                        <div class="thumbnails" id="thumbnailContainer">
-                            <!-- Thumbnails will be loaded dynamically -->
-                        </div>
+            <h2 id="productName"></h2>
+
+            <div class="product-media">
+                <!-- Hauptbild-Galerie -->
+                <div class="gallery-container">
+                    <div class="main-image" id="mainImageContainer">
+                        <img id="mainImage" src="" alt="Produktbild">
+                        <button class="gallery-nav-btn prev" id="prevBtn" aria-label="Vorheriges Bild">❮</button>
+                        <button class="gallery-nav-btn next" id="nextBtn" aria-label="Nächstes Bild">❯</button>
                     </div>
-                    
-                    <!-- Videos Section -->
-                    <div id="videosSection" class="videos-section" style="display: none;">
-                        <h3>Produktvideos</h3>
-                        <div class="videos-container" id="videosContainer">
-                            <!-- Videos werden dynamisch geladen -->
-                        </div>
+                    <div class="thumbnails" id="thumbnailContainer">
+                        <!-- Thumbnails will be loaded dynamically -->
                     </div>
                 </div>
-
-                <!-- Right side: Info and Specs -->
-                <div class="product-info">
-                    <h2 id="productName"></h2>
-                    
-                    <div class="product-specs" id="specsContainer">
-                        <!-- Technische Daten erscheinen hier -->
+                
+                <!-- Videos Section -->
+                <div id="videosSection" class="videos-section" style="display: none;">
+                    <h3>Produktvideos</h3>
+                    <div class="videos-container" id="videosContainer">
+                        <!-- Videos werden dynamisch geladen -->
                     </div>
                 </div>
             </div>
 
-            <div class="product-detail-fullwidth">
-                <div class="pdf-viewer-wrapper" id="pdfViewerContainer">
-                    <!-- Spezifikationen werden hier als Bilder dargestellt -->
-                </div>
+            <div class="product-specs" id="specsContainer">
+                <!-- Technische Daten erscheinen hier -->
+            </div>
 
-                <div class="inquiry-section">
-                    <h3>Produktanfrage senden</h3>
-                    <form id="inquiryForm" class="inquiry-form" action="https://formsubmit.co/ea2e661910e6d62498bce0022bd85aac " method="POST">
-                        <input type="hidden" name="_subject" value="Neue Anfrage von Ihrer Website">
-                        <input type="hidden" name="_template" value="table">
-                        <input type="hidden" name="_captcha" value="false">
-                        <input type="hidden" name="_honey" value="">
-                        <input type="hidden" name="productId" id="productId" value="">
-                        <input type="hidden" name="productName" id="productName" value="">
-                        <input type="hidden" name="sourcePage" id="sourcePage" value="product-detail">
+            <div class="inquiry-section">
+                <h3>Produktanfrage senden</h3>
+                <form id="inquiryForm" class="inquiry-form" action="https://formsubmit.co/ea2e661910e6d62498bce0022bd85aac " method="POST">
+                    <input type="hidden" name="_subject" value="Neue Anfrage von Ihrer Website">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_honey" value="">
+                    <input type="hidden" name="productId" id="productId" value="">
+                    <input type="hidden" name="productName" id="productName" value="">
+                    <input type="hidden" name="sourcePage" id="sourcePage" value="product-detail">
 
-                        <div class="form-group">
-                            <label for="name">Name *</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
+                    <div class="form-group">
+                        <label for="name">Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
 
-                        <div class="form-group">
-                            <label for="email">E-Mail *</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
+                    <div class="form-group">
+                        <label for="email">E-Mail *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
 
-                        <div class="form-group">
-                            <label for="phone">Telefon *</label>
-                            <input type="tel" id="phone" name="phone" required>
-                        </div>
+                    <div class="form-group">
+                        <label for="phone">Telefon *</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
 
-                        <div class="form-group">
-                            <label for="company">Firma</label>
-                            <input type="text" id="company" name="company">
-                        </div>
+                    <div class="form-group">
+                        <label for="company">Firma</label>
+                        <input type="text" id="company" name="company">
+                    </div>
 
-                        <div class="form-group">
-                            <label for="message">Nachricht *</label>
-                            <textarea id="message" name="message" rows="5" placeholder="Beschreiben Sie Ihre Anfrage..." required></textarea>
-                        </div>
+                    <div class="form-group">
+                        <label for="message">Nachricht *</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Beschreiben Sie Ihre Anfrage..." required></textarea>
+                    </div>
 
-                        <button type="submit" class="submit-btn">Anfrage senden</button>
-                        <p class="form-note">* Pflichtfelder</p>
-                    </form>
-                </div>
+                    <button type="submit" class="submit-btn">Anfrage senden</button>
+                    <p class="form-note">* Pflichtfelder</p>
+                </form>
             </div>
         </div>
     </section>
@@ -123,12 +111,11 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2026 BW-Bagger. All rights reserved.</p>
+            <p>&copy; 2026 BW-Mähroboter. Alle Rechte vorbehalten.</p>
         </div>
     </footer>
 
     <script src="app.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
     <script src="product-detail.js"></script>
 </body>
 </html>
