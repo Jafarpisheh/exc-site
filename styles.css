@@ -44,133 +44,72 @@ body {
    ============================================ */
 
 .header {
-    background: #232b36; /* deep navy */
+    background: #232b36;
     color: var(--color-white);
-    padding: 22px 0 8px 0;
+    padding: 14px 0;
     position: sticky;
     top: 0;
     z-index: 100;
-    box-shadow: 0 6px 24px rgba(0,0,0,0.5);
-    border-bottom: 6px solid rgba(0,0,0,0.15);
-    min-height: 150px; /* ensure header area is tall so logo sits at top and nav can sit at bottom */
+    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
     transition: top 0.3s ease;
 }
 
 .header.hidden {
-    top: -160px;
+    top: -90px;
 }
 
 .header .container {
+    max-width: 1200px;
+    padding: 0 20px;
+}
+
+.header-top {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
     gap: 20px;
-    max-width: 100%; /* allow full-width usage inside header */
-    padding: 0 20px;
 }
 
 .logo {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     flex: none;
 }
 
 .site-logo {
-    height: 120px;
-    max-height: 200px;
+    height: 56px;
     width: auto;
     display: block;
     object-fit: contain;
-    margin-top: 6px;
 }
 
-.nav ul {
-    list-style: none;
-    display: flex;
-    gap: 18px;
+.header-contact-btn {
+    display: inline-flex;
     align-items: center;
-}
-
-/* Anchor nav to bottom of the header panel */
-.nav {
-    align-self: flex-end;
-}
-
-.nav a {
-    color: var(--color-white);
+    justify-content: center;
+    background: #fbbf24;
+    color: var(--color-dark-blue);
     text-decoration: none;
-    font-weight: 600;
+    padding: 10px 18px;
+    border-radius: 999px;
+    font-weight: 700;
     transition: all 0.2s ease;
-    padding: 8px 14px;
-    border-radius: 20px;
-    background: rgba(255,255,255,0.02);
-    box-shadow: inset 0 -2px 0 rgba(0,0,0,0.15);
 }
 
-.nav a:hover {
-    background: rgba(255,255,255,0.04);
+.header-contact-btn:hover {
+    background: #f59e0b;
     transform: translateY(-1px);
 }
 
-.nav a.active {
-    background: linear-gradient(180deg,#f6c84c,#d99a15);
-    color: var(--color-dark-blue);
-    box-shadow: 0 4px 12px rgba(217,154,21,0.25);
-}
+@media (max-width: 600px) {
+    .site-logo {
+        height: 42px;
+    }
 
-/* ============================================
-   HERO SECTION
-   ============================================ */
-
-.hero {
-    background: linear-gradient(180deg, rgba(35,43,54,1) 0%, rgba(35,43,54,0.85) 30%, rgba(35,43,54,0.35) 60%, rgba(255,255,255,1) 100%);
-    color: var(--color-white);
-    padding: 120px 20px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-}
-
-.hero::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 120px;
-    background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
-    pointer-events: none;
-}
-
-.hero-content h2 {
-    font-size: 42px;
-    margin-bottom: 14px;
-    text-shadow: 0 2px 12px rgba(0,0,0,0.6);
-    font-weight: 700;
-}
-
-.hero-content p {
-    font-size: 16px;
-    margin-bottom: 20px;
-    opacity: 0.9;
-}
-
-.cta-button {
-    display: inline-block;
-    background-color: #fbbf24;
-    color: var(--color-dark-blue);
-    padding: 15px 40px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 16px;
-    transition: all 0.3s;
-}
-
-.cta-button:hover {
-    background-color: #f59e0b;
-    transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    .header-contact-btn {
+        padding: 8px 14px;
+        font-size: 14px;
+    }
 }
 
 /* ============================================

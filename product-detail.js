@@ -44,7 +44,10 @@ async function loadProductMedia(product) {
     galleryState.mediaItems = [];
     
     // Bilder ermitteln und hinzufügen
-    const imagePaths = await getProductImagePaths(product);
+    const imagePaths = product.imageFiles
+        ? product.imageFiles.map(filename => `${product.folder}/images/${filename}`)
+        : await getProductImagePaths(product);
+
     if (imagePaths.length > 0) {
         imagePaths.forEach((imagePath, index) => {
             galleryState.mediaItems.push({
@@ -53,15 +56,6 @@ async function loadProductMedia(product) {
                 index: index + 1
             });
         });
-    } else if (product.imageCount) {
-        // Fallback, falls der Server kein Verzeichnislisting liefert
-        for (let i = 1; i <= product.imageCount; i++) {
-            galleryState.mediaItems.push({
-                type: 'image',
-                path: `${product.folder}/images/${i}.jpg`,
-                index: i
-            });
-        }
     }
     
     // Video hinzufügen, falls vorhanden
@@ -346,40 +340,38 @@ function loadProductSpecs(product) {
 function getBasicSpecs(product) {
     const specs = {
         'Modell': product.name,
-        'Typ': 'Mähroboter',
+        'Typ': 'E-Bike',
         'Status': 'Verfügbar',
         'Verfügbarkeit': 'Auf Lager'
     };
     
     // Modellabhängige Spezifikationen hinzufügen
-    if (product.id === 'i600') {
-        specs['Arbeitsfläche'] = 'Bis 600 m²';
-        specs['Schnittbreite'] = '20 cm';
-        specs['Schnitthöhe'] = '30 – 60 mm (einstellbar)';
-        specs['Max. Steigung'] = '35 %';
-        specs['Akku'] = '5,0 Ah';
-        specs['Motor'] = 'Bürstenlos (leise & langlebig)';
-        specs['Verbindung'] = 'WLAN & Bluetooth';
-        specs['Display'] = 'LED';
-        specs['Vision AI'] = 'Ja – automatische Hinderniserkennung';
-        specs['OTA-Updates'] = 'Ja – immer auf dem neuesten Stand';
-        specs['Fernsteuerung'] = 'Ja – bequem per App von überall';
-    } else if (product.id === 'n1000') {
-        specs['Arbeitsfläche'] = 'Bis 3.000 m²';
-        specs['Neigungswinkel'] = '±45 % (24°)';
-        specs['Anzahl Klingen'] = '3 Stück';
-        specs['Akku'] = 'Lithium 21,6V / 6,4 Ah';
-        specs['Ladezeit'] = '120 Minuten';
-        specs['Laufzeit'] = '150 Minuten';
-        specs['Flächenleistung'] = '200 m²/Stunde';
-        specs['Begrenzung'] = 'Kein Begrenzungsdraht – elektronischer Zaun';
-        specs['Ladestation'] = '28V / 3Ah';
-        specs['Navigation'] = 'RTK GPS';
-        specs['Mähmuster'] = 'Geordnet (systematische Bahnen)';
-        specs['Hinderniserkennung'] = 'Vision (Kamera)';
-        specs['Regentauglich'] = 'Ja';
-        specs['Abmessungen'] = '66 × 47 × 32 cm';
-        specs['Gewicht'] = '13 kg';
+    if (product.id === 'C29k') {
+        specs['Typ'] = 'E-Mountainbike';
+        specs['Reichweite'] = 'Bis 80 km';
+        specs['Motor'] = '250 W Nabenmotor';
+        specs['Akku'] = '500 Wh';
+        specs['Max. Geschwindigkeit'] = '25 km/h';
+        specs['Ladezeit'] = '4 Stunden';
+        specs['Rahmen'] = 'Starker Aluminiumrahmen';
+        specs['Schaltung'] = '7-Gang-Schaltung';
+        specs['Bremsen'] = 'Hydraulische Scheibenbremsen';
+        specs['Federung'] = 'Vorderradfederung';
+        specs['Display'] = 'Integriertes LCD-Display';
+        specs['Konnektivität'] = 'Bluetooth-fähig';
+    } else if (product.id === 'OT01') {
+        specs['Typ'] = 'E-Urbanbike';
+        specs['Reichweite'] = 'Bis 120 km';
+        specs['Motor'] = '500 W Mittelmotor';
+        specs['Akku'] = '720 Wh';
+        specs['Max. Geschwindigkeit'] = '45 km/h';
+        specs['Ladezeit'] = '5 Stunden';
+        specs['Rahmen'] = 'Robuster Allroad-Rahmen';
+        specs['Schaltung'] = '8-Gang-Schaltung';
+        specs['Bremsen'] = 'Hydraulische Scheibenbremsen';
+        specs['Federung'] = 'Komfortable Gabel-Federung';
+        specs['Reifen'] = '28" Cityreifen';
+        specs['Display'] = 'TFT-Farbdisplay';
     }
     
     return specs;

@@ -1,45 +1,51 @@
 // Produktkatalog
 const products = [
     {
-        id: 'i600',
-        name: 'i600',
-        description: 'Intelligenter Mähroboter mit Vision AI – mäht bis 600 m² Fläche, kein Begrenzungsdraht nötig.',
-        folder: 'products/i600',
-        imageCount: 5,
-        hasVideo: true
+        id: 'C29k',
+        name: 'C29K E-Mountain',
+        description: 'Robustes E-Mountainbike mit starker Reichweite und Gelände-Performance.',
+        folder: 'products/C29k',
+        imageFiles: [
+            '1.JPG','2.JPG','3.JPG','4.JPG','5.JPG','6.JPG','7.JPG','8.JPG','9.JPG','10.JPG','11.JPG','12.JPG','13.JPG','14.JPG','15.JPG','16.JPG','17.JPG','18.JPG','19.JPG','20.JPG','21.JPG','22.JPG','23.JPG','24.jpg','25.jpg','26.jpg','27.jpg'
+        ],
+        hasVideo: false
     },
     {
-        id: 'n1000',
-        name: 'n1000',
-        description: 'RTK GPS gesteuerter Mähroboter – mäht bis 3.000 m² mit zentimetergenauer Navigation.',
-        folder: 'products/n1000',
-        imageCount: 6,
-        hasVideo: true
+        id: 'OT01',
+        name: 'OT01 Urban',
+        description: 'Vielseitiges E-Bike für tägliche Pendlerfahrten und Entdeckungstouren.',
+        folder: 'products/OT01',
+        imageFiles: [
+            '1.jfif','2.JPG','3.JPG','4.JPG','5.JPG','6.JPG','7.JPG','8.JPG','9.JPG','10.JPG','11.JPG','12.JPG','13.JPG','14.JPG','15.JPG','16.JPG','17.JPG','18.JPG','19.JPG','20.jpg','21.jpg','22.jpg','23.jpg','24.jpg','25.jpg','26.jfif','27.jfif','28.jfif','29.jfif','30.jfif','31.jfif','32.jfif','33.jfif','34.jpg','35.jpg','36.jpg'
+        ],
+        hasVideo: false
     }
 ];
 
 // Produkte auf der Startseite laden
 function loadProducts() {
     const productsList = document.getElementById('productsList');
-    
+
     if (!productsList) return; // Not on home page
-    
+
     productsList.innerHTML = '';
-    
+
     products.forEach(product => {
-        const firstImagePath = `${product.folder}/images/1.jpg`;
+        const firstImagePath = product.imageFiles && product.imageFiles.length
+            ? `${product.folder}/images/${product.imageFiles[0]}`
+            : `${product.folder}/images/1.jpg`;
         const specs = getBasicSpecs(product);
-        
+
         const productCard = document.createElement('div');
         productCard.className = 'product-card';
         productCard.onclick = () => goToProduct(product.id);
-        
+
         // Build specs HTML
         let specsHTML = '';
         Object.entries(specs).forEach(([key, value]) => {
             specsHTML += `<div class="card-spec"><span class="spec-key">${key}:</span> <span class="spec-val">${value}</span></div>`;
         });
-        
+
         productCard.innerHTML = `
             <img src="${firstImagePath}" alt="${product.name}" class="product-image" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22250%22%3E%3Crect fill=%22%23ddd%22 width=%22400%22 height=%22250%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22Arial%22 font-size=%2224%22 fill=%22%23999%22%3EBild nicht verfügbar%3C/text%3E%3C/svg%3E'">
             <div class="product-card-content">
@@ -50,7 +56,7 @@ function loadProducts() {
                 </div>
             </div>
         `;
-        
+
         productsList.appendChild(productCard);
     });
 }
@@ -68,20 +74,20 @@ function getProductById(productId) {
 // Basisdaten je nach Produkt ermitteln
 function getBasicSpecs(product) {
     const specs = {};
-    
+
     // Modellabhängige Spezifikationen hinzufügen
-    if (product.id === 'i600') {
-        specs['Arbeitsfläche'] = 'Bis 600 m²';
-        specs['Akku'] = '5,0 Ah';
-        specs['Hinderniserkennung'] = 'Vision AI';
-        specs['Neigung'] = '35 %';
-    } else if (product.id === 'n1000') {
-        specs['Arbeitsfläche'] = 'Bis 3.000 m²';
-        specs['Akku'] = '21,6V / 6,4 Ah';
-        specs['Hinderniserkennung'] = 'Vision (Kamera)';
-        specs['Neigung'] = '±45 % (24°)';
+    if (product.id === 'C29k') {
+        specs['Reichweite'] = 'Bis 80 km';
+        specs['Motorleistung'] = '250 W';
+        specs['Akku'] = '500 Wh';
+        specs['Max. Geschwindigkeit'] = '25 km/h';
+    } else if (product.id === 'OT01') {
+        specs['Reichweite'] = 'Bis 120 km';
+        specs['Motorleistung'] = '500 W';
+        specs['Akku'] = '720 Wh';
+        specs['Max. Geschwindigkeit'] = '45 km/h';
     }
-    
+
     return specs;
 }
 
@@ -169,7 +175,6 @@ function siteShowSuccessMessage() {
     }, 5000);
 }
 
-// Initialize site inquiry form if present
 function setupScrollSpy() {
     const homeLink = document.querySelector('.nav a[href="index.html"]');
     const productsLink = document.querySelector('.nav a[href="#products"]');
