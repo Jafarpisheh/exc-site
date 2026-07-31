@@ -4,6 +4,7 @@ const products = [
         id: 'C29k',
         name: 'C29K E-Mountain',
         description: 'Robustes E-Mountainbike mit starker Reichweite und Gelände-Performance.',
+        price: 1199,
         folder: 'products/C29k',
         imageFiles: [
             '1.JPG','2.JPG','3.JPG','4.JPG','5.JPG','6.JPG','7.JPG','8.JPG','9.JPG','10.JPG','11.JPG','12.JPG','13.JPG','14.JPG','15.JPG','16.JPG','17.JPG','18.JPG','19.JPG','20.JPG','21.JPG','22.JPG','23.JPG','24.jpg','25.jpg','26.jpg','27.jpg'
@@ -14,13 +15,90 @@ const products = [
         id: 'OT01',
         name: 'OT01 Urban',
         description: 'Vielseitiges E-Bike für tägliche Pendlerfahrten und Entdeckungstouren.',
+        price: 1089,
         folder: 'products/OT01',
         imageFiles: [
             '1.jfif','2.JPG','3.JPG','4.JPG','5.JPG','6.JPG','7.JPG','8.JPG','9.JPG','10.JPG','11.JPG','12.JPG','13.JPG','14.JPG','15.JPG','16.JPG','17.JPG','18.JPG','19.JPG','20.jpg','21.jpg','22.jpg','23.jpg','24.jpg','25.jpg','26.jfif','27.jfif','28.jfif','29.jfif','30.jfif','31.jfif','32.jfif','33.jfif','34.jpg','35.jpg','36.jpg'
         ],
         hasVideo: false
+    },
+    {
+        id: 'OT02',
+        name: 'OT02',
+        description: 'Moderne E-Bike-Variante mit zwei attraktiven Farboptionen und hochwertiger Ausstattung.',
+        price: 599,
+        folder: 'products/OT02',
+        variants: [
+            {
+                id: 'gruen',
+                name: 'Grün',
+                folder: 'products/OT02/images/Grün',
+                coverImage: 'products/OT02/images/Grün/1.JPG',
+                imageFiles: ['1.JPG','2.JPG','3.JPG','4.JPG','5.JPG','6.JPG','7.JPG','8.JPG','9.JPG','10.JPG','11.JPG','12.JPG','13.JPG','14.JPG','15.JPG','16.JPG','17.JPG','18.JPG','19.jpg','20.jpg','21.JPG','22.JPG','23.JPG']
+            },
+            {
+                id: 'rot',
+                name: 'Röt',
+                folder: 'products/OT02/images/Röt',
+                coverImage: 'products/OT02/images/Röt/1.JPG',
+                imageFiles: ['1.JPG','2.JPG','3.JPG','4.JPG','5.JPG','6.JPG','7.JPG','8.JPG','9.JPG','10.JPG','11.jpg','12.jpg','13.JPG','14.JPG','15.jpg','16.jpg']
+            }
+        ],
+        hasVideo: false
+    },
+    {
+        id: 'OT12',
+        name: 'OT12',
+        description: 'Stylisches E-Bike mit zwei attraktiven Farbvarianten und hochwertiger Ausstattung.',
+        price: 729,
+        folder: 'products/OT12',
+        variants: [
+            {
+                id: 'schwarz',
+                name: 'Schwarz',
+                folder: 'products/OT12/images/Schwarz',
+                coverImage: 'products/OT12/images/Schwarz/1.JPG',
+                imageFiles: ['1.JPG','2.JPG','3.JPG','4.JPG','5.JPG','6.JPG','7.JPG','8.JPG','9.JPG','10.JPG','11.JPG','12.JPG','13.JPG','14.JPG','15.JPG','16.jpg','17.jpg','18.JPG','19.jpg','20.jpg','21.jpg']
+            },
+            {
+                id: 'weiss',
+                name: 'Weiß',
+                folder: 'products/OT12/images/Weiß',
+                coverImage: 'products/OT12/images/Weiß/1.JPG',
+                imageFiles: ['1.JPG','2.JPG','3.JPG','4.JPG','5.JPG','6.JPG','7.JPG','8.JPG','9.JPG','10.JPG','11.JPG','12.JPG','13.JPG','14.JPG','15.jpg','16.JPG','17.jpg','18.jpg','19.jpg']
+            }
+        ],
+        hasVideo: false
+    },
+    {
+        id: 'OT16',
+        name: 'OT16',
+        description: 'Robustes E-Bike mit modernem Design und vielseitiger Alltagstauglichkeit.',
+        price: 729,
+        folder: 'products/OT16',
+        imageFiles: ['1.JPG','2.JPG','3.JPG','4.JPG','5.JPG','6.JPG','7.JPG','8.JPG','9.JPG','10.JPG','11.JPG','12.JPG','13.jpg','14.jpg','15.jpg','16.jpg','17.jpg','18.JPG','19.JPG','20.JPG','21.JPG','22.JPG','23.JPG','24.jpg','25.jpg'],
+        hasVideo: false
     }
 ];
+
+function formatPrice(price) {
+    return `€${price.toLocaleString('de-DE')}`;
+}
+
+function getProductPreviewImagePath(product) {
+    if (product.variants?.length) {
+        const firstVariant = product.variants[0];
+        if (firstVariant.coverImage) {
+            return firstVariant.coverImage;
+        }
+    }
+
+    if (product.imageFiles && product.imageFiles.length) {
+        return `${product.folder}/images/${product.imageFiles[0]}`;
+    }
+
+    return `${product.folder}/images/1.jpg`;
+}
 
 // Produkte auf der Startseite laden
 function loadProducts() {
@@ -31,9 +109,7 @@ function loadProducts() {
     productsList.innerHTML = '';
 
     products.forEach(product => {
-        const firstImagePath = product.imageFiles && product.imageFiles.length
-            ? `${product.folder}/images/${product.imageFiles[0]}`
-            : `${product.folder}/images/1.jpg`;
+        const firstImagePath = getProductPreviewImagePath(product);
         const specs = getBasicSpecs(product);
 
         const productCard = document.createElement('div');
@@ -51,6 +127,7 @@ function loadProducts() {
             <div class="product-card-content">
                 <h3>${product.name}</h3>
                 <p>${product.description}</p>
+                <p class="product-card-price">${formatPrice(product.price)}</p>
                 <div class="card-specs">
                     ${specsHTML}
                 </div>
@@ -73,7 +150,9 @@ function getProductById(productId) {
 
 // Basisdaten je nach Produkt ermitteln
 function getBasicSpecs(product) {
-    const specs = {};
+    const specs = {
+        'Preis': `${formatPrice(product.price)}`
+    };
 
     // Modellabhängige Spezifikationen hinzufügen
     if (product.id === 'C29k') {
@@ -85,6 +164,21 @@ function getBasicSpecs(product) {
         specs['Reichweite'] = 'Bis 120 km';
         specs['Motorleistung'] = '500 W';
         specs['Akku'] = '720 Wh';
+        specs['Max. Geschwindigkeit'] = '45 km/h';
+    } else if (product.id === 'OT02') {
+        specs['Reichweite'] = 'Bis 110 km';
+        specs['Motorleistung'] = '500 W';
+        specs['Akku'] = '720 Wh';
+        specs['Max. Geschwindigkeit'] = '45 km/h';
+    } else if (product.id === 'OT12') {
+        specs['Reichweite'] = 'Bis 100 km';
+        specs['Motorleistung'] = '500 W';
+        specs['Akku'] = '720 Wh';
+        specs['Max. Geschwindigkeit'] = '45 km/h';
+    } else if (product.id === 'OT16') {
+        specs['Reichweite'] = 'Bis 95 km';
+        specs['Motorleistung'] = '500 W';
+        specs['Akku'] = '700 Wh';
         specs['Max. Geschwindigkeit'] = '45 km/h';
     }
 

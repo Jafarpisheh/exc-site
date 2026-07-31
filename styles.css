@@ -178,6 +178,13 @@ body {
     line-height: 1.5;
 }
 
+.product-card-price {
+    color: var(--color-dark-blue);
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0 0 15px;
+}
+
 .card-specs {
     flex: 1;
     display: flex;
@@ -575,6 +582,31 @@ body {
 /* ============================================
    GALLERY CONTAINER & NAVIGATION
    ============================================ */
+
+.variant-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.variant-btn {
+    border: 1px solid #d1d5db;
+    background-color: #ffffff;
+    color: var(--color-dark-blue);
+    padding: 10px 16px;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.variant-btn:hover,
+.variant-btn.active {
+    background-color: #2563eb;
+    color: #ffffff;
+    border-color: #2563eb;
+}
 
 .gallery-container {
     display: flex;

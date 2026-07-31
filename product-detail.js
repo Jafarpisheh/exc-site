@@ -2,7 +2,8 @@
 let galleryState = {
     currentIndex: 0,
     mediaItems: [],
-    product: null
+    product: null,
+    activeVariantId: null
 };
 
 // Produkt-ID aus der URL lesen
@@ -22,12 +23,16 @@ async function loadProductDetails() {
     }
     
     galleryState.product = product;
+    galleryState.activeVariantId = getInitialVariantId(product);
     
-    // Set product name
+    // Set product name and price
     document.getElementById('productName').textContent = product.name;
+    document.getElementById('productPrice').textContent = `${formatPrice(product.price)}`;
+
+    renderVariantButtons(product);
     
     // Bilder und Videos laden
-    await loadProductMedia(product);
+    await loadProductMedia(product, galleryState.activeVariantId);
     
     // Spezifikationen laden
     loadProductSpecs(product);
@@ -36,17 +41,57 @@ async function loadProductDetails() {
     setupInquiryForm(product);
 }
 
+function getInitialVariantId(product) {
+    return product.variants?.length ? product.variants[0].id : null;
+}
+
+function renderVariantButtons(product) {
+    const container = document.getElementById('variantButtonsContainer');
+    if (!container) return;
+
+    if (!product.variants?.length) {
+        container.style.display = 'none';
+        return;
+    }
+
+    container.style.display = 'flex';
+    container.innerHTML = '';
+
+    product.variants.forEach((variant) => {
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'variant-btn';
+        button.textContent = variant.name;
+
+        if (galleryState.activeVariantId === variant.id) {
+            button.classList.add('active');
+        }
+
+        button.addEventListener('click', async () => {
+            galleryState.activeVariantId = variant.id;
+            renderVariantButtons(product);
+            await loadProductMedia(product, variant.id);
+        });
+
+        container.appendChild(button);
+    });
+}
+
 // Produktbilder und Videos laden
-async function loadProductMedia(product) {
+async function loadProductMedia(product, variantId = galleryState.activeVariantId) {
     const thumbnailContainer = document.getElementById('thumbnailContainer');
     
     // Medienarray erstellen (Bilder und Videos)
     galleryState.mediaItems = [];
     
-    // Bilder ermitteln und hinzufügen
-    const imagePaths = product.imageFiles
-        ? product.imageFiles.map(filename => `${product.folder}/images/${filename}`)
-        : await getProductImagePaths(product);
+    const selectedVariant = product.variants?.find(variant => variant.id === variantId) || null;
+    const imagePaths = selectedVariant
+        ? (selectedVariant.imageFiles?.length
+            ? selectedVariant.imageFiles.map(filename => `${selectedVariant.folder}/${filename}`)
+            : await getProductImagePaths(product, selectedVariant.folder))
+        : product.imageFiles
+            ? product.imageFiles.map(filename => `${product.folder}/images/${filename}`)
+            : await getProductImagePaths(product);
 
     if (imagePaths.length > 0) {
         imagePaths.forEach((imagePath, index) => {
@@ -79,8 +124,8 @@ async function loadProductMedia(product) {
     setupGalleryNavigation();
 }
 
-async function getProductImagePaths(product) {
-    const imagesFolderUrl = `${product.folder}/images/`;
+async function getProductImagePaths(product, folderPath = null) {
+    const imagesFolderUrl = folderPath ? `${folderPath}/` : `${product.folder}/images/`;
     const acceptedExtensions = ['.jpg', '.jpeg', '.png', '.gif', '.webp', '.svg'];
 
     try {
@@ -339,6 +384,7 @@ function loadProductSpecs(product) {
 // Basisdaten je nach Produkt ermitteln
 function getBasicSpecs(product) {
     const specs = {
+        'Preis': `${formatPrice(product.price)}`,
         'Modell': product.name,
         'Typ': 'E-Bike',
         'Status': 'Verfügbar',
@@ -371,6 +417,45 @@ function getBasicSpecs(product) {
         specs['Bremsen'] = 'Hydraulische Scheibenbremsen';
         specs['Federung'] = 'Komfortable Gabel-Federung';
         specs['Reifen'] = '28" Cityreifen';
+        specs['Display'] = 'TFT-Farbdisplay';
+    } else if (product.id === 'OT02') {
+        specs['Typ'] = 'E-Urbanbike';
+        specs['Reichweite'] = 'Bis 110 km';
+        specs['Motor'] = '500 W Mittelmotor';
+        specs['Akku'] = '720 Wh';
+        specs['Max. Geschwindigkeit'] = '45 km/h';
+        specs['Ladezeit'] = '5 Stunden';
+        specs['Rahmen'] = 'Leichtgewichtiger Rahmen';
+        specs['Schaltung'] = '8-Gang-Schaltung';
+        specs['Bremsen'] = 'Hydraulische Scheibenbremsen';
+        specs['Federung'] = 'Komfortable Gabel-Federung';
+        specs['Reifen'] = '28" Allround-Reifen';
+        specs['Display'] = 'TFT-Farbdisplay';
+    } else if (product.id === 'OT12') {
+        specs['Typ'] = 'E-Urbanbike';
+        specs['Reichweite'] = 'Bis 100 km';
+        specs['Motor'] = '500 W Mittelmotor';
+        specs['Akku'] = '720 Wh';
+        specs['Max. Geschwindigkeit'] = '45 km/h';
+        specs['Ladezeit'] = '5 Stunden';
+        specs['Rahmen'] = 'Stilvoller Aluminiumrahmen';
+        specs['Schaltung'] = '8-Gang-Schaltung';
+        specs['Bremsen'] = 'Hydraulische Scheibenbremsen';
+        specs['Federung'] = 'Komfortable Gabel-Federung';
+        specs['Reifen'] = '28" Cityreifen';
+        specs['Display'] = 'TFT-Farbdisplay';
+    } else if (product.id === 'OT16') {
+        specs['Typ'] = 'E-Urbanbike';
+        specs['Reichweite'] = 'Bis 95 km';
+        specs['Motor'] = '500 W Mittelmotor';
+        specs['Akku'] = '700 Wh';
+        specs['Max. Geschwindigkeit'] = '45 km/h';
+        specs['Ladezeit'] = '5 Stunden';
+        specs['Rahmen'] = 'Robuster Aluminiumrahmen';
+        specs['Schaltung'] = '8-Gang-Schaltung';
+        specs['Bremsen'] = 'Hydraulische Scheibenbremsen';
+        specs['Federung'] = 'Komfortable Gabel-Federung';
+        specs['Reifen'] = '28" Allround-Reifen';
         specs['Display'] = 'TFT-Farbdisplay';
     }
     
