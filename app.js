@@ -29,6 +29,7 @@ const products = [
         name: 'ONESPORT E-Bike Cityrad OT02',
         description: 'Moderne E-Bike-Variante mit zwei attraktiven Farboptionen und hochwertiger Ausstattung.',
         price: 599,
+        stripeCheckoutUrl: 'https://buy.stripe.com/8x2dR1eP1cHD4vyeKS3oA05',
         folder: 'products/OT02',
         variants: [
             {
@@ -55,6 +56,7 @@ const products = [
         name: 'Onesport OT12 Urban',
         description: 'Stylisches E-Bike mit zwei attraktiven Farbvarianten und hochwertiger Ausstattung.',
         price: 729,
+        stripeCheckoutUrl: 'https://buy.stripe.com/4gM6oz8qDePL3ruauC3oA06',
         folder: 'products/OT12',
         variants: [
             {
@@ -81,6 +83,7 @@ const products = [
         name: 'Onesport OT16 Faltbar',
         description: 'Robustes E-Bike mit modernem Design und vielseitiger Alltagstauglichkeit.',
         price: 729,
+        stripeCheckoutUrl: 'https://buy.stripe.com/cNi8wH7mz373gegdGO3oA08',
         folder: 'products/OT16',
         variants: [
             {
