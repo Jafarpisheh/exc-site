@@ -140,6 +140,40 @@ const products = [
         ],
         stripeCheckoutUrl: 'https://buy.stripe.com/fZueV57mz9vr4vygT03oA0b',
         hasVideo: false
+    },
+    {
+        id: 'OT08Pro',
+        name: 'Onesport OT08 Pro Full-Suspension E-Bike',
+        description: 'Leistungsstarkes E-Bike mit Dual-Batterie-System, Vollfederung und Fat-Tire-Reifen – für Gelände und lange Touren.',
+        longDescription: [
+            'Das Onesport OT08 Pro ist ein kraftvolles Full-Suspension E-Bike im markanten Fat-Tire-Design. Das Dual-Batterie-System (2 x 48V 18Ah) ermöglicht Reichweiten von bis zu 190 km und macht das Bike zum idealen Begleiter für lange Touren und anspruchsvolles Gelände.',
+            'Der starke 250-W-Motor (Spitzenleistung 500 W) liefert bis zu 65 N·m Drehmoment und meistert Steigungen von bis zu 30° mühelos. Die hydraulischen Scheibenbremsen, die Shimano-7-Gang-Schaltung und die Vollfederung sorgen für ein komfortables und sicheres Fahrerlebnis – ob in der Stadt, auf Trails oder im Gelände.'
+        ],
+        price: 1429,
+        outOfStock: true,
+        stripeCheckoutUrl: 'https://buy.stripe.com/REPLACE_OT08PRO',
+        folder: 'products/OT08Pro',
+        variants: [
+            {
+                id: 'dunkelgrau',
+                name: 'Dunkelgrau',
+                outOfStock: true,
+                folder: 'products/OT08Pro/images/Dunkelgrau',
+                coverImage: 'products/OT08Pro/images/Dunkelgrau/1.JPG',
+                stripeCheckoutUrl: 'https://buy.stripe.com/REPLACE_OT08PRO_DUNKELGRAU',
+                imageFiles: ['1.JPG','2.JPG','3.JPG','4.JPG','5.JPG','6.JPG','7.JPG','8.JPG','9.JPG','10.JPG','11.JPG','12.JPG','13.JPG','14.JPG','15.JPG','17.jpg','18.jpg','19.jpg','20.png','65465.JPG']
+            },
+            {
+                id: 'weiss',
+                name: 'Weiß',
+                outOfStock: true,
+                folder: 'products/OT08Pro/images/Weiß',
+                coverImage: 'products/OT08Pro/images/Weiß/1.JPG',
+                stripeCheckoutUrl: 'https://buy.stripe.com/REPLACE_OT08PRO_WEISS',
+                imageFiles: ['1.JPG','2.JPG','3.JPG','4.JPG','5.JPG','6.JPG','7.JPG','8.JPG','9.JPG','10.JPG','11.JPG','12.JPG','13.JPG','14.jpg','15.jpg','16.png','17.png','18.png','19.png','20.jpg']
+            }
+        ],
+        hasVideo: false
     }
 ];
 
@@ -156,6 +190,11 @@ function getProductCheckoutUrl(product, variant) {
 
 function createCheckoutButton(product, extraClass = '', variant = null) {
     const checkoutUrl = getProductCheckoutUrl(product, variant);
+    const outOfStock = variant ? variant.outOfStock : product.outOfStock;
+    if (outOfStock) {
+        const classes = ['out-of-stock-badge', extraClass].filter(Boolean).join(' ');
+        return `<span class="${classes}">Ausverkauft</span>`;
+    }
     if (!checkoutUrl) {
         return '';
     }
@@ -273,6 +312,11 @@ function getBasicSpecs(product) {
         specs['Reichweite'] = 'Bis 90 km';
         specs['Motorleistung'] = '500 W';
         specs['Akku'] = '48V 18Ah';
+        specs['Max. Geschwindigkeit'] = '25 km/h';
+    } else if (product.id === 'OT08Pro') {
+        specs['Reichweite'] = 'Bis 190 km';
+        specs['Motorleistung'] = '500 W';
+        specs['Akku'] = '2x 48V 18Ah';
         specs['Max. Geschwindigkeit'] = '25 km/h';
     }
 

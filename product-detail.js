@@ -83,15 +83,11 @@ function renderProductActions(product) {
     if (!container) return;
 
     const activeVariant = product.variants?.find(variant => variant.id === galleryState.activeVariantId);
-    const checkoutUrl = getProductCheckoutUrl(product, activeVariant);
-    if (!checkoutUrl) {
-        container.innerHTML = '';
-        container.style.display = 'none';
-        return;
-    }
-
     container.style.display = 'flex';
     container.innerHTML = createCheckoutButton(product, 'checkout-btn--detail', activeVariant);
+    if (!container.innerHTML) {
+        container.style.display = 'none';
+    }
 }
 
 function renderVariantButtons(product) {
@@ -549,6 +545,27 @@ function getBasicSpecs(product) {
         specs['Gewicht'] = 'Netto 43,2 kg';
         specs['Display'] = '3,5 Zoll LCD-Display';
         specs['Konnektivität'] = 'Bluetooth (App)';
+    } else if (product.id === 'OT08Pro') {
+        specs['Typ'] = 'Full-Suspension E-Bike';
+        specs['Reichweite'] = 'Bis 190 km (Power-Assist)';
+        specs['Motor'] = '250 W (500 W Peak, 65 N·m)';
+        specs['Akku'] = '2 x 48V 18Ah (Dual-Batterie)';
+        specs['Max. Geschwindigkeit'] = '25 km/h';
+        specs['Ladezeit'] = '8–10 Stunden';
+        specs['Rahmen'] = 'Aluminiumrahmen (faltbar)';
+        specs['Schaltung'] = 'Shimano 7-Gang-Schaltung';
+        specs['Bremsen'] = 'Hydraulische Scheibenbremsen';
+        specs['Federung'] = 'Vollfederung (Vorder- und Hinterrad)';
+        specs['Reifen'] = '20 x 4,0 Zoll Fat-Tire';
+        specs['Zuladung'] = '120 kg';
+        specs['Gewicht'] = 'Netto 39,2 kg';
+        specs['Display'] = 'LCD-Farbdisplay';
+        specs['Wasserdicht'] = 'IPX4';
+    }
+
+    if (product.outOfStock) {
+        specs['Status'] = 'Ausverkauft';
+        specs['Verfügbarkeit'] = 'Nicht auf Lager';
     }
     
     return specs;
