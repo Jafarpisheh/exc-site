@@ -14,10 +14,10 @@ const products = [
     },
     {
         id: 'OT01',
-        name: 'OT01 Urban',
+        name: 'OT01',
         description: 'Vielseitiges E-Bike für tägliche Pendlerfahrten und Entdeckungstouren.',
-        price: 1089,
-        stripeCheckoutUrl: 'https://buy.stripe.com/28E8wHgX9dLH7HKauC3oA01',
+        price: 999,
+        stripeCheckoutUrl: 'https://buy.stripe.com/aFa6oz5er0YV2nqcCK3oA02',
         folder: 'products/OT01',
         imageFiles: [
             '1.JPG','2.JPG','3.JPG','4.JPG','5.JPG','6.JPG','7.JPG','8.JPG','9.JPG','10.JPG','11.JPG','12.JPG','13.JPG','14.JPG','15.JPG','16.JPG','17.JPG','18.JPG','19.JPG','20.jpg','21.jpg','22.jpg','23.jpg','24.jpg','25.jpg','26.jfif','27.jfif','28.jfif','29.jfif','30.jfif','31.jfif','32.jfif','33.jfif','34.jpg','35.jpg','36.jpg'
