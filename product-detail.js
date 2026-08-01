@@ -468,6 +468,18 @@ function getBasicSpecs(product) {
         specs['Gewicht'] = 'Netto 29,25 kg';
         specs['Display'] = 'Integriertes LCD-Display';
         specs['Konnektivität'] = 'Bluetooth-fähig';
+    } else if (product.id === 'C29Lite') {
+        specs['Typ'] = 'E-Urbanbike';
+        specs['Reichweite'] = 'Bis 65 km (mit Pedalunterstützung)';
+        specs['Motor'] = '36V 250W';
+        specs['Akku'] = '36V 13Ah';
+        specs['Max. Geschwindigkeit'] = '25 km/h';
+        specs['Rahmen'] = 'Stahlrahmen';
+        specs['Schaltung'] = 'Shimano 7-Gang';
+        specs['Bremsen'] = 'Mechanische Scheibenbremsen (vorne und hinten)';
+        specs['Reifen'] = '27,5 x 2,25 Zoll';
+        specs['Display'] = '3-Tasten-Multifunktions-Farbdisplay';
+        specs['Garantie'] = 'Herstellergarantie';
     } else if (product.id === 'OT01') {
         specs['Typ'] = 'E-Urbanbike';
         specs['Reichweite'] = 'Bis 100 km';

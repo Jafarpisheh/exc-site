@@ -17,6 +17,20 @@ const products = [
         hasVideo: false
     },
     {
+        id: 'C29Lite',
+        name: 'Duotts C29 Lite E-Bike 250W',
+        description: 'Zuverlässiges und alltagstaugliches E-Bike mit 250-W-Motor, Shimano-7-Gang-Schaltung und komfortablen 27,5-Zoll-Reifen – ideal für Pendler und Freizeitfahrer.',
+        longDescription: [
+            'Das Duotts C29 Lite ist ein zuverlässiges und alltagstaugliches E-Bike, das speziell für Pendler und Freizeitfahrer entwickelt wurde. Mit seinem effizienten 250-W-Motor und der 36-V-13-Ah-Batterie erreichen Sie eine Reichweite von bis zu 65 km – ideal für den Weg zur Arbeit oder entspannte Ausflüge.',
+            'Die Shimano-7-Gang-Schaltung, die mechanischen Scheibenbremsen vorne und hinten sowie die komfortablen 27,5 x 2,25 Zoll großen Reifen sorgen für ein stabiles und sicheres Fahrgefühl. Der robuste Stahlrahmen und das 3-Tasten-Multifunktions-Farbdisplay machen das C29 Lite zu einem einfachen und zuverlässigen Begleiter im Alltag.'
+        ],
+        price: 749,
+        stripeCheckoutUrl: 'https://buy.stripe.com/28EbITbCPcHD4vyeKS3oA0c',
+        folder: 'products/C29Lite',
+        imageFiles: ['1.JPG','2.JPG','4.JPG','9.JPG','13.JPG','14.JPG','15.JPG','16.JPG','17.JPG','18.JPG','19.JPG','20.JPG','21.JPG','22.JPG','23.JPG','24.JPG','25.JPG','26.JPG','27.jpg','28.jpg','29.jpg','30.jpg','31.jpg','32.jpg','33.jpg','34.jpg','40.jpg','41.jpg','42.jpg','43.jpg','44.jpg','47.jpg','48.jpg','49.jpg'],
+        hasVideo: false
+    },
+    {
         id: 'OT01',
         name: 'ONESPORT OT01 Elektrofahrrad Faltrad',
         description: 'Vielseitiges E-Bike für tägliche Pendlerfahrten und Entdeckungstouren.',
@@ -287,6 +301,11 @@ function getBasicSpecs(product) {
         specs['Reichweite'] = 'Bis 90 km';
         specs['Motorleistung'] = '500 W';
         specs['Akku'] = '48V 18Ah';
+        specs['Max. Geschwindigkeit'] = '25 km/h';
+    } else if (product.id === 'C29Lite') {
+        specs['Reichweite'] = 'Bis 65 km';
+        specs['Motorleistung'] = '250 W';
+        specs['Akku'] = '36V 13Ah';
         specs['Max. Geschwindigkeit'] = '25 km/h';
     } else if (product.id === 'OT01') {
         specs['Reichweite'] = 'Bis 100 km';
