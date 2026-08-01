@@ -580,17 +580,57 @@ function showSuccessMessage() {
     }, 5000);
 }
 
-// Initialisierung beim Laden der Seite
-document.addEventListener('DOMContentLoaded', () => {
+function activateDetailTab(targetId) {
+    const tabs = Array.from(document.querySelectorAll('.detail-tab'));
+    const panels = Array.from(document.querySelectorAll('.detail-panel'));
+    const targetPanel = document.getElementById(targetId);
+
+    if (!targetPanel) return;
+
+    tabs.forEach((item) => {
+        const isActive = item.getAttribute('data-target') === targetId;
+        item.classList.toggle('active', isActive);
+        item.setAttribute('aria-selected', isActive ? 'true' : 'false');
+    });
+
+    panels.forEach((panel) => {
+        const isActive = panel.id === targetId;
+        panel.classList.toggle('active', isActive);
+        panel.hidden = !isActive;
+    });
+}
+
+function setupDetailTabs() {
+    const tabs = Array.from(document.querySelectorAll('.detail-tab'));
+
+    tabs.forEach((tab) => {
+        tab.addEventListener('click', () => {
+            const targetId = tab.getAttribute('data-target');
+            activateDetailTab(targetId);
+        });
+    });
+
+    const inquiryLink = document.querySelector('.secondary-action');
+    if (inquiryLink) {
+        inquiryLink.addEventListener('click', (event) => {
+            event.preventDefault();
+            activateDetailTab('inquiryPanel');
+            window.location.hash = 'inquiryPanel';
+        });
+    }
+}
+
+
+function initializeDetailPage() {
     loadProductDetails();
     disableProductNavButton();
-});
+    setupDetailTabs();
+}
+
+// Initialisierung beim Laden der Seite
+document.addEventListener('DOMContentLoaded', initializeDetailPage);
 
 // Versuche sofort, falls DOM bereits geladen ist
-if (document.readyState === 'loading') {
-    // DOM is still loading
-} else {
-    // DOM is already loaded
-    loadProductDetails();
-    disableProductNavButton();
+if (document.readyState !== 'loading') {
+    initializeDetailPage();
 }

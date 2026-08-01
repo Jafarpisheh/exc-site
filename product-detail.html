@@ -75,58 +75,65 @@
                     <div class="detail-side-card">
                         <h3>Jetzt anfragen</h3>
                         <p>Erhalten Sie ein individuelles Angebot oder eine fachkundige Empfehlung für Ihr neues E-Bike.</p>
-                        <a href="#inquirySection" class="secondary-action">Produktanfrage senden</a>
+                        <a href="#inquiryPanel" class="secondary-action">Produktanfrage senden</a>
                     </div>
                 </div>
             </div>
 
             <div class="detail-content-stack">
-                <div class="product-specs-card">
-                    <h3>Technische Daten</h3>
-                    <div class="product-specs" id="specsContainer">
-                        <!-- Technische Daten erscheinen hier -->
+                <div class="detail-tabs" role="tablist" aria-label="Produktinformationen">
+                    <button class="detail-tab active" role="tab" aria-selected="true" aria-controls="specsPanel" id="specsTab" data-target="specsPanel">Technische Daten</button>
+                    <button class="detail-tab" role="tab" aria-selected="false" aria-controls="inquiryPanel" id="inquiryTab" data-target="inquiryPanel">Produktanfrage</button>
+                </div>
+
+                <div id="specsPanel" class="detail-panel active" role="tabpanel" aria-labelledby="specsTab">
+                    <div class="product-specs-card">
+                        <div class="product-specs" id="specsContainer">
+                            <!-- Technische Daten erscheinen hier -->
+                        </div>
                     </div>
                 </div>
 
-                <div id="inquirySection" class="inquiry-section">
-                    <h3>Produktanfrage senden</h3>
-                    <form id="inquiryForm" class="inquiry-form" action="https://formsubmit.co/ea2e661910e6d62498bce0022bd85aac " method="POST">
-                        <input type="hidden" name="_subject" value="Neue Anfrage von Ihrer Website">
-                        <input type="hidden" name="_template" value="table">
-                        <input type="hidden" name="_captcha" value="false">
-                        <input type="hidden" name="_honey" value="">
-                        <input type="hidden" name="productId" id="productId" value="">
-                        <input type="hidden" name="productName" id="productName" value="">
-                        <input type="hidden" name="sourcePage" id="sourcePage" value="product-detail">
+                <div id="inquiryPanel" class="detail-panel" role="tabpanel" aria-labelledby="inquiryTab" hidden>
+                    <div id="inquirySection" class="inquiry-section">
+                        <form id="inquiryForm" class="inquiry-form" action="https://formsubmit.co/ea2e661910e6d62498bce0022bd85aac " method="POST">
+                            <input type="hidden" name="_subject" value="Neue Anfrage von Ihrer Website">
+                            <input type="hidden" name="_template" value="table">
+                            <input type="hidden" name="_captcha" value="false">
+                            <input type="hidden" name="_honey" value="">
+                            <input type="hidden" name="productId" id="productId" value="">
+                            <input type="hidden" name="productName" id="productName" value="">
+                            <input type="hidden" name="sourcePage" id="sourcePage" value="product-detail">
 
-                        <div class="form-group">
-                            <label for="name">Name *</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
+                            <div class="form-group">
+                                <label for="name">Name *</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
 
-                        <div class="form-group">
-                            <label for="email">E-Mail *</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
+                            <div class="form-group">
+                                <label for="email">E-Mail *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
 
-                        <div class="form-group">
-                            <label for="phone">Telefon *</label>
-                            <input type="tel" id="phone" name="phone" required>
-                        </div>
+                            <div class="form-group">
+                                <label for="phone">Telefon *</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
 
-                        <div class="form-group">
-                            <label for="company">Firma</label>
-                            <input type="text" id="company" name="company">
-                        </div>
+                            <div class="form-group">
+                                <label for="company">Firma</label>
+                                <input type="text" id="company" name="company">
+                            </div>
 
-                        <div class="form-group">
-                            <label for="message">Nachricht *</label>
-                            <textarea id="message" name="message" rows="5" placeholder="Beschreiben Sie Ihre Anfrage..." required></textarea>
-                        </div>
+                            <div class="form-group">
+                                <label for="message">Nachricht *</label>
+                                <textarea id="message" name="message" rows="5" placeholder="Beschreiben Sie Ihre Anfrage..." required></textarea>
+                            </div>
 
-                        <button type="submit" class="submit-btn">Anfrage senden</button>
-                        <p class="form-note">* Pflichtfelder</p>
-                    </form>
+                            <button type="submit" class="submit-btn">Anfrage senden</button>
+                            <p class="form-note">* Pflichtfelder</p>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
