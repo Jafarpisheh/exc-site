@@ -30,29 +30,6 @@
                     <span class="filter-label">Marke</span>
                     <div class="filter-chips" id="brandFilter" role="group" aria-label="Marke"></div>
                 </div>
-                <div class="filter-row">
-                    <div class="search-group">
-                        <input type="search" id="searchInput" class="catalog-input" placeholder="E-Bike suchen..." aria-label="Suche">
-                    </div>
-                    <div class="price-group">
-                        <span class="filter-label">Preis (€)</span>
-                        <input type="number" id="minPrice" class="catalog-input price-input" min="0" step="10" placeholder="Min" aria-label="Mindestpreis">
-                        <span class="price-sep">–</span>
-                        <input type="number" id="maxPrice" class="catalog-input price-input" min="0" step="10" placeholder="Max" aria-label="Höchstpreis">
-                    </div>
-                    <div class="sort-group">
-                        <label class="filter-label" for="sortSelect">Sortieren</label>
-                        <select id="sortSelect" class="catalog-input catalog-select">
-                            <option value="default">Empfohlen</option>
-                            <option value="price-asc">Preis aufsteigend</option>
-                            <option value="price-desc">Preis absteigend</option>
-                            <option value="range-desc">Reichweite absteigend</option>
-                            <option value="power-desc">Motorleistung absteigend</option>
-                        </select>
-                    </div>
-                    <button id="resetFilters" class="reset-btn" type="button">Zurücksetzen</button>
-                </div>
-                <p id="resultsCount" class="results-count" aria-live="polite"></p>
             </div>
 
             <div id="productsList" class="products-grid">

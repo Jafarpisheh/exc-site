@@ -257,7 +257,7 @@ const products = [
                 folder: 'products/OT08Pro/images/Dunkelgrau',
                 coverImage: 'products/OT08Pro/images/Dunkelgrau/1.JPG',
                 stripeCheckoutUrl: 'https://buy.stripe.com/REPLACE_OT08PRO_DUNKELGRAU',
-                imageFiles: ['1.JPG','2.JPG','3.JPG','4.JPG','5.JPG','6.JPG','7.JPG','8.JPG','9.JPG','10.JPG','11.JPG','12.JPG','13.JPG','14.JPG','15.JPG','17.jpg','18.jpg','19.jpg','20.png','65465.JPG']
+                imageFiles: ['1.JPG','2.JPG','3.JPG','4.JPG','5.JPG','6.JPG','7.JPG','8.JPG','9.JPG','10.JPG','11.JPG','12.JPG','13.JPG','14.JPG','15.JPG','17.jpg','18.jpg','19.jpg','20.jpg','65465.JPG']
             },
             {
                 id: 'weiss',
@@ -266,7 +266,7 @@ const products = [
                 folder: 'products/OT08Pro/images/Weiß',
                 coverImage: 'products/OT08Pro/images/Weiß/1.JPG',
                 stripeCheckoutUrl: 'https://buy.stripe.com/REPLACE_OT08PRO_WEISS',
-                imageFiles: ['1.JPG','2.JPG','3.JPG','4.JPG','5.JPG','6.JPG','7.JPG','8.JPG','9.JPG','10.JPG','11.JPG','12.JPG','13.JPG','14.jpg','15.jpg','16.png','17.png','18.png','19.png','20.jpg']
+                imageFiles: ['1.JPG','2.JPG','3.JPG','4.JPG','5.JPG','6.JPG','7.JPG','8.JPG','9.JPG','10.JPG','11.JPG','12.JPG','13.JPG','14.jpg','15.jpg','16.jpg','17.jpg','18.jpg','19.jpg','20.jpg']
             }
         ],
         hasVideo: false
@@ -327,6 +327,65 @@ const products = [
             }
         ],
         hasVideo: false
+    },
+    {
+        id: 'N26',
+        brand: 'Duotts',
+        category: ['mountain', 'moto'],
+        rangeKm: 120,
+        motorW: 500,
+        battery: '48V 20Ah',
+        name: 'Duotts N26 Dual-Motor E-Bike',
+        description: 'Leistungsstarkes Dual-Motor E-Bike mit Vollfederung, Fat-Tire-Reifen und 48-V-20-Ah-Akku – für maximale Traktion und Reichweiten von bis zu 120 km.',
+        longDescription: [
+            'Das Duotts N26 ist ein kraftvolles E-Bike mit Dual-Motor-Antrieb (Vorder- und Hinterrad), das maximale Traktion und Durchsetzungskraft auf jedem Untergrund bietet. Mit dem 48-V-20-Ah-Akku mit Samsung-Zellen erreichen Sie Reichweiten von bis zu 120 km mit Pedalunterstützung – ideal für lange Touren und anspruchsvolles Gelände.',
+            'Die Vollfederung, die hydraulischen Scheibenbremsen, die breiten 26 x 4,0 Zoll Fat-Tire-Reifen und die Shimano-7-Gang-Schaltung sorgen für ein komfortables und sicheres Fahrerlebnis. Das 4,5-Zoll-HD-LCD-Display mit Bluetooth-Anbindung an die Duotts-App und die Wahl zwischen Single- und Dual-Drive-Modus machen das N26 zum vielseitigen Begleiter für Stadt und Offroad.'
+        ],
+        price: 1299,
+        stripeCheckoutUrl: 'https://buy.stripe.com/3cI3cnayL5fb7HK8mu3oA0k',
+        folder: 'products/N26',
+        coverImage: 'products/N26/images/Weiss-Blau/1.jpg',
+        variants: [
+            {
+                id: 'rot',
+                name: 'Rot',
+                price: 1299,
+                folder: 'products/N26/images/Rot',
+                coverImage: 'products/N26/images/Rot/1.jpg',
+                stripeCheckoutUrl: 'https://buy.stripe.com/3cI3cnayL5fb7HK8mu3oA0k',
+                imageFiles: ['1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','6.jpg','7.jpg','8.jpg']
+            },
+            {
+                id: 'weiss-blau',
+                name: 'Weiß-Blau',
+                price: 1299,
+                folder: 'products/N26/images/Weiss-Blau',
+                coverImage: 'products/N26/images/Weiss-Blau/1.jpg',
+                stripeCheckoutUrl: 'https://buy.stripe.com/cNiaEPfT5bDzfacgT03oA0j',
+                imageFiles: ['1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','6.jpg','7.jpg','8.jpg']
+            }
+        ],
+        hasVideo: false
+    },
+    {
+        id: 'S26Pro',
+        brand: 'Duotts',
+        category: ['mountain', 'moto'],
+        rangeKm: 120,
+        motorW: 1500,
+        battery: '48V 20Ah',
+        name: 'Duotts S26 Pro Dual-Motor E-Bike',
+        description: 'Leistungsstarkes Dual-Motor E-Bike mit Vollfederung, Fat-Tire-Reifen und 48-V-20-Ah-Samsung-Akku – für maximale Traktion und Reichweiten von bis zu 120 km.',
+        longDescription: [
+            'Das Duotts S26 Pro ist ein kraftvolles E-Bike mit Dual-Motor-Antrieb (2x 750 W, 1500 W im Dual-Drive-Modus), das maximale Traktion und Durchsetzungskraft auf jedem Untergrund bietet. Der 48-V-20-Ah-Akku mit Samsung-Lithium-Zellen ermöglicht Reichweiten von bis zu 120 km mit Pedalunterstützung – ideal für lange Touren und anspruchsvolles Gelände.',
+            'Die Vollfederung, die hydraulischen Scheibenbremsen, die breiten 26 x 4,0 Zoll Fat-Tire-Reifen und die Shimano-7-Gang-Schaltung sorgen für ein komfortables und sicheres Fahrerlebnis. Das Display mit Bluetooth-Anbindung an die Duotts-App und die Wahl zwischen Single- und Dual-Drive-Modus machen das S26 Pro zum vielseitigen Begleiter für Stadt und Offroad.'
+        ],
+        price: 1299,
+        stripeCheckoutUrl: 'https://buy.stripe.com/3cI8wH6iv0YVgegdGO3oA0l',
+        folder: 'products/S26Pro',
+        coverImage: 'products/S26Pro/images/1.jpg',
+        imageFiles: ['1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','6.jpg','7.jpg','8.jpg','9.jpg','10.jpg','11.jpg','12.jpg','13.jpg','14.jpg','15.jpg','16.jpg','17.jpg','18.jpg','19.jpg','20.jpg'],
+        hasVideo: false
     }
 ];
 
@@ -357,6 +416,10 @@ function createCheckoutButton(product, extraClass = '', variant = null) {
 }
 
 function getProductPreviewImagePath(product) {
+    if (product.coverImage) {
+        return product.coverImage;
+    }
+
     if (product.variants?.length) {
         const firstVariant = product.variants[0];
         if (firstVariant.coverImage) {
@@ -372,10 +435,10 @@ function getProductPreviewImagePath(product) {
 }
 
 const CATEGORY_META = {
-    mountain: { label: 'E-Mountainbike', order: 1, heroImage: 'products/OT08Pro/images/Weiß/19.png' },
+    mountain: { label: 'E-Mountainbike', order: 1, heroImage: 'products/OT08Pro/images/Weiß/19.jpg' },
     city: { label: 'City / Urban', order: 2, heroImage: 'products/C29L/images/28.jpg' },
     folding: { label: 'Faltbar', order: 3, heroImage: 'products/OT02/images/Grün/22.jpg' },
-    moto: { label: 'Moto-Style', order: 4, heroImage: 'products/OT08Pro/images/Weiß/16.png' }
+    moto: { label: 'Moto-Style', order: 4, heroImage: 'products/OT08Pro/images/Weiß/16.jpg' }
 };
 
 function getCategoryHeroImage(categoryId) {
@@ -389,11 +452,7 @@ function getCategoryHeroImage(categoryId) {
 
 const catalogState = {
     category: 'all',
-    brand: 'all',
-    search: '',
-    minPrice: null,
-    maxPrice: null,
-    sort: 'default'
+    brand: 'all'
 };
 
 function getCatalogBrands() {
@@ -486,63 +545,15 @@ function updateChips() {
     });
 }
 
-function updatePriceBoundaries() {
-    const prices = products.map(p => p.price);
-    const minPriceInput = document.getElementById('minPrice');
-    const maxPriceInput = document.getElementById('maxPrice');
-    if (minPriceInput) {
-        minPriceInput.min = Math.min(...prices);
-        minPriceInput.max = Math.max(...prices);
-    }
-    if (maxPriceInput) {
-        maxPriceInput.min = Math.min(...prices);
-        maxPriceInput.max = Math.max(...prices);
-    }
-}
-
 function getVisibleProducts() {
     const s = catalogState;
 
-    let result = products.filter(product => {
+    return products.filter(product => {
         if (s.category !== 'all' && !(product.category || []).includes(s.category)) return false;
         if (s.brand !== 'all' && product.brand !== s.brand) return false;
 
-        const query = s.search.trim().toLowerCase();
-        if (query) {
-            const haystack = `${product.name} ${product.description} ${product.id}`.toLowerCase();
-            if (!haystack.includes(query)) return false;
-        }
-
-        if (s.minPrice != null && product.price < s.minPrice) return false;
-        if (s.maxPrice != null && product.price > s.maxPrice) return false;
-
         return true;
     });
-
-    switch (s.sort) {
-        case 'price-asc':
-            result.sort((a, b) => a.price - b.price);
-            break;
-        case 'price-desc':
-            result.sort((a, b) => b.price - a.price);
-            break;
-        case 'range-desc':
-            result.sort((a, b) => (b.rangeKm || 0) - (a.rangeKm || 0));
-            break;
-        case 'power-desc':
-            result.sort((a, b) => (b.motorW || 0) - (a.motorW || 0));
-            break;
-    }
-
-    return result;
-}
-
-function updateResultsCount(count) {
-    const counter = document.getElementById('resultsCount');
-    if (!counter) return;
-    counter.textContent = count === 1
-        ? '1 E-Bike gefunden'
-        : `${count} E-Bikes gefunden`;
 }
 
 function createProductCard(product) {
@@ -597,7 +608,6 @@ function loadProducts() {
     if (!productsList) return; // Not on home page
 
     const visibleProducts = getVisibleProducts();
-    updateResultsCount(visibleProducts.length);
 
     productsList.innerHTML = '';
 
@@ -617,58 +627,6 @@ function setupCatalogFilters() {
     buildCategoryCards();
     buildFilterChips('brandFilter', getCatalogBrands().map(brand => ({ id: brand, label: brand })));
     updateChips();
-    updatePriceBoundaries();
-
-    const searchInput = document.getElementById('searchInput');
-    if (searchInput) {
-        searchInput.addEventListener('input', () => {
-            catalogState.search = searchInput.value;
-            loadProducts();
-        });
-    }
-
-    const minPriceInput = document.getElementById('minPrice');
-    const maxPriceInput = document.getElementById('maxPrice');
-    if (minPriceInput) {
-        minPriceInput.addEventListener('input', () => {
-            const value = parseFloat(minPriceInput.value);
-            catalogState.minPrice = isNaN(value) ? null : value;
-            loadProducts();
-        });
-    }
-    if (maxPriceInput) {
-        maxPriceInput.addEventListener('input', () => {
-            const value = parseFloat(maxPriceInput.value);
-            catalogState.maxPrice = isNaN(value) ? null : value;
-            loadProducts();
-        });
-    }
-
-    const sortSelect = document.getElementById('sortSelect');
-    if (sortSelect) {
-        sortSelect.addEventListener('change', () => {
-            catalogState.sort = sortSelect.value;
-            loadProducts();
-        });
-    }
-
-    const resetBtn = document.getElementById('resetFilters');
-    if (resetBtn) {
-        resetBtn.addEventListener('click', () => {
-            catalogState.category = 'all';
-            catalogState.brand = 'all';
-            catalogState.search = '';
-            catalogState.minPrice = null;
-            catalogState.maxPrice = null;
-            catalogState.sort = 'default';
-            if (searchInput) searchInput.value = '';
-            if (minPriceInput) minPriceInput.value = '';
-            if (maxPriceInput) maxPriceInput.value = '';
-            if (sortSelect) sortSelect.value = 'default';
-            updateChips();
-            loadProducts();
-        });
-    }
 }
 
 // Zur Produktdetailseite navigieren

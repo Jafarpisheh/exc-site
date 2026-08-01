@@ -339,15 +339,14 @@ function updateModalImage() {
 
 // Galerie navigieren
 function navigateGallery(direction) {
-    const newIndex = galleryState.currentIndex + direction;
-    
-    if (newIndex >= 0 && newIndex < galleryState.mediaItems.length) {
-        galleryState.currentIndex = newIndex;
-        updateMainImage();
-        updateModalImage();
-        updateActiveThumb();
-        updateImageCounter();
-    }
+    const length = galleryState.mediaItems.length;
+    if (length === 0) return;
+
+    galleryState.currentIndex = (galleryState.currentIndex + direction + length) % length;
+    updateMainImage();
+    updateModalImage();
+    updateActiveThumb();
+    updateImageCounter();
 }
 
 // Touch-Swipe-Navigation für die Galerie (Smartphone)
@@ -429,7 +428,12 @@ function setupGallerySwipe() {
 }
 
 // Galerie-Navigationsbuttons einrichten
+let galleryNavSetup = false;
+
 function setupGalleryNavigation() {
+    if (galleryNavSetup) return;
+    galleryNavSetup = true;
+
     const prevBtn = document.getElementById('prevBtn');
     const nextBtn = document.getElementById('nextBtn');
     const mainImageContainer = document.getElementById('mainImageContainer');
@@ -543,7 +547,6 @@ function loadProductSpecs(product) {
 function getBasicSpecs(product) {
     const specs = {
         'Preis': `${formatPrice(product.price)}`,
-        'Modell': product.name,
         'Typ': 'E-Bike',
         'Status': 'Verfügbar',
         'Verfügbarkeit': 'Auf Lager'
@@ -551,6 +554,7 @@ function getBasicSpecs(product) {
     
     // Modellabhängige Spezifikationen hinzufügen
     if (product.id === 'C29k') {
+        specs['Modell'] = 'C29 K';
         specs['Typ'] = 'E-Mountainbike';
         specs['Reichweite'] = 'Bis 90 km';
         specs['Motor'] = '500 W (65 N·m)';
@@ -567,6 +571,7 @@ function getBasicSpecs(product) {
         specs['Display'] = 'Integriertes LCD-Display';
         specs['Konnektivität'] = 'Bluetooth-fähig';
     } else if (product.id === 'C29Lite') {
+        specs['Modell'] = 'C29 Lite';
         specs['Typ'] = 'E-Urbanbike';
         specs['Reichweite'] = 'Bis 65 km (mit Pedalunterstützung)';
         specs['Motor'] = '36V 250W';
@@ -579,6 +584,7 @@ function getBasicSpecs(product) {
         specs['Display'] = '3-Tasten-Multifunktions-Farbdisplay';
         specs['Garantie'] = 'Herstellergarantie';
     } else if (product.id === 'C29L') {
+        specs['Modell'] = 'C29 L';
         specs['Typ'] = 'E-Mountainbike';
         specs['Reichweite'] = 'Bis 100 km (mit Pedalunterstützung)';
         specs['Motor'] = '750 W 48V (65 N·m)';
@@ -597,6 +603,7 @@ function getBasicSpecs(product) {
         specs['Sensor'] = 'Geschwindigkeitssensor';
         specs['Konnektivität'] = 'App (Smart Connection)';
     } else if (product.id === 'OT01') {
+        specs['Modell'] = 'OT01';
         specs['Typ'] = 'E-Urbanbike';
         specs['Reichweite'] = 'Bis 100 km';
         specs['Motor'] = '650 W (62 N·m)';
@@ -612,6 +619,7 @@ function getBasicSpecs(product) {
         specs['Gewicht'] = 'Netto 41,7 kg';
         specs['Display'] = 'TFT-Farbdisplay';
     } else if (product.id === 'OT02') {
+        specs['Modell'] = 'OT02';
         specs['Typ'] = 'E-Urbanbike';
         specs['Reichweite'] = 'Bis 25 km';
         specs['Motor'] = '250 W (30 N·m)';
@@ -627,6 +635,7 @@ function getBasicSpecs(product) {
         specs['Gewicht'] = 'Netto 14,5 kg';
         specs['Display'] = 'TFT-Farbdisplay';
     } else if (product.id === 'OT12') {
+        specs['Modell'] = 'OT12';
         specs['Typ'] = 'E-Urbanbike';
         specs['Reichweite'] = 'Bis 100 km';
         specs['Motor'] = '250 W (44 N·m)';
@@ -642,6 +651,7 @@ function getBasicSpecs(product) {
         specs['Gewicht'] = 'Netto 27,8 kg';
         specs['Display'] = 'TFT-Farbdisplay';
     } else if (product.id === 'OT16') {
+        specs['Modell'] = 'OT16';
         specs['Typ'] = 'E-Urbanbike';
         specs['Reichweite'] = 'Bis 120 km';
         specs['Motor'] = '250 W (40 N·m)';
@@ -657,6 +667,7 @@ function getBasicSpecs(product) {
         specs['Gewicht'] = 'Netto 30,1 kg';
         specs['Display'] = 'TFT-Farbdisplay';
     } else if (product.id === 'W77') {
+        specs['Modell'] = 'W77';
         specs['Typ'] = 'E-Moto-Style';
         specs['Reichweite'] = 'Bis 90 km';
         specs['Motor'] = '250 W (500 W Peak, 65 N·m)';
@@ -673,6 +684,7 @@ function getBasicSpecs(product) {
         specs['Display'] = '3,5 Zoll LCD-Display';
         specs['Konnektivität'] = 'Bluetooth (App)';
     } else if (product.id === 'OT08Pro') {
+        specs['Modell'] = 'OT08 Pro';
         specs['Typ'] = 'Full-Suspension E-Bike';
         specs['Reichweite'] = 'Bis 190 km (Power-Assist)';
         specs['Motor'] = '250 W (500 W Peak, 65 N·m)';
@@ -689,6 +701,7 @@ function getBasicSpecs(product) {
         specs['Display'] = 'LCD-Farbdisplay';
         specs['Wasserdicht'] = 'IPX4';
     } else if (product.id === 'F20') {
+        specs['Modell'] = 'F20';
         specs['Typ'] = 'Full-Suspension Retro E-Bike';
         specs['Reichweite'] = 'Bis 140 km (mit Pedalunterstützung)';
         specs['Motor'] = '250 W (1000 W Peak, 70 N·m)';
@@ -706,6 +719,7 @@ function getBasicSpecs(product) {
         specs['Konnektivität'] = 'Bluetooth (Duotts App)';
         specs['Wasserdicht'] = 'IPX4';
     } else if (product.id === 'F26Lite') {
+        specs['Modell'] = 'F26 Lite';
         specs['Typ'] = 'Fat-Tire E-Bike';
         specs['Reichweite'] = 'Bis 90 km (mit Pedalunterstützung) / 50–60 km (reiner Elektromodus)';
         specs['Motor'] = '500 W Hecknabenmotor (750 W Peak, 65 N·m)';
@@ -723,8 +737,43 @@ function getBasicSpecs(product) {
         specs['Konnektivität'] = 'Duotts App';
         specs['Beleuchtung'] = 'Integrierte Front- und Rücklichter';
         specs['Wasserdicht'] = 'IPX4';
+    } else if (product.id === 'N26') {
+        specs['Modell'] = 'N26';
+        specs['Typ'] = 'Dual-Motor Fat-Tire E-Bike';
+        specs['Reichweite'] = 'Bis 120 km (mit Pedalunterstützung) / 40–60 km (reiner Elektromodus)';
+        specs['Motor'] = '2x 250 W (2x 750 W Peak, 65 N·m)';
+        specs['Akku'] = '48V 20Ah (herausnehmbar)';
+        specs['Max. Geschwindigkeit'] = '25 km/h';
+        specs['Ladezeit'] = '6–7 Stunden';
+        specs['Rahmen'] = 'Aluminiumrahmen (nicht faltbar)';
+        specs['Schaltung'] = 'Shimano 7-Gang';
+        specs['Bremsen'] = 'Hydraulische Scheibenbremsen';
+        specs['Federung'] = 'Vollfederung (Vorder- und Hinterrad)';
+        specs['Reifen'] = '26 x 4,0 Zoll Fat-Tire';
+        specs['Zuladung'] = '150 kg';
+        specs['Gewicht'] = 'Netto ca. 39–40 kg';
+        specs['Display'] = '4,5 Zoll HD-LCD-Display mit Bluetooth';
+        specs['Konnektivität'] = 'Duotts App';
+        specs['Wasserdicht'] = 'IPX4';
+    } else if (product.id === 'S26Pro') {
+        specs['Modell'] = 'S26 Pro';
+        specs['Typ'] = 'Dual-Motor Fat-Tire E-Bike';
+        specs['Reichweite'] = 'Bis 120 km (mit Pedalunterstützung) / 50–60 km (reiner Elektromodus)';
+        specs['Motor'] = '2x 750 W (1500 W im Dual-Drive-Modus)';
+        specs['Akku'] = '48V 20Ah (Samsung-Lithium-Akku)';
+        specs['Max. Geschwindigkeit'] = '25 km/h';
+        specs['Ladezeit'] = '6–7 Stunden';
+        specs['Rahmen'] = 'Aluminiumrahmen (nicht faltbar)';
+        specs['Schaltung'] = 'Shimano 7-Gang';
+        specs['Bremsen'] = 'Hydraulische Scheibenbremsen';
+        specs['Federung'] = 'Vollfederung (Vorder- und Hinterrad)';
+        specs['Reifen'] = '26 x 4,0 Zoll Fat-Tire';
+        specs['Zuladung'] = '150 kg';
+        specs['Gewicht'] = 'Netto ca. 39,8 kg';
+        specs['Konnektivität'] = 'Bluetooth (Duotts App)';
+        specs['Wasserdicht'] = 'IPX4';
     }
-
+    
     if (product.outOfStock) {
         specs['Status'] = 'Ausverkauft';
         specs['Verfügbarkeit'] = 'Nicht auf Lager';
