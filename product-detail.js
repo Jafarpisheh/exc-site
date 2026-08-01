@@ -688,6 +688,23 @@ function getBasicSpecs(product) {
         specs['Gewicht'] = 'Netto 39,2 kg';
         specs['Display'] = 'LCD-Farbdisplay';
         specs['Wasserdicht'] = 'IPX4';
+    } else if (product.id === 'F20') {
+        specs['Typ'] = 'Full-Suspension Retro E-Bike';
+        specs['Reichweite'] = 'Bis 140 km (mit Pedalunterstützung)';
+        specs['Motor'] = '250 W (1000 W Peak, 70 N·m)';
+        specs['Akku'] = '52V 27Ah';
+        specs['Max. Geschwindigkeit'] = '25 km/h';
+        specs['Ladezeit'] = '8–9 Stunden';
+        specs['Rahmen'] = 'Aluminiumrahmen (nicht faltbar)';
+        specs['Schaltung'] = 'Shimano Tourney 1×7-Gang';
+        specs['Bremsen'] = 'Hydraulische Scheibenbremsen';
+        specs['Federung'] = 'Vollfederung (Vorder- und Hinterrad)';
+        specs['Reifen'] = '20 x 4,0 Zoll Fat-Tire';
+        specs['Zuladung'] = '150 kg';
+        specs['Gewicht'] = 'Netto 38 kg';
+        specs['Display'] = '4,5 Zoll HD-LCD-Display';
+        specs['Konnektivität'] = 'Bluetooth (Duotts App)';
+        specs['Wasserdicht'] = 'IPX4';
     }
 
     if (product.outOfStock) {

@@ -225,6 +225,20 @@ const products = [
             }
         ],
         hasVideo: false
+    },
+    {
+        id: 'F20',
+        name: 'Duotts F20 Full-Suspension E-Bike im Retro-Style',
+        description: 'Retro Full-Suspension E-Bike mit Fat-Tire-Reifen, 52-V-27-Ah-Akku und Reichweiten von bis zu 140 km.',
+        longDescription: [
+            'Das Duotts F20 ist ein auffälliges Full-Suspension E-Bike im Retro-Stil, das klassisches Design mit moderner E-Bike-Technologie verbindet. Der kraftvolle 52-V-Motor und die 52-V-27-Ah-Batterie mit hochwertigen Zellen ermöglichen Reichweiten von bis zu 140 km – ideal für lange Touren und anspruchsvolles Gelände.',
+            'Die hydraulischen Scheibenbremsen, die Vollfederung und die breiten 20 x 4,0 Zoll Fat-Tire-Reifen sorgen für ein komfortables und sicheres Fahrerlebnis. Das 4,5-Zoll-HD-LCD-Display mit Bluetooth-Anbindung an die Duotts-App hält Sie dabei über alle wichtigen Fahrdaten auf dem Laufenden.'
+        ],
+        price: 1169,
+        stripeCheckoutUrl: 'https://buy.stripe.com/28E3cnfT522Z5zCeKS3oA0f',
+        folder: 'products/F20',
+        imageFiles: ['1.JPG','2.JPG','3.JPG','4.JPG','5.JPG','6.JPG','7.jpg','8.jpg','9.jpg','10.jpg','11.jpg','12.jpg','13.jpg','14.jpg','15.jpg','16.jpg','17.JPG','18.JPG','19.JPG','20.JPG'],
+        hasVideo: false
     }
 ];
 
@@ -378,6 +392,11 @@ function getBasicSpecs(product) {
         specs['Reichweite'] = 'Bis 190 km';
         specs['Motorleistung'] = '500 W';
         specs['Akku'] = '2x 48V 18Ah';
+        specs['Max. Geschwindigkeit'] = '25 km/h';
+    } else if (product.id === 'F20') {
+        specs['Reichweite'] = 'Bis 140 km';
+        specs['Motorleistung'] = '250 W';
+        specs['Akku'] = '52V 27Ah';
         specs['Max. Geschwindigkeit'] = '25 km/h';
     }
 
