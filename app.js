@@ -38,7 +38,7 @@ const products = [
                 folder: 'products/OT02/images/Grün',
                 coverImage: 'products/OT02/images/Grün/1.JPG',
                 stripeCheckoutUrl: 'https://buy.stripe.com/8x2dR1eP1cHD4vyeKS3oA05',
-                imageFiles: ['1.JPG','2.JPG','3.JPG','4.JPG','5.JPG','6.JPG','7.JPG','8.JPG','9.JPG','10.JPG','11.JPG','12.JPG','13.JPG','14.JPG','15.JPG','16.JPG','17.JPG','18.JPG','19.jpg','20.jpg','21.JPG','22.JPG','23.JPG']
+                imageFiles: ['1.JPG','2.JPG','3.JPG','4.JPG','5.JPG','6.JPG','7.JPG','8.JPG','9.JPG','10.JPG','11.JPG','12.JPG','13.JPG','14.JPG','15.JPG','16.JPG','17.JPG','18.JPG','19.jpg','20.jpg','21.jpg','22.jpg','23.jpg']
             },
             {
                 id: 'rot',
@@ -46,7 +46,7 @@ const products = [
                 folder: 'products/OT02/images/Röt',
                 coverImage: 'products/OT02/images/Röt/1.JPG',
                 stripeCheckoutUrl: 'https://buy.stripe.com/fZubITfT54b7geg0U23oA04',
-                imageFiles: ['1.JPG','2.JPG','3.JPG','4.JPG','5.JPG','6.JPG','7.JPG','8.JPG','9.JPG','10.JPG','11.jpg','12.jpg','13.JPG','14.JPG','15.jpg','16.jpg']
+                imageFiles: ['1.JPG','2.JPG','3.JPG','4.JPG','5.JPG','6.JPG','7.JPG','8.JPG','9.JPG','10.JPG','11.jpg','12.jpg','13.jpg','14.jpg','15.jpg','16.jpg']
             }
         ],
         hasVideo: false
@@ -65,7 +65,7 @@ const products = [
                 folder: 'products/OT12/images/Schwarz',
                 coverImage: 'products/OT12/images/Schwarz/1.JPG',
                 stripeCheckoutUrl: 'https://buy.stripe.com/4gM6oz8qDePL3ruauC3oA06',
-                imageFiles: ['1.JPG','2.JPG','3.JPG','4.JPG','5.JPG','6.JPG','7.JPG','8.JPG','9.JPG','10.JPG','11.JPG','12.JPG','13.JPG','14.JPG','15.JPG','16.jpg','17.jpg','18.JPG','19.jpg','20.jpg','21.jpg']
+                imageFiles: ['1.JPG','2.JPG','3.JPG','4.JPG','5.jpg','6.jpg','7.jpg','8.jpg','9.jpg','10.jpg','11.JPG','12.JPG','13.JPG','14.jpg','15.JPG','16.jpg','17.jpg','18.JPG','19.jpg','20.jpg','21.jpg']
             },
             {
                 id: 'weiss',
@@ -73,7 +73,7 @@ const products = [
                 folder: 'products/OT12/images/Weiß',
                 coverImage: 'products/OT12/images/Weiß/1.JPG',
                 stripeCheckoutUrl: 'https://buy.stripe.com/4gM6ozayL5fbbY0fOW3oA07',
-                imageFiles: ['1.JPG','2.JPG','3.JPG','4.JPG','5.JPG','6.JPG','7.JPG','8.JPG','9.JPG','10.JPG','11.JPG','12.JPG','13.JPG','14.JPG','15.jpg','16.JPG','17.jpg','18.jpg','19.jpg']
+                imageFiles: ['1.JPG','2.JPG','3.JPG','4.JPG','5.JPG','6.jpg','7.jpg','8.JPG','9.JPG','10.JPG','11.JPG','12.jpg','13.JPG','14.jpg','15.jpg','16.jpg','17.jpg','18.jpg','19.jpg']
             }
         ],
         hasVideo: false
