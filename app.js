@@ -31,6 +31,43 @@ const products = [
         hasVideo: false
     },
     {
+        id: 'C29L',
+        name: 'Duotts C29L E-Bike 750W',
+        description: 'Kräftiges E-Bike mit 750-W-Motor, Shimano-21-Gang-Schaltung und hydraulischen Scheibenbremsen – für lange Touren und den täglichen Einsatz.',
+        longDescription: [
+            'Das Duotts C29L ist ein kraftvolles E-Bike für alle, die hohe Leistung und Zuverlässigkeit schätzen. Der starke 750-W-Motor und die 48-V-15-Ah-Batterie mit hochwertigen 18650-Zellen ermöglichen Reichweiten von bis zu 100 km – perfekt für lange Touren und den täglichen Einsatz.',
+            'Die Shimano-21-Gang-Schaltung, die hydraulischen Scheibenbremsen und der robuste Aluminiumrahmen sorgen für ein stabiles und komfortables Fahrerlebnis. Mit Gepäckträger, Rücklicht, Frontfederung und App-Anbindung ist das C29L ein vielseitiger Begleiter für jede Fahrt.'
+        ],
+        price: 859,
+        stripeCheckoutUrl: 'https://buy.stripe.com/fZu14f0Yb8rne687iq3oA0d',
+        folder: 'products/C29L',
+        imageFiles: ['1.JPG','2.jpg','3.jpg','4.jpg','5.jpg','6.jpg','7.jpg','8.jpg','9.jpg','10.jpg','11.jpg','12.jpg','13.jpg','14.jpg','15.jpg','16.jpg','17.jpg','18.jpg','19.jpg','20.jpg','21.jpg','22.jpg','23.jpg','24.jpg','25.jpg','26.jpg','27.jpg','28.jpg'],
+        variants: [
+            {
+                id: 'standard',
+                name: 'Standard',
+                price: 859,
+                folder: 'products/C29L/images',
+                coverImage: 'products/C29L/images/1.JPG',
+                stripeCheckoutUrl: 'https://buy.stripe.com/fZu14f0Yb8rne687iq3oA0d',
+                imageFiles: ['1.JPG','2.jpg','3.jpg','4.jpg','5.jpg','6.jpg','7.jpg','8.jpg','9.jpg','10.jpg','11.jpg','12.jpg','13.jpg','14.jpg','15.jpg','16.jpg','17.jpg','18.jpg','19.jpg','20.jpg','21.jpg','22.jpg','23.jpg','24.jpg','25.jpg','26.jpg','27.jpg','28.jpg']
+            },
+            {
+                id: 'doppelt-batterien',
+                name: 'Doppelt-Batterien',
+                price: 1049,
+                folder: 'products/C29L/images/Doppelt-Batterien',
+                coverImage: 'products/C29L/images/Doppelt-Batterien/1.JPG',
+                stripeCheckoutUrl: 'https://buy.stripe.com/dRmcMX36jazv4vyeKS3oA0e',
+                imageFiles: ['1.JPG','../2.jpg','../3.jpg','../4.jpg','../5.jpg','../6.jpg','../7.jpg','../8.jpg','../9.jpg','../10.jpg','../11.jpg','../12.jpg','../13.jpg','../14.jpg','../15.jpg','../16.jpg','../17.jpg','../18.jpg','../19.jpg','../20.jpg','../21.jpg','../22.jpg','../23.jpg','../24.jpg','../25.jpg','../26.jpg','../27.jpg','../28.jpg'],
+                specOverrides: {
+                    'Akku': '2x 48V 15Ah (Dual-Batterie)'
+                }
+            }
+        ],
+        hasVideo: false
+    },
+    {
         id: 'OT01',
         name: 'ONESPORT OT01 Elektrofahrrad Faltrad',
         description: 'Vielseitiges E-Bike für tägliche Pendlerfahrten und Entdeckungstouren.',
@@ -306,6 +343,11 @@ function getBasicSpecs(product) {
         specs['Reichweite'] = 'Bis 65 km';
         specs['Motorleistung'] = '250 W';
         specs['Akku'] = '36V 13Ah';
+        specs['Max. Geschwindigkeit'] = '25 km/h';
+    } else if (product.id === 'C29L') {
+        specs['Reichweite'] = 'Bis 100 km';
+        specs['Motorleistung'] = '750 W';
+        specs['Akku'] = '48V 15Ah';
         specs['Max. Geschwindigkeit'] = '25 km/h';
     } else if (product.id === 'OT01') {
         specs['Reichweite'] = 'Bis 100 km';

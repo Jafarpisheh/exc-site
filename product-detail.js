@@ -34,7 +34,7 @@ async function loadProductDetails() {
     
     // Set product name, price and supporting copy
     document.getElementById('productName').textContent = product.name;
-    document.getElementById('productPrice').textContent = `${formatPrice(product.price)}`;
+    renderProductPrice(product);
     const productDescription = document.getElementById('productDescription');
     if (productDescription) {
         productDescription.textContent = product.description || 'Entdecken Sie dieses hochwertige E-Bike mit modernem Design, starker Reichweite und komfortabler Ausstattung.';
@@ -57,6 +57,18 @@ async function loadProductDetails() {
 
 function getInitialVariantId(product) {
     return product.variants?.length ? product.variants[0].id : null;
+}
+
+function getActiveVariantPrice(product) {
+    const activeVariant = product.variants?.find(variant => variant.id === galleryState.activeVariantId);
+    return activeVariant?.price ?? product.price;
+}
+
+function renderProductPrice(product) {
+    const priceElement = document.getElementById('productPrice');
+    if (priceElement) {
+        priceElement.textContent = `${formatPrice(getActiveVariantPrice(product))}`;
+    }
 }
 
 function renderLongDescription(product) {
@@ -115,7 +127,9 @@ function renderVariantButtons(product) {
             galleryState.activeVariantId = variant.id;
             renderVariantButtons(product);
             renderProductActions(product);
+            renderProductPrice(product);
             await loadProductMedia(product, variant.id);
+            loadProductSpecs(product);
         });
 
         container.appendChild(button);
@@ -425,6 +439,12 @@ function loadProductSpecs(product) {
     
     // Basisdaten je nach Produkt erzeugen
     const basicSpecs = getBasicSpecs(product);
+
+    // Variantenspezifische Überschreibungen anwenden
+    const activeVariant = product.variants?.find(variant => variant.id === galleryState.activeVariantId);
+    if (activeVariant?.specOverrides) {
+        Object.assign(basicSpecs, activeVariant.specOverrides);
+    }
     
     let specsHTML = '';
     
@@ -480,6 +500,24 @@ function getBasicSpecs(product) {
         specs['Reifen'] = '27,5 x 2,25 Zoll';
         specs['Display'] = '3-Tasten-Multifunktions-Farbdisplay';
         specs['Garantie'] = 'Herstellergarantie';
+    } else if (product.id === 'C29L') {
+        specs['Typ'] = 'E-Mountainbike';
+        specs['Reichweite'] = 'Bis 100 km (mit Pedalunterstützung)';
+        specs['Motor'] = '750 W 48V (65 N·m)';
+        specs['Akku'] = '48V 15Ah';
+        specs['Max. Geschwindigkeit'] = '25 km/h';
+        specs['Ladezeit'] = '7–8 Stunden';
+        specs['Ladegerät'] = '54,6V 2A';
+        specs['Rahmen'] = 'Aluminiumrahmen (nicht faltbar)';
+        specs['Schaltung'] = 'Shimano 21-Gang';
+        specs['Bremsen'] = 'Hydraulische Scheibenbremsen';
+        specs['Federung'] = 'Frontfederung';
+        specs['Reifen'] = '29 x 2,1 Zoll';
+        specs['Zuladung'] = '150 kg';
+        specs['Gewicht'] = 'Netto 25,5 kg / Brutto 30,7 kg';
+        specs['Wasserdicht'] = 'IPX4';
+        specs['Sensor'] = 'Geschwindigkeitssensor';
+        specs['Konnektivität'] = 'App (Smart Connection)';
     } else if (product.id === 'OT01') {
         specs['Typ'] = 'E-Urbanbike';
         specs['Reichweite'] = 'Bis 100 km';
