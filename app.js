@@ -386,6 +386,45 @@ const products = [
         coverImage: 'products/S26Pro/images/1.jpg',
         imageFiles: ['1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','6.jpg','7.jpg','8.jpg','9.jpg','10.jpg','11.jpg','12.jpg','13.jpg','14.jpg','15.jpg','16.jpg','17.jpg','18.jpg','19.jpg','20.jpg'],
         hasVideo: false
+    },
+    {
+        id: 'E26',
+        brand: 'Duotts',
+        category: ['mountain'],
+        rangeKm: 120,
+        motorW: 750,
+        battery: '48V 20Ah',
+        name: 'Duotts E26 E-Mountainbike',
+        description: 'Kraftvolles E-Mountainbike mit 750-W-Motor, starkem 48-V-20-Ah-Akku und Reichweiten von bis zu 120 km – für anspruchsvolles Gelände und lange Touren.',
+        longDescription: [
+            'Das Duotts E26 ist ein robustes E-Mountainbike, das für anspruchsvolles Gelände und lange Touren entwickelt wurde. Der Bafang-Motor mit 750 W und 80 N·m Drehmoment meistert Steigungen von bis zu 30° mühelos, während der Samsung-Lithium-Akku mit 48 V und 20 Ah Reichweiten von bis zu 120 km ermöglicht.',
+            'Die DNM-Luftfederung vorne und hinten, die TEKTRO-4-Kolben-Hydraulikbremsen und die breiten 26 x 4,0 Zoll Fat-Tire-Reifen sorgen für ein komfortables und sicheres Fahrgefühl – ob auf Trails, Feldwegen oder in der Stadt. Der zentrale Drehmomentsensor liefert ein natürliches Fahrgefühl, und die Smart-Connection-App hält Sie über alle wichtigen Fahrdaten auf dem Laufenden.'
+        ],
+        price: 1999,
+        stripeCheckoutUrl: 'https://buy.stripe.com/8x2dR18qD8rn8LO0U23oA0m',
+        folder: 'products/E26',
+        coverImage: 'products/E26/images/Blau/1.jpg',
+        variants: [
+            {
+                id: 'blau',
+                name: 'Blau',
+                price: 1999,
+                folder: 'products/E26/images/Blau',
+                coverImage: 'products/E26/images/Blau/1.jpg',
+                stripeCheckoutUrl: 'https://buy.stripe.com/8x2dR18qD8rn8LO0U23oA0m',
+                imageFiles: ['1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','6.jpg','7.jpg']
+            },
+            {
+                id: 'gruen',
+                name: 'Grün',
+                price: 1999,
+                folder: 'products/E26/images/Grün',
+                coverImage: 'products/E26/images/Grün/1.jpg',
+                stripeCheckoutUrl: 'https://buy.stripe.com/eVq8wHayL4b70fi5ai3oA0n',
+                imageFiles: ['1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','6.jpg','7.jpg','8.jpg','9.jpg']
+            }
+        ],
+        hasVideo: false
     }
 ];
 
