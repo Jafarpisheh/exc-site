@@ -128,7 +128,7 @@ const products = [
 ];
 
 function formatPrice(price) {
-    return `€${price.toLocaleString('de-DE')}`;
+    return `€${price.toLocaleString('de-DE', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
 }
 
 function getProductCheckoutUrl(product, variant) {

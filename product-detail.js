@@ -433,8 +433,6 @@ function loadProductSpecs(product) {
     
     let specsHTML = '';
     
-    specsHTML += `<h3>Technische Daten</h3>`;
-    
     // Übliche Spezifikationen anzeigen
     Object.entries(basicSpecs).forEach(([key, value]) => {
         specsHTML += `
