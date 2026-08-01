@@ -2,10 +2,10 @@
 const products = [
     {
         id: 'C29k',
-        name: 'C29K E-Mountain',
+        name: 'Duotts C29 - K 750W Doppelbatterie – bis 120km',
         description: 'Robustes E-Mountainbike mit starker Reichweite und Gelände-Performance.',
-        price: 1199,
-        stripeCheckoutUrl: 'https://buy.stripe.com/test_28o5k9g9C8hM5mY8AA',
+        price: 1049,
+        stripeCheckoutUrl: 'https://buy.stripe.com/fZudR18qD0YVfac8mu3oA03',
         folder: 'products/C29k',
         imageFiles: [
             '1.JPG','2.JPG','3.JPG','4.JPG','5.JPG','6.JPG','7.JPG','8.JPG','9.JPG','10.JPG','11.JPG','12.JPG','13.JPG','14.JPG','15.JPG','16.JPG','17.JPG','18.JPG','19.JPG','20.JPG','21.JPG','22.JPG','23.JPG','24.jpg','25.jpg','26.jpg','27.jpg'
@@ -14,7 +14,7 @@ const products = [
     },
     {
         id: 'OT01',
-        name: 'OT01',
+        name: 'ONESPORT OT01 Elektrofahrrad Faltrad',
         description: 'Vielseitiges E-Bike für tägliche Pendlerfahrten und Entdeckungstouren.',
         price: 999,
         stripeCheckoutUrl: 'https://buy.stripe.com/aFa6oz5er0YV2nqcCK3oA02',
@@ -26,10 +26,9 @@ const products = [
     },
     {
         id: 'OT02',
-        name: 'OT02',
+        name: 'ONESPORT E-Bike Cityrad OT02',
         description: 'Moderne E-Bike-Variante mit zwei attraktiven Farboptionen und hochwertiger Ausstattung.',
         price: 599,
-        stripeCheckoutUrl: 'https://buy.stripe.com/test_eVa7vA2xA6hM6iI6AA',
         folder: 'products/OT02',
         variants: [
             {
@@ -37,6 +36,7 @@ const products = [
                 name: 'Grün',
                 folder: 'products/OT02/images/Grün',
                 coverImage: 'products/OT02/images/Grün/1.JPG',
+                stripeCheckoutUrl: 'https://buy.stripe.com/8x2dR1eP1cHD4vyeKS3oA05',
                 imageFiles: ['1.JPG','2.JPG','3.JPG','4.JPG','5.JPG','6.JPG','7.JPG','8.JPG','9.JPG','10.JPG','11.JPG','12.JPG','13.JPG','14.JPG','15.JPG','16.JPG','17.JPG','18.JPG','19.jpg','20.jpg','21.JPG','22.JPG','23.JPG']
             },
             {
@@ -44,6 +44,7 @@ const products = [
                 name: 'Röt',
                 folder: 'products/OT02/images/Röt',
                 coverImage: 'products/OT02/images/Röt/1.JPG',
+                stripeCheckoutUrl: 'https://buy.stripe.com/fZubITfT54b7geg0U23oA04',
                 imageFiles: ['1.JPG','2.JPG','3.JPG','4.JPG','5.JPG','6.JPG','7.JPG','8.JPG','9.JPG','10.JPG','11.jpg','12.jpg','13.JPG','14.JPG','15.jpg','16.jpg']
             }
         ],
@@ -51,10 +52,9 @@ const products = [
     },
     {
         id: 'OT12',
-        name: 'OT12',
+        name: 'Onesport OT12 Urban',
         description: 'Stylisches E-Bike mit zwei attraktiven Farbvarianten und hochwertiger Ausstattung.',
         price: 729,
-        stripeCheckoutUrl: 'https://buy.stripe.com/test_dR6dSg7MS6hM5mY6AA',
         folder: 'products/OT12',
         variants: [
             {
@@ -62,6 +62,7 @@ const products = [
                 name: 'Schwarz',
                 folder: 'products/OT12/images/Schwarz',
                 coverImage: 'products/OT12/images/Schwarz/1.JPG',
+                stripeCheckoutUrl: 'https://buy.stripe.com/4gM6oz8qDePL3ruauC3oA06',
                 imageFiles: ['1.JPG','2.JPG','3.JPG','4.JPG','5.JPG','6.JPG','7.JPG','8.JPG','9.JPG','10.JPG','11.JPG','12.JPG','13.JPG','14.JPG','15.JPG','16.jpg','17.jpg','18.JPG','19.jpg','20.jpg','21.jpg']
             },
             {
@@ -69,6 +70,7 @@ const products = [
                 name: 'Weiß',
                 folder: 'products/OT12/images/Weiß',
                 coverImage: 'products/OT12/images/Weiß/1.JPG',
+                stripeCheckoutUrl: 'https://buy.stripe.com/4gM6ozayL5fbbY0fOW3oA07',
                 imageFiles: ['1.JPG','2.JPG','3.JPG','4.JPG','5.JPG','6.JPG','7.JPG','8.JPG','9.JPG','10.JPG','11.JPG','12.JPG','13.JPG','14.JPG','15.jpg','16.JPG','17.jpg','18.jpg','19.jpg']
             }
         ],
@@ -76,10 +78,9 @@ const products = [
     },
     {
         id: 'OT16',
-        name: 'OT16',
+        name: 'Onesport OT16 Faltbar',
         description: 'Robustes E-Bike mit modernem Design und vielseitiger Alltagstauglichkeit.',
         price: 729,
-        stripeCheckoutUrl: 'https://buy.stripe.com/test_9AQbJY8oE4hM3yU4AA',
         folder: 'products/OT16',
         variants: [
             {
@@ -87,6 +88,7 @@ const products = [
                 name: 'Schwarz',
                 folder: 'products/OT16/images/Schwarz',
                 coverImage: 'products/OT16/images/Schwarz/1.JPG',
+                stripeCheckoutUrl: 'https://buy.stripe.com/cNi8wH7mz373gegdGO3oA08',
                 imageFiles: ['1.JPG','2.JPG','3.JPG','4.JPG','5.JPG','6.JPG','7.jpg','8.jpg','9.jpg','10.jpg','11.JPG','12.JPG','13.jpg']
             },
             {
@@ -94,6 +96,7 @@ const products = [
                 name: 'Weiß',
                 folder: 'products/OT16/images/Weiß',
                 coverImage: 'products/OT16/images/Weiß/1.JPG',
+                stripeCheckoutUrl: 'https://buy.stripe.com/7sYbIT4anazv4vybyG3oA09',
                 imageFiles: ['1.JPG','2.JPG','3.JPG','4.JPG','5.JPG','6.JPG','7.JPG','8.jpg','9.jpg','10.JPG','11.JPG','12.JPG','13.JPG']
             }
         ],
@@ -105,12 +108,15 @@ function formatPrice(price) {
     return `€${price.toLocaleString('de-DE')}`;
 }
 
-function getProductCheckoutUrl(product) {
+function getProductCheckoutUrl(product, variant) {
+    if (variant && variant.stripeCheckoutUrl) {
+        return variant.stripeCheckoutUrl.trim();
+    }
     return (product.stripeCheckoutUrl || '').trim();
 }
 
-function createCheckoutButton(product, extraClass = '') {
-    const checkoutUrl = getProductCheckoutUrl(product);
+function createCheckoutButton(product, extraClass = '', variant = null) {
+    const checkoutUrl = getProductCheckoutUrl(product, variant);
     if (!checkoutUrl) {
         return '';
     }

@@ -62,7 +62,8 @@ function renderProductActions(product) {
     const container = document.getElementById('productActions');
     if (!container) return;
 
-    const checkoutUrl = getProductCheckoutUrl(product);
+    const activeVariant = product.variants?.find(variant => variant.id === galleryState.activeVariantId);
+    const checkoutUrl = getProductCheckoutUrl(product, activeVariant);
     if (!checkoutUrl) {
         container.innerHTML = '';
         container.style.display = 'none';
@@ -70,7 +71,7 @@ function renderProductActions(product) {
     }
 
     container.style.display = 'flex';
-    container.innerHTML = createCheckoutButton(product, 'checkout-btn--detail');
+    container.innerHTML = createCheckoutButton(product, 'checkout-btn--detail', activeVariant);
 }
 
 function renderVariantButtons(product) {
@@ -98,6 +99,7 @@ function renderVariantButtons(product) {
         button.addEventListener('click', async () => {
             galleryState.activeVariantId = variant.id;
             renderVariantButtons(product);
+            renderProductActions(product);
             await loadProductMedia(product, variant.id);
         });
 
