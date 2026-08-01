@@ -705,6 +705,24 @@ function getBasicSpecs(product) {
         specs['Display'] = '4,5 Zoll HD-LCD-Display';
         specs['Konnektivität'] = 'Bluetooth (Duotts App)';
         specs['Wasserdicht'] = 'IPX4';
+    } else if (product.id === 'F26Lite') {
+        specs['Typ'] = 'Fat-Tire E-Bike';
+        specs['Reichweite'] = 'Bis 90 km (mit Pedalunterstützung) / 50–60 km (reiner Elektromodus)';
+        specs['Motor'] = '500 W Hecknabenmotor (750 W Peak, 65 N·m)';
+        specs['Akku'] = '48V 18Ah (integriert)';
+        specs['Max. Geschwindigkeit'] = '25 km/h';
+        specs['Ladezeit'] = '8–10 Stunden';
+        specs['Rahmen'] = 'Aluminiumrahmen (nicht faltbar)';
+        specs['Schaltung'] = 'Shimano 7-Gang';
+        specs['Bremsen'] = 'Hydraulische Scheibenbremsen';
+        specs['Federung'] = 'Frontfederung';
+        specs['Reifen'] = '26 x 4,0 Zoll Fat-Tire';
+        specs['Zuladung'] = '150 kg';
+        specs['Gewicht'] = 'Netto ca. 34–35 kg';
+        specs['Display'] = 'LCD-Display mit Bluetooth';
+        specs['Konnektivität'] = 'Duotts App';
+        specs['Beleuchtung'] = 'Integrierte Front- und Rücklichter';
+        specs['Wasserdicht'] = 'IPX4';
     }
 
     if (product.outOfStock) {

@@ -7,14 +7,14 @@ const products = [
         rangeKm: 90,
         motorW: 500,
         battery: '48V 18Ah',
-        name: 'Duotts C29 - K 500W E-Mountainbike – bis 90 km',
+        name: 'Duotts C29 - K 750W Doppelbatterie',
         description: 'Robustes E-Mountainbike mit starker Reichweite und Gelände-Performance.',
         longDescription: [
             'Das Duotts C29 ist ein kraftvolles E-Mountainbike, das für anspruchsvolles Gelände und lange Touren entwickelt wurde. Mit seiner leistungsstarken Batterie erreichen Sie Reichweiten von bis zu 90 km und sind damit auch für ausgedehnte Ausflüge bestens gerüstet.',
             'Der starke 500-W-Motor meistert Steigungen mühelos und bringt Sie sicher und schnell ans Ziel. Das robuste Design, die hochwertige Federung und die zuverlässigen Bremsen sorgen für ein stabiles und komfortables Fahrgefühl – ob im Wald, auf Feldwegen oder in der Stadt.'
         ],
-        price: 1049,
-        stripeCheckoutUrl: 'https://buy.stripe.com/fZudR18qD0YVfac8mu3oA03',
+        price: 1199,
+        stripeCheckoutUrl: 'https://buy.stripe.com/00w3cncGTfTPgegfOW3oA0g',
         folder: 'products/C29k',
         imageFiles: [
             '1.JPG','2.JPG','3.JPG','4.JPG','5.JPG','6.JPG','7.JPG','8.JPG','9.JPG','10.JPG','11.JPG','12.JPG','13.JPG','14.JPG','15.JPG','16.JPG','17.JPG','18.JPG','19.JPG','20.JPG','21.JPG','22.JPG','23.JPG','24.jpg','25.jpg','26.jpg','27.jpg'
@@ -288,6 +288,44 @@ const products = [
         stripeCheckoutUrl: 'https://buy.stripe.com/28E3cnfT522Z5zCeKS3oA0f',
         folder: 'products/F20',
         imageFiles: ['1.JPG','2.JPG','3.JPG','4.JPG','5.JPG','6.JPG','7.jpg','8.jpg','9.jpg','10.jpg','11.jpg','12.jpg','13.jpg','14.jpg','15.jpg','16.jpg','17.JPG','18.JPG','19.JPG','20.JPG'],
+        hasVideo: false
+    },
+    {
+        id: 'F26Lite',
+        brand: 'Duotts',
+        category: ['mountain', 'moto'],
+        rangeKm: 90,
+        motorW: 500,
+        battery: '48V 18Ah',
+        name: 'Duotts F26Lite Fat-Tire E-Bike 750W',
+        description: 'Vielseitiges Fat-Tire E-Bike mit 500-W-Motor (750 W Peak), integriertem 48-V-18-Ah-Akku und 26 x 4,0 Zoll Reifen – für Stadt und Gelände.',
+        longDescription: [
+            'Das Duotts F26Lite ist ein vielseitiges Fat-Tire E-Bike, das urbane Pendelfahrten und Offroad-Abenteuer vereint. Der integrierte 48-V-18-Ah-Akku fügt sich nahtlos in den Aluminiumrahmen ein und ermöglicht mit dem 500-W-Hecknabenmotor (Spitzenleistung 750 W, 65 N·m) Reichweiten von bis zu 90 km mit Pedalunterstützung.',
+            'Die breiten 26 x 4,0 Zoll Fat-Reifen, die hydraulischen Scheibenbremsen, die Frontfederung und die Shimano-7-Gang-Schaltung sorgen für Komfort und Sicherheit auf jedem Untergrund. Das LCD-Display mit Bluetooth-Anbindung an die Duotts-App, integrierte Lichter und der praktische Gepäckträger machen das F26Lite zum idealen Begleiter für jeden Tag.'
+        ],
+        price: 1149,
+        stripeCheckoutUrl: 'https://buy.stripe.com/28EcMX4an4b74vy9qy3oA0i',
+        folder: 'products/F26Lite',
+        variants: [
+            {
+                id: 'schwarz',
+                name: 'Schwarz',
+                price: 1149,
+                folder: 'products/F26Lite/images/Schwarz',
+                coverImage: 'products/F26Lite/images/Schwarz/1.jpg',
+                stripeCheckoutUrl: 'https://buy.stripe.com/28EcMX4an4b74vy9qy3oA0i',
+                imageFiles: ['1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','6.jpg','7.jpg','8.jpg','9.jpg','10.jpg','11.jpg']
+            },
+            {
+                id: 'silber',
+                name: 'Silber',
+                price: 1149,
+                folder: 'products/F26Lite/images/Silber',
+                coverImage: 'products/F26Lite/images/Silber/1.jpg',
+                stripeCheckoutUrl: 'https://buy.stripe.com/14A00bbCP3732nqdGO3oA0h',
+                imageFiles: ['1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','6.jpg','7.jpg','8.jpg']
+            }
+        ],
         hasVideo: false
     }
 ];
