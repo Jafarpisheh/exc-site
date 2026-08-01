@@ -324,22 +324,39 @@ function setupGalleryNavigation() {
     const prevBtn = document.getElementById('prevBtn');
     const nextBtn = document.getElementById('nextBtn');
     const mainImageContainer = document.getElementById('mainImageContainer');
+    const mainImage = document.getElementById('mainImage');
     
     prevBtn.addEventListener('click', () => navigateGallery(-1));
     nextBtn.addEventListener('click', () => navigateGallery(1));
     
     if (mainImageContainer) {
         mainImageContainer.style.cursor = 'zoom-in';
-        mainImageContainer.addEventListener('click', (event) => {
+        mainImageContainer.setAttribute('role', 'button');
+        mainImageContainer.setAttribute('tabindex', '0');
+
+        const openGalleryFromMedia = (event) => {
+            const target = event.target;
+            if (target.closest('.gallery-nav-btn')) {
+                return;
+            }
+
             const item = galleryState.mediaItems[galleryState.currentIndex];
             if (item?.type === 'image') {
-                const target = event.target;
-                if (target.closest('.gallery-nav-btn')) {
-                    return;
-                }
                 openImageModal();
             }
+        };
+
+        mainImageContainer.addEventListener('click', openGalleryFromMedia);
+        mainImageContainer.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                openGalleryFromMedia(event);
+            }
         });
+
+        if (mainImage) {
+            mainImage.addEventListener('click', openGalleryFromMedia);
+        }
     }
     
     // Setup modal navigation

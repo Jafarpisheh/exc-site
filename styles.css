@@ -588,15 +588,17 @@ body {
     background: #f0f2f2;
 }
 
-.detail-content-grid {
-    display: grid;
-    grid-template-columns: 1.15fr 0.85fr;
-    gap: 24px;
-    margin-top: 24px;
+.detail-content-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+    margin-top: 32px;
 }
 
 .product-specs-card {
     padding: 24px;
+    background: #f9fbfd;
+    border: 1px solid #e5e7eb;
 }
 
 .product-specs-card h3 {
@@ -636,23 +638,24 @@ body {
 /* Inquiry Form */
 
 .inquiry-section {
-    background-color: #ffffff;
-    padding: 24px;
-    border-radius: 18px;
-    border: 1px solid #d9d9d9;
-    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+    background: linear-gradient(135deg, #fffdf7 0%, #fff8e1 100%);
+    padding: 32px;
+    border-radius: 22px;
+    border: 1px solid #f0d68b;
+    box-shadow: 0 16px 36px rgba(15, 23, 42, 0.08);
+    margin-top: 8px;
 }
 
 .inquiry-section h3 {
-    color: #111111;
-    margin-bottom: 20px;
+    color: #7a4b00;
+    margin-bottom: 22px;
     font-size: 22px;
 }
 
 .inquiry-form {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 18px;
 }
 
 .form-group {
@@ -689,17 +692,17 @@ body {
 }
 
 .submit-btn {
-    background: #ffd814;
+    background: linear-gradient(180deg, #ffd814 0%, #f1b500 100%);
     color: #111111;
-    padding: 13px 16px;
+    padding: 14px 18px;
     border: none;
     border-radius: 999px;
     font-weight: 700;
     font-size: 15px;
     cursor: pointer;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-    margin-top: 6px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    margin-top: 10px;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
 }
 
 .submit-btn:hover {
@@ -744,8 +747,7 @@ body {
 }
 
 @media (max-width: 960px) {
-    .detail-layout,
-    .detail-content-grid {
+    .detail-layout {
         grid-template-columns: 1fr;
     }
 }
