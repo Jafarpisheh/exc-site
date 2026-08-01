@@ -533,6 +533,22 @@ function getBasicSpecs(product) {
         specs['Zuladung'] = '150 kg';
         specs['Gewicht'] = 'Netto 30,1 kg';
         specs['Display'] = 'TFT-Farbdisplay';
+    } else if (product.id === 'W77') {
+        specs['Typ'] = 'E-Moto-Style';
+        specs['Reichweite'] = 'Bis 90 km';
+        specs['Motor'] = '250 W (500 W Peak, 65 N·m)';
+        specs['Akku'] = '48V 18Ah';
+        specs['Max. Geschwindigkeit'] = '25 km/h';
+        specs['Ladezeit'] = '8–9 Stunden';
+        specs['Rahmen'] = 'Eisenrahmen (nicht faltbar)';
+        specs['Schaltung'] = 'Shimano 7-Gang-Schaltung';
+        specs['Bremsen'] = 'Hydraulische Scheibenbremsen';
+        specs['Federung'] = 'Doppelfederung (Vorder- und Hinterrad)';
+        specs['Reifen'] = '20 x 4,0 Zoll Fat-Tire';
+        specs['Zuladung'] = '90 kg';
+        specs['Gewicht'] = 'Netto 43,2 kg';
+        specs['Display'] = '3,5 Zoll LCD-Display';
+        specs['Konnektivität'] = 'Bluetooth (App)';
     }
     
     return specs;

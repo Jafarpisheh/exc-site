@@ -124,6 +124,22 @@ const products = [
             }
         ],
         hasVideo: false
+    },
+    {
+        id: 'W77',
+        name: 'Onesport W77 E-Bike im Moto-Style',
+        description: 'Moto-Style E-Bike mit Fat-Tire-Reifen, starkem Motor und komfortabler Doppelfederung.',
+        longDescription: [
+            'Das Onesport W77 ist ein auffälliges E-Bike im Moto-Style mit markantem Retro-Design und breiten 20 x 4,0 Zoll Fat-Tire-Reifen. Der kraftvolle 250-W-Motor (Spitzenleistung 500 W) und die 48-V-18-Ah-Batterie bringen Sie mit einer Reichweite von bis zu 90 km sicher ans Ziel.',
+            'Die hydraulischen Scheibenbremsen, die Doppelfederung und die Shimano-7-Gang-Schaltung sorgen für ein komfortables und sicheres Fahrerlebnis. Das 3,5-Zoll-LCD-Display mit Bluetooth-Funktion hält Sie dabei über alle wichtigen Fahrdaten auf dem Laufenden.'
+        ],
+        price: 999,
+        folder: 'products/W77',
+        imageFiles: [
+            '1.JPG','2.JPG','3.JPG','4.JPG','5.JPG','6.JPG','7.JPG','8.JPG','9.JPG','10.jpg','11.jpg','12.jpg','13.jpg','14.jpg','15.jpg','16.jpg','17.jpg','18.jpg','19.jpg','20.jpg','21.jpg'
+        ],
+        stripeCheckoutUrl: 'https://buy.stripe.com/fZueV57mz9vr4vygT03oA0b',
+        hasVideo: false
     }
 ];
 
@@ -252,6 +268,11 @@ function getBasicSpecs(product) {
         specs['Reichweite'] = 'Bis 120 km';
         specs['Motorleistung'] = '250 W';
         specs['Akku'] = '48V 17Ah';
+        specs['Max. Geschwindigkeit'] = '25 km/h';
+    } else if (product.id === 'W77') {
+        specs['Reichweite'] = 'Bis 90 km';
+        specs['Motorleistung'] = '500 W';
+        specs['Akku'] = '48V 18Ah';
         specs['Max. Geschwindigkeit'] = '25 km/h';
     }
 
