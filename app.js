@@ -383,31 +383,9 @@ function setupScrollSpy() {
     updateActiveLink();
 }
 
-function setupHeaderScroll() {
-    const header = document.querySelector('.header');
-    if (!header) return;
-
-    let lastScrollY = window.scrollY;
-
-    function onScroll() {
-        const currentScrollY = window.scrollY;
-        if (currentScrollY > 100 && currentScrollY > lastScrollY) {
-            header.classList.add('hidden');
-        } else if (currentScrollY < lastScrollY) {
-            header.classList.remove('hidden');
-        }
-        lastScrollY = currentScrollY;
-    }
-
-    window.addEventListener('scroll', () => {
-        window.requestAnimationFrame(onScroll);
-    });
-}
-
 document.addEventListener('DOMContentLoaded', () => {
     if (document.getElementById('contact')) {
         setupSiteInquiryForm();
     }
     setupScrollSpy();
-    setupHeaderScroll();
 });
