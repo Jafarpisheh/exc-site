@@ -2,6 +2,11 @@
 const products = [
     {
         id: 'C29k',
+        brand: 'Duotts',
+        category: ['mountain'],
+        rangeKm: 90,
+        motorW: 500,
+        battery: '48V 18Ah',
         name: 'Duotts C29 - K 500W E-Mountainbike – bis 90 km',
         description: 'Robustes E-Mountainbike mit starker Reichweite und Gelände-Performance.',
         longDescription: [
@@ -18,6 +23,11 @@ const products = [
     },
     {
         id: 'C29Lite',
+        brand: 'Duotts',
+        category: ['city'],
+        rangeKm: 65,
+        motorW: 250,
+        battery: '36V 13Ah',
         name: 'Duotts C29 Lite E-Bike 250W',
         description: 'Zuverlässiges und alltagstaugliches E-Bike mit 250-W-Motor, Shimano-7-Gang-Schaltung und komfortablen 27,5-Zoll-Reifen – ideal für Pendler und Freizeitfahrer.',
         longDescription: [
@@ -32,6 +42,11 @@ const products = [
     },
     {
         id: 'C29L',
+        brand: 'Duotts',
+        category: ['city'],
+        rangeKm: 100,
+        motorW: 750,
+        battery: '48V 15Ah',
         name: 'Duotts C29L E-Bike 750W',
         description: 'Kräftiges E-Bike mit 750-W-Motor, Shimano-21-Gang-Schaltung und hydraulischen Scheibenbremsen – für lange Touren und den täglichen Einsatz.',
         longDescription: [
@@ -69,6 +84,11 @@ const products = [
     },
     {
         id: 'OT01',
+        brand: 'Onesport',
+        category: ['folding'],
+        rangeKm: 100,
+        motorW: 650,
+        battery: '48V 27Ah',
         name: 'ONESPORT OT01 Elektrofahrrad Faltrad',
         description: 'Vielseitiges E-Bike für tägliche Pendlerfahrten und Entdeckungstouren.',
         longDescription: [
@@ -85,6 +105,11 @@ const products = [
     },
     {
         id: 'OT02',
+        brand: 'Onesport',
+        category: ['city', 'folding'],
+        rangeKm: 25,
+        motorW: 250,
+        battery: '36V 5,2Ah',
         name: 'ONESPORT E-Bike Cityrad OT02',
         description: 'Moderne E-Bike-Variante mit zwei attraktiven Farboptionen und hochwertiger Ausstattung.',
         longDescription: [
@@ -116,6 +141,11 @@ const products = [
     },
     {
         id: 'OT12',
+        brand: 'Onesport',
+        category: ['city'],
+        rangeKm: 100,
+        motorW: 250,
+        battery: '36V 13Ah',
         name: 'Onesport OT12 Urban',
         description: 'Stylisches E-Bike mit zwei attraktiven Farbvarianten und hochwertiger Ausstattung.',
         longDescription: [
@@ -147,6 +177,11 @@ const products = [
     },
     {
         id: 'OT16',
+        brand: 'Onesport',
+        category: ['folding'],
+        rangeKm: 120,
+        motorW: 250,
+        battery: '48V 17Ah',
         name: 'Onesport OT16 Faltbar',
         description: 'Robustes E-Bike mit modernem Design und vielseitiger Alltagstauglichkeit.',
         longDescription: [
@@ -178,6 +213,11 @@ const products = [
     },
     {
         id: 'W77',
+        brand: 'Onesport',
+        category: ['moto'],
+        rangeKm: 90,
+        motorW: 500,
+        battery: '48V 18Ah',
         name: 'Onesport W77 E-Bike im Moto-Style',
         description: 'Moto-Style E-Bike mit Fat-Tire-Reifen, starkem Motor und komfortabler Doppelfederung.',
         longDescription: [
@@ -194,6 +234,11 @@ const products = [
     },
     {
         id: 'OT08Pro',
+        brand: 'Onesport',
+        category: ['mountain', 'moto'],
+        rangeKm: 190,
+        motorW: 500,
+        battery: '2x 48V 18Ah',
         name: 'Onesport OT08 Pro Full-Suspension E-Bike',
         description: 'Leistungsstarkes E-Bike mit Dual-Batterie-System, Vollfederung und Fat-Tire-Reifen – für Gelände und lange Touren.',
         longDescription: [
@@ -228,6 +273,11 @@ const products = [
     },
     {
         id: 'F20',
+        brand: 'Duotts',
+        category: ['mountain', 'moto'],
+        rangeKm: 140,
+        motorW: 250,
+        battery: '52V 27Ah',
         name: 'Duotts F20 Full-Suspension E-Bike im Retro-Style',
         description: 'Retro Full-Suspension E-Bike mit Fat-Tire-Reifen, 52-V-27-Ah-Akku und Reichweiten von bis zu 140 km.',
         longDescription: [
@@ -283,52 +333,304 @@ function getProductPreviewImagePath(product) {
     return `${product.folder}/images/1.jpg`;
 }
 
+const CATEGORY_META = {
+    mountain: { label: 'E-Mountainbike', order: 1, heroImage: 'products/OT08Pro/images/Weiß/19.png' },
+    city: { label: 'City / Urban', order: 2, heroImage: 'products/C29L/images/28.jpg' },
+    folding: { label: 'Faltbar', order: 3, heroImage: 'products/OT02/images/Grün/22.jpg' },
+    moto: { label: 'Moto-Style', order: 4, heroImage: 'products/OT08Pro/images/Weiß/16.png' }
+};
+
+function getCategoryHeroImage(categoryId) {
+    const meta = CATEGORY_META[categoryId];
+    if (meta.heroImage) {
+        return meta.heroImage;
+    }
+    const hero = products.find(p => p.id === meta.heroProduct);
+    return hero ? getProductPreviewImagePath(hero) : '';
+}
+
+const catalogState = {
+    category: 'all',
+    brand: 'all',
+    search: '',
+    minPrice: null,
+    maxPrice: null,
+    sort: 'default'
+};
+
+function getCatalogBrands() {
+    return [...new Set(products.map(p => p.brand).filter(Boolean))].sort();
+}
+
+function getCatalogCategories() {
+    const present = new Set();
+    products.forEach(p => (p.category || []).forEach(c => present.add(c)));
+    return Object.entries(CATEGORY_META)
+        .filter(([id]) => present.has(id))
+        .sort((a, b) => a[1].order - b[1].order)
+        .map(([id, meta]) => ({ id, label: meta.label }));
+}
+
+function buildCategoryCards() {
+    const container = document.getElementById('categoryCards');
+    if (!container) return;
+
+    container.innerHTML = '';
+
+    getCatalogCategories().forEach(category => {
+        const card = document.createElement('button');
+        card.type = 'button';
+        card.className = 'category-card';
+        card.dataset.filter = category.id;
+        card.setAttribute('role', 'button');
+        card.setAttribute('aria-pressed', 'false');
+
+        card.innerHTML = `
+            <img src="${getCategoryHeroImage(category.id)}" alt="${category.label}" loading="lazy">
+            <span class="category-card-overlay">
+                <span class="category-card-name">${category.label}</span>
+            </span>
+        `;
+
+        card.addEventListener('click', () => {
+            catalogState.category = catalogState.category === category.id ? 'all' : category.id;
+            updateChips();
+            loadProducts();
+        });
+
+        container.appendChild(card);
+    });
+}
+
+function buildFilterChips(containerId, items) {
+    const container = document.getElementById(containerId);
+    if (!container) return;
+
+    container.innerHTML = '';
+
+    const allChip = document.createElement('button');
+    allChip.type = 'button';
+    allChip.className = 'filter-chip active';
+    allChip.textContent = 'Alle';
+    allChip.dataset.filter = 'all';
+    allChip.addEventListener('click', () => {
+        catalogState.brand = 'all';
+        updateChips();
+        loadProducts();
+    });
+    container.appendChild(allChip);
+
+    items.forEach(item => {
+        const chip = document.createElement('button');
+        chip.type = 'button';
+        chip.className = 'filter-chip';
+        chip.textContent = item.label;
+        chip.dataset.filter = item.id;
+        chip.addEventListener('click', () => {
+            catalogState.brand = item.id;
+            updateChips();
+            loadProducts();
+        });
+        container.appendChild(chip);
+    });
+}
+
+function updateChips() {
+    document.querySelectorAll('#categoryCards .category-card').forEach(card => {
+        const isActive = catalogState.category === card.dataset.filter;
+        card.classList.toggle('active', isActive);
+        card.setAttribute('aria-pressed', isActive);
+    });
+    document.querySelectorAll('#brandFilter .filter-chip').forEach(chip => {
+        const isActive = catalogState.brand === chip.dataset.filter;
+        chip.classList.toggle('active', isActive);
+        chip.setAttribute('aria-pressed', isActive);
+    });
+}
+
+function updatePriceBoundaries() {
+    const prices = products.map(p => p.price);
+    const minPriceInput = document.getElementById('minPrice');
+    const maxPriceInput = document.getElementById('maxPrice');
+    if (minPriceInput) {
+        minPriceInput.min = Math.min(...prices);
+        minPriceInput.max = Math.max(...prices);
+    }
+    if (maxPriceInput) {
+        maxPriceInput.min = Math.min(...prices);
+        maxPriceInput.max = Math.max(...prices);
+    }
+}
+
+function getVisibleProducts() {
+    const s = catalogState;
+
+    let result = products.filter(product => {
+        if (s.category !== 'all' && !(product.category || []).includes(s.category)) return false;
+        if (s.brand !== 'all' && product.brand !== s.brand) return false;
+
+        const query = s.search.trim().toLowerCase();
+        if (query) {
+            const haystack = `${product.name} ${product.description} ${product.id}`.toLowerCase();
+            if (!haystack.includes(query)) return false;
+        }
+
+        if (s.minPrice != null && product.price < s.minPrice) return false;
+        if (s.maxPrice != null && product.price > s.maxPrice) return false;
+
+        return true;
+    });
+
+    switch (s.sort) {
+        case 'price-asc':
+            result.sort((a, b) => a.price - b.price);
+            break;
+        case 'price-desc':
+            result.sort((a, b) => b.price - a.price);
+            break;
+        case 'range-desc':
+            result.sort((a, b) => (b.rangeKm || 0) - (a.rangeKm || 0));
+            break;
+        case 'power-desc':
+            result.sort((a, b) => (b.motorW || 0) - (a.motorW || 0));
+            break;
+    }
+
+    return result;
+}
+
+function updateResultsCount(count) {
+    const counter = document.getElementById('resultsCount');
+    if (!counter) return;
+    counter.textContent = count === 1
+        ? '1 E-Bike gefunden'
+        : `${count} E-Bikes gefunden`;
+}
+
+function createProductCard(product) {
+    const firstImagePath = getProductPreviewImagePath(product);
+    const specs = getBasicSpecs(product);
+
+    const productCard = document.createElement('div');
+    productCard.className = 'product-card';
+    productCard.onclick = () => goToProduct(product.id);
+
+    let specsHTML = '';
+    Object.entries(specs).forEach(([key, value]) => {
+        specsHTML += `<div class="card-spec"><span class="spec-key">${key}:</span> <span class="spec-val">${value}</span></div>`;
+    });
+
+    productCard.innerHTML = `
+        <img src="${firstImagePath}" alt="${product.name}" class="product-image" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22250%22%3E%3Crect fill=%22%23ddd%22 width=%22400%22 height=%22250%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22Arial%22 font-size=%2224%22 fill=%22%23999%22%3EBild nicht verfügbar%3C/text%3E%3C/svg%3E'">
+        <div class="product-card-content">
+            <h3>${product.name}</h3>
+            <p>${product.description}</p>
+            <p class="product-card-price">${formatPrice(product.price)}</p>
+            <div class="product-card-actions">
+                ${createCheckoutButton(product)}
+            </div>
+            <div class="card-specs">
+                ${specsHTML}
+            </div>
+        </div>
+    `;
+
+    const buyButton = productCard.querySelector('.checkout-btn');
+    if (buyButton) {
+        buyButton.addEventListener('click', (event) => {
+            event.stopPropagation();
+        });
+    }
+
+    return productCard;
+}
+
+function showEmptyState(productsList) {
+    const emptyState = document.createElement('div');
+    emptyState.className = 'empty-state';
+    emptyState.innerHTML = '<p>Keine E-Bikes gefunden. Bitte passen Sie Ihre Filter an.</p>';
+    productsList.appendChild(emptyState);
+}
+
 // Produkte auf der Startseite laden
 function loadProducts() {
     const productsList = document.getElementById('productsList');
 
     if (!productsList) return; // Not on home page
 
+    const visibleProducts = getVisibleProducts();
+    updateResultsCount(visibleProducts.length);
+
     productsList.innerHTML = '';
 
-    products.forEach(product => {
-        const firstImagePath = getProductPreviewImagePath(product);
-        const specs = getBasicSpecs(product);
+    if (!visibleProducts.length) {
+        showEmptyState(productsList);
+        return;
+    }
 
-        const productCard = document.createElement('div');
-        productCard.className = 'product-card';
-        productCard.onclick = () => goToProduct(product.id);
-
-        // Build specs HTML
-        let specsHTML = '';
-        Object.entries(specs).forEach(([key, value]) => {
-            specsHTML += `<div class="card-spec"><span class="spec-key">${key}:</span> <span class="spec-val">${value}</span></div>`;
-        });
-
-        productCard.innerHTML = `
-            <img src="${firstImagePath}" alt="${product.name}" class="product-image" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22250%22%3E%3Crect fill=%22%23ddd%22 width=%22400%22 height=%22250%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22Arial%22 font-size=%2224%22 fill=%22%23999%22%3EBild nicht verfügbar%3C/text%3E%3C/svg%3E'">
-            <div class="product-card-content">
-                <h3>${product.name}</h3>
-                <p>${product.description}</p>
-                <p class="product-card-price">${formatPrice(product.price)}</p>
-                <div class="product-card-actions">
-                    ${createCheckoutButton(product)}
-                </div>
-                <div class="card-specs">
-                    ${specsHTML}
-                </div>
-            </div>
-        `;
-
-        productsList.appendChild(productCard);
-
-        const buyButton = productCard.querySelector('.checkout-btn');
-        if (buyButton) {
-            buyButton.addEventListener('click', (event) => {
-                event.stopPropagation();
-            });
-        }
+    visibleProducts.forEach(product => {
+        productsList.appendChild(createProductCard(product));
     });
+}
+
+function setupCatalogFilters() {
+    if (!document.getElementById('productsList')) return;
+
+    buildCategoryCards();
+    buildFilterChips('brandFilter', getCatalogBrands().map(brand => ({ id: brand, label: brand })));
+    updateChips();
+    updatePriceBoundaries();
+
+    const searchInput = document.getElementById('searchInput');
+    if (searchInput) {
+        searchInput.addEventListener('input', () => {
+            catalogState.search = searchInput.value;
+            loadProducts();
+        });
+    }
+
+    const minPriceInput = document.getElementById('minPrice');
+    const maxPriceInput = document.getElementById('maxPrice');
+    if (minPriceInput) {
+        minPriceInput.addEventListener('input', () => {
+            const value = parseFloat(minPriceInput.value);
+            catalogState.minPrice = isNaN(value) ? null : value;
+            loadProducts();
+        });
+    }
+    if (maxPriceInput) {
+        maxPriceInput.addEventListener('input', () => {
+            const value = parseFloat(maxPriceInput.value);
+            catalogState.maxPrice = isNaN(value) ? null : value;
+            loadProducts();
+        });
+    }
+
+    const sortSelect = document.getElementById('sortSelect');
+    if (sortSelect) {
+        sortSelect.addEventListener('change', () => {
+            catalogState.sort = sortSelect.value;
+            loadProducts();
+        });
+    }
+
+    const resetBtn = document.getElementById('resetFilters');
+    if (resetBtn) {
+        resetBtn.addEventListener('click', () => {
+            catalogState.category = 'all';
+            catalogState.brand = 'all';
+            catalogState.search = '';
+            catalogState.minPrice = null;
+            catalogState.maxPrice = null;
+            catalogState.sort = 'default';
+            if (searchInput) searchInput.value = '';
+            if (minPriceInput) minPriceInput.value = '';
+            if (maxPriceInput) maxPriceInput.value = '';
+            if (sortSelect) sortSelect.value = 'default';
+            updateChips();
+            loadProducts();
+        });
+    }
 }
 
 // Zur Produktdetailseite navigieren
@@ -344,67 +646,19 @@ function getProductById(productId) {
 // Basisdaten je nach Produkt ermitteln
 function getBasicSpecs(product) {
     const specs = {
-        'Preis': `${formatPrice(product.price)}`
+        'Preis': `${formatPrice(product.price)}`,
+        'Reichweite': `Bis ${product.rangeKm} km`,
+        'Motorleistung': `${product.motorW} W`,
+        'Akku': product.battery,
+        'Max. Geschwindigkeit': '25 km/h'
     };
-
-    // Modellabhängige Spezifikationen hinzufügen
-    if (product.id === 'C29k') {
-        specs['Reichweite'] = 'Bis 90 km';
-        specs['Motorleistung'] = '500 W';
-        specs['Akku'] = '48V 18Ah';
-        specs['Max. Geschwindigkeit'] = '25 km/h';
-    } else if (product.id === 'C29Lite') {
-        specs['Reichweite'] = 'Bis 65 km';
-        specs['Motorleistung'] = '250 W';
-        specs['Akku'] = '36V 13Ah';
-        specs['Max. Geschwindigkeit'] = '25 km/h';
-    } else if (product.id === 'C29L') {
-        specs['Reichweite'] = 'Bis 100 km';
-        specs['Motorleistung'] = '750 W';
-        specs['Akku'] = '48V 15Ah';
-        specs['Max. Geschwindigkeit'] = '25 km/h';
-    } else if (product.id === 'OT01') {
-        specs['Reichweite'] = 'Bis 100 km';
-        specs['Motorleistung'] = '650 W';
-        specs['Akku'] = '48V 27Ah';
-        specs['Max. Geschwindigkeit'] = '25 km/h';
-    } else if (product.id === 'OT02') {
-        specs['Reichweite'] = 'Bis 25 km';
-        specs['Motorleistung'] = '250 W';
-        specs['Akku'] = '36V 5,2Ah';
-        specs['Max. Geschwindigkeit'] = '25 km/h';
-    } else if (product.id === 'OT12') {
-        specs['Reichweite'] = 'Bis 100 km';
-        specs['Motorleistung'] = '250 W';
-        specs['Akku'] = '36V 13Ah';
-        specs['Max. Geschwindigkeit'] = '25 km/h';
-    } else if (product.id === 'OT16') {
-        specs['Reichweite'] = 'Bis 120 km';
-        specs['Motorleistung'] = '250 W';
-        specs['Akku'] = '48V 17Ah';
-        specs['Max. Geschwindigkeit'] = '25 km/h';
-    } else if (product.id === 'W77') {
-        specs['Reichweite'] = 'Bis 90 km';
-        specs['Motorleistung'] = '500 W';
-        specs['Akku'] = '48V 18Ah';
-        specs['Max. Geschwindigkeit'] = '25 km/h';
-    } else if (product.id === 'OT08Pro') {
-        specs['Reichweite'] = 'Bis 190 km';
-        specs['Motorleistung'] = '500 W';
-        specs['Akku'] = '2x 48V 18Ah';
-        specs['Max. Geschwindigkeit'] = '25 km/h';
-    } else if (product.id === 'F20') {
-        specs['Reichweite'] = 'Bis 140 km';
-        specs['Motorleistung'] = '250 W';
-        specs['Akku'] = '52V 27Ah';
-        specs['Max. Geschwindigkeit'] = '25 km/h';
-    }
 
     return specs;
 }
 
 // Initialisierung beim Laden der Seite
 document.addEventListener('DOMContentLoaded', () => {
+    setupCatalogFilters();
     loadProducts();
 });
 
