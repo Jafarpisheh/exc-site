@@ -2,11 +2,11 @@
 const products = [
     {
         id: 'C29k',
-        name: 'Duotts C29 - K 750W Doppelbatterie – bis 120km',
+        name: 'Duotts C29 - K 500W E-Mountainbike – bis 90 km',
         description: 'Robustes E-Mountainbike mit starker Reichweite und Gelände-Performance.',
         longDescription: [
-            'Das Duotts C29 ist ein kraftvolles E-Mountainbike, das für anspruchsvolles Gelände und lange Touren entwickelt wurde. Mit seiner Doppelbatterie erreichen Sie Reichweiten von bis zu 120 km und sind damit auch für ausgedehnte Ausflüge bestens gerüstet.',
-            'Der starke 750-W-Motor meistert Steigungen mühelos und bringt Sie sicher und schnell ans Ziel. Das robuste Design, die hochwertige Federung und die zuverlässigen Bremsen sorgen für ein stabiles und komfortables Fahrgefühl – ob im Wald, auf Feldwegen oder in der Stadt.'
+            'Das Duotts C29 ist ein kraftvolles E-Mountainbike, das für anspruchsvolles Gelände und lange Touren entwickelt wurde. Mit seiner leistungsstarken Batterie erreichen Sie Reichweiten von bis zu 90 km und sind damit auch für ausgedehnte Ausflüge bestens gerüstet.',
+            'Der starke 500-W-Motor meistert Steigungen mühelos und bringt Sie sicher und schnell ans Ziel. Das robuste Design, die hochwertige Federung und die zuverlässigen Bremsen sorgen für ein stabiles und komfortables Fahrgefühl – ob im Wald, auf Feldwegen oder in der Stadt.'
         ],
         price: 1049,
         stripeCheckoutUrl: 'https://buy.stripe.com/fZudR18qD0YVfac8mu3oA03',
@@ -22,7 +22,7 @@ const products = [
         description: 'Vielseitiges E-Bike für tägliche Pendlerfahrten und Entdeckungstouren.',
         longDescription: [
             'Das ONESPORT OT01 ist das ideale E-Bike für den Alltag. Als faltbares Elektrofahrrad passt es problemlos in den Kofferraum, unter den Schreibtisch oder in öffentliche Verkehrsmittel – perfekt für Pendler und Stadtentdecker.',
-            'Mit einer Reichweite von bis zu 120 km und einem starken 500-W-Motor sind Sie flexibel unterwegs, ganz ohne Reichweitenangst. Die hochwertige Ausstattung und die kompakte Bauweise machen das OT01 zu einem zuverlässigen Begleiter für jeden Tag.'
+            'Mit einer Reichweite von bis zu 100 km und einem starken 650-W-Motor sind Sie flexibel unterwegs, ganz ohne Reichweitenangst. Die hochwertige Ausstattung und die kompakte Bauweise machen das OT01 zu einem zuverlässigen Begleiter für jeden Tag.'
         ],
         price: 999,
         stripeCheckoutUrl: 'https://buy.stripe.com/aFa6oz5er0YV2nqcCK3oA02',
@@ -38,7 +38,7 @@ const products = [
         description: 'Moderne E-Bike-Variante mit zwei attraktiven Farboptionen und hochwertiger Ausstattung.',
         longDescription: [
             'Das ONESPORT Cityrad OT02 kombiniert modernes Design mit durchdachter Technik. Erhältlich in zwei attraktiven Farbvarianten, passt es sich perfekt Ihrem persönlichen Stil an.',
-            'Der leistungsstarke 500-W-Mittelmotor und die große Batterie mit bis zu 110 km Reichweite machen das OT02 zum idealen Begleiter für die Stadt und darüber hinaus. Komfortable Federung und hydraulische Scheibenbremsen sorgen für sicheres und angenehmes Fahren auf jeder Strecke.'
+            'Der kompakte 250-W-Motor und die 36-V-Batterie machen das OT02 zum idealen Begleiter für kurze Fahrten in der Stadt. Dank seines geringen Gewichts und der praktischen Faltkonstruktion ist es problemlos überallhin mitnehmbar.'
         ],
         price: 599,
         stripeCheckoutUrl: 'https://buy.stripe.com/8x2dR1eP1cHD4vyeKS3oA05',
@@ -69,7 +69,7 @@ const products = [
         description: 'Stylisches E-Bike mit zwei attraktiven Farbvarianten und hochwertiger Ausstattung.',
         longDescription: [
             'Das Onesport OT12 Urban ist ein stilvolles E-Bike für alle, die Wert auf Design und Komfort legen. In elegantem Schwarz oder strahlendem Weiß erhältlich, setzt es in der Stadt ein klares Statement.',
-            'Mit seinem leistungsstarken 500-W-Mittelmotor, der 720-Wh-Batterie und einer Reichweite von bis zu 100 km sind Sie für jeden Weg gerüstet. Das TFT-Farbdisplay hält Sie über alle wichtigen Fahrdaten auf dem Laufenden.'
+            'Mit seinem effizienten 250-W-Motor, der 36-V-Batterie und einer Reichweite von bis zu 100 km sind Sie für jeden Weg gerüstet. Das TFT-Farbdisplay hält Sie über alle wichtigen Fahrdaten auf dem Laufenden.'
         ],
         price: 729,
         stripeCheckoutUrl: 'https://buy.stripe.com/4gM6oz8qDePL3ruauC3oA06',
@@ -100,7 +100,7 @@ const products = [
         description: 'Robustes E-Bike mit modernem Design und vielseitiger Alltagstauglichkeit.',
         longDescription: [
             'Das Onesport OT16 Faltbar vereint Robustheit, modernes Design und maximale Flexibilität. Durch die Faltkonstruktion lässt es sich platzsparend verstauen und überallhin mitnehmen – ob im Auto, im Zug oder im Büro.',
-            'Der kräftige 500-W-Mittelmotor und die 700-Wh-Batterie ermöglichen Reichweiten von bis zu 95 km. Dank komfortabler Federung und hochwertiger Komponenten genießen Sie auf jeder Fahrt ein angenehmes und sicheres Fahrerlebnis.'
+            'Der kräftige 250-W-Motor und die 48-V-Batterie ermöglichen Reichweiten von bis zu 120 km. Dank komfortabler Federung und hochwertiger Komponenten genießen Sie auf jeder Fahrt ein angenehmes und sicheres Fahrerlebnis.'
         ],
         price: 729,
         stripeCheckoutUrl: 'https://buy.stripe.com/cNi8wH7mz373gegdGO3oA08',
@@ -229,30 +229,30 @@ function getBasicSpecs(product) {
 
     // Modellabhängige Spezifikationen hinzufügen
     if (product.id === 'C29k') {
-        specs['Reichweite'] = 'Bis 80 km';
-        specs['Motorleistung'] = '250 W';
-        specs['Akku'] = '500 Wh';
+        specs['Reichweite'] = 'Bis 90 km';
+        specs['Motorleistung'] = '500 W';
+        specs['Akku'] = '48V 18Ah';
         specs['Max. Geschwindigkeit'] = '25 km/h';
     } else if (product.id === 'OT01') {
-        specs['Reichweite'] = 'Bis 120 km';
-        specs['Motorleistung'] = '500 W';
-        specs['Akku'] = '720 Wh';
-        specs['Max. Geschwindigkeit'] = '45 km/h';
+        specs['Reichweite'] = 'Bis 100 km';
+        specs['Motorleistung'] = '650 W';
+        specs['Akku'] = '48V 27Ah';
+        specs['Max. Geschwindigkeit'] = '25 km/h';
     } else if (product.id === 'OT02') {
-        specs['Reichweite'] = 'Bis 110 km';
-        specs['Motorleistung'] = '500 W';
-        specs['Akku'] = '720 Wh';
-        specs['Max. Geschwindigkeit'] = '45 km/h';
+        specs['Reichweite'] = 'Bis 25 km';
+        specs['Motorleistung'] = '250 W';
+        specs['Akku'] = '36V 5,2Ah';
+        specs['Max. Geschwindigkeit'] = '25 km/h';
     } else if (product.id === 'OT12') {
         specs['Reichweite'] = 'Bis 100 km';
-        specs['Motorleistung'] = '500 W';
-        specs['Akku'] = '720 Wh';
-        specs['Max. Geschwindigkeit'] = '45 km/h';
+        specs['Motorleistung'] = '250 W';
+        specs['Akku'] = '36V 13Ah';
+        specs['Max. Geschwindigkeit'] = '25 km/h';
     } else if (product.id === 'OT16') {
-        specs['Reichweite'] = 'Bis 95 km';
-        specs['Motorleistung'] = '500 W';
-        specs['Akku'] = '700 Wh';
-        specs['Max. Geschwindigkeit'] = '45 km/h';
+        specs['Reichweite'] = 'Bis 120 km';
+        specs['Motorleistung'] = '250 W';
+        specs['Akku'] = '48V 17Ah';
+        specs['Max. Geschwindigkeit'] = '25 km/h';
     }
 
     return specs;
