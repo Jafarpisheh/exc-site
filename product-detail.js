@@ -350,6 +350,84 @@ function navigateGallery(direction) {
     }
 }
 
+// Touch-Swipe-Navigation für die Galerie (Smartphone)
+let gallerySwipeSetup = false;
+
+function setupSwipeNavigation(element, onSwipe) {
+    if (!element) return;
+
+    let startX = 0;
+    let startY = 0;
+    let startTime = 0;
+    let active = false;
+    let swiped = false;
+
+    element.addEventListener('touchstart', (e) => {
+        const item = galleryState.mediaItems[galleryState.currentIndex];
+        if (item?.type === 'video') return;
+
+        const touch = e.changedTouches[0];
+        startX = touch.clientX;
+        startY = touch.clientY;
+        startTime = Date.now();
+        active = true;
+        swiped = false;
+    }, { passive: true });
+
+    element.addEventListener('touchmove', (e) => {
+        if (!active) return;
+        const touch = e.changedTouches[0];
+        const deltaX = touch.clientX - startX;
+        const deltaY = touch.clientY - startY;
+
+        if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 10) {
+            e.preventDefault();
+        }
+    }, { passive: false });
+
+    element.addEventListener('touchend', (e) => {
+        if (!active) return;
+        active = false;
+
+        const touch = e.changedTouches[0];
+        const deltaX = touch.clientX - startX;
+        const deltaY = touch.clientY - startY;
+        const elapsed = Date.now() - startTime;
+
+        if (elapsed > 700) return;
+        if (Math.abs(deltaX) < 50) return;
+        if (Math.abs(deltaY) > Math.abs(deltaX) * 1.2) return;
+
+        swiped = true;
+        onSwipe(deltaX < 0 ? 1 : -1);
+    }, { passive: true });
+
+    // Nach einem Swipe kein Klick (Modal öffnen) auslösen
+    element.addEventListener('click', (e) => {
+        if (swiped) {
+            e.preventDefault();
+            e.stopPropagation();
+            swiped = false;
+        }
+    }, true);
+}
+
+function setupGallerySwipe() {
+    if (gallerySwipeSetup) return;
+    gallerySwipeSetup = true;
+
+    const mainImageContainer = document.getElementById('mainImageContainer');
+    const modalImageContainer = document.querySelector('.modal-image-container');
+
+    setupSwipeNavigation(mainImageContainer, (direction) => {
+        navigateGallery(direction);
+    });
+
+    setupSwipeNavigation(modalImageContainer, (direction) => {
+        navigateGallery(direction);
+    });
+}
+
 // Galerie-Navigationsbuttons einrichten
 function setupGalleryNavigation() {
     const prevBtn = document.getElementById('prevBtn');
@@ -729,6 +807,7 @@ function initializeDetailPage() {
     loadProductDetails();
     disableProductNavButton();
     setupDetailTabs();
+    setupGallerySwipe();
 }
 
 // Initialisierung beim Laden der Seite

@@ -1192,6 +1192,7 @@ body {
     justify-content: center;
     position: relative;
     cursor: zoom-in;
+    touch-action: pan-y;
 }
 
 .main-image img,
@@ -1363,6 +1364,7 @@ body {
     max-height: 70vh;
     position: relative;
     width: 100%;
+    touch-action: pan-y;
 }
 
 .modal-image-container img {
