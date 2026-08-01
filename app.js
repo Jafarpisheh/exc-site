@@ -20,7 +20,7 @@ const products = [
         stripeCheckoutUrl: 'https://buy.stripe.com/test_5kA3eG5o08hM7iI7AA',
         folder: 'products/OT01',
         imageFiles: [
-            '1.jfif','2.JPG','3.JPG','4.JPG','5.JPG','6.JPG','7.JPG','8.JPG','9.JPG','10.JPG','11.JPG','12.JPG','13.JPG','14.JPG','15.JPG','16.JPG','17.JPG','18.JPG','19.JPG','20.jpg','21.jpg','22.jpg','23.jpg','24.jpg','25.jpg','26.jfif','27.jfif','28.jfif','29.jfif','30.jfif','31.jfif','32.jfif','33.jfif','34.jpg','35.jpg','36.jpg'
+            '1.JPG','2.JPG','3.JPG','4.JPG','5.JPG','6.JPG','7.JPG','8.JPG','9.JPG','10.JPG','11.JPG','12.JPG','13.JPG','14.JPG','15.JPG','16.JPG','17.JPG','18.JPG','19.JPG','20.jpg','21.jpg','22.jpg','23.jpg','24.jpg','25.jpg','26.jfif','27.jfif','28.jfif','29.jfif','30.jfif','31.jfif','32.jfif','33.jfif','34.jpg','35.jpg','36.jpg'
         ],
         hasVideo: false
     },
@@ -81,7 +81,22 @@ const products = [
         price: 729,
         stripeCheckoutUrl: 'https://buy.stripe.com/test_9AQbJY8oE4hM3yU4AA',
         folder: 'products/OT16',
-        imageFiles: ['1.JPG','2.JPG','3.JPG','4.JPG','5.JPG','6.JPG','7.JPG','8.JPG','9.JPG','10.JPG','11.JPG','12.JPG','13.jpg','14.jpg','15.jpg','16.jpg','17.jpg','18.JPG','19.JPG','20.JPG','21.JPG','22.JPG','23.JPG','24.jpg','25.jpg'],
+        variants: [
+            {
+                id: 'schwarz',
+                name: 'Schwarz',
+                folder: 'products/OT16/images/Schwarz',
+                coverImage: 'products/OT16/images/Schwarz/1.JPG',
+                imageFiles: ['1.JPG','2.JPG','3.JPG','4.JPG','5.JPG','6.JPG','7.jpg','8.jpg','9.jpg','10.jpg','11.JPG','12.JPG','13.jpg']
+            },
+            {
+                id: 'weiss',
+                name: 'Weiß',
+                folder: 'products/OT16/images/Weiß',
+                coverImage: 'products/OT16/images/Weiß/1.JPG',
+                imageFiles: ['1.JPG','2.JPG','3.JPG','4.JPG','5.JPG','6.JPG','7.JPG','8.jpg','9.jpg','10.JPG','11.JPG','12.JPG','13.JPG']
+            }
+        ],
         hasVideo: false
     }
 ];

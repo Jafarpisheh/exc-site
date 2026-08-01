@@ -600,6 +600,19 @@ function activateDetailTab(targetId) {
     });
 }
 
+function scrollToDetailPanel(panelId) {
+    const targetPanel = document.getElementById(panelId);
+    if (!targetPanel) return;
+
+    const tabSection = document.querySelector('.detail-content-stack');
+    if (tabSection) {
+        tabSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        return;
+    }
+
+    targetPanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
 function setupDetailTabs() {
     const tabs = Array.from(document.querySelectorAll('.detail-tab'));
 
@@ -615,7 +628,7 @@ function setupDetailTabs() {
         inquiryLink.addEventListener('click', (event) => {
             event.preventDefault();
             activateDetailTab('inquiryPanel');
-            window.location.hash = 'inquiryPanel';
+            setTimeout(() => scrollToDetailPanel('inquiryPanel'), 0);
         });
     }
 }
