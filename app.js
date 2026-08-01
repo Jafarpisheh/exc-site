@@ -5,6 +5,7 @@ const products = [
         name: 'C29K E-Mountain',
         description: 'Robustes E-Mountainbike mit starker Reichweite und Gelände-Performance.',
         price: 1199,
+        stripeCheckoutUrl: 'https://buy.stripe.com/test_28o5k9g9C8hM5mY8AA',
         folder: 'products/C29k',
         imageFiles: [
             '1.JPG','2.JPG','3.JPG','4.JPG','5.JPG','6.JPG','7.JPG','8.JPG','9.JPG','10.JPG','11.JPG','12.JPG','13.JPG','14.JPG','15.JPG','16.JPG','17.JPG','18.JPG','19.JPG','20.JPG','21.JPG','22.JPG','23.JPG','24.jpg','25.jpg','26.jpg','27.jpg'
@@ -16,6 +17,7 @@ const products = [
         name: 'OT01 Urban',
         description: 'Vielseitiges E-Bike für tägliche Pendlerfahrten und Entdeckungstouren.',
         price: 1089,
+        stripeCheckoutUrl: 'https://buy.stripe.com/test_5kA3eG5o08hM7iI7AA',
         folder: 'products/OT01',
         imageFiles: [
             '1.jfif','2.JPG','3.JPG','4.JPG','5.JPG','6.JPG','7.JPG','8.JPG','9.JPG','10.JPG','11.JPG','12.JPG','13.JPG','14.JPG','15.JPG','16.JPG','17.JPG','18.JPG','19.JPG','20.jpg','21.jpg','22.jpg','23.jpg','24.jpg','25.jpg','26.jfif','27.jfif','28.jfif','29.jfif','30.jfif','31.jfif','32.jfif','33.jfif','34.jpg','35.jpg','36.jpg'
@@ -27,6 +29,7 @@ const products = [
         name: 'OT02',
         description: 'Moderne E-Bike-Variante mit zwei attraktiven Farboptionen und hochwertiger Ausstattung.',
         price: 599,
+        stripeCheckoutUrl: 'https://buy.stripe.com/test_eVa7vA2xA6hM6iI6AA',
         folder: 'products/OT02',
         variants: [
             {
@@ -51,6 +54,7 @@ const products = [
         name: 'OT12',
         description: 'Stylisches E-Bike mit zwei attraktiven Farbvarianten und hochwertiger Ausstattung.',
         price: 729,
+        stripeCheckoutUrl: 'https://buy.stripe.com/test_dR6dSg7MS6hM5mY6AA',
         folder: 'products/OT12',
         variants: [
             {
@@ -75,6 +79,7 @@ const products = [
         name: 'OT16',
         description: 'Robustes E-Bike mit modernem Design und vielseitiger Alltagstauglichkeit.',
         price: 729,
+        stripeCheckoutUrl: 'https://buy.stripe.com/test_9AQbJY8oE4hM3yU4AA',
         folder: 'products/OT16',
         imageFiles: ['1.JPG','2.JPG','3.JPG','4.JPG','5.JPG','6.JPG','7.JPG','8.JPG','9.JPG','10.JPG','11.JPG','12.JPG','13.jpg','14.jpg','15.jpg','16.jpg','17.jpg','18.JPG','19.JPG','20.JPG','21.JPG','22.JPG','23.JPG','24.jpg','25.jpg'],
         hasVideo: false
@@ -83,6 +88,20 @@ const products = [
 
 function formatPrice(price) {
     return `€${price.toLocaleString('de-DE')}`;
+}
+
+function getProductCheckoutUrl(product) {
+    return (product.stripeCheckoutUrl || '').trim();
+}
+
+function createCheckoutButton(product, extraClass = '') {
+    const checkoutUrl = getProductCheckoutUrl(product);
+    if (!checkoutUrl) {
+        return '';
+    }
+
+    const classes = ['checkout-btn', extraClass].filter(Boolean).join(' ');
+    return `<a href="${checkoutUrl}" class="${classes}" target="_blank" rel="noopener noreferrer">Jetzt kaufen</a>`;
 }
 
 function getProductPreviewImagePath(product) {
@@ -128,6 +147,9 @@ function loadProducts() {
                 <h3>${product.name}</h3>
                 <p>${product.description}</p>
                 <p class="product-card-price">${formatPrice(product.price)}</p>
+                <div class="product-card-actions">
+                    ${createCheckoutButton(product)}
+                </div>
                 <div class="card-specs">
                     ${specsHTML}
                 </div>
@@ -135,6 +157,13 @@ function loadProducts() {
         `;
 
         productsList.appendChild(productCard);
+
+        const buyButton = productCard.querySelector('.checkout-btn');
+        if (buyButton) {
+            buyButton.addEventListener('click', (event) => {
+                event.stopPropagation();
+            });
+        }
     });
 }
 

@@ -8,8 +8,15 @@ let galleryState = {
 
 // Produkt-ID aus der URL lesen
 function getProductIdFromUrl() {
-    const params = new URLSearchParams(window.location.search);
-    return params.get('product');
+    try {
+        const rawSearch = window.location.search || '';
+        const decodedSearch = decodeURIComponent(rawSearch);
+        const params = new URLSearchParams(decodedSearch);
+        return params.get('product');
+    } catch (error) {
+        console.warn('Could not parse product URL:', error);
+        return null;
+    }
 }
 
 // Produktdetails laden
@@ -25,10 +32,16 @@ async function loadProductDetails() {
     galleryState.product = product;
     galleryState.activeVariantId = getInitialVariantId(product);
     
-    // Set product name and price
+    // Set product name, price and supporting copy
     document.getElementById('productName').textContent = product.name;
+    document.getElementById('productBreadcrumb').textContent = product.name;
     document.getElementById('productPrice').textContent = `${formatPrice(product.price)}`;
+    const productDescription = document.getElementById('productDescription');
+    if (productDescription) {
+        productDescription.textContent = product.description || 'Entdecken Sie dieses hochwertige E-Bike mit modernem Design, starker Reichweite und komfortabler Ausstattung.';
+    }
 
+    renderProductActions(product);
     renderVariantButtons(product);
     
     // Bilder und Videos laden
@@ -43,6 +56,21 @@ async function loadProductDetails() {
 
 function getInitialVariantId(product) {
     return product.variants?.length ? product.variants[0].id : null;
+}
+
+function renderProductActions(product) {
+    const container = document.getElementById('productActions');
+    if (!container) return;
+
+    const checkoutUrl = getProductCheckoutUrl(product);
+    if (!checkoutUrl) {
+        container.innerHTML = '';
+        container.style.display = 'none';
+        return;
+    }
+
+    container.style.display = 'flex';
+    container.innerHTML = createCheckoutButton(product, 'checkout-btn--detail');
 }
 
 function renderVariantButtons(product) {
