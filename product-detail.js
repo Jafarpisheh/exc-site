@@ -41,6 +41,8 @@ async function loadProductDetails() {
         productDescription.textContent = product.description || 'Entdecken Sie dieses hochwertige E-Bike mit modernem Design, starker Reichweite und komfortabler Ausstattung.';
     }
 
+    renderLongDescription(product);
+
     renderProductActions(product);
     renderVariantButtons(product);
     
@@ -56,6 +58,24 @@ async function loadProductDetails() {
 
 function getInitialVariantId(product) {
     return product.variants?.length ? product.variants[0].id : null;
+}
+
+function renderLongDescription(product) {
+    const container = document.getElementById('productLongDescription');
+    if (!container) return;
+
+    if (!product.longDescription) {
+        container.style.display = 'none';
+        return;
+    }
+
+    container.style.display = 'block';
+    container.innerHTML = '';
+    product.longDescription.forEach((paragraph) => {
+        const p = document.createElement('p');
+        p.textContent = paragraph;
+        container.appendChild(p);
+    });
 }
 
 function renderProductActions(product) {
@@ -602,19 +622,6 @@ function activateDetailTab(targetId) {
     });
 }
 
-function scrollToDetailPanel(panelId) {
-    const targetPanel = document.getElementById(panelId);
-    if (!targetPanel) return;
-
-    const tabSection = document.querySelector('.detail-content-stack');
-    if (tabSection) {
-        tabSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        return;
-    }
-
-    targetPanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
-}
-
 function setupDetailTabs() {
     const tabs = Array.from(document.querySelectorAll('.detail-tab'));
 
@@ -624,15 +631,6 @@ function setupDetailTabs() {
             activateDetailTab(targetId);
         });
     });
-
-    const inquiryLink = document.querySelector('.secondary-action');
-    if (inquiryLink) {
-        inquiryLink.addEventListener('click', (event) => {
-            event.preventDefault();
-            activateDetailTab('inquiryPanel');
-            setTimeout(() => scrollToDetailPanel('inquiryPanel'), 0);
-        });
-    }
 }
 
 

@@ -4,6 +4,10 @@ const products = [
         id: 'C29k',
         name: 'Duotts C29 - K 750W Doppelbatterie – bis 120km',
         description: 'Robustes E-Mountainbike mit starker Reichweite und Gelände-Performance.',
+        longDescription: [
+            'Das Duotts C29 ist ein kraftvolles E-Mountainbike, das für anspruchsvolles Gelände und lange Touren entwickelt wurde. Mit seiner Doppelbatterie erreichen Sie Reichweiten von bis zu 120 km und sind damit auch für ausgedehnte Ausflüge bestens gerüstet.',
+            'Der starke 750-W-Motor meistert Steigungen mühelos und bringt Sie sicher und schnell ans Ziel. Das robuste Design, die hochwertige Federung und die zuverlässigen Bremsen sorgen für ein stabiles und komfortables Fahrgefühl – ob im Wald, auf Feldwegen oder in der Stadt.'
+        ],
         price: 1049,
         stripeCheckoutUrl: 'https://buy.stripe.com/fZudR18qD0YVfac8mu3oA03',
         folder: 'products/C29k',
@@ -16,6 +20,10 @@ const products = [
         id: 'OT01',
         name: 'ONESPORT OT01 Elektrofahrrad Faltrad',
         description: 'Vielseitiges E-Bike für tägliche Pendlerfahrten und Entdeckungstouren.',
+        longDescription: [
+            'Das ONESPORT OT01 ist das ideale E-Bike für den Alltag. Als faltbares Elektrofahrrad passt es problemlos in den Kofferraum, unter den Schreibtisch oder in öffentliche Verkehrsmittel – perfekt für Pendler und Stadtentdecker.',
+            'Mit einer Reichweite von bis zu 120 km und einem starken 500-W-Motor sind Sie flexibel unterwegs, ganz ohne Reichweitenangst. Die hochwertige Ausstattung und die kompakte Bauweise machen das OT01 zu einem zuverlässigen Begleiter für jeden Tag.'
+        ],
         price: 999,
         stripeCheckoutUrl: 'https://buy.stripe.com/aFa6oz5er0YV2nqcCK3oA02',
         folder: 'products/OT01',
@@ -28,6 +36,10 @@ const products = [
         id: 'OT02',
         name: 'ONESPORT E-Bike Cityrad OT02',
         description: 'Moderne E-Bike-Variante mit zwei attraktiven Farboptionen und hochwertiger Ausstattung.',
+        longDescription: [
+            'Das ONESPORT Cityrad OT02 kombiniert modernes Design mit durchdachter Technik. Erhältlich in zwei attraktiven Farbvarianten, passt es sich perfekt Ihrem persönlichen Stil an.',
+            'Der leistungsstarke 500-W-Mittelmotor und die große Batterie mit bis zu 110 km Reichweite machen das OT02 zum idealen Begleiter für die Stadt und darüber hinaus. Komfortable Federung und hydraulische Scheibenbremsen sorgen für sicheres und angenehmes Fahren auf jeder Strecke.'
+        ],
         price: 599,
         stripeCheckoutUrl: 'https://buy.stripe.com/8x2dR1eP1cHD4vyeKS3oA05',
         folder: 'products/OT02',
@@ -55,6 +67,10 @@ const products = [
         id: 'OT12',
         name: 'Onesport OT12 Urban',
         description: 'Stylisches E-Bike mit zwei attraktiven Farbvarianten und hochwertiger Ausstattung.',
+        longDescription: [
+            'Das Onesport OT12 Urban ist ein stilvolles E-Bike für alle, die Wert auf Design und Komfort legen. In elegantem Schwarz oder strahlendem Weiß erhältlich, setzt es in der Stadt ein klares Statement.',
+            'Mit seinem leistungsstarken 500-W-Mittelmotor, der 720-Wh-Batterie und einer Reichweite von bis zu 100 km sind Sie für jeden Weg gerüstet. Das TFT-Farbdisplay hält Sie über alle wichtigen Fahrdaten auf dem Laufenden.'
+        ],
         price: 729,
         stripeCheckoutUrl: 'https://buy.stripe.com/4gM6oz8qDePL3ruauC3oA06',
         folder: 'products/OT12',
@@ -82,6 +98,10 @@ const products = [
         id: 'OT16',
         name: 'Onesport OT16 Faltbar',
         description: 'Robustes E-Bike mit modernem Design und vielseitiger Alltagstauglichkeit.',
+        longDescription: [
+            'Das Onesport OT16 Faltbar vereint Robustheit, modernes Design und maximale Flexibilität. Durch die Faltkonstruktion lässt es sich platzsparend verstauen und überallhin mitnehmen – ob im Auto, im Zug oder im Büro.',
+            'Der kräftige 500-W-Mittelmotor und die 700-Wh-Batterie ermöglichen Reichweiten von bis zu 95 km. Dank komfortabler Federung und hochwertiger Komponenten genießen Sie auf jeder Fahrt ein angenehmes und sicheres Fahrerlebnis.'
+        ],
         price: 729,
         stripeCheckoutUrl: 'https://buy.stripe.com/cNi8wH7mz373gegdGO3oA08',
         folder: 'products/OT16',

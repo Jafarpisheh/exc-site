@@ -583,22 +583,17 @@ body {
     line-height: 1.6;
 }
 
-.secondary-action {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 12px;
-    padding: 10px 14px;
-    border-radius: 999px;
-    background: #ffffff;
-    border: 1px solid #007185;
-    color: #007185;
-    font-weight: 700;
-    text-decoration: none;
+.product-long-description {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
-.secondary-action:hover {
-    background: #f0f2f2;
+.product-long-description p {
+    color: #565959;
+    font-size: 14px;
+    line-height: 1.7;
+    margin: 0;
 }
 
 .detail-content-stack {
