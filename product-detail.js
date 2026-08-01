@@ -34,7 +34,6 @@ async function loadProductDetails() {
     
     // Set product name, price and supporting copy
     document.getElementById('productName').textContent = product.name;
-    document.getElementById('productBreadcrumb').textContent = product.name;
     document.getElementById('productPrice').textContent = `${formatPrice(product.price)}`;
     const productDescription = document.getElementById('productDescription');
     if (productDescription) {
