@@ -42,6 +42,8 @@ async function loadProductDetails() {
 
     renderLongDescription(product);
 
+    renderDeliveryEstimate();
+
     renderProductActions(product);
     renderVariantButtons(product);
     
@@ -69,6 +71,33 @@ function renderProductPrice(product) {
     if (priceElement) {
         priceElement.textContent = `${formatPrice(getActiveVariantPrice(product))}`;
     }
+}
+
+function addWorkingDays(startDate, workingDays) {
+    const date = new Date(startDate);
+    let added = 0;
+    while (added < workingDays) {
+        date.setDate(date.getDate() + 1);
+        const day = date.getDay();
+        if (day !== 0 && day !== 6) {
+            added++;
+        }
+    }
+    return date;
+}
+
+function formatDeliveryDate(date) {
+    return date.toLocaleDateString('de-DE', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
+}
+
+function renderDeliveryEstimate() {
+    const container = document.getElementById('productDeliveryInfo');
+    if (!container) return;
+
+    const earliest = addWorkingDays(new Date(), 5);
+    const latest = addWorkingDays(new Date(), 7);
+
+    container.textContent = `Kostenlose Lieferung voraussichtlich zwischen ${formatDeliveryDate(earliest)} und ${formatDeliveryDate(latest)}.`;
 }
 
 function renderLongDescription(product) {

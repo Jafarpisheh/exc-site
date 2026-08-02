@@ -613,7 +613,8 @@ function createProductCard(product) {
         <div class="product-card-content">
             <h3>${product.name}</h3>
             <p>${product.description}</p>
-            <p class="product-card-price">${formatPrice(product.price)}</p>
+            <p class="product-card-price">${formatPrice(product.price)} <span class="product-card-vat-note">(MwSt-befreit)</span></p>
+            <p class="product-card-shipping-note">Kostenloser Versand</p>
             <div class="product-card-actions">
                 ${createCheckoutButton(product)}
             </div>
