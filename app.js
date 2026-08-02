@@ -29,10 +29,10 @@ const products = [
         motorW: 250,
         battery: '36V 13Ah',
         name: 'Duotts C29 Lite E-Bike 250W',
-        description: 'Zuverlässiges und alltagstaugliches E-Bike mit 250-W-Motor, Shimano-7-Gang-Schaltung und komfortablen 27,5-Zoll-Reifen – ideal für Pendler und Freizeitfahrer.',
+        description: 'Zuverlässiges und alltagstaugliches E-Bike mit 250-W-Motor, mechanischen Scheibenbremsen und komfortablen 27,5-Zoll-Reifen – ideal für Pendler und Freizeitfahrer.',
         longDescription: [
             'Das Duotts C29 Lite ist ein zuverlässiges und alltagstaugliches E-Bike, das speziell für Pendler und Freizeitfahrer entwickelt wurde. Mit seinem effizienten 250-W-Motor und der 36-V-13-Ah-Batterie erreichen Sie eine Reichweite von bis zu 65 km – ideal für den Weg zur Arbeit oder entspannte Ausflüge.',
-            'Die Shimano-7-Gang-Schaltung, die mechanischen Scheibenbremsen vorne und hinten sowie die komfortablen 27,5 x 2,25 Zoll großen Reifen sorgen für ein stabiles und sicheres Fahrgefühl. Der robuste Stahlrahmen und das 3-Tasten-Multifunktions-Farbdisplay machen das C29 Lite zu einem einfachen und zuverlässigen Begleiter im Alltag.'
+            'Die mechanischen Scheibenbremsen vorne und hinten, die Frontgabel-Federung sowie die komfortablen 27,5 x 2,25 Zoll großen Reifen sorgen für ein stabiles und sicheres Fahrgefühl. Der robuste Stahlrahmen und der Geschwindigkeitssensor machen das C29 Lite zu einem einfachen und zuverlässigen Begleiter im Alltag.'
         ],
         price: 749,
         stripeCheckoutUrl: 'https://buy.stripe.com/28EbITbCPcHD4vyeKS3oA0c',
@@ -48,10 +48,10 @@ const products = [
         motorW: 750,
         battery: '48V 15Ah',
         name: 'Duotts C29L E-Bike 750W',
-        description: 'Kräftiges E-Bike mit 750-W-Motor, Shimano-21-Gang-Schaltung und hydraulischen Scheibenbremsen – für lange Touren und den täglichen Einsatz.',
+        description: 'Kräftiges E-Bike mit 750-W-Motor, hydraulischen Scheibenbremsen und 48-V-15-Ah-Akku – für lange Touren und den täglichen Einsatz.',
         longDescription: [
-            'Das Duotts C29L ist ein kraftvolles E-Bike für alle, die hohe Leistung und Zuverlässigkeit schätzen. Der starke 750-W-Motor und die 48-V-15-Ah-Batterie mit hochwertigen 18650-Zellen ermöglichen Reichweiten von bis zu 100 km – perfekt für lange Touren und den täglichen Einsatz.',
-            'Die Shimano-21-Gang-Schaltung, die hydraulischen Scheibenbremsen und der robuste Aluminiumrahmen sorgen für ein stabiles und komfortables Fahrerlebnis. Mit Gepäckträger, Rücklicht, Frontfederung und App-Anbindung ist das C29L ein vielseitiger Begleiter für jede Fahrt.'
+            'Das Duotts C29L ist ein kraftvolles E-Bike für alle, die hohe Leistung und Zuverlässigkeit schätzen. Der starke 750-W-Motor und die 48-V-15-Ah-Batterie ermöglichen Reichweiten von 80 bis 100 km – perfekt für lange Touren und den täglichen Einsatz.',
+            'Die hydraulischen Scheibenbremsen, die Frontfederung und der robuste Aluminiumrahmen sorgen für ein stabiles und komfortables Fahrerlebnis. Mit bis zu 52 km/h (auf 25 km/h begrenzt) und App-Anbindung ist das C29L ein vielseitiger Begleiter für jede Fahrt.'
         ],
         price: 859,
         stripeCheckoutUrl: 'https://buy.stripe.com/fZu14f0Yb8rne687iq3oA0d',
@@ -130,7 +130,7 @@ const products = [
             },
             {
                 id: 'rot',
-                name: 'Röt',
+                name: 'Rot',
                 folder: 'products/OT02/images/Röt',
                 coverImage: 'products/OT02/images/Röt/1.JPG',
                 stripeCheckoutUrl: 'https://buy.stripe.com/fZubITfT54b7geg0U23oA04',
@@ -150,7 +150,7 @@ const products = [
         description: 'Stylisches E-Bike mit zwei attraktiven Farbvarianten und hochwertiger Ausstattung.',
         longDescription: [
             'Das Onesport OT12 Urban ist ein stilvolles E-Bike für alle, die Wert auf Design und Komfort legen. In elegantem Schwarz oder strahlendem Weiß erhältlich, setzt es in der Stadt ein klares Statement.',
-            'Mit seinem effizienten 250-W-Motor, der 36-V-Batterie und einer Reichweite von bis zu 100 km sind Sie für jeden Weg gerüstet. Das TFT-Farbdisplay hält Sie über alle wichtigen Fahrdaten auf dem Laufenden.'
+            'Mit seinem effizienten 250-W-Motor, der 36-V-Batterie und einer Reichweite von bis zu 100 km sind Sie für jeden Weg gerüstet. Die mechanischen Scheibenbremsen und die Frontgabel-Federung sorgen für ein stabiles und sicheres Fahrgefühl.'
         ],
         price: 729,
         stripeCheckoutUrl: 'https://buy.stripe.com/4gM6oz8qDePL3ruauC3oA06',
@@ -219,10 +219,10 @@ const products = [
         motorW: 500,
         battery: '48V 18Ah',
         name: 'Onesport W77 E-Bike im Moto-Style',
-        description: 'Moto-Style E-Bike mit Fat-Tire-Reifen, starkem Motor und komfortabler Doppelfederung.',
+        description: 'Moto-Style E-Bike mit Fat-Tire-Reifen, starkem Motor und komfortabler Frontfederung.',
         longDescription: [
-            'Das Onesport W77 ist ein auffälliges E-Bike im Moto-Style mit markantem Retro-Design und breiten 20 x 4,0 Zoll Fat-Tire-Reifen. Der kraftvolle 250-W-Motor (Spitzenleistung 500 W) und die 48-V-18-Ah-Batterie bringen Sie mit einer Reichweite von bis zu 90 km sicher ans Ziel.',
-            'Die hydraulischen Scheibenbremsen, die Doppelfederung und die Shimano-7-Gang-Schaltung sorgen für ein komfortables und sicheres Fahrerlebnis. Das 3,5-Zoll-LCD-Display mit Bluetooth-Funktion hält Sie dabei über alle wichtigen Fahrdaten auf dem Laufenden.'
+            'Das Onesport W77 ist ein auffälliges E-Bike im Moto-Style mit markantem Retro-Design und breiten 20 x 4,0 Zoll Fat-Tire-Reifen. Der kraftvolle 500-W-Motor und die 48-V-18-Ah-Batterie bringen Sie mit einer Reichweite von bis zu 90 km sicher ans Ziel.',
+            'Die hydraulischen Scheibenbremsen und die Frontgabel-Federung sorgen für ein komfortables und sicheres Fahrerlebnis. Mit der Smart-Connection-App hält Sie das W77 über alle wichtigen Fahrdaten auf dem Laufenden.'
         ],
         price: 999,
         folder: 'products/W77',
@@ -243,7 +243,7 @@ const products = [
         description: 'Leistungsstarkes E-Bike mit Dual-Batterie-System, Vollfederung und Fat-Tire-Reifen – für Gelände und lange Touren.',
         longDescription: [
             'Das Onesport OT08 Pro ist ein kraftvolles Full-Suspension E-Bike im markanten Fat-Tire-Design. Das Dual-Batterie-System (2 x 48V 18Ah) ermöglicht Reichweiten von bis zu 190 km und macht das Bike zum idealen Begleiter für lange Touren und anspruchsvolles Gelände.',
-            'Der starke 250-W-Motor (Spitzenleistung 500 W) liefert bis zu 65 N·m Drehmoment und meistert Steigungen von bis zu 30° mühelos. Die hydraulischen Scheibenbremsen, die Shimano-7-Gang-Schaltung und die Vollfederung sorgen für ein komfortables und sicheres Fahrerlebnis – ob in der Stadt, auf Trails oder im Gelände.'
+            'Der starke 500-W-Motor liefert bis zu 65 N·m Drehmoment und meistert Steigungen von bis zu 30° mühelos. Die hydraulischen Scheibenbremsen und die Doppelfederung sorgen für ein komfortables und sicheres Fahrerlebnis – ob in der Stadt, auf Trails oder im Gelände.'
         ],
         price: 1429,
         outOfStock: true,
@@ -276,13 +276,13 @@ const products = [
         brand: 'Duotts',
         category: ['mountain', 'moto'],
         rangeKm: 140,
-        motorW: 250,
+        motorW: 750,
         battery: '52V 27Ah',
         name: 'Duotts F20 Full-Suspension E-Bike im Retro-Style',
         description: 'Retro Full-Suspension E-Bike mit Fat-Tire-Reifen, 52-V-27-Ah-Akku und Reichweiten von bis zu 140 km.',
         longDescription: [
-            'Das Duotts F20 ist ein auffälliges Full-Suspension E-Bike im Retro-Stil, das klassisches Design mit moderner E-Bike-Technologie verbindet. Der kraftvolle 52-V-Motor und die 52-V-27-Ah-Batterie mit hochwertigen Zellen ermöglichen Reichweiten von bis zu 140 km – ideal für lange Touren und anspruchsvolles Gelände.',
-            'Die hydraulischen Scheibenbremsen, die Vollfederung und die breiten 20 x 4,0 Zoll Fat-Tire-Reifen sorgen für ein komfortables und sicheres Fahrerlebnis. Das 4,5-Zoll-HD-LCD-Display mit Bluetooth-Anbindung an die Duotts-App hält Sie dabei über alle wichtigen Fahrdaten auf dem Laufenden.'
+            'Das Duotts F20 ist ein auffälliges Full-Suspension E-Bike im Retro-Stil, das klassisches Design mit moderner E-Bike-Technologie verbindet. Der kraftvolle 750-W-Motor und die 52-V-27-Ah-Batterie ermöglichen Reichweiten von 130 bis 140 km – ideal für lange Touren und anspruchsvolles Gelände.',
+            'Die hydraulischen ZooM-Scheibenbremsen, die Vollfederung und die breiten 20 x 4,0 Zoll Fat-Tire-Reifen sorgen für ein komfortables und sicheres Fahrerlebnis. Mit bis zu 40 km/h (auf 25 km/h begrenzt) und der Smart-Connection-App hält Sie das F20 über alle wichtigen Fahrdaten auf dem Laufenden.'
         ],
         price: 1169,
         stripeCheckoutUrl: 'https://buy.stripe.com/28E3cnfT522Z5zCeKS3oA0f',
@@ -297,11 +297,11 @@ const products = [
         rangeKm: 90,
         motorW: 500,
         battery: '48V 18Ah',
-        name: 'Duotts F26Lite Fat-Tire E-Bike 750W',
-        description: 'Vielseitiges Fat-Tire E-Bike mit 500-W-Motor (750 W Peak), integriertem 48-V-18-Ah-Akku und 26 x 4,0 Zoll Reifen – für Stadt und Gelände.',
+        name: 'Duotts F26Lite Fat-Tire E-Bike',
+        description: 'Vielseitiges Fat-Tire E-Bike mit 500-W-Motor, integriertem 48-V-18-Ah-Akku und 26 x 4,0 Zoll Reifen – für Stadt und Gelände.',
         longDescription: [
-            'Das Duotts F26Lite ist ein vielseitiges Fat-Tire E-Bike, das urbane Pendelfahrten und Offroad-Abenteuer vereint. Der integrierte 48-V-18-Ah-Akku fügt sich nahtlos in den Aluminiumrahmen ein und ermöglicht mit dem 500-W-Hecknabenmotor (Spitzenleistung 750 W, 65 N·m) Reichweiten von bis zu 90 km mit Pedalunterstützung.',
-            'Die breiten 26 x 4,0 Zoll Fat-Reifen, die hydraulischen Scheibenbremsen, die Frontfederung und die Shimano-7-Gang-Schaltung sorgen für Komfort und Sicherheit auf jedem Untergrund. Das LCD-Display mit Bluetooth-Anbindung an die Duotts-App, integrierte Lichter und der praktische Gepäckträger machen das F26Lite zum idealen Begleiter für jeden Tag.'
+            'Das Duotts F26Lite ist ein vielseitiges Fat-Tire E-Bike, das urbane Pendelfahrten und Offroad-Abenteuer vereint. Der integrierte 48-V-18-Ah-Akku fügt sich nahtlos in den Aluminiumrahmen ein und ermöglicht mit dem 500-W-Motor (65 N·m) Reichweiten von 80 bis 90 km mit Pedalunterstützung.',
+            'Die breiten 26 x 4,0 Zoll Fat-Reifen, die hydraulischen Scheibenbremsen und die Frontgabel-Federung sorgen für Komfort und Sicherheit auf jedem Untergrund. Mit bis zu 50 km/h (auf 25 km/h begrenzt), dem Geschwindigkeitssensor und der Smart-Connection-App für alle wichtigen Fahrdaten ist das F26Lite ein idealer Begleiter für jeden Tag.'
         ],
         price: 1149,
         stripeCheckoutUrl: 'https://buy.stripe.com/28EcMX4an4b74vy9qy3oA0i',
@@ -309,7 +309,7 @@ const products = [
         variants: [
             {
                 id: 'schwarz',
-                name: 'Schwarz',
+                name: 'Schwarz-Rot',
                 price: 1149,
                 folder: 'products/F26Lite/images/Schwarz',
                 coverImage: 'products/F26Lite/images/Schwarz/1.jpg',
@@ -318,7 +318,7 @@ const products = [
             },
             {
                 id: 'silber',
-                name: 'Silber',
+                name: 'Silber-Weiß',
                 price: 1149,
                 folder: 'products/F26Lite/images/Silber',
                 coverImage: 'products/F26Lite/images/Silber/1.jpg',
@@ -333,13 +333,13 @@ const products = [
         brand: 'Duotts',
         category: ['mountain', 'moto'],
         rangeKm: 120,
-        motorW: 500,
+        motorW: 1500,
         battery: '48V 20Ah',
         name: 'Duotts N26 Dual-Motor E-Bike',
-        description: 'Leistungsstarkes Dual-Motor E-Bike mit Vollfederung, Fat-Tire-Reifen und 48-V-20-Ah-Akku – für maximale Traktion und Reichweiten von bis zu 120 km.',
+        description: 'Leistungsstarkes Dual-Motor E-Bike mit Vollfederung, Fat-Tire-Reifen und 48-V-20-Ah-Samsung-Akku – für maximale Traktion und Reichweiten von bis zu 120 km.',
         longDescription: [
-            'Das Duotts N26 ist ein kraftvolles E-Bike mit Dual-Motor-Antrieb (Vorder- und Hinterrad), das maximale Traktion und Durchsetzungskraft auf jedem Untergrund bietet. Mit dem 48-V-20-Ah-Akku mit Samsung-Zellen erreichen Sie Reichweiten von bis zu 120 km mit Pedalunterstützung – ideal für lange Touren und anspruchsvolles Gelände.',
-            'Die Vollfederung, die hydraulischen Scheibenbremsen, die breiten 26 x 4,0 Zoll Fat-Tire-Reifen und die Shimano-7-Gang-Schaltung sorgen für ein komfortables und sicheres Fahrerlebnis. Das 4,5-Zoll-HD-LCD-Display mit Bluetooth-Anbindung an die Duotts-App und die Wahl zwischen Single- und Dual-Drive-Modus machen das N26 zum vielseitigen Begleiter für Stadt und Offroad.'
+            'Das Duotts N26 ist ein kraftvolles E-Bike mit Dual-Motor-Antrieb (2x 750 W, 65 N·m pro Motor), das maximale Traktion und Durchsetzungskraft auf jedem Untergrund bietet. Mit dem 48-V-20-Ah-Akku mit Samsung-Lithium-Zellen erreichen Sie Reichweiten von 100 bis 120 km mit Pedalunterstützung – ideal für lange Touren und anspruchsvolles Gelände.',
+            'Die Vollfederung, die hydraulischen ZooM-Scheibenbremsen, die breiten 26 x 4,0 Zoll Fat-Tire-Reifen und der Geschwindigkeitssensor sorgen für ein komfortables und sicheres Fahrerlebnis. Mit bis zu 45 km/h (auf 25 km/h begrenzt) und der Smart-Connection-App für alle wichtigen Fahrdaten ist das N26 ein vielseitiger Begleiter für Stadt und Offroad.'
         ],
         price: 1299,
         stripeCheckoutUrl: 'https://buy.stripe.com/3cI3cnayL5fb7HK8mu3oA0k',
@@ -348,7 +348,7 @@ const products = [
         variants: [
             {
                 id: 'rot',
-                name: 'Rot',
+                name: 'Schwarz-Rot',
                 price: 1299,
                 folder: 'products/N26/images/Rot',
                 coverImage: 'products/N26/images/Rot/1.jpg',
@@ -407,7 +407,7 @@ const products = [
         variants: [
             {
                 id: 'blau',
-                name: 'Blau',
+                name: 'Blau-Lila',
                 price: 1999,
                 folder: 'products/E26/images/Blau',
                 coverImage: 'products/E26/images/Blau/1.jpg',
@@ -416,7 +416,7 @@ const products = [
             },
             {
                 id: 'gruen',
-                name: 'Grün',
+                name: 'Grün-Lila',
                 price: 1999,
                 folder: 'products/E26/images/Grün',
                 coverImage: 'products/E26/images/Grün/1.jpg',
