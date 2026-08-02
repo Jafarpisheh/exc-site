@@ -425,6 +425,50 @@ const products = [
             }
         ],
         hasVideo: false
+    },
+    {
+        id: 'C29Pro',
+        brand: 'Duotts',
+        category: ['city'],
+        rangeKm: 70,
+        motorW: 750,
+        battery: '48V 15Ah',
+        name: 'Duotts C29 Pro E-Bike 750W',
+        description: 'Vielseitiges E-Bike mit 750-W-Motor, Shimano-Tourney-3×7-Gang-Schaltung und 48-V-15-Ah-Akku – optional mit Doppelbatterie für Reichweiten von bis zu 170 km.',
+        longDescription: [
+            'Das Duotts C29 Pro ist ein vielseitiges E-Bike, das Leistung und Alltagstauglichkeit vereint. Der 750-W-Motor mit 65 N·m Drehmoment, die Shimano-Tourney-3×7-Gang-Schaltung und der 48-V-15-Ah-Akku ermöglichen Reichweiten von bis zu 70 km mit Pedalunterstützung – ideal für den täglichen Einsatz und längere Touren.',
+            'Optional ist das C29 Pro auch mit Dual-Batterie-System (2x 48V 15Ah) erhältlich, das Reichweiten von bis zu 170 km ermöglicht. Das 2,4-Zoll-HD-Display mit Bluetooth-Anbindung an die Duotts-App, die Scheibenbremsen und die 29-Zoll-Reifen sorgen für ein komfortables und sicheres Fahrerlebnis.'
+        ],
+        price: 799,
+        stripeCheckoutUrl: 'https://buy.stripe.com/aFacMXfT5373bY00U23oA0p',
+        folder: 'products/C29Pro',
+        coverImage: 'products/C29Pro/images/1.jpg',
+        imageFiles: ['1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','6.jpg','7.jpg','8.jpg','9.jpg','10.jpg','11.jpg','12.jpg','13.jpg','14.jpg','15.jpg','16.jpg','17.jpg','18.jpg','19.jpg','20.jpg','21.jpg','22.jpg','23.jpg','24.jpg','25.jpg','26.jpg','27.jpg','28.jpg','29.jpg','30.jpg','31.jpg','32.jpg'],
+        variants: [
+            {
+                id: 'standard',
+                name: 'Standard',
+                price: 799,
+                folder: 'products/C29Pro/images',
+                coverImage: 'products/C29Pro/images/1.jpg',
+                stripeCheckoutUrl: 'https://buy.stripe.com/aFacMXfT5373bY00U23oA0p',
+                imageFiles: ['1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','6.jpg','7.jpg','8.jpg','9.jpg','10.jpg','11.jpg','12.jpg','13.jpg','14.jpg','15.jpg','16.jpg','17.jpg','18.jpg','19.jpg','20.jpg','21.jpg','22.jpg','23.jpg','24.jpg','25.jpg','26.jpg','27.jpg','28.jpg','29.jpg','30.jpg','31.jpg','32.jpg']
+            },
+            {
+                id: 'doppelt-batterien',
+                name: 'Doppelt-Batterien',
+                price: 1039,
+                folder: 'products/C29Pro/images',
+                coverImage: 'products/C29Pro/images/1.jpg',
+                stripeCheckoutUrl: 'https://buy.stripe.com/6oUcMX5er22Z3ru0U23oA0o',
+                imageFiles: ['1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','6.jpg','7.jpg','8.jpg','9.jpg','10.jpg','11.jpg','12.jpg','13.jpg','14.jpg','15.jpg','16.jpg','17.jpg','18.jpg','19.jpg','20.jpg','21.jpg','22.jpg','23.jpg','24.jpg','25.jpg','26.jpg','27.jpg','28.jpg','29.jpg','30.jpg','31.jpg','32.jpg'],
+                specOverrides: {
+                    'Akku': '2x 48V 15Ah (18650-Zellen, Dual-Batterie)',
+                    'Reichweite': '90–100 km (reiner Elektromodus) / 150–170 km (mit Pedalunterstützung)'
+                }
+            }
+        ],
+        hasVideo: false
     }
 ];
 

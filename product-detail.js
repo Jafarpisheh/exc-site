@@ -747,6 +747,28 @@ function getBasicSpecs(product) {
         specs['Display'] = '4,5 Zoll HD-LCD-Display';
         specs['Konnektivität'] = 'Bluetooth (Duotts App)';
         specs['Wasserdicht'] = 'IPX4';
+    } else if (product.id === 'S26Pro') {
+        specs['Modell'] = 'S26 Pro';
+        specs['Typ'] = 'Full-Suspension Dual-Motor E-Bike';
+        specs['Reichweite'] = '100–120 km (mit Pedalunterstützung)';
+        specs['Motor'] = 'Dual-Motor 2x 48V 750 W (65 N·m)';
+        specs['Akku'] = '48V 20Ah (Samsung-Lithium-Akku)';
+        specs['Max. Geschwindigkeit'] = '25 km/h (begrenzt, max. 55 km/h)';
+        specs['Sensor'] = 'Geschwindigkeitssensor';
+        specs['Ladezeit'] = '6–7 Stunden';
+        specs['Ladegerät'] = '54,6V 3A';
+        specs['Rahmen'] = 'Aluminiumlegierung (nicht faltbar)';
+        specs['Bremsen'] = 'Hydraulische Scheibenbremsen';
+        specs['Federung'] = 'Vollfederung (Vorder- und Hinterrad)';
+        specs['Reifen'] = '26 x 4,0 Zoll Fat-Tire';
+        specs['Zuladung'] = '150 kg';
+        specs['Gewicht'] = 'Netto 39,8 kg / Brutto 51,15 kg';
+        specs['Maße (Produkt)'] = '1930 x 720 x 1120 mm';
+        specs['Maße (Verpackung)'] = '1550 x 340 x 830 mm';
+        specs['Steigfähigkeit'] = 'Max. 30°';
+        specs['Farbe'] = 'Schwarz-Rot';
+        specs['Konnektivität'] = 'Smart Connection (App)';
+        specs['Wasserdicht'] = 'IPX4';
     } else if (product.id === 'E26') {
         specs['Modell'] = 'E26';
         specs['Typ'] = 'E-Mountainbike';
@@ -766,6 +788,20 @@ function getBasicSpecs(product) {
         specs['Steigfähigkeit'] = 'Max. 30°';
         specs['Konnektivität'] = 'Smart Connection (App)';
         specs['Wasserdicht'] = 'IPX4';
+    } else if (product.id === 'C29Pro') {
+        specs['Modell'] = 'C29 Pro';
+        specs['Typ'] = 'E-Bike';
+        specs['Reichweite'] = '30–40 km (reiner Elektromodus) / 60–70 km (mit Pedalunterstützung)';
+        specs['Motor'] = '48V 750 W (65 N·m)';
+        specs['Akku'] = '48V 15Ah';
+        specs['Max. Geschwindigkeit'] = '25 km/h (begrenzt, max. 48–52 km/h)';
+        specs['Rahmen'] = 'Aluminiumrahmen';
+        specs['Schaltung'] = 'Shimano Tourney 3×7-Gang';
+        specs['Bremsen'] = 'Scheibenbremsen';
+        specs['Sensor'] = 'Geschwindigkeitssensor';
+        specs['Display'] = '2,4 Zoll HD-Display mit Bluetooth';
+        specs['Reifen'] = '29 Zoll';
+        specs['Konnektivität'] = 'Bluetooth (Duotts App)';
     }
     
     if (product.outOfStock) {
