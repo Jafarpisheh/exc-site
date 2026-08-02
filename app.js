@@ -4,14 +4,14 @@ const products = [
         id: 'C29k',
         brand: 'Duotts',
         category: ['mountain'],
-        rangeKm: 90,
-        motorW: 500,
-        battery: '48V 18Ah',
+        rangeKm: 170,
+        motorW: 750,
+        battery: '48V 15Ah + 22,5Ah',
         name: 'Duotts C29 - K 750W Doppelbatterie',
         description: 'Robustes E-Mountainbike mit starker Reichweite und Gelände-Performance.',
         longDescription: [
-            'Das Duotts C29 ist ein kraftvolles E-Mountainbike, das für anspruchsvolles Gelände und lange Touren entwickelt wurde. Mit seiner leistungsstarken Batterie erreichen Sie Reichweiten von bis zu 90 km und sind damit auch für ausgedehnte Ausflüge bestens gerüstet.',
-            'Der starke 500-W-Motor meistert Steigungen mühelos und bringt Sie sicher und schnell ans Ziel. Das robuste Design, die hochwertige Federung und die zuverlässigen Bremsen sorgen für ein stabiles und komfortables Fahrgefühl – ob im Wald, auf Feldwegen oder in der Stadt.'
+            'Das Duotts C29 ist ein kraftvolles E-Mountainbike, das für anspruchsvolles Gelände und lange Touren entwickelt wurde. Mit seiner leistungsstarken Doppelbatterie erreichen Sie Reichweiten von 150 bis 170 km und sind damit auch für ausgedehnte Ausflüge bestens gerüstet.',
+            'Der starke 750-W-Motor meistert Steigungen von bis zu 30° mühelos und bringt Sie sicher und schnell ans Ziel. Das robuste Design, die hochwertige Federung und die zuverlässigen Bremsen sorgen für ein stabiles und komfortables Fahrgefühl – ob im Wald, auf Feldwegen oder in der Stadt.'
         ],
         price: 1199,
         stripeCheckoutUrl: 'https://buy.stripe.com/00w3cncGTfTPgegfOW3oA0g',

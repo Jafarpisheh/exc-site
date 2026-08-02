@@ -585,20 +585,24 @@ function getBasicSpecs(product) {
     if (product.id === 'C29k') {
         specs['Modell'] = 'C29 K';
         specs['Typ'] = 'E-Mountainbike';
-        specs['Reichweite'] = 'Bis 90 km';
-        specs['Motor'] = '500 W (65 N·m)';
-        specs['Akku'] = '48V 18Ah';
-        specs['Max. Geschwindigkeit'] = '25 km/h';
-        specs['Ladezeit'] = '8–9 Stunden';
+        specs['Reichweite'] = '150–170 km';
+        specs['Motor'] = '48V 750 W (65 N·m)';
+        specs['Akku'] = '48V 15Ah (18650 Zellen) + 48V 22,5Ah Gepäckträgerbatterie (Doppelbatterie)';
+        specs['Max. Geschwindigkeit'] = '50 km/h (auf 25 km/h begrenzt)';
+        specs['Ladezeit'] = '6–8 Stunden';
+        specs['Ladegerät'] = '54,6V 2A + 54,6V 3A';
         specs['Rahmen'] = 'Aluminiumrahmen (nicht faltbar)';
-        specs['Schaltung'] = '7-Gang-Schaltung';
+        specs['Federung'] = 'Vorderrad-Federgabel';
         specs['Bremsen'] = 'Hydraulische Scheibenbremsen';
-        specs['Federung'] = 'Vorderradfederung';
-        specs['Reifen'] = '29 x 2,1 Zoll';
+        specs['Sensor'] = 'Geschwindigkeitssensor';
+        specs['Reifen'] = '29 x 2,125 Zoll';
         specs['Zuladung'] = '150 kg';
-        specs['Gewicht'] = 'Netto 29,25 kg';
-        specs['Display'] = 'Integriertes LCD-Display';
-        specs['Konnektivität'] = 'Bluetooth-fähig';
+        specs['Gewicht'] = 'Netto 32,5 kg / Brutto 40 kg';
+        specs['Wasserdicht'] = 'IPX4';
+        specs['Farbe'] = 'Schwarz-Blau';
+        specs['Konnektivität'] = 'App (Smart Connection)';
+        specs['Abmessungen (L x B x H)'] = '1860 x 1080 x 680 mm';
+        specs['Verpackungsmaße'] = '1480 x 240 x 790 mm';
     } else if (product.id === 'C29Lite') {
         specs['Modell'] = 'C29 Lite';
         specs['Typ'] = 'E-Urbanbike';
