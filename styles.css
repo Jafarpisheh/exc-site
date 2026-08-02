@@ -858,6 +858,15 @@ body {
     font-size: 14px;
 }
 
+.highlight-link {
+    color: var(--color-dark-blue);
+    text-decoration: underline;
+}
+
+.highlight-link:hover {
+    text-decoration: none;
+}
+
 .detail-side-card {
     padding: 0;
     background: transparent;
@@ -1395,6 +1404,40 @@ body {
 
 .legal-notice strong {
     color: #9a3412;
+}
+
+.legal-card .table-wrapper {
+    overflow-x: auto;
+    margin: 12px 0;
+}
+
+.legal-card table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.legal-card th,
+.legal-card td {
+    border: 1px solid #e5e7eb;
+    padding: 10px 12px;
+    text-align: left;
+    vertical-align: top;
+}
+
+.legal-card th {
+    background-color: var(--color-dark-blue);
+    color: var(--color-white);
+    font-weight: 600;
+}
+
+.legal-card tbody tr:nth-child(even) {
+    background-color: #f9fafb;
+}
+
+.legal-card table code,
+.legal-card table a {
+    color: var(--color-dark-blue);
 }
 
 .legal-placeholder {

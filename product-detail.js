@@ -611,7 +611,6 @@ function getBasicSpecs(product) {
         specs['Bremsen'] = 'Mechanische Scheibenbremsen (vorne und hinten)';
         specs['Reifen'] = '27,5 x 2,25 Zoll';
         specs['Display'] = '3-Tasten-Multifunktions-Farbdisplay';
-        specs['Garantie'] = 'Herstellergarantie';
     } else if (product.id === 'C29L') {
         specs['Modell'] = 'C29 L';
         specs['Typ'] = 'E-Mountainbike';
