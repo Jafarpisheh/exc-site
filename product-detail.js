@@ -935,6 +935,24 @@ function getBasicSpecs(product) {
         specs['Bremsen'] = 'Mechanische Scheibenbremsen';
         specs['Reifen'] = '20 Zoll, pannensicher und rutschfest (Breite 2,125")';
         specs['Batterieposition'] = 'Sattelstützenakku';
+    } else if (product.id === 'Urban7') {
+        specs['Modell'] = 'Urban7';
+        specs['Typ'] = 'Elektro-Cityrad';
+        specs['Reichweite'] = 'Bis 70 km';
+        specs['Motor'] = '36V 250 W bürstenloser Nabenmotor (40–50 N·m)';
+        specs['Akku'] = '36V 12,8Ah (Lithium-Ionen, herausnehmbar)';
+        specs['Max. Geschwindigkeit'] = '25 km/h';
+        specs['Schaltung'] = '7-Gang';
+        specs['Schalthebel'] = 'Daumenschalthebel';
+        specs['Ladezeit'] = 'Ca. 7 Stunden';
+        specs['Rahmen'] = 'Aluminium';
+        specs['Federung'] = 'Frontfederung';
+        specs['Bremsen'] = 'Hydraulische Scheibenbremsen';
+        specs['Reifen'] = '28 Zoll';
+        specs['Batterieposition'] = 'Gepäckträgermontage';
+        specs['Display'] = 'Kompaktes LED-Display';
+        specs['Besonderheiten'] = 'Verstellbarer Vorbauwinkel (-10° bis 60°), Gepäckträger, Schutzbleche & Beleuchtung';
+        specs['Anwendung'] = 'Erwachsene, Stadt';
     }
     
     if (product.outOfStock) {

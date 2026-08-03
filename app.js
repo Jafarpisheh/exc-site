@@ -247,26 +247,29 @@ const products = [
             'Der starke 500-W-Motor liefert bis zu 65 N·m Drehmoment und meistert Steigungen von bis zu 30° mühelos. Die hydraulischen Scheibenbremsen und die Doppelfederung sorgen für ein komfortables und sicheres Fahrerlebnis – ob in der Stadt, auf Trails oder im Gelände.'
         ],
         price: 1429,
-        outOfStock: true,
-        stripeCheckoutUrl: 'https://buy.stripe.com/REPLACE_OT08PRO',
+        askForAvailability: true,
+        // outOfStock: true,
+        // stripeCheckoutUrl: 'https://buy.stripe.com/REPLACE_OT08PRO',
         folder: 'products/OT08Pro',
         variants: [
             {
                 id: 'dunkelgrau',
                 name: 'Dunkelgrau',
-                outOfStock: true,
                 folder: 'products/OT08Pro/images/Dunkelgrau',
                 coverImage: 'products/OT08Pro/images/Dunkelgrau/1.JPG',
-                stripeCheckoutUrl: 'https://buy.stripe.com/REPLACE_OT08PRO_DUNKELGRAU',
+                askForAvailability: true,
+                // outOfStock: true,
+                // stripeCheckoutUrl: 'https://buy.stripe.com/REPLACE_OT08PRO_DUNKELGRAU',
                 imageFiles: ['1.JPG','2.JPG','3.JPG','4.JPG','5.JPG','6.JPG','7.JPG','8.JPG','9.JPG','10.JPG','11.JPG','12.JPG','13.JPG','14.JPG','15.JPG','17.jpg','18.jpg','19.jpg','20.jpg','65465.JPG']
             },
             {
                 id: 'weiss',
                 name: 'Weiß',
-                outOfStock: true,
                 folder: 'products/OT08Pro/images/Weiß',
                 coverImage: 'products/OT08Pro/images/Weiß/1.JPG',
-                stripeCheckoutUrl: 'https://buy.stripe.com/REPLACE_OT08PRO_WEISS',
+                askForAvailability: true,
+                // outOfStock: true,
+                // stripeCheckoutUrl: 'https://buy.stripe.com/REPLACE_OT08PRO_WEISS',
                 imageFiles: ['1.JPG','2.JPG','3.JPG','4.JPG','5.JPG','6.JPG','7.JPG','8.JPG','9.JPG','10.JPG','11.JPG','12.JPG','13.JPG','14.jpg','15.jpg','16.jpg','17.jpg','18.jpg','19.jpg','20.jpg']
             }
         ],
@@ -576,6 +579,41 @@ const products = [
                 coverImage: 'products/Smart30/Goldgrau/1.jpg',
                 stripeCheckoutUrl: 'https://buy.stripe.com/00w28j4an8rngegeKS3oA0w',
                 imageFiles: ['1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','6.jpg','7.jpg','8.jpg','9.jpg','10.jpg','11.jpg']
+            }
+        ],
+        hasVideo: false
+    },
+    {
+        id: 'Urban7',
+        category: ['city'],
+        rangeKm: 70,
+        motorW: 250,
+        battery: '36V 12,8Ah',
+        name: 'Urban7 City E-Bike',
+        description: 'Komfortables City-E-Bike mit 36-V-250-W-Nabenmotor, herausnehmbarem 12,8-Ah-Lithium-Akku und hydraulischen Scheibenbremsen – ideal für den urbanen Alltag.',
+        longDescription: [
+            'Das Urban7 ist ein komfortables City-E-Bike für den urbanen Alltag. Der leise 36-V-250-W-Hinterradnabenmotor mit 40–50 N·m Drehmoment bringt Sie mit einer Reichweite von bis zu 70 km entspannt durch die Stadt.',
+            'Der herausnehmbare 12,8-Ah-Lithium-Ionen-Akku sitzt am Gepäckträger und ist in ca. 7 Stunden aufgeladen. Der verstellbare Vorbauwinkel (-10° bis 60°), der Gepäckträger, die Schutzbleche und die integrierte Beleuchtung machen das Urban7 zum vielseitigen Begleiter für jeden Tag.'
+        ],
+        price: 809,
+        stripeCheckoutUrl: 'https://buy.stripe.com/6oUbIT0Yb7nj8LOcCK3oA0x',
+        folder: 'products/Urban7',
+        variants: [
+            {
+                id: 'blau',
+                name: 'Blau',
+                folder: 'products/Urban7/Blau',
+                coverImage: 'products/Urban7/Blau/1.jpg',
+                stripeCheckoutUrl: 'https://buy.stripe.com/6oUbIT0Yb7nj8LOcCK3oA0x',
+                imageFiles: ['1.jpg','H04f69f1868b048c68852f24c4cb086b9g.jpg','H3a8a70eb37cd4dfbb472f3d3f2b55cd8j.jpg','H548a77e9f86f491498f5e1fe9d178a749.jpg','H7abb1099f67b48b5b6144bf5cb457cb2Q.jpg','H859eb6ae422048f5b672835e88b26e75k.jpg','Hacba0a23771a4e16bf2a9ce3b5f4d7e64.jpg','Hbff2f534361c4997a7a74005ca8c6f39o.jpg','Hd31e9811383542fc8fffb157d06aabc7S.jpg','Hd3e4e9a3a74d477e90fa5a005543ac9cP.jpg','Hdd5d383dd6c84d559f96749585fe5067b.jpg','He8db8b6bfcf84f58a2cfc46767087f74j.jpg']
+            },
+            {
+                id: 'reisweiss',
+                name: 'Reisweiß',
+                folder: 'products/Urban7/Reisweiß',
+                coverImage: 'products/Urban7/Reisweiß/1.jpg',
+                stripeCheckoutUrl: 'https://buy.stripe.com/aFaaEP4an7njbY05ai3oA0y',
+                imageFiles: ['1.jpg','H04f69f1868b048c68852f24c4cb086b9g.jpg','H3a8a70eb37cd4dfbb472f3d3f2b55cd8j.jpg','H548a77e9f86f491498f5e1fe9d178a749.jpg','H7abb1099f67b48b5b6144bf5cb457cb2Q.jpg','H859eb6ae422048f5b672835e88b26e75k.jpg','Hacba0a23771a4e16bf2a9ce3b5f4d7e64.jpg','Hbff2f534361c4997a7a74005ca8c6f39o.jpg','Hd31e9811383542fc8fffb157d06aabc7S.jpg','Hd3e4e9a3a74d477e90fa5a005543ac9cP.jpg','Hdd5d383dd6c84d559f96749585fe5067b.jpg','He8db8b6bfcf84f58a2cfc46767087f74j.jpg']
             }
         ],
         hasVideo: false
