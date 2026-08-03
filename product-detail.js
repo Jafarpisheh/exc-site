@@ -599,7 +599,6 @@ function getBasicSpecs(product) {
         specs['Zuladung'] = '150 kg';
         specs['Gewicht'] = 'Netto 32,5 kg / Brutto 40 kg';
         specs['Wasserdicht'] = 'IPX4';
-        specs['Farbe'] = 'Schwarz-Blau';
         specs['Konnektivität'] = 'App (Smart Connection)';
         specs['Abmessungen (L x B x H)'] = '1860 x 1080 x 680 mm';
         specs['Verpackungsmaße'] = '1480 x 240 x 790 mm';
@@ -622,7 +621,6 @@ function getBasicSpecs(product) {
         specs['Maße (Produkt)'] = '1800 x 680 x 1100 mm';
         specs['Maße (Verpackung)'] = '1480 x 240 x 800 mm';
         specs['Steigfähigkeit'] = 'Max. 30°';
-        specs['Farbe'] = 'Schwarz-Blau';
         specs['Wasserdicht'] = 'IPX4';
     } else if (product.id === 'C29L') {
         specs['Modell'] = 'C29 L';
@@ -643,7 +641,6 @@ function getBasicSpecs(product) {
         specs['Maße (Produkt)'] = '1860 x 1080 x 680 mm';
         specs['Maße (Verpackung)'] = '1470 x 240 x 790 mm';
         specs['Steigfähigkeit'] = 'Max. 30°';
-        specs['Farbe'] = 'Schwarz-Blau';
         specs['Konnektivität'] = 'App (Smart Connection)';
         specs['Wasserdicht'] = 'IPX4';
     } else if (product.id === 'OT01') {
@@ -665,7 +662,6 @@ function getBasicSpecs(product) {
         specs['Maße (Produkt)'] = '1860 x 720 x 1160~1220 mm';
         specs['Maße (Verpackung)'] = '1600 x 280 x 750 mm';
         specs['Steigfähigkeit'] = 'Max. 30°';
-        specs['Farbe'] = 'Blau';
         specs['Konnektivität'] = 'Smart Connection (App)';
         specs['Wasserdicht'] = 'IPX6';
     } else if (product.id === 'OT02') {
@@ -687,7 +683,6 @@ function getBasicSpecs(product) {
         specs['Maße (Produkt)'] = '1500 x 550 x 1120 mm';
         specs['Maße (Verpackung)'] = '840 x 380 x 640 mm';
         specs['Steigfähigkeit'] = 'Max. 30°';
-        specs['Farbe'] = 'Rot, Grün';
         specs['Wasserdicht'] = 'IPX4';
     } else if (product.id === 'OT12') {
         specs['Modell'] = 'OT12';
@@ -708,7 +703,6 @@ function getBasicSpecs(product) {
         specs['Maße (Produkt)'] = '1800 x 680 x 1100 mm';
         specs['Maße (Verpackung)'] = '1480 x 240 x 800 mm';
         specs['Steigfähigkeit'] = 'Max. 30°';
-        specs['Farbe'] = 'Weiß, Schwarz';
         specs['Wasserdicht'] = 'IPX6';
     } else if (product.id === 'OT16') {
         specs['Modell'] = 'OT16';
@@ -729,7 +723,6 @@ function getBasicSpecs(product) {
         specs['Maße (Produkt)'] = '1640 x 560 x 1050~1190 mm';
         specs['Maße (Verpackung)'] = '895 x 380 x 750 mm';
         specs['Steigfähigkeit'] = 'Max. 30°';
-        specs['Farbe'] = 'Beige';
         specs['Konnektivität'] = 'Smart Connection (App)';
         specs['Wasserdicht'] = 'IPX6';
     } else if (product.id === 'W77') {
@@ -751,7 +744,6 @@ function getBasicSpecs(product) {
         specs['Maße (Produkt)'] = '1750 x 680 x 1180 mm';
         specs['Maße (Verpackung)'] = '1505 x 307 x 888 mm';
         specs['Steigfähigkeit'] = 'Max. 30°';
-        specs['Farbe'] = 'Beige';
         specs['Konnektivität'] = 'Smart Connection (App)';
         specs['Wasserdicht'] = 'IPX6';
     } else if (product.id === 'OT08Pro') {
@@ -773,7 +765,6 @@ function getBasicSpecs(product) {
         specs['Maße (Produkt)'] = '1750 x 730 x 1200 mm';
         specs['Maße (Verpackung)'] = '1480 x 310 x 820 mm';
         specs['Steigfähigkeit'] = 'Max. 30°';
-        specs['Farbe'] = 'Weiß';
         specs['Wasserdicht'] = 'IPX6';
     } else if (product.id === 'F20') {
         specs['Modell'] = 'F20';
@@ -794,7 +785,6 @@ function getBasicSpecs(product) {
         specs['Maße (Produkt)'] = '1740 x 1225 x 760 mm';
         specs['Maße (Verpackung)'] = '1550 x 310 x 830 mm';
         specs['Steigfähigkeit'] = 'Max. 30°';
-        specs['Farbe'] = 'Schwarz';
         specs['Konnektivität'] = 'Smart Connection (App)';
         specs['Wasserdicht'] = 'IPX4';
     } else if (product.id === 'S26Pro') {
@@ -816,7 +806,6 @@ function getBasicSpecs(product) {
         specs['Maße (Produkt)'] = '1930 x 720 x 1120 mm';
         specs['Maße (Verpackung)'] = '1550 x 340 x 830 mm';
         specs['Steigfähigkeit'] = 'Max. 30°';
-        specs['Farbe'] = 'Schwarz-Rot';
         specs['Konnektivität'] = 'Smart Connection (App)';
         specs['Wasserdicht'] = 'IPX4';
     } else if (product.id === 'N26') {
@@ -838,7 +827,6 @@ function getBasicSpecs(product) {
         specs['Maße (Produkt)'] = '1600 x 330 x 840 mm';
         specs['Maße (Verpackung)'] = '1950 x 730 x 1200 mm';
         specs['Steigfähigkeit'] = 'Max. 30°';
-        specs['Farbe'] = 'Weiß-Blau, Schwarz-Rot';
         specs['Konnektivität'] = 'Smart Connection (App)';
         specs['Wasserdicht'] = 'IPX4';
     } else if (product.id === 'F26Lite') {
@@ -860,7 +848,6 @@ function getBasicSpecs(product) {
         specs['Maße (Produkt)'] = '1550 x 300 x 830 mm';
         specs['Maße (Verpackung)'] = '1930 x 720 x 1180 mm';
         specs['Steigfähigkeit'] = 'Max. 30°';
-        specs['Farbe'] = 'Silber-Weiß, Schwarz-Rot';
         specs['Konnektivität'] = 'Smart Connection (App)';
         specs['Wasserdicht'] = 'IPX4';
     } else if (product.id === 'E26') {
@@ -882,7 +869,6 @@ function getBasicSpecs(product) {
         specs['Maße (Produkt)'] = '1930 x 1130 x 710 mm';
         specs['Maße (Verpackung)'] = '1560 x 315 x 840 mm';
         specs['Steigfähigkeit'] = 'Max. 30°';
-        specs['Farbe'] = 'Grün-Lila, Blau-Lila';
         specs['Konnektivität'] = 'Smart Connection (App)';
         specs['Wasserdicht'] = 'IPX4';
     } else if (product.id === 'C29Pro') {
