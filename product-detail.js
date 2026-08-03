@@ -919,6 +919,22 @@ function getBasicSpecs(product) {
         specs['Steckertyp'] = 'US-Stecker, Europäischer Stecker, Britischer Stecker';
         specs['Wasserdicht'] = 'IPX5';
         specs['Altersklasse'] = 'Erwachsene';
+    } else if (product.id === 'Smart30') {
+        specs['Modell'] = 'Smart30';
+        specs['Typ'] = 'Faltbares Mini-Urban E-Bike';
+        specs['Reichweite'] = 'Bis 70 km';
+        specs['Motor'] = '36V 250 W bürstenloser Hinterradnabenmotor (35 N·m)';
+        specs['Akku'] = '36V 9,6Ah (Samsung-Zellen-Lithium-Akku)';
+        specs['Max. Geschwindigkeit'] = '25 km/h';
+        specs['Schaltung'] = 'Einzelgeschwindigkeit';
+        specs['Antrieb'] = 'Belt Drive';
+        specs['Sensor'] = 'Torque Sensor';
+        specs['Ladezeit'] = 'Ca. 5 Stunden';
+        specs['Rahmen'] = 'Stahl (faltbar)';
+        specs['Federung'] = 'Starr';
+        specs['Bremsen'] = 'Mechanische Scheibenbremsen';
+        specs['Reifen'] = '20 Zoll, pannensicher und rutschfest (Breite 2,125")';
+        specs['Batterieposition'] = 'Sattelstützenakku';
     }
     
     if (product.outOfStock) {

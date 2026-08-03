@@ -473,19 +473,20 @@ const products = [
     },
     {
         id: 'Literider',
-        // brand: 'Kingbull',
+        brand: 'Kingbull',
         category: ['folding'],
         rangeKm: 80,
         motorW: 250,
         battery: '48V 13,5Ah',
-        name: 'Literider Faltbares Fat-Tire E-Bike',
+        name: 'Kingbull Literider Faltbares Fat-Tire E-Bike',
         description: 'Faltbares Fat-Tire E-Bike mit 250-W-Motor, hydraulischen Scheibenbremsen und herausnehmbarem 48-V-13,5-Ah-Akku – für Stadt und Freizeit.',
         longDescription: [
             'Das Literider ist ein vielseitiges Falt-E-Bike mit komfortablen 20 x 4,0 Zoll CST Fat-Reifen. Der herausnehmbare 48-V-13,5-Ah-Lithium-Ionen-Akku mit Smart BMS und die 6-stündige Ladezeit mit Dual Charging machen es zum idealen Begleiter für den Alltag.',
             'Der 250-W-Hinterradnabenmotor mit 50 N·m Drehmoment und die 7-Gang-Schaltung bringen Sie mit einer Reichweite von bis zu 80 km zuverlässig ans Ziel. Die hydraulischen Scheibenbremsen, die Vorderradgabel-Federung und das Smart Color LCD-Display sorgen für Komfort und Sicherheit auf jeder Fahrt.'
         ],
         price: 1029,
-        askForAvailability: true,
+        stripeCheckoutUrl: 'https://buy.stripe.com/9B63cnayL0YV4vy6em3oA0q',
+        // askForAvailability: true,
         folder: 'products/Literider',
         variants: [
             {
@@ -493,6 +494,7 @@ const products = [
                 name: 'Weiß',
                 folder: 'products/Literider/Weiß',
                 coverImage: 'products/Literider/Weiß/1.avif',
+                stripeCheckoutUrl: 'https://buy.stripe.com/9B63cnayL0YV4vy6em3oA0q',
                 imageFiles: ['1.avif','H28397e6707f046b6b0031b5d65861149r.avif','H3e5c734f69914b55934a5ff54dd30bdd8.avif','H40e30174951f4af7bef931865c664244i.avif','H570e6a6e63114c9f989a76eee6810a17O.avif','H6a95467b30fc449fad66e5ee461befa21.avif','H6d12bb9e77c34e5a952e59e141b8a5c3H.avif','H7c14152131d0411f83e9fc41edf248e8n.avif','Heab9ef71144d4b31b28fda47d7eaee31h.avif','Heb5c69957dcb4b2597b11ee9c25cd125D.avif','Hec72544449864be29fb94d3b498ec9f0Z.avif','Hef24dd3fb26f4a7794c6d170fce31c5cm.avif']
             },
             {
@@ -500,6 +502,7 @@ const products = [
                 name: 'Grün',
                 folder: 'products/Literider/Grün',
                 coverImage: 'products/Literider/Grün/1.avif',
+                stripeCheckoutUrl: 'https://buy.stripe.com/7sYdR14an3738LOgT03oA0r',
                 imageFiles: ['1.avif','H28397e6707f046b6b0031b5d65861149r.avif','H3e5c734f69914b55934a5ff54dd30bdd8.avif','H40e30174951f4af7bef931865c664244i.avif','H570e6a6e63114c9f989a76eee6810a17O.avif','H6a95467b30fc449fad66e5ee461befa21.avif','H6d12bb9e77c34e5a952e59e141b8a5c3H.avif','H7c14152131d0411f83e9fc41edf248e8n.avif','Heab9ef71144d4b31b28fda47d7eaee31h.avif','Heb5c69957dcb4b2597b11ee9c25cd125D.avif','Hec72544449864be29fb94d3b498ec9f0Z.avif','Hef24dd3fb26f4a7794c6d170fce31c5cm.avif']
             },
             {
@@ -507,6 +510,7 @@ const products = [
                 name: 'Schwarz',
                 folder: 'products/Literider/Schwarz',
                 coverImage: 'products/Literider/Schwarz/1.avif',
+                stripeCheckoutUrl: 'https://buy.stripe.com/4gM9AL0Yb3737HKcCK3oA0s',
                 imageFiles: ['1.avif','H28397e6707f046b6b0031b5d65861149r.avif','H3e5c734f69914b55934a5ff54dd30bdd8.avif','H40e30174951f4af7bef931865c664244i.avif','H570e6a6e63114c9f989a76eee6810a17O.avif','H6a95467b30fc449fad66e5ee461befa21.avif','H6d12bb9e77c34e5a952e59e141b8a5c3H.avif','H7c14152131d0411f83e9fc41edf248e8n.avif','Heab9ef71144d4b31b28fda47d7eaee31h.avif','Heb5c69957dcb4b2597b11ee9c25cd125D.avif','Hec72544449864be29fb94d3b498ec9f0Z.avif','Hef24dd3fb26f4a7794c6d170fce31c5cm.avif']
             },
             {
@@ -514,6 +518,7 @@ const products = [
                 name: 'Lila',
                 folder: 'products/Literider/Lila',
                 coverImage: 'products/Literider/Lila/1.avif',
+                stripeCheckoutUrl: 'https://buy.stripe.com/14A00b8qD6jfbY01Y63oA0t',
                 imageFiles: ['1.avif','H28397e6707f046b6b0031b5d65861149r.avif','H3e5c734f69914b55934a5ff54dd30bdd8.avif','H40e30174951f4af7bef931865c664244i.avif','H570e6a6e63114c9f989a76eee6810a17O.avif','H6a95467b30fc449fad66e5ee461befa21.avif','H6d12bb9e77c34e5a952e59e141b8a5c3H.avif','H7c14152131d0411f83e9fc41edf248e8n.avif','Heab9ef71144d4b31b28fda47d7eaee31h.avif','Heb5c69957dcb4b2597b11ee9c25cd125D.avif','Hec72544449864be29fb94d3b498ec9f0Z.avif','Hef24dd3fb26f4a7794c6d170fce31c5cm.avif']
             }
         ],
@@ -533,10 +538,46 @@ const products = [
             'Der 250-W-Brushless-Geared-Hubmotor mit 50–60 N·m Drehmoment, die hydraulischen Scheibenbremsen, die 7-Gang-Schaltung und die wasserdichte IPX5-Ausführung sorgen für Komfort und Sicherheit – mit einer Reichweite von 45 bis 100 km.'
         ],
         price: 939,
-        askForAvailability: true,
+        // askForAvailability: true,
+        stripeCheckoutUrl: 'https://buy.stripe.com/8x27sDfT55fbe68byG3oA0u',
         folder: 'products/MX10',
         coverImage: 'products/MX10/images/1.jpg',
         imageFiles: ['1.jpg','H027129e983a24c2a85630ad2ad5d09bfk.png','H300f3a2814584857aaea12ac7169f7ef8.jpg','H36c0f091bc3e4cc1a69b303720e50cdaX.jpg','H3e52905e284b4c818891764cbed47c97k.jpg','H4758d36f6e5e4ef2801a293b5a15c410p.jpg','H6e6e309a7f1647388b7f7cc70fa084fbx.jpg','Hbe7d8ee7a71546358484b797d5d67eefM.jpg','Hf1258d7c3ceb407b8db8f715b26e6effV.jpg'],
+        hasVideo: false
+    },
+    {
+        id: 'Smart30',
+        category: ['city', 'folding'],
+        rangeKm: 70,
+        motorW: 250,
+        battery: '36V 9,6Ah',
+        name: 'Smart30 Mini-Urban Klapprad E-Bike',
+        description: 'Faltbares Mini-Urban E-Bike mit 250-W-Motor, Samsung-Lithium-Akku und Belt-Drive-Antrieb – ideal für städtisches Pendeln.',
+        longDescription: [
+            'Das Smart30 ist ein kompaktes Falt-E-Bike für den urbanen Alltag. Der bürstenlose 36-V-250-W-Hinterradnabenmotor mit 35 N·m Drehmoment und Torque-Sensor bringt Sie mit einer Reichweite von bis zu 70 km entspannt durch die Stadt.',
+            'Der Samsung-Zellen-Lithium-Akku mit 9,6 Ah sitzt als Sattelstützenakku direkt am Rahmen und ist in ca. 5 Stunden aufgeladen. Der wartungsarme Belt-Drive-Antrieb, die pannensicheren Reifen und die mechanischen Scheibenbremsen machen das Smart30 zum zuverlässigen Begleiter für den Alltag.'
+        ],
+        price: 1059,
+        stripeCheckoutUrl: 'https://buy.stripe.com/28E28j8qD8rn4vy5ai3oA0v',
+        folder: 'products/Smart30',
+        variants: [
+            {
+                id: 'dunkelblau',
+                name: 'Dunkelblau',
+                folder: 'products/Smart30/Dunkelblau',
+                coverImage: 'products/Smart30/Dunkelblau/1.jpg',
+                stripeCheckoutUrl: 'https://buy.stripe.com/28E28j8qD8rn4vy5ai3oA0v',
+                imageFiles: ['1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','6.jpg','7.jpg','8.jpg','9.jpg','10.jpg','11.jpg']
+            },
+            {
+                id: 'goldgrau',
+                name: 'Goldgrau',
+                folder: 'products/Smart30/Goldgrau',
+                coverImage: 'products/Smart30/Goldgrau/1.jpg',
+                stripeCheckoutUrl: 'https://buy.stripe.com/00w28j4an8rngegeKS3oA0w',
+                imageFiles: ['1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','6.jpg','7.jpg','8.jpg','9.jpg','10.jpg','11.jpg']
+            }
+        ],
         hasVideo: false
     }
 ];
