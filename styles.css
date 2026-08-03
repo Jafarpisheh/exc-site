@@ -497,6 +497,15 @@ body {
     box-shadow: 0 8px 16px rgba(17, 24, 39, 0.12);
 }
 
+.availability-btn {
+    background: linear-gradient(180deg, #007185 0%, #005f73 100%);
+    color: #ffffff;
+}
+
+.availability-btn:hover {
+    box-shadow: 0 8px 16px rgba(0, 113, 133, 0.25);
+}
+
 .checkout-btn--detail {
     padding: 12px 22px;
     font-size: 15px;
@@ -837,10 +846,20 @@ body {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
+.availability-btn.checkout-btn--detail {
+    background: linear-gradient(180deg, #007185 0%, #005f73 100%);
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 113, 133, 0.18);
+}
+
 .checkout-btn:hover,
 .checkout-btn--detail:hover {
     transform: translateY(-1px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+}
+
+.availability-btn.checkout-btn--detail:hover {
+    box-shadow: 0 8px 16px rgba(0, 113, 133, 0.28);
 }
 
 .product-highlights {
@@ -1203,6 +1222,115 @@ body {
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+/* ============================================
+   AVAILABILITY MODAL
+   ============================================ */
+
+.availability-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(2px);
+}
+
+.availability-modal-content {
+    position: relative;
+    width: 100%;
+    max-width: 420px;
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 32px 28px;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.25);
+    animation: modalFadeIn 0.25s ease-out;
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.availability-modal-close {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    width: 32px;
+    height: 32px;
+    border: none;
+    border-radius: 50%;
+    background: #f0f2f2;
+    color: #111111;
+    font-size: 16px;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease;
+}
+
+.availability-modal-close:hover {
+    background: #e0e4e4;
+}
+
+.availability-modal-content h3 {
+    color: #111111;
+    font-size: 22px;
+    margin-bottom: 12px;
+}
+
+.availability-modal-text {
+    color: #565959;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.availability-modal-text strong {
+    color: #111111;
+}
+
+.availability-error {
+    background-color: #fef3f2;
+    border-left: 4px solid #d92d20;
+    color: #b42318;
+    padding: 10px 12px;
+    border-radius: 8px;
+    font-size: 13px;
+    margin-top: 12px;
+}
+
+.availability-success {
+    background-color: #ecfdf3;
+    border-left: 4px solid #16a34a;
+    color: #111111;
+    padding: 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+@media (max-width: 640px) {
+    .availability-modal {
+        align-items: flex-end;
+    }
+
+    .availability-modal-content {
+        border-radius: 16px 16px 0 0;
+        padding: 28px 20px 24px;
     }
 }
 

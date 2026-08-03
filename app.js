@@ -19,7 +19,8 @@ const products = [
         imageFiles: [
             '1.JPG','2.JPG','3.JPG','4.JPG','5.JPG','6.JPG','7.JPG','8.JPG','9.JPG','10.JPG','11.JPG','12.JPG','13.JPG','14.JPG','15.JPG','16.JPG','17.JPG','18.JPG','19.JPG','20.JPG','21.JPG','22.JPG','23.JPG','24.jpg','25.jpg','26.jpg','27.jpg'
         ],
-        hasVideo: false
+        hasVideo: false,
+        // askForAvailability: true
     },
     {
         id: 'C29Lite',
@@ -469,6 +470,54 @@ const products = [
             }
         ],
         hasVideo: false
+    },
+    {
+        id: 'Literider',
+        brand: 'Kingbull',
+        category: ['folding'],
+        rangeKm: 80,
+        motorW: 250,
+        battery: '48V 13,5Ah',
+        name: 'Kingbull Literider Faltbares Fat-Tire E-Bike',
+        description: 'Faltbares Fat-Tire E-Bike mit 250-W-Motor, hydraulischen Scheibenbremsen und herausnehmbarem 48-V-13,5-Ah-Akku – für Stadt und Freizeit.',
+        longDescription: [
+            'Das Kingbull Literider ist ein vielseitiges Falt-E-Bike mit komfortablen 20 x 4,0 Zoll CST Fat-Reifen. Der herausnehmbare 48-V-13,5-Ah-Lithium-Ionen-Akku mit Smart BMS und die 6-stündige Ladezeit mit Dual Charging machen es zum idealen Begleiter für den Alltag.',
+            'Der 250-W-Hinterradnabenmotor mit 50 N·m Drehmoment und die 7-Gang-Schaltung bringen Sie mit einer Reichweite von bis zu 80 km zuverlässig ans Ziel. Die hydraulischen Scheibenbremsen, die Vorderradgabel-Federung und das Smart Color LCD-Display sorgen für Komfort und Sicherheit auf jeder Fahrt.'
+        ],
+        price: 1029,
+        askForAvailability: true,
+        folder: 'products/Literider',
+        variants: [
+            {
+                id: 'weiss',
+                name: 'Weiß',
+                folder: 'products/Literider/Weiß',
+                coverImage: 'products/Literider/Weiß/1.avif',
+                imageFiles: ['1.avif','H28397e6707f046b6b0031b5d65861149r.avif','H3e5c734f69914b55934a5ff54dd30bdd8.avif','H40e30174951f4af7bef931865c664244i.avif','H570e6a6e63114c9f989a76eee6810a17O.avif','H6a95467b30fc449fad66e5ee461befa21.avif','H6d12bb9e77c34e5a952e59e141b8a5c3H.avif','H7c14152131d0411f83e9fc41edf248e8n.avif','Heab9ef71144d4b31b28fda47d7eaee31h.avif','Heb5c69957dcb4b2597b11ee9c25cd125D.avif','Hec72544449864be29fb94d3b498ec9f0Z.avif','Hef24dd3fb26f4a7794c6d170fce31c5cm.avif']
+            },
+            {
+                id: 'gruen',
+                name: 'Grün',
+                folder: 'products/Literider/Grün',
+                coverImage: 'products/Literider/Grün/1.avif',
+                imageFiles: ['1.avif','H28397e6707f046b6b0031b5d65861149r.avif','H3e5c734f69914b55934a5ff54dd30bdd8.avif','H40e30174951f4af7bef931865c664244i.avif','H570e6a6e63114c9f989a76eee6810a17O.avif','H6a95467b30fc449fad66e5ee461befa21.avif','H6d12bb9e77c34e5a952e59e141b8a5c3H.avif','H7c14152131d0411f83e9fc41edf248e8n.avif','Heab9ef71144d4b31b28fda47d7eaee31h.avif','Heb5c69957dcb4b2597b11ee9c25cd125D.avif','Hec72544449864be29fb94d3b498ec9f0Z.avif','Hef24dd3fb26f4a7794c6d170fce31c5cm.avif']
+            },
+            {
+                id: 'schwarz',
+                name: 'Schwarz',
+                folder: 'products/Literider/Schwarz',
+                coverImage: 'products/Literider/Schwarz/1.avif',
+                imageFiles: ['1.avif','H28397e6707f046b6b0031b5d65861149r.avif','H3e5c734f69914b55934a5ff54dd30bdd8.avif','H40e30174951f4af7bef931865c664244i.avif','H570e6a6e63114c9f989a76eee6810a17O.avif','H6a95467b30fc449fad66e5ee461befa21.avif','H6d12bb9e77c34e5a952e59e141b8a5c3H.avif','H7c14152131d0411f83e9fc41edf248e8n.avif','Heab9ef71144d4b31b28fda47d7eaee31h.avif','Heb5c69957dcb4b2597b11ee9c25cd125D.avif','Hec72544449864be29fb94d3b498ec9f0Z.avif','Hef24dd3fb26f4a7794c6d170fce31c5cm.avif']
+            },
+            {
+                id: 'lila',
+                name: 'Lila',
+                folder: 'products/Literider/Lila',
+                coverImage: 'products/Literider/Lila/1.avif',
+                imageFiles: ['1.avif','H28397e6707f046b6b0031b5d65861149r.avif','H3e5c734f69914b55934a5ff54dd30bdd8.avif','H40e30174951f4af7bef931865c664244i.avif','H570e6a6e63114c9f989a76eee6810a17O.avif','H6a95467b30fc449fad66e5ee461befa21.avif','H6d12bb9e77c34e5a952e59e141b8a5c3H.avif','H7c14152131d0411f83e9fc41edf248e8n.avif','Heab9ef71144d4b31b28fda47d7eaee31h.avif','Heb5c69957dcb4b2597b11ee9c25cd125D.avif','Hec72544449864be29fb94d3b498ec9f0Z.avif','Hef24dd3fb26f4a7794c6d170fce31c5cm.avif']
+            }
+        ],
+        hasVideo: false
     }
 ];
 
@@ -490,12 +539,21 @@ function createCheckoutButton(product, extraClass = '', variant = null) {
         const classes = ['out-of-stock-badge', extraClass].filter(Boolean).join(' ');
         return `<span class="${classes}">Ausverkauft</span>`;
     }
+    if (product.askForAvailability || (variant && variant.askForAvailability)) {
+        return createAvailabilityButton(product, extraClass, variant);
+    }
     if (!checkoutUrl) {
         return '';
     }
 
     const classes = ['checkout-btn', extraClass].filter(Boolean).join(' ');
     return `<a href="${checkoutUrl}" class="${classes}" target="_blank" rel="noopener noreferrer">Jetzt kaufen</a>`;
+}
+
+function createAvailabilityButton(product, extraClass = '', variant = null) {
+    const classes = ['checkout-btn', 'availability-btn', extraClass].filter(Boolean).join(' ');
+    const variantAttr = variant ? ` data-variant-id="${variant.id}"` : '';
+    return `<button type="button" class="${classes}" data-product-id="${product.id}"${variantAttr}>Verfügbarkeit anfragen</button>`;
 }
 
 function getProductPreviewImagePath(product) {
@@ -740,6 +798,7 @@ function getBasicSpecs(product) {
 document.addEventListener('DOMContentLoaded', () => {
     setupCatalogFilters();
     loadProducts();
+    setupAvailabilityRequest();
 });
 
 // Setup site-wide inquiry form (used on index.html)
@@ -819,6 +878,174 @@ function siteShowSuccessMessage() {
     setTimeout(() => {
         successMessage.classList.remove('show');
     }, 5000);
+}
+
+// Verfügbarkeitsanfrage
+let currentAvailabilityRequest = null;
+
+function ensureAvailabilityModal() {
+    if (document.getElementById('availabilityModal')) return;
+
+    const modal = document.createElement('div');
+    modal.id = 'availabilityModal';
+    modal.className = 'availability-modal';
+    modal.setAttribute('role', 'dialog');
+    modal.setAttribute('aria-modal', 'true');
+    modal.setAttribute('aria-labelledby', 'availabilityModalTitle');
+    modal.innerHTML = `
+        <div class="availability-modal-content">
+            <button type="button" class="availability-modal-close" id="availabilityModalClose" aria-label="Schließen">✕</button>
+            <h3 id="availabilityModalTitle">Verfügbarkeit anfragen</h3>
+            <p class="availability-modal-text">Hinterlassen Sie Ihre E-Mail-Adresse und wir melden uns zur Verfügbarkeit von <strong id="availabilityProductName"></strong> bei Ihnen.</p>
+            <div class="availability-form" id="availabilityForm">
+                <div class="form-group">
+                    <label for="availabilityEmail">E-Mail-Adresse *</label>
+                    <input type="email" id="availabilityEmail" name="availabilityEmail" placeholder="ihre@email.de" autocomplete="email" required>
+                </div>
+                <p class="availability-error" id="availabilityError" hidden></p>
+                <button type="button" class="submit-btn" id="availabilitySubmitBtn">Verfügbarkeit anfragen</button>
+            </div>
+            <p class="availability-success" id="availabilitySuccess" hidden>✓ Vielen Dank! Ihre Verfügbarkeitsanfrage wurde gesendet. Wir melden uns in Kürze.</p>
+        </div>
+    `;
+    document.body.appendChild(modal);
+
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal || e.target.closest('#availabilityModalClose')) {
+            closeAvailabilityModal();
+        }
+    });
+
+    document.getElementById('availabilitySubmitBtn').addEventListener('click', submitAvailabilityRequest);
+    document.getElementById('availabilityEmail').addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            submitAvailabilityRequest();
+        }
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.style.display === 'flex') {
+            closeAvailabilityModal();
+        }
+    });
+}
+
+function openAvailabilityModal(product, variantId = null) {
+    ensureAvailabilityModal();
+
+    const variant = product.variants?.find(v => v.id === variantId) || null;
+    currentAvailabilityRequest = { product, variant };
+
+    document.getElementById('availabilityProductName').textContent = variant
+        ? `${product.name} (${variant.name})`
+        : product.name;
+    document.getElementById('availabilityEmail').value = '';
+    document.getElementById('availabilityError').hidden = true;
+    document.getElementById('availabilitySuccess').hidden = true;
+    document.getElementById('availabilityForm').style.display = 'block';
+
+    const modal = document.getElementById('availabilityModal');
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+
+    setTimeout(() => {
+        document.getElementById('availabilityEmail').focus();
+    }, 50);
+}
+
+function closeAvailabilityModal() {
+    const modal = document.getElementById('availabilityModal');
+    if (modal) modal.style.display = 'none';
+    document.body.style.overflow = 'auto';
+}
+
+async function submitAvailabilityRequest() {
+    if (!currentAvailabilityRequest) return;
+
+    const emailInput = document.getElementById('availabilityEmail');
+    const errorEl = document.getElementById('availabilityError');
+    const submitBtn = document.getElementById('availabilitySubmitBtn');
+    const email = emailInput.value.trim();
+
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        errorEl.textContent = 'Bitte geben Sie eine gültige E-Mail-Adresse ein.';
+        errorEl.hidden = false;
+        return;
+    }
+
+    errorEl.hidden = true;
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Wird gesendet…';
+
+    try {
+        const { product, variant } = currentAvailabilityRequest;
+        await sendAvailabilityEmail(product, variant, email);
+
+        const requests = JSON.parse(localStorage.getItem('availabilityRequests') || '[]');
+        requests.push({
+            productId: product.id,
+            productName: product.name,
+            variant: variant ? variant.name : null,
+            email,
+            timestamp: new Date().toISOString()
+        });
+        localStorage.setItem('availabilityRequests', JSON.stringify(requests));
+
+        document.getElementById('availabilityForm').style.display = 'none';
+        document.getElementById('availabilitySuccess').hidden = false;
+    } catch (error) {
+        console.error('E-Mail-Versand fehlgeschlagen:', error);
+        errorEl.textContent = 'Ihre Anfrage konnte nicht gesendet werden. Bitte versuchen Sie es später erneut.';
+        errorEl.hidden = false;
+    } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Verfügbarkeit anfragen';
+    }
+}
+
+async function sendAvailabilityEmail(product, variant, email) {
+    const emailEndpoint = 'https://formsubmit.co/ajax/info@mrado.de';
+    const params = new URLSearchParams();
+    params.set('_subject', `Verfügbarkeitsanfrage: ${product.name}`);
+    params.set('_template', 'table');
+    params.set('_captcha', 'false');
+    params.set('Product', product.name);
+    params.set('Product-ID', product.id);
+    params.set('Kunden-E-Mail', email);
+    if (variant) params.set('Variante', variant.name);
+
+    const response = await fetch(emailEndpoint, {
+        method: 'POST',
+        body: params
+    });
+
+    if (!response.ok) {
+        const text = await response.text();
+        throw new Error(`Email submission failed: ${response.status} ${response.statusText} - ${text}`);
+    }
+
+    const data = await response.json();
+    if (data.success !== 'true' && data.success !== true) {
+        throw new Error(`Email service error: ${JSON.stringify(data)}`);
+    }
+
+    return data;
+}
+
+function setupAvailabilityRequest() {
+    document.addEventListener('click', (event) => {
+        const button = event.target.closest('.availability-btn');
+        if (!button) return;
+        event.preventDefault();
+        event.stopPropagation();
+        const productId = button.dataset.productId;
+        const variantId = button.dataset.variantId || null;
+        const product = getProductById(productId);
+        if (product) {
+            openAvailabilityModal(product, variantId);
+        }
+    }, true);
 }
 
 function setupScrollSpy() {

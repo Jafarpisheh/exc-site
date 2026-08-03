@@ -885,6 +885,23 @@ function getBasicSpecs(product) {
         specs['Display'] = '2,4 Zoll HD-Display mit Bluetooth';
         specs['Reifen'] = '29 Zoll';
         specs['Konnektivität'] = 'Bluetooth (Duotts App)';
+    } else if (product.id === 'Literider') {
+        specs['Modell'] = 'Literider';
+        specs['Typ'] = 'Faltbares Fat-Tire E-Bike';
+        specs['Reichweite'] = 'Bis 80 km';
+        specs['Motor'] = '48V 250 W bürstenloser Hinterradnabenmotor (50 N·m)';
+        specs['Akku'] = '48V 13,5Ah (Lithium-Ionen, herausnehmbar, Smart BMS)';
+        specs['Max. Geschwindigkeit'] = '25 km/h';
+        specs['Schaltung'] = '7-Gang';
+        specs['Ladezeit'] = 'Ca. 6 Stunden';
+        specs['Ladegerät'] = 'Dual Charging';
+        specs['Rahmen'] = 'Aluminiumlegierung (faltbar)';
+        specs['Federung'] = 'Vorderradgabel-Federung';
+        specs['Bremsen'] = 'Hydraulische Scheibenbremsen';
+        specs['Reifen'] = '20 x 4,0 Zoll CST Fat-Tire (pannensicher)';
+        specs['Räder'] = 'Integrierte Magnesiumräder';
+        specs['Batterieposition'] = 'Unterrohr';
+        specs['Display'] = 'Smart Color LCD-Display';
     }
     
     if (product.outOfStock) {
