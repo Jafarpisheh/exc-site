@@ -902,6 +902,23 @@ function getBasicSpecs(product) {
         specs['Räder'] = 'Integrierte Magnesiumräder';
         specs['Batterieposition'] = 'Unterrohr';
         specs['Display'] = 'Smart Color LCD-Display';
+    } else if (product.id === 'MX10') {
+        specs['Modell'] = 'MX10';
+        specs['Typ'] = 'Retro Scrambler Fat-Tire E-Bike';
+        specs['Reichweite'] = '45–100 km';
+        specs['Motor'] = '48V 250 W Brushless Geared Hubmotor (50–60 N·m)';
+        specs['Akku'] = '48V 13,5Ah (Lithium-Ionen, herausnehmbar)';
+        specs['Max. Geschwindigkeit'] = '25 km/h';
+        specs['Schaltung'] = '7-Gang';
+        specs['Ladezeit'] = 'Ca. 6 Stunden';
+        specs['Rahmen'] = 'Kohlenstoffstahl';
+        specs['Federung'] = 'Vollfederung';
+        specs['Bremsen'] = 'Hydraulische Scheibenbremsen';
+        specs['Reifen'] = '20 x 4,0 Zoll Fat-Tire';
+        specs['Batterieposition'] = 'Unterrohr';
+        specs['Steckertyp'] = 'US-Stecker, Europäischer Stecker, Britischer Stecker';
+        specs['Wasserdicht'] = 'IPX5';
+        specs['Altersklasse'] = 'Erwachsene';
     }
     
     if (product.outOfStock) {

@@ -473,15 +473,15 @@ const products = [
     },
     {
         id: 'Literider',
-        brand: 'Kingbull',
+        // brand: 'Kingbull',
         category: ['folding'],
         rangeKm: 80,
         motorW: 250,
         battery: '48V 13,5Ah',
-        name: 'Kingbull Literider Faltbares Fat-Tire E-Bike',
+        name: 'Literider Faltbares Fat-Tire E-Bike',
         description: 'Faltbares Fat-Tire E-Bike mit 250-W-Motor, hydraulischen Scheibenbremsen und herausnehmbarem 48-V-13,5-Ah-Akku – für Stadt und Freizeit.',
         longDescription: [
-            'Das Kingbull Literider ist ein vielseitiges Falt-E-Bike mit komfortablen 20 x 4,0 Zoll CST Fat-Reifen. Der herausnehmbare 48-V-13,5-Ah-Lithium-Ionen-Akku mit Smart BMS und die 6-stündige Ladezeit mit Dual Charging machen es zum idealen Begleiter für den Alltag.',
+            'Das Literider ist ein vielseitiges Falt-E-Bike mit komfortablen 20 x 4,0 Zoll CST Fat-Reifen. Der herausnehmbare 48-V-13,5-Ah-Lithium-Ionen-Akku mit Smart BMS und die 6-stündige Ladezeit mit Dual Charging machen es zum idealen Begleiter für den Alltag.',
             'Der 250-W-Hinterradnabenmotor mit 50 N·m Drehmoment und die 7-Gang-Schaltung bringen Sie mit einer Reichweite von bis zu 80 km zuverlässig ans Ziel. Die hydraulischen Scheibenbremsen, die Vorderradgabel-Federung und das Smart Color LCD-Display sorgen für Komfort und Sicherheit auf jeder Fahrt.'
         ],
         price: 1029,
@@ -517,6 +517,26 @@ const products = [
                 imageFiles: ['1.avif','H28397e6707f046b6b0031b5d65861149r.avif','H3e5c734f69914b55934a5ff54dd30bdd8.avif','H40e30174951f4af7bef931865c664244i.avif','H570e6a6e63114c9f989a76eee6810a17O.avif','H6a95467b30fc449fad66e5ee461befa21.avif','H6d12bb9e77c34e5a952e59e141b8a5c3H.avif','H7c14152131d0411f83e9fc41edf248e8n.avif','Heab9ef71144d4b31b28fda47d7eaee31h.avif','Heb5c69957dcb4b2597b11ee9c25cd125D.avif','Hec72544449864be29fb94d3b498ec9f0Z.avif','Hef24dd3fb26f4a7794c6d170fce31c5cm.avif']
             }
         ],
+        hasVideo: false
+    },
+    {
+        id: 'MX10',
+        // brand: 'Vankel',
+        category: ['mountain', 'moto'],
+        rangeKm: 100,
+        motorW: 250,
+        battery: '48V 13,5Ah',
+        name: 'MX10 Retro Scrambler Fat-Tire E-Bike',
+        description: 'Retro-Scrambler E-Bike mit Vollfederung, 250-W-Hubmotor und herausnehmbarem 48-V-13,5-Ah-Akku – für Stadt und Gelände.',
+        longDescription: [
+            'Das MX10 ist ein auffälliges Retro-Scrambler E-Bike im Fat-Tire-Look mit Vollfederung. Der 48-V-13,5-Ah-Lithium-Ionen-Akku ist herausnehmbar im Unterrohr untergebracht und lädt sich in etwa 6 Stunden auf.',
+            'Der 250-W-Brushless-Geared-Hubmotor mit 50–60 N·m Drehmoment, die hydraulischen Scheibenbremsen, die 7-Gang-Schaltung und die wasserdichte IPX5-Ausführung sorgen für Komfort und Sicherheit – mit einer Reichweite von 45 bis 100 km.'
+        ],
+        price: 939,
+        askForAvailability: true,
+        folder: 'products/MX10',
+        coverImage: 'products/MX10/images/1.jpg',
+        imageFiles: ['1.jpg','H027129e983a24c2a85630ad2ad5d09bfk.png','H300f3a2814584857aaea12ac7169f7ef8.jpg','H36c0f091bc3e4cc1a69b303720e50cdaX.jpg','H3e52905e284b4c818891764cbed47c97k.jpg','H4758d36f6e5e4ef2801a293b5a15c410p.jpg','H6e6e309a7f1647388b7f7cc70fa084fbx.jpg','Hbe7d8ee7a71546358484b797d5d67eefM.jpg','Hf1258d7c3ceb407b8db8f715b26e6effV.jpg'],
         hasVideo: false
     }
 ];
