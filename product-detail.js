@@ -953,6 +953,21 @@ function getBasicSpecs(product) {
         specs['Display'] = 'Kompaktes LED-Display';
         specs['Besonderheiten'] = 'Verstellbarer Vorbauwinkel (-10° bis 60°), Gepäckträger, Schutzbleche & Beleuchtung';
         specs['Anwendung'] = 'Erwachsene, Stadt';
+    } else if (product.id === 'Polaris') {
+        specs['Modell'] = 'Polaris';
+        specs['Typ'] = 'Elektrisches Klappfahrrad';
+        specs['Reichweite'] = 'Bis 45 km';
+        specs['Motor'] = '48V 250 W bürstenloser Nabenmotor (60 N·m)';
+        specs['Akku'] = '48V 13Ah (Lithium-Ionen, herausnehmbar, 624 Wh)';
+        specs['Max. Geschwindigkeit'] = '25 km/h';
+        specs['Schaltung'] = '7-Gang';
+        specs['Ladezeit'] = 'Ca. 6–7 Stunden';
+        specs['Rahmen'] = 'Aluminiumlegierung (faltbar)';
+        specs['Federung'] = 'Vollfederung';
+        specs['Bremsen'] = 'Hydraulische Scheibenbremsen';
+        specs['Reifen'] = '20 x 4,0 Zoll Fat-Tire, pannensicher';
+        specs['Batterieposition'] = 'Im Rahmenrohr';
+        specs['Anwendung'] = 'Erwachsene, Stadt';
     }
     
     if (product.outOfStock) {

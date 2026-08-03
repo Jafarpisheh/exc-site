@@ -617,6 +617,41 @@ const products = [
             }
         ],
         hasVideo: false
+    },
+    {
+        id: 'Polaris',
+        category: ['folding'],
+        rangeKm: 45,
+        motorW: 250,
+        battery: '48V 13Ah',
+        name: 'Polaris Faltbares Fat-Tire E-Bike',
+        description: 'Faltbares Fat-Tire E-Bike mit 48-V-250-W-Nabenmotor, Vollfederung und hydraulischen Scheibenbremsen – für Stadt und Freizeit.',
+        longDescription: [
+            'Das Polaris ist ein kompaktes Falt-E-Bike mit pannensicheren 20 x 4,0 Zoll Fat-Reifen und Vollfederung. Der leise 48-V-250-W-Hinterradnabenmotor mit 60 N·m Drehmoment bringt Sie mit einer Reichweite von bis zu 45 km entspannt ans Ziel.',
+            'Der herausnehmbare 13-Ah-Lithium-Ionen-Akku sitzt im Rahmenrohr und ist in ca. 6–7 Stunden aufgeladen. Die 7-Gang-Schaltung und die hydraulischen Scheibenbremsen machen das Polaris zum zuverlässigen Begleiter für den Alltag.'
+        ],
+        price: 779,
+        stripeCheckoutUrl: 'https://buy.stripe.com/fZuaEP5er5fb4vy1Y63oA0z',
+        folder: 'products/Polaris',
+        variants: [
+            {
+                id: 'grau',
+                name: 'Grau',
+                folder: 'products/Polaris/Grau',
+                coverImage: 'products/Polaris/Grau/1.jpg',
+                stripeCheckoutUrl: 'https://buy.stripe.com/fZuaEP5er5fb4vy1Y63oA0z',
+                imageFiles: ['1.jpg','H46bb6d5beb2746aaa7fe61dad0ac964dO.jpg','H498d18bc64314452a0a43226c8a94ee57.jpg','H5cb6b6e47914423582fca3021a660057O.jpg','H756794da25cb4c45abf914c39311f1d5u.jpg','H77237e2da23d4b0d99e8b04a4a8adf71O.jpg','H893ab6d1ec164efc915d92db328d523e4.jpg','H95df886519cf4b0f8e881366b8625f48y.jpg','Hba5f38b9019648f1a7be556e8ffc9e0bT.jpg','Hcbdef2e69d0e4a97b3bf753804150a19Q.jpg','Hd890c9669f444486b178d64f592d7591R.jpg','He2d62e1221514e53acb56c7eb8412ab50.jpg']
+            },
+            {
+                id: 'schwarz',
+                name: 'Schwarz',
+                folder: 'products/Polaris/Schwarz',
+                coverImage: 'products/Polaris/Schwarz/1.jpg',
+                stripeCheckoutUrl: 'https://buy.stripe.com/bJe4gr9uHfTP2nqbyG3oA0A',
+                imageFiles: ['1.jpg','H46bb6d5beb2746aaa7fe61dad0ac964dO.jpg','H498d18bc64314452a0a43226c8a94ee57.jpg','H5cb6b6e47914423582fca3021a660057O.jpg','H756794da25cb4c45abf914c39311f1d5u.jpg','H77237e2da23d4b0d99e8b04a4a8adf71O.jpg','H893ab6d1ec164efc915d92db328d523e4.jpg','H95df886519cf4b0f8e881366b8625f48y.jpg','Hba5f38b9019648f1a7be556e8ffc9e0bT.jpg','Hcbdef2e69d0e4a97b3bf753804150a19Q.jpg','Hd890c9669f444486b178d64f592d7591R.jpg','He2d62e1221514e53acb56c7eb8412ab50.jpg']
+            }
+        ],
+        hasVideo: false
     }
 ];
 
