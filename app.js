@@ -751,6 +751,42 @@ const products = [
             }
         ],
         hasVideo: false
+    },
+    {
+        id: 'OT05Pro',
+        brand: 'Onesport',
+        category: ['city'],
+        rangeKm: 135,
+        motorW: 250,
+        battery: '36V 22,5Ah',
+        name: 'ONESPORT E-Bike Cityrad OT05 Pro',
+        description: 'Modernes City-E-Bike mit 27,5-Zoll-Reifen, starkem 22,5-Ah-Akku, hydraulischen Scheibenbremsen und Drehmomentsensor für lange, komfortable Touren.',
+        longDescription: [
+            'Das ONESPORT Cityrad OT05 Pro ist der leistungsstärkere Bruder des OT05. Der leise 36-V-250-W-Motor mit 40 N·m Drehmoment und der Drehmomentsensor sorgen für eine natürliche, reaktionsschnelle Pedalunterstützung mit Reichweiten von bis zu 140 km.',
+            'Der herausnehmbare 36-V-Akku mit 22,5 Ah (810 Wh) wird in ca. 6–8 Stunden aufgeladen. Der leichte Aluminiumrahmen, die Frontgabel-Federung und die hydraulischen Scheibenbremsen machen das OT05 Pro zum zuverlässigen Begleiter für City und Alltag.'
+        ],
+        price: 1149,
+        stripeCheckoutUrl: 'https://buy.stripe.com/bJeaEPeP1azv1jm6em3oA0J',
+        folder: 'products/OT05Pro',
+        variants: [
+            {
+                id: 'dunkelgrau',
+                name: 'Dunkelgrau',
+                folder: 'products/OT05Pro/Dunkelgrau',
+                coverImage: 'products/OT05Pro/Dunkelgrau/1.jpg',
+                stripeCheckoutUrl: 'https://buy.stripe.com/bJeaEPeP1azv1jm6em3oA0J',
+                imageFiles: ['1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','6.jpg','7.jpg','8.jpg','9.jpg','10.jpg']
+            },
+            {
+                id: 'orange',
+                name: 'Orange',
+                folder: 'products/OT05Pro/Orange',
+                coverImage: 'products/OT05Pro/Orange/1.jpg',
+                stripeCheckoutUrl: 'https://buy.stripe.com/bJe9ALgX9dLH7HK0U23oA0K',
+                imageFiles: ['1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','6.jpg','7.jpg','8.jpg','9.jpg','10.jpg']
+            }
+        ],
+        hasVideo: false
     }
 ];
 

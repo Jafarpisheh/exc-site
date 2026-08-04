@@ -1033,6 +1033,27 @@ function getBasicSpecs(product) {
         specs['Steigfähigkeit'] = 'Max. 30°';
         specs['Konnektivität'] = 'App (Smart Connection)';
         specs['Wasserdicht'] = 'IPX6';
+    } else if (product.id === 'OT05Pro') {
+        specs['Modell'] = 'OT05 Pro';
+        specs['Typ'] = 'E-Citybike';
+        specs['Reichweite'] = '130–140 km';
+        specs['Motor'] = '36V 250 W (40 N·m)';
+        specs['Akku'] = '36V 22,5Ah';
+        specs['Max. Geschwindigkeit'] = '25 km/h';
+        specs['Sensor'] = 'Drehmomentsensor';
+        specs['Ladezeit'] = '6–8 Stunden';
+        specs['Ladegerät'] = '42V 3A';
+        specs['Rahmen'] = 'Aluminiumrahmen';
+        specs['Federung'] = 'Frontgabel-Federung';
+        specs['Bremsen'] = 'Hydraulische Scheibenbremsen';
+        specs['Reifen'] = '27,5 x 2,25 Zoll';
+        specs['Zuladung'] = '100 kg';
+        specs['Gewicht'] = 'Netto 29 kg / Brutto 36,5 kg';
+        specs['Maße (Produkt)'] = '1900 x 670 x 1150 mm';
+        specs['Maße (Verpackung)'] = '1510 x 240 x 790 mm';
+        specs['Steigfähigkeit'] = 'Max. 30°';
+        specs['Konnektivität'] = 'App (Smart Connection)';
+        specs['Wasserdicht'] = 'IPX6';
     }
     
     if (product.outOfStock) {
