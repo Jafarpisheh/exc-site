@@ -134,6 +134,7 @@ const products = [
                 name: 'Rot',
                 folder: 'products/OT02/images/Röt',
                 coverImage: 'products/OT02/images/Röt/1.JPG',
+                askForAvailability: true,
                 stripeCheckoutUrl: 'https://buy.stripe.com/7sY3cn6ivePL1jm1Y63oA0C',
                 imageFiles: ['1.JPG','2.JPG','3.JPG','4.JPG','5.JPG','6.JPG','7.JPG','8.JPG','9.JPG','10.JPG','11.jpg','12.jpg','13.jpg','14.jpg','15.jpg','16.jpg']
             }
@@ -170,6 +171,7 @@ const products = [
                 name: 'Weiß',
                 folder: 'products/OT12/images/Weiß',
                 coverImage: 'products/OT12/images/Weiß/1.JPG',
+                askForAvailability: true,
                 stripeCheckoutUrl: 'https://buy.stripe.com/4gM6ozayL5fbbY0fOW3oA07',
                 imageFiles: ['1.JPG','2.JPG','3.JPG','4.JPG','5.JPG','6.jpg','7.jpg','8.JPG','9.JPG','10.JPG','11.JPG','12.jpg','13.JPG','14.jpg','15.jpg','16.jpg','17.jpg','18.jpg','19.jpg']
             }
@@ -206,6 +208,7 @@ const products = [
                 name: 'Weiß',
                 folder: 'products/OT16/images/Weiß',
                 coverImage: 'products/OT16/images/Weiß/1.JPG',
+                askForAvailability: true,
                 stripeCheckoutUrl: 'https://buy.stripe.com/7sYbIT4anazv4vybyG3oA09',
                 imageFiles: ['1.JPG','2.JPG','3.JPG','4.JPG','5.JPG','6.JPG','7.JPG','8.jpg','9.jpg','10.JPG','11.JPG','12.JPG','13.JPG']
             }
@@ -226,6 +229,7 @@ const products = [
             'Die hydraulischen Scheibenbremsen und die Frontgabel-Federung sorgen für ein komfortables und sicheres Fahrerlebnis. Mit der Smart-Connection-App hält Sie das W77 über alle wichtigen Fahrdaten auf dem Laufenden.'
         ],
         price: 999,
+        askForAvailability: true,
         folder: 'products/W77',
         imageFiles: [
             '1.JPG','2.JPG','3.JPG','4.JPG','5.JPG','6.JPG','7.JPG','8.JPG','9.JPG','10.jpg','11.jpg','12.jpg','13.jpg','14.jpg','15.jpg','16.jpg','17.jpg','18.jpg','19.jpg','20.jpg','21.jpg'
@@ -356,6 +360,7 @@ const products = [
                 price: 1299,
                 folder: 'products/N26/images/Rot',
                 coverImage: 'products/N26/images/Rot/1.jpg',
+                askForAvailability: true,
                 stripeCheckoutUrl: 'https://buy.stripe.com/3cI3cnayL5fb7HK8mu3oA0k',
                 imageFiles: ['1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','6.jpg','7.jpg','8.jpg']
             },
@@ -424,6 +429,7 @@ const products = [
                 price: 1999,
                 folder: 'products/E26/images/Grün',
                 coverImage: 'products/E26/images/Grün/1.jpg',
+                askForAvailability: true,
                 stripeCheckoutUrl: 'https://buy.stripe.com/eVq8wHayL4b70fi5ai3oA0n',
                 imageFiles: ['1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','6.jpg','7.jpg','8.jpg','9.jpg']
             }
@@ -455,6 +461,7 @@ const products = [
                 price: 799,
                 folder: 'products/C29Pro/images',
                 coverImage: 'products/C29Pro/images/1.jpg',
+                askForAvailability: true,
                 stripeCheckoutUrl: 'https://buy.stripe.com/aFacMXfT5373bY00U23oA0p',
                 imageFiles: ['1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','6.jpg','7.jpg','8.jpg','9.jpg','10.jpg','11.jpg','12.jpg','13.jpg','14.jpg','15.jpg','16.jpg','17.jpg','18.jpg','19.jpg','20.jpg','21.jpg','22.jpg','23.jpg','24.jpg','25.jpg','26.jpg','27.jpg','28.jpg','29.jpg','30.jpg','31.jpg','32.jpg']
             },
@@ -730,6 +737,7 @@ const products = [
                 name: 'Blau',
                 folder: 'products/OT05/Blau',
                 coverImage: 'products/OT05/Blau/1.jpg',
+                askForAvailability: true,
                 stripeCheckoutUrl: 'https://buy.stripe.com/bJe5kv9uH22Z9PSeKS3oA0G',
                 imageFiles: ['1.jpg','IMG_6322.JPG','OT05-ShL.3.jpg','OT05亮光蓝-深蓝.jpg','OT05深蓝色.jpg','微信图片_20251031172236.jpg']
             },
