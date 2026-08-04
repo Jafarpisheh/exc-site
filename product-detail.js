@@ -992,6 +992,26 @@ function getBasicSpecs(product) {
         specs['Display'] = 'Multifunktionsdisplay';
         specs['Traglast'] = '25 kg';
         specs['Anwendung'] = 'Erwachsene, Freizeit & Pendeln';
+    } else if (product.id === 'OT02Pro') {
+        specs['Modell'] = 'OT02 Pro';
+        specs['Typ'] = 'E-Urbanbike (faltbar, Retro)';
+        specs['Reichweite'] = 'Bis 25 km';
+        specs['Motor'] = '36V 250 W (30 N·m)';
+        specs['Akku'] = '36V 5,2Ah';
+        specs['Max. Geschwindigkeit'] = '25 km/h';
+        specs['Sensor'] = 'Drehmomentsensor';
+        specs['Ladezeit'] = '2,5–3 Stunden';
+        specs['Ladegerät'] = '42V 2A';
+        specs['Rahmen'] = 'Chromoly-Stahl (faltbar)';
+        specs['Federung'] = 'Keine';
+        specs['Bremsen'] = 'Mechanische Scheibenbremsen';
+        specs['Reifen'] = '20 x 1,35 Zoll';
+        specs['Zuladung'] = '80 kg';
+        specs['Gewicht'] = 'Netto 17,18 kg / Brutto 21,8 kg';
+        specs['Maße (Produkt)'] = '1500 x 550 x 1120 mm';
+        specs['Maße (Verpackung)'] = '840 x 380 x 640 mm';
+        specs['Steigfähigkeit'] = 'Max. 30°';
+        specs['Wasserdicht'] = 'IPX4';
     }
     
     if (product.outOfStock) {

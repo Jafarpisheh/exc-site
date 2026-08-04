@@ -671,6 +671,42 @@ const products = [
         coverImage: 'products/Camel/images/1.jpg',
         imageFiles: ['1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','6.jpg','7.jpg','8.jpg','9.jpg','10.jpg'],
         hasVideo: false
+    },
+    {
+        id: 'OT02Pro',
+        brand: 'Onesport',
+        category: ['folding'],
+        rangeKm: 25,
+        motorW: 250,
+        battery: '36V 5,2Ah',
+        name: 'ONESPORT E-Bike OT02 Pro',
+        description: 'Kompaktes Falt-E-Bike im Retro-Design mit 250-W-Motor, Drehmomentsensor und mechanischen Scheibenbremsen – ideal für die Stadt.',
+        longDescription: [
+            'Das ONESPORT OT02 Pro ist ein kompaktes Falt-E-Bike im Retro-Design, das sich ideal für kurze Fahrten in der Stadt eignet. Der 36-V-250-W-Motor mit 30 N·m Drehmoment und der Drehmomentsensor sorgen für eine natürliche und reaktionsschnelle Pedalunterstützung.',
+            'Der 36-V-Akku mit 5,2 Ah bietet eine Reichweite von bis zu 25 km und ist in ca. 2,5–3 Stunden aufgeladen. Der faltbare Chromoly-Stahlrahmen und die 20 x 1,35 Zoll Reifen machen das Bike kompakt, wendig und leicht überallhin mitnehmbar.'
+        ],
+        price: 629,
+        stripeCheckoutUrl: 'https://buy.stripe.com/6oU5kvfT5fTPgegcCK3oA0F',
+        folder: 'products/OT02Pro',
+        variants: [
+            {
+                id: 'gruen',
+                name: 'Grün',
+                folder: 'products/OT02Pro/Grün',
+                coverImage: 'products/OT02Pro/Grün/1.jpg',
+                stripeCheckoutUrl: 'https://buy.stripe.com/6oU5kvfT5fTPgegcCK3oA0F',
+                imageFiles: ['1.jpg','2.jpg','L01.jpg','L02.jpg','L03.jpg','L04.jpg','L05.jpg','L06.jpg','L07.jpg','L08.jpg','L09.jpg','OT02Pro-L.13.jpg','OT02Pro-L.14.jpg','OT02Pro-L.15.jpg','OT02Pro-L.16.jpg','OT02Pro-L.17.jpg','OT02Pro-L.19.jpg','OT02Pro-L.20.jpg','OT02Pro-L.21.jpg','OT02Pro-L.22.jpg','OT02Pro-L.23.jpg','OT02Pro-L.24.jpg','OT02Pro-L.25.jpg','OT02Pro-L.26.jpg','OT02Pro-L.5.jpg','OT02Pro-L.9.jpg','OT02Pro-ZD.4.jpg','OT02Pro-ZD.6.jpg']
+            },
+            {
+                id: 'rot',
+                name: 'Rot',
+                folder: 'products/OT02Pro/Rot',
+                coverImage: 'products/OT02Pro/Rot/1.jpg',
+                stripeCheckoutUrl: 'https://buy.stripe.com/14A8wHcGTgXT1jm9qy3oA0E',
+                imageFiles: ['1.jpg','2 (2).jpg','2.jpg','2b.jpg','4 (2).jpg','H01.jpg','H02.jpg','H03.jpg','H04.jpg','H05.jpg','H06.jpg','H07.jpg','H08.jpg','H09.jpg','OT02Pro-H.13.jpg','OT02Pro-H.14.jpg','OT02Pro-H.15.jpg','OT02Pro-H.17.jpg','OT02Pro-H.19.jpg','OT02Pro-H.21.jpg','OT02Pro-H.22.jpg','OT02Pro-H.23.jpg','OT02Pro-H.24.jpg','OT02Pro-H.25.jpg','OT02Pro-H.26.jpg','OT02Pro-H.5.jpg','OT02Pro-H.9.jpg','OT02Pro-ZD.1.jpg']
+            }
+        ],
+        hasVideo: false
     }
 ];
 
