@@ -117,8 +117,8 @@ const products = [
             'Das ONESPORT Cityrad OT02 kombiniert modernes Design mit durchdachter Technik. Erhältlich in zwei attraktiven Farbvarianten, passt es sich perfekt Ihrem persönlichen Stil an.',
             'Der kompakte 250-W-Motor und die 36-V-Batterie machen das OT02 zum idealen Begleiter für kurze Fahrten in der Stadt. Dank seines geringen Gewichts und der praktischen Faltkonstruktion ist es problemlos überallhin mitnehmbar.'
         ],
-        price: 599,
-        stripeCheckoutUrl: 'https://buy.stripe.com/8x2dR1eP1cHD4vyeKS3oA05',
+        price: 529,
+        stripeCheckoutUrl: 'https://buy.stripe.com/5kQfZ9cGT22ZgeggT03oA0D',
         folder: 'products/OT02',
         variants: [
             {
@@ -126,7 +126,7 @@ const products = [
                 name: 'Grün',
                 folder: 'products/OT02/images/Grün',
                 coverImage: 'products/OT02/images/Grün/1.JPG',
-                stripeCheckoutUrl: 'https://buy.stripe.com/8x2dR1eP1cHD4vyeKS3oA05',
+                stripeCheckoutUrl: 'https://buy.stripe.com/5kQfZ9cGT22ZgeggT03oA0D',
                 imageFiles: ['1.JPG','2.JPG','3.JPG','4.JPG','5.JPG','6.JPG','7.JPG','8.JPG','9.JPG','10.JPG','11.JPG','12.JPG','13.JPG','14.JPG','15.JPG','16.JPG','17.JPG','18.JPG','19.jpg','20.jpg','21.jpg','22.jpg','23.jpg']
             },
             {
@@ -134,7 +134,7 @@ const products = [
                 name: 'Rot',
                 folder: 'products/OT02/images/Röt',
                 coverImage: 'products/OT02/images/Röt/1.JPG',
-                stripeCheckoutUrl: 'https://buy.stripe.com/fZubITfT54b7geg0U23oA04',
+                stripeCheckoutUrl: 'https://buy.stripe.com/7sY3cn6ivePL1jm1Y63oA0C',
                 imageFiles: ['1.JPG','2.JPG','3.JPG','4.JPG','5.JPG','6.JPG','7.JPG','8.JPG','9.JPG','10.JPG','11.jpg','12.jpg','13.jpg','14.jpg','15.jpg','16.jpg']
             }
         ],
