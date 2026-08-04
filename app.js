@@ -640,7 +640,7 @@ const products = [
                 folder: 'products/Polaris/Grau',
                 coverImage: 'products/Polaris/Grau/1.jpg',
                 stripeCheckoutUrl: 'https://buy.stripe.com/fZuaEP5er5fb4vy1Y63oA0z',
-                imageFiles: ['1.jpg','H46bb6d5beb2746aaa7fe61dad0ac964dO.jpg','H498d18bc64314452a0a43226c8a94ee57.jpg','H5cb6b6e47914423582fca3021a660057O.jpg','H756794da25cb4c45abf914c39311f1d5u.jpg','H77237e2da23d4b0d99e8b04a4a8adf71O.jpg','H893ab6d1ec164efc915d92db328d523e4.jpg','H95df886519cf4b0f8e881366b8625f48y.jpg','Hba5f38b9019648f1a7be556e8ffc9e0bT.jpg','Hcbdef2e69d0e4a97b3bf753804150a19Q.jpg','Hd890c9669f444486b178d64f592d7591R.jpg','He2d62e1221514e53acb56c7eb8412ab50.jpg']
+                imageFiles: ['1.jpg','H46bb6d5beb2746aaa7fe61dad0ac964dO.jpg','H498d18bc64314452a0a43226c8a94ee57.jpg','H5cb6b6e47914423582fca3021a660057O.jpg','H756794da25cb4c45abf914c39311f1d5u.jpg','24f412a66ad0d58b84099f94cfac701c.jpg', 'H77237e2da23d4b0d99e8b04a4a8adf71O.jpg','H893ab6d1ec164efc915d92db328d523e4.jpg','H95df886519cf4b0f8e881366b8625f48y.jpg','Hba5f38b9019648f1a7be556e8ffc9e0bT.jpg','Hcbdef2e69d0e4a97b3bf753804150a19Q.jpg','Hd890c9669f444486b178d64f592d7591R.jpg','He2d62e1221514e53acb56c7eb8412ab50.jpg']
             },
             {
                 id: 'schwarz',
@@ -648,7 +648,7 @@ const products = [
                 folder: 'products/Polaris/Schwarz',
                 coverImage: 'products/Polaris/Schwarz/1.jpg',
                 stripeCheckoutUrl: 'https://buy.stripe.com/bJe4gr9uHfTP2nqbyG3oA0A',
-                imageFiles: ['1.jpg','H46bb6d5beb2746aaa7fe61dad0ac964dO.jpg','H498d18bc64314452a0a43226c8a94ee57.jpg','H5cb6b6e47914423582fca3021a660057O.jpg','H756794da25cb4c45abf914c39311f1d5u.jpg','H77237e2da23d4b0d99e8b04a4a8adf71O.jpg','H893ab6d1ec164efc915d92db328d523e4.jpg','H95df886519cf4b0f8e881366b8625f48y.jpg','Hba5f38b9019648f1a7be556e8ffc9e0bT.jpg','Hcbdef2e69d0e4a97b3bf753804150a19Q.jpg','Hd890c9669f444486b178d64f592d7591R.jpg','He2d62e1221514e53acb56c7eb8412ab50.jpg']
+                imageFiles: ['1.jpg','H46bb6d5beb2746aaa7fe61dad0ac964dO.jpg','H498d18bc64314452a0a43226c8a94ee57.jpg','24f412a66ad0d58b84099f94cfac701c.jpg','H5cb6b6e47914423582fca3021a660057O.jpg','H756794da25cb4c45abf914c39311f1d5u.jpg','H77237e2da23d4b0d99e8b04a4a8adf71O.jpg','H893ab6d1ec164efc915d92db328d523e4.jpg','H95df886519cf4b0f8e881366b8625f48y.jpg','Hba5f38b9019648f1a7be556e8ffc9e0bT.jpg','Hcbdef2e69d0e4a97b3bf753804150a19Q.jpg','Hd890c9669f444486b178d64f592d7591R.jpg','He2d62e1221514e53acb56c7eb8412ab50.jpg']
             }
         ],
         hasVideo: false
