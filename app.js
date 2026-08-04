@@ -707,6 +707,50 @@ const products = [
             }
         ],
         hasVideo: false
+    },
+    {
+        id: 'OT05',
+        brand: 'Onesport',
+        category: ['city'],
+        rangeKm: 120,
+        motorW: 250,
+        battery: '36V 18,2Ah',
+        name: 'ONESPORT E-Bike Cityrad OT05',
+        description: 'Modernes City-E-Bike mit 27,5-Zoll-Reifen, hydraulischen Scheibenbremsen und Drehmomentsensor – für komfortable Fahrten in Stadt und Alltag.',
+        longDescription: [
+            'Das ONESPORT Cityrad OT05 kombiniert urbane Eleganz mit durchdachter Technik. Der leise 36-V-250-W-Motor mit 40 N·m Drehmoment und der Drehmomentsensor sorgen für eine natürliche, reaktionsschnelle Pedalunterstützung mit Reichweiten von bis zu 120 km.',
+            'Der herausnehmbare 36-V-Akku mit 18,2 Ah (655 Wh) wird in ca. 6–8 Stunden aufgeladen. Der leichte Aluminiumrahmen, die Frontgabel-Federung und die hydraulischen Scheibenbremsen machen das OT05 zum zuverlässigen Begleiter auf jedem Weg in der Stadt.'
+        ],
+        price: 1029,
+        stripeCheckoutUrl: 'https://buy.stripe.com/bJe5kv9uH22Z9PSeKS3oA0G',
+        folder: 'products/OT05',
+        variants: [
+            {
+                id: 'blau',
+                name: 'Blau',
+                folder: 'products/OT05/Blau',
+                coverImage: 'products/OT05/Blau/1.jpg',
+                stripeCheckoutUrl: 'https://buy.stripe.com/bJe5kv9uH22Z9PSeKS3oA0G',
+                imageFiles: ['1.jpg','IMG_6322.JPG','OT05-ShL.3.jpg','OT05亮光蓝-深蓝.jpg','OT05深蓝色.jpg','微信图片_20251031172236.jpg']
+            },
+            {
+                id: 'grau',
+                name: 'Grau',
+                folder: 'products/OT05/Grau',
+                coverImage: 'products/OT05/Grau/1.jpg',
+                stripeCheckoutUrl: 'https://buy.stripe.com/8x24gr36j4b7e68dGO3oA0H',
+                imageFiles: ['1.jpg','IMG_6800.JPG','IMG_6806.JPG','OT05-Hui.12.jpg','OT05-Hui.23.jpg','OT05亮光蓝-深蓝.jpg','OT05亮光蓝.jpg','OT05亮光蓝2.jpg','OT05灰色.jpg','OT05灰色2.jpg','微信图片_20251031172236.jpg']
+            },
+            {
+                id: 'weiss',
+                name: 'Weiß',
+                folder: 'products/OT05/Weiß',
+                coverImage: 'products/OT05/Weiß/1.jpg',
+                stripeCheckoutUrl: 'https://buy.stripe.com/5kQbITgX96jf3ru6em3oA0I',
+                imageFiles: ['1.jpg','IMG_6790.JPG','IMG_6791.JPG','OT05-Bai.13.jpg','OT05白色.jpg','OT05白色2.jpg','微信图片_20251031172236.jpg']
+            }
+        ],
+        hasVideo: false
     }
 ];
 

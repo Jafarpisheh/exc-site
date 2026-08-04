@@ -1012,6 +1012,27 @@ function getBasicSpecs(product) {
         specs['Maße (Verpackung)'] = '840 x 380 x 640 mm';
         specs['Steigfähigkeit'] = 'Max. 30°';
         specs['Wasserdicht'] = 'IPX4';
+    } else if (product.id === 'OT05') {
+        specs['Modell'] = 'OT05';
+        specs['Typ'] = 'E-Citybike';
+        specs['Reichweite'] = '100–120 km';
+        specs['Motor'] = '36V 250 W (40 N·m)';
+        specs['Akku'] = '36V 18,2Ah';
+        specs['Max. Geschwindigkeit'] = '25 km/h';
+        specs['Sensor'] = 'Drehmomentsensor';
+        specs['Ladezeit'] = '6–8 Stunden';
+        specs['Ladegerät'] = '42V 2A';
+        specs['Rahmen'] = 'Aluminiumrahmen';
+        specs['Federung'] = 'Frontgabel-Federung';
+        specs['Bremsen'] = 'Hydraulische Scheibenbremsen';
+        specs['Reifen'] = '27,5 x 2,25 Zoll';
+        specs['Zuladung'] = '100 kg';
+        specs['Gewicht'] = 'Netto 28 kg / Brutto 35 kg';
+        specs['Maße (Produkt)'] = '1850 x 680 x 1080 mm';
+        specs['Maße (Verpackung)'] = '1470 x 230 x 760 mm';
+        specs['Steigfähigkeit'] = 'Max. 30°';
+        specs['Konnektivität'] = 'App (Smart Connection)';
+        specs['Wasserdicht'] = 'IPX6';
     }
     
     if (product.outOfStock) {
