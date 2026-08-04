@@ -652,6 +652,25 @@ const products = [
             }
         ],
         hasVideo: false
+    },
+    {
+        id: 'Camel',
+        category: ['city'],
+        rangeKm: 120,
+        motorW: 250,
+        battery: '48V 18Ah',
+        name: 'Camel Fat-Tire Step-Thru E-Bike',
+        description: 'Mehrzweck-Fatbike mit tiefem Einstieg, 48-V-250-W-Motor, Vollfederung und hydraulischen Scheibenbremsen – für Freizeit und tägliches Pendeln.',
+        longDescription: [
+            'Das Camel ist ein vielseitiges Fatbike mit tiefem Einstieg (Step-Thru-Design), das sich ideal für entspanntes Fahren und tägliche Pendelfahrten eignet. Der leise 48-V-250-W-Hinterradnabenmotor mit 60 N·m Drehmoment bringt Sie mit einer Reichweite von bis zu 120 km zuverlässig ans Ziel.',
+            'Der herausnehmbare 48-V-18-Ah-Lithium-Ionen-Akku (864 Wh) ist fest ins Unterrohr integriert und in ca. 9 Stunden aufgeladen. Die Vollfederung (Doppelaufhängung), die hydraulischen Zoom-Scheibenbremsen und die breiten 20 x 4,0 Zoll Fat-Reifen sorgen für Komfort und Sicherheit auf jeder Fahrt.'
+        ],
+        price: 969,
+        stripeCheckoutUrl: 'https://buy.stripe.com/00waEPbCPcHDaTW5ai3oA0B',
+        folder: 'products/Camel',
+        coverImage: 'products/Camel/images/1.jpg',
+        imageFiles: ['1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','6.jpg','7.jpg','8.jpg','9.jpg','10.jpg'],
+        hasVideo: false
     }
 ];
 
@@ -837,6 +856,7 @@ function createProductCard(product) {
 
     const productCard = document.createElement('div');
     productCard.className = 'product-card';
+    productCard.dataset.productId = product.id;
     productCard.onclick = () => goToProduct(product.id);
 
     let specsHTML = '';
@@ -910,6 +930,19 @@ function goToProduct(productId) {
     window.location.href = `product-detail.html?product=${productId}`;
 }
 
+// Zum Produkt zurück scrollen, wenn über einen Produktparameter zurückgekehrt wird
+function scrollToReturnedProduct() {
+    const params = new URLSearchParams(window.location.search);
+    const productId = params.get('product');
+    if (!productId) return;
+
+    const cards = document.querySelectorAll('#productsList .product-card');
+    const card = Array.from(cards).find(c => c.dataset.productId === productId);
+    if (card) {
+        card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+}
+
 // Produkt nach ID abrufen
 function getProductById(productId) {
     return products.find(p => p.id === productId);
@@ -933,6 +966,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setupCatalogFilters();
     loadProducts();
     setupAvailabilityRequest();
+    scrollToReturnedProduct();
 });
 
 // Setup site-wide inquiry form (used on index.html)

@@ -31,6 +31,12 @@ async function loadProductDetails() {
     
     galleryState.product = product;
     galleryState.activeVariantId = getInitialVariantId(product);
+
+    // Back-Link so setzen, dass auf der Startseite zum Produkt gescrollt wird
+    const backLink = document.querySelector('.back-link');
+    if (backLink) {
+        backLink.href = `index.html?product=${encodeURIComponent(product.id)}`;
+    }
     
     // Set product name, price and supporting copy
     document.getElementById('productName').textContent = product.name;
@@ -968,6 +974,24 @@ function getBasicSpecs(product) {
         specs['Reifen'] = '20 x 4,0 Zoll Fat-Tire, pannensicher';
         specs['Batterieposition'] = 'Im Rahmenrohr';
         specs['Anwendung'] = 'Erwachsene, Stadt';
+    } else if (product.id === 'Camel') {
+        specs['Modell'] = 'Camel';
+        specs['Typ'] = 'Mehrzweck-Fatbike mit tiefem Einstieg';
+        specs['Reichweite'] = 'Bis 120 km';
+        specs['Motor'] = '48V 250 W bürstenloser Hinterradnabenmotor (60 N·m)';
+        specs['Akku'] = '48V 18Ah (Lithium-Ionen, herausnehmbar, 864 Wh)';
+        specs['Max. Geschwindigkeit'] = '25 km/h';
+        specs['Schaltung'] = '7-Gang';
+        specs['Ladezeit'] = 'Ca. 9 Stunden';
+        specs['Rahmen'] = 'Hochfester Stahl';
+        specs['Federung'] = 'Vollfederung (Doppelaufhängung)';
+        specs['Bremsen'] = 'Hydraulische Zoom-Scheibenbremsen';
+        specs['Reifen'] = '20 x 4,0 Zoll Fat-Tire';
+        specs['Batterieposition'] = 'Im Unterrohr integriert';
+        specs['Steckertyp'] = 'Europäischer Stecker, Britischer Stecker';
+        specs['Display'] = 'Multifunktionsdisplay';
+        specs['Traglast'] = '25 kg';
+        specs['Anwendung'] = 'Erwachsene, Freizeit & Pendeln';
     }
     
     if (product.outOfStock) {
