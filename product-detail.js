@@ -1054,6 +1054,27 @@ function getBasicSpecs(product) {
         specs['Steigfähigkeit'] = 'Max. 30°';
         specs['Konnektivität'] = 'App (Smart Connection)';
         specs['Wasserdicht'] = 'IPX6';
+    } else if (product.id === 'E29') {
+        specs['Modell'] = 'E29';
+        specs['Typ'] = 'E-Mountainbike';
+        specs['Reichweite'] = '80–90 km';
+        specs['Motor'] = 'Bafang 48V 250 W (50 N·m)';
+        specs['Akku'] = '48V 13,5Ah';
+        specs['Max. Geschwindigkeit'] = '40 km/h (auf 25 km/h begrenzt)';
+        specs['Sensor'] = 'Drehmomentsensor (Central Axis)';
+        specs['Ladezeit'] = '6–7 Stunden';
+        specs['Ladegerät'] = '54,6V 2A';
+        specs['Rahmen'] = 'Aluminiumrahmen (nicht faltbar)';
+        specs['Federung'] = 'DNM Luftfederung';
+        specs['Bremsen'] = 'Shimano hydraulische Scheibenbremsen';
+        specs['Reifen'] = '27,5 x 2,6 Zoll';
+        specs['Zuladung'] = '150 kg';
+        specs['Gewicht'] = 'Netto 26,6 kg / Brutto 34,5 kg';
+        specs['Maße (Produkt)'] = '1870 x 690 x 1110 mm';
+        specs['Maße (Verpackung)'] = '1500 x 250 x 810 mm';
+        specs['Steigfähigkeit'] = 'Max. 30°';
+        specs['Konnektivität'] = 'App (Smart Connection)';
+        specs['Wasserdicht'] = 'IPX4';
     }
     
     if (product.outOfStock) {

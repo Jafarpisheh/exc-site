@@ -809,6 +809,43 @@ const products = [
             }
         ],
         hasVideo: false
+    },
+    {
+        id: 'E29',
+        brand: 'Duotts',
+        category: ['mountain'],
+        rangeKm: 90,
+        motorW: 250,
+        battery: '48V 13,5Ah',
+        name: 'Duotts E29 E-Mountainbike',
+        description: 'Sportliches E-Mountainbike mit Bafang 48-V-250-W-Mittelmotor, Torque-Sensor, DNM Luftfederung und Shimano hydraulischen Scheibenbremsen – für anspruchsvolle Touren.',
+        longDescription: [
+            'Das Duotts E29 ist ein sportliches E-Mountainbike, das für anspruchsvolle Touren und abwechslungsreiches Gelände konzipiert wurde. Der Bafang 48-V-250-W-Mittelmotor mit 50 N·m Drehmoment und Torque-Sensor (Central Axis) sorgt für eine natürliche, reaktionsschnelle Pedalunterstützung mit Reichweiten von 80 bis 90 km.',
+            'Der herausnehmbare 48-V-13,5-Ah-Lithium-Akku ist in ca. 6–7 Stunden aufgeladen. Die DNM-Luftfederung, die Shimano-hydraulischen Scheibenbremsen und die breiten 27,5 x 2,6 Zoll Reifen sorgen für Komfort und Sicherheit auf jedem Trail. Mit der Smart-Connection-App behalten Sie alle wichtigen Fahrdaten im Blick.'
+        ],
+        price: 1359,
+        stripeCheckoutUrl: 'https://buy.stripe.com/6oUeV5gX97nj2nqeKS3oA0N',
+        folder: 'products/E29',
+        variants: [
+            {
+                id: 'schwarz-rot',
+                name: 'Schwarz-Rot',
+                folder: 'products/E29/Schwarz-Rot',
+                coverImage: 'products/E29/Schwarz-Rot/1.jpg',
+                stripeCheckoutUrl: 'https://buy.stripe.com/6oUeV5gX97nj2nqeKS3oA0N',
+                imageFiles: ['1.jpg','114bde39-d8fb-4aa4-8d6f-30efb221da3e.jpg','3.jpg','4.jpg','5.jpg','6.jpg','7.jpg','8.jpg','9.jpg','s-l1600 (1).jpg','s-l1600 (2).jpg','s-l1600 (3).jpg','s-l1600 (4).jpg','s-l1600 (5).jpg','s-l1600.jpg','s-l16002.jpg']
+            },
+            {
+                id: 'silber',
+                name: 'Silber',
+                folder: 'products/E29/Silber',
+                coverImage: 'products/E29/Silber/1.jpg',
+                askForAvailability: true,
+                // stripeCheckoutUrl: 'https://buy.stripe.com/REPLACE_E29_SILBER',
+                imageFiles: ['1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','6.jpg','7.jpg','8.jpg','9.jpg','10.jpg','11.jpg','12.jpg','13.jpg','14.jpg','15.jpg','16.jpg','17.jpg','18.jpg','19.jpg','20.jpg','21.jpg']
+            }
+        ],
+        hasVideo: false
     }
 ];
 
