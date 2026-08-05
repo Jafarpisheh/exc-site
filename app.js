@@ -495,8 +495,8 @@ const products = [
             'Der 250-W-Hinterradnabenmotor mit 50 N·m Drehmoment und die 7-Gang-Schaltung bringen Sie mit einer Reichweite von bis zu 80 km zuverlässig ans Ziel. Die hydraulischen Scheibenbremsen, die Vorderradgabel-Federung und das Smart Color LCD-Display sorgen für Komfort und Sicherheit auf jeder Fahrt.'
         ],
         price: 1029,
-        stripeCheckoutUrl: 'https://buy.stripe.com/9B63cnayL0YV4vy6em3oA0q',
-        // askForAvailability: true,
+        // stripeCheckoutUrl: 'https://buy.stripe.com/9B63cnayL0YV4vy6em3oA0q',
+        askForAvailability: true,
         folder: 'products/Literider',
         variants: [
             {
@@ -504,7 +504,8 @@ const products = [
                 name: 'Weiß',
                 folder: 'products/Literider/Weiß',
                 coverImage: 'products/Literider/Weiß/1.avif',
-                stripeCheckoutUrl: 'https://buy.stripe.com/9B63cnayL0YV4vy6em3oA0q',
+                askForAvailability: true,
+                // stripeCheckoutUrl: 'https://buy.stripe.com/9B63cnayL0YV4vy6em3oA0q',
                 imageFiles: ['1.avif','H28397e6707f046b6b0031b5d65861149r.avif','H3e5c734f69914b55934a5ff54dd30bdd8.avif','H40e30174951f4af7bef931865c664244i.avif','H570e6a6e63114c9f989a76eee6810a17O.avif','H6a95467b30fc449fad66e5ee461befa21.avif','H6d12bb9e77c34e5a952e59e141b8a5c3H.avif','H7c14152131d0411f83e9fc41edf248e8n.avif','Heab9ef71144d4b31b28fda47d7eaee31h.avif','Heb5c69957dcb4b2597b11ee9c25cd125D.avif','Hec72544449864be29fb94d3b498ec9f0Z.avif','Hef24dd3fb26f4a7794c6d170fce31c5cm.avif']
             },
             {
@@ -512,7 +513,8 @@ const products = [
                 name: 'Grün',
                 folder: 'products/Literider/Grün',
                 coverImage: 'products/Literider/Grün/1.avif',
-                stripeCheckoutUrl: 'https://buy.stripe.com/7sYdR14an3738LOgT03oA0r',
+                askForAvailability: true,
+                // stripeCheckoutUrl: 'https://buy.stripe.com/7sYdR14an3738LOgT03oA0r',
                 imageFiles: ['1.avif','H28397e6707f046b6b0031b5d65861149r.avif','H3e5c734f69914b55934a5ff54dd30bdd8.avif','H40e30174951f4af7bef931865c664244i.avif','H570e6a6e63114c9f989a76eee6810a17O.avif','H6a95467b30fc449fad66e5ee461befa21.avif','H6d12bb9e77c34e5a952e59e141b8a5c3H.avif','H7c14152131d0411f83e9fc41edf248e8n.avif','Heab9ef71144d4b31b28fda47d7eaee31h.avif','Heb5c69957dcb4b2597b11ee9c25cd125D.avif','Hec72544449864be29fb94d3b498ec9f0Z.avif','Hef24dd3fb26f4a7794c6d170fce31c5cm.avif']
             },
             {
@@ -520,7 +522,8 @@ const products = [
                 name: 'Schwarz',
                 folder: 'products/Literider/Schwarz',
                 coverImage: 'products/Literider/Schwarz/1.avif',
-                stripeCheckoutUrl: 'https://buy.stripe.com/4gM9AL0Yb3737HKcCK3oA0s',
+                askForAvailability: true,
+                // stripeCheckoutUrl: 'https://buy.stripe.com/4gM9AL0Yb3737HKcCK3oA0s',
                 imageFiles: ['1.avif','H28397e6707f046b6b0031b5d65861149r.avif','H3e5c734f69914b55934a5ff54dd30bdd8.avif','H40e30174951f4af7bef931865c664244i.avif','H570e6a6e63114c9f989a76eee6810a17O.avif','H6a95467b30fc449fad66e5ee461befa21.avif','H6d12bb9e77c34e5a952e59e141b8a5c3H.avif','H7c14152131d0411f83e9fc41edf248e8n.avif','Heab9ef71144d4b31b28fda47d7eaee31h.avif','Heb5c69957dcb4b2597b11ee9c25cd125D.avif','Hec72544449864be29fb94d3b498ec9f0Z.avif','Hef24dd3fb26f4a7794c6d170fce31c5cm.avif']
             },
             {
@@ -528,7 +531,8 @@ const products = [
                 name: 'Lila',
                 folder: 'products/Literider/Lila',
                 coverImage: 'products/Literider/Lila/1.avif',
-                stripeCheckoutUrl: 'https://buy.stripe.com/14A00b8qD6jfbY01Y63oA0t',
+                askForAvailability: true,
+                // stripeCheckoutUrl: 'https://buy.stripe.com/14A00b8qD6jfbY01Y63oA0t',
                 imageFiles: ['1.avif','H28397e6707f046b6b0031b5d65861149r.avif','H3e5c734f69914b55934a5ff54dd30bdd8.avif','H40e30174951f4af7bef931865c664244i.avif','H570e6a6e63114c9f989a76eee6810a17O.avif','H6a95467b30fc449fad66e5ee461befa21.avif','H6d12bb9e77c34e5a952e59e141b8a5c3H.avif','H7c14152131d0411f83e9fc41edf248e8n.avif','Heab9ef71144d4b31b28fda47d7eaee31h.avif','Heb5c69957dcb4b2597b11ee9c25cd125D.avif','Hec72544449864be29fb94d3b498ec9f0Z.avif','Hef24dd3fb26f4a7794c6d170fce31c5cm.avif']
             }
         ],
@@ -548,8 +552,8 @@ const products = [
             'Der 250-W-Brushless-Geared-Hubmotor mit 50–60 N·m Drehmoment, die hydraulischen Scheibenbremsen, die 7-Gang-Schaltung und die wasserdichte IPX5-Ausführung sorgen für Komfort und Sicherheit – mit einer Reichweite von 45 bis 100 km.'
         ],
         price: 939,
-        // askForAvailability: true,
-        stripeCheckoutUrl: 'https://buy.stripe.com/8x27sDfT55fbe68byG3oA0u',
+        askForAvailability: true,
+        // stripeCheckoutUrl: 'https://buy.stripe.com/8x27sDfT55fbe68byG3oA0u',
         folder: 'products/MX10',
         coverImage: 'products/MX10/images/1.jpg',
         imageFiles: ['1.jpg','H027129e983a24c2a85630ad2ad5d09bfk.png','H300f3a2814584857aaea12ac7169f7ef8.jpg','H36c0f091bc3e4cc1a69b303720e50cdaX.jpg','H3e52905e284b4c818891764cbed47c97k.jpg','H4758d36f6e5e4ef2801a293b5a15c410p.jpg','H6e6e309a7f1647388b7f7cc70fa084fbx.jpg','Hbe7d8ee7a71546358484b797d5d67eefM.jpg','Hf1258d7c3ceb407b8db8f715b26e6effV.jpg'],
@@ -568,7 +572,8 @@ const products = [
             'Der Samsung-Zellen-Lithium-Akku mit 9,6 Ah sitzt als Sattelstützenakku direkt am Rahmen und ist in ca. 5 Stunden aufgeladen. Der wartungsarme Belt-Drive-Antrieb, die pannensicheren Reifen und die mechanischen Scheibenbremsen machen das Smart30 zum zuverlässigen Begleiter für den Alltag.'
         ],
         price: 1059,
-        stripeCheckoutUrl: 'https://buy.stripe.com/28E28j8qD8rn4vy5ai3oA0v',
+        // stripeCheckoutUrl: 'https://buy.stripe.com/28E28j8qD8rn4vy5ai3oA0v',
+        askForAvailability: true,
         folder: 'products/Smart30',
         variants: [
             {
@@ -576,7 +581,8 @@ const products = [
                 name: 'Dunkelblau',
                 folder: 'products/Smart30/Dunkelblau',
                 coverImage: 'products/Smart30/Dunkelblau/1.jpg',
-                stripeCheckoutUrl: 'https://buy.stripe.com/28E28j8qD8rn4vy5ai3oA0v',
+                askForAvailability: true,
+                // stripeCheckoutUrl: 'https://buy.stripe.com/28E28j8qD8rn4vy5ai3oA0v',
                 imageFiles: ['1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','6.jpg','7.jpg','8.jpg','9.jpg','10.jpg','11.jpg']
             },
             {
@@ -584,7 +590,8 @@ const products = [
                 name: 'Goldgrau',
                 folder: 'products/Smart30/Goldgrau',
                 coverImage: 'products/Smart30/Goldgrau/1.jpg',
-                stripeCheckoutUrl: 'https://buy.stripe.com/00w28j4an8rngegeKS3oA0w',
+                askForAvailability: true,
+                // stripeCheckoutUrl: 'https://buy.stripe.com/00w28j4an8rngegeKS3oA0w',
                 imageFiles: ['1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','6.jpg','7.jpg','8.jpg','9.jpg','10.jpg','11.jpg']
             }
         ],
@@ -603,7 +610,8 @@ const products = [
             'Der herausnehmbare 12,8-Ah-Lithium-Ionen-Akku sitzt am Gepäckträger und ist in ca. 7 Stunden aufgeladen. Der verstellbare Vorbauwinkel (-10° bis 60°), der Gepäckträger, die Schutzbleche und die integrierte Beleuchtung machen das Urban7 zum vielseitigen Begleiter für jeden Tag.'
         ],
         price: 809,
-        stripeCheckoutUrl: 'https://buy.stripe.com/6oUbIT0Yb7nj8LOcCK3oA0x',
+        askForAvailability: true,
+        // stripeCheckoutUrl: 'https://buy.stripe.com/6oUbIT0Yb7nj8LOcCK3oA0x',
         folder: 'products/Urban7',
         variants: [
             {
@@ -611,7 +619,8 @@ const products = [
                 name: 'Blau',
                 folder: 'products/Urban7/Blau',
                 coverImage: 'products/Urban7/Blau/1.jpg',
-                stripeCheckoutUrl: 'https://buy.stripe.com/6oUbIT0Yb7nj8LOcCK3oA0x',
+                askForAvailability: true,
+                // stripeCheckoutUrl: 'https://buy.stripe.com/6oUbIT0Yb7nj8LOcCK3oA0x',
                 imageFiles: ['1.jpg','H04f69f1868b048c68852f24c4cb086b9g.jpg','H3a8a70eb37cd4dfbb472f3d3f2b55cd8j.jpg','H548a77e9f86f491498f5e1fe9d178a749.jpg','H7abb1099f67b48b5b6144bf5cb457cb2Q.jpg','H859eb6ae422048f5b672835e88b26e75k.jpg','Hacba0a23771a4e16bf2a9ce3b5f4d7e64.jpg','Hbff2f534361c4997a7a74005ca8c6f39o.jpg','Hd31e9811383542fc8fffb157d06aabc7S.jpg','Hd3e4e9a3a74d477e90fa5a005543ac9cP.jpg','Hdd5d383dd6c84d559f96749585fe5067b.jpg','He8db8b6bfcf84f58a2cfc46767087f74j.jpg']
             },
             {
@@ -619,7 +628,8 @@ const products = [
                 name: 'Reisweiß',
                 folder: 'products/Urban7/Reisweiß',
                 coverImage: 'products/Urban7/Reisweiß/1.jpg',
-                stripeCheckoutUrl: 'https://buy.stripe.com/aFaaEP4an7njbY05ai3oA0y',
+                askForAvailability: true,
+                // stripeCheckoutUrl: 'https://buy.stripe.com/aFaaEP4an7njbY05ai3oA0y',
                 imageFiles: ['1.jpg','H04f69f1868b048c68852f24c4cb086b9g.jpg','H3a8a70eb37cd4dfbb472f3d3f2b55cd8j.jpg','H548a77e9f86f491498f5e1fe9d178a749.jpg','H7abb1099f67b48b5b6144bf5cb457cb2Q.jpg','H859eb6ae422048f5b672835e88b26e75k.jpg','Hacba0a23771a4e16bf2a9ce3b5f4d7e64.jpg','Hbff2f534361c4997a7a74005ca8c6f39o.jpg','Hd31e9811383542fc8fffb157d06aabc7S.jpg','Hd3e4e9a3a74d477e90fa5a005543ac9cP.jpg','Hdd5d383dd6c84d559f96749585fe5067b.jpg','He8db8b6bfcf84f58a2cfc46767087f74j.jpg']
             }
         ],
@@ -638,7 +648,8 @@ const products = [
             'Der herausnehmbare 13-Ah-Lithium-Ionen-Akku sitzt im Rahmenrohr und ist in ca. 6–7 Stunden aufgeladen. Die 7-Gang-Schaltung und die hydraulischen Scheibenbremsen machen das Polaris zum zuverlässigen Begleiter für den Alltag.'
         ],
         price: 779,
-        stripeCheckoutUrl: 'https://buy.stripe.com/fZuaEP5er5fb4vy1Y63oA0z',
+        askForAvailability: true,
+        // stripeCheckoutUrl: 'https://buy.stripe.com/fZuaEP5er5fb4vy1Y63oA0z',
         folder: 'products/Polaris',
         variants: [
             {
@@ -646,7 +657,8 @@ const products = [
                 name: 'Grau',
                 folder: 'products/Polaris/Grau',
                 coverImage: 'products/Polaris/Grau/1.jpg',
-                stripeCheckoutUrl: 'https://buy.stripe.com/fZuaEP5er5fb4vy1Y63oA0z',
+                askForAvailability: true,
+                // stripeCheckoutUrl: 'https://buy.stripe.com/fZuaEP5er5fb4vy1Y63oA0z',
                 imageFiles: ['1.jpg','H46bb6d5beb2746aaa7fe61dad0ac964dO.jpg','H498d18bc64314452a0a43226c8a94ee57.jpg','H5cb6b6e47914423582fca3021a660057O.jpg','H756794da25cb4c45abf914c39311f1d5u.jpg','24f412a66ad0d58b84099f94cfac701c.jpg', 'H77237e2da23d4b0d99e8b04a4a8adf71O.jpg','H893ab6d1ec164efc915d92db328d523e4.jpg','H95df886519cf4b0f8e881366b8625f48y.jpg','Hba5f38b9019648f1a7be556e8ffc9e0bT.jpg','Hcbdef2e69d0e4a97b3bf753804150a19Q.jpg','Hd890c9669f444486b178d64f592d7591R.jpg','He2d62e1221514e53acb56c7eb8412ab50.jpg']
             },
             {
@@ -654,7 +666,8 @@ const products = [
                 name: 'Schwarz',
                 folder: 'products/Polaris/Schwarz',
                 coverImage: 'products/Polaris/Schwarz/1.jpg',
-                stripeCheckoutUrl: 'https://buy.stripe.com/bJe4gr9uHfTP2nqbyG3oA0A',
+                askForAvailability: true,
+                // stripeCheckoutUrl: 'https://buy.stripe.com/bJe4gr9uHfTP2nqbyG3oA0A',
                 imageFiles: ['1.jpg','H46bb6d5beb2746aaa7fe61dad0ac964dO.jpg','H498d18bc64314452a0a43226c8a94ee57.jpg','24f412a66ad0d58b84099f94cfac701c.jpg','H5cb6b6e47914423582fca3021a660057O.jpg','H756794da25cb4c45abf914c39311f1d5u.jpg','H77237e2da23d4b0d99e8b04a4a8adf71O.jpg','H893ab6d1ec164efc915d92db328d523e4.jpg','H95df886519cf4b0f8e881366b8625f48y.jpg','Hba5f38b9019648f1a7be556e8ffc9e0bT.jpg','Hcbdef2e69d0e4a97b3bf753804150a19Q.jpg','Hd890c9669f444486b178d64f592d7591R.jpg','He2d62e1221514e53acb56c7eb8412ab50.jpg']
             }
         ],
@@ -673,7 +686,8 @@ const products = [
             'Der herausnehmbare 48-V-18-Ah-Lithium-Ionen-Akku (864 Wh) ist fest ins Unterrohr integriert und in ca. 9 Stunden aufgeladen. Die Vollfederung (Doppelaufhängung), die hydraulischen Zoom-Scheibenbremsen und die breiten 20 x 4,0 Zoll Fat-Reifen sorgen für Komfort und Sicherheit auf jeder Fahrt.'
         ],
         price: 969,
-        stripeCheckoutUrl: 'https://buy.stripe.com/00waEPbCPcHDaTW5ai3oA0B',
+        askForAvailability: true,
+        // stripeCheckoutUrl: 'https://buy.stripe.com/00waEPbCPcHDaTW5ai3oA0B',
         folder: 'products/Camel',
         coverImage: 'products/Camel/images/1.jpg',
         imageFiles: ['1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','6.jpg','7.jpg','8.jpg','9.jpg','10.jpg'],
