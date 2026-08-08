@@ -208,7 +208,6 @@ const products = [
                 name: 'Weiß',
                 folder: 'products/OT16/images/Weiß',
                 coverImage: 'products/OT16/images/Weiß/1.JPG',
-                askForAvailability: true,
                 stripeCheckoutUrl: 'https://buy.stripe.com/7sYbIT4anazv4vybyG3oA09',
                 imageFiles: ['1.JPG','2.JPG','3.JPG','4.JPG','5.JPG','6.JPG','7.JPG','8.jpg','9.jpg','10.JPG','11.JPG','12.JPG','13.JPG']
             }
@@ -229,7 +228,6 @@ const products = [
             'Die hydraulischen Scheibenbremsen und die Frontgabel-Federung sorgen für ein komfortables und sicheres Fahrerlebnis. Mit der Smart-Connection-App hält Sie das W77 über alle wichtigen Fahrdaten auf dem Laufenden.'
         ],
         price: 999,
-        askForAvailability: true,
         folder: 'products/W77',
         imageFiles: [
             '1.JPG','2.JPG','3.JPG','4.JPG','5.JPG','6.JPG','7.JPG','8.JPG','9.JPG','10.jpg','11.jpg','12.jpg','13.jpg','14.jpg','15.jpg','16.jpg','17.jpg','18.jpg','19.jpg','20.jpg','21.jpg'
