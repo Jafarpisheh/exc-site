@@ -1104,6 +1104,21 @@ function getBasicSpecs(product) {
         specs['Steigfähigkeit'] = 'Max. 35°';
         specs['Wasserdicht'] = 'IPX4';
         specs['Gewicht'] = '52 kg';
+    } else if (product.id === 'T08') {
+        specs['Modell'] = 'T08';
+        specs['Typ'] = 'E-Scooter';
+        specs['Reichweite'] = 'Ca. 30 km';
+        specs['Motor'] = '48V 500 W (Nennleistung)';
+        specs['Akku'] = '48V 10,4Ah';
+        specs['Max. Geschwindigkeit'] = 'Ca. 46 km/h (max.) / 25 km/h (limitiert)';
+        specs['Schaltung'] = '3 Geschwindigkeitsstufen';
+        specs['Ladezeit'] = '5–6 Stunden';
+        specs['Rahmen'] = 'Eisen (faltbar)';
+        specs['Bremsen'] = 'Scheibenbremse';
+        specs['Reifen'] = '10 Zoll Straßen-Vakuumreifen';
+        specs['Steigfähigkeit'] = 'Max. 35°';
+        specs['Wasserdicht'] = 'IPX4';
+        specs['Gewicht'] = '25,16 kg';
     }
     
     if (product.outOfStock) {

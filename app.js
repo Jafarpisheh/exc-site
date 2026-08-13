@@ -902,6 +902,27 @@ const products = [
             '1.jpg','s-l1600 (1).jpg','s-l1600 (10).jpg','s-l1600 (11).jpg','s-l1600 (12).jpg','s-l1600 (13).jpg','s-l1600 (2).jpg','s-l1600 (3).jpg','s-l1600 (4).jpg','s-l1600 (5).jpg','s-l1600 (6).jpg','s-l1600 (7).jpg','s-l1600 (8).jpg','s-l1600 (9).jpg','s-l1600.jpg'
         ],
         hasVideo: false
+    },
+    {
+        id: 'T08',
+        brand: 'OOTD',
+        category: ['scooter'],
+        rangeKm: 30,
+        motorW: 500,
+        battery: '48V 10.4Ah',
+        name: 'OOTD T08 E-Scooter',
+        description: 'Faltbarer E-Scooter mit 10-Zoll-Straßenreifen, 48-V-500-W-Motor und einer Reichweite von ca. 30 km – kompakt, leicht und ideal für die Stadt.',
+        longDescription: [
+            'Der OOTD T08 ist ein faltbarer E-Scooter für den urbanen Alltag. Der 48-V-500-W-Motor (Nennleistung) bewältigt Steigungen von bis zu 35° und erreicht eine Höchstgeschwindigkeit von ca. 46 km/h (im EU-Modus auf 25 km/h begrenzt).',
+            'Der 48-V-10,4-Ah-Akku sorgt für eine Reichweite von ca. 30 km und ist in 5–6 Stunden vollständig geladen. Mit nur 25,16 kg Gewicht, der Scheibenbremse, den 10-Zoll-Vakuumstraßenreifen und der IPX4-Wasserdichtigkeit ist der T08 ein zuverlässiger Begleiter für jeden Tag.'
+        ],
+        price: 389,
+        stripeCheckoutUrl: 'https://buy.stripe.com/00waEP36j4b79PSgT03oA0Q',
+        folder: 'products/T08',
+        imageFiles: [
+            '1.jpg','OOTD_T08_Beyond_Daily_Rides_1920x.jpg','OOTD_T08_Beyond_the_Shortcut_1920x.jpg','OOTD_T08_Built_for_Busy_Days_1920x.jpg','OOTD_T08_Easy_to_Carry_1200x.jpg','OOTD_T08_Evening_City_Ride_1200x.jpg','OOTD_T08_Light_Simple_Fun_1200x.jpg','OOTD_T08_Playful_City_Riding_1200x.jpg','OOTD_T08_Ready_for_the_Climb_1200x.jpg','OOTD_T08_Smooth_City_Comfort_1200x.jpg','OOTD_T08_Stable_Downhill_Control_1200x.jpg','OOTD_T08_Urban_Simplicity_2000x.jpg','OTD_T08_Visible_After_Dark_1200x.jpg'
+        ],
+        hasVideo: false
     }
 ];
 
