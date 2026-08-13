@@ -859,6 +859,49 @@ const products = [
             }
         ],
         hasVideo: false
+    },
+    {
+        id: 'C14',
+        brand: 'APEFOX',
+        category: ['scooter'],
+        rangeKm: 50,
+        motorW: 500,
+        battery: '48V 15Ah',
+        name: 'APEFOX C14 E-Scooter',
+        description: 'Kompakter E-Scooter mit 14-Zoll-Reifen, 48-V-500-W-Motor und einer Reichweite von bis zu 50 km – ideal für den urbanen Alltag.',
+        longDescription: [
+            'Der APEFOX C14 ist ein kompakter und robuster E-Scooter für den urbanen Alltag. Der leistungsstarke 48-V-500-W-Motor (Peak 900 W, 25,55 N·m) bringt Sie mit einer Reichweite von bis zu 50 km bei 25 km/h entspannt durch die Stadt.',
+            'Mit dem 48-V-15-Ah-Akku, dem stabilen Eisenrahmen und den 14-Zoll-Reifen meistert der C14 Steigungen von bis zu 30° mühelos. Das LED-Display hält Sie stets über Geschwindigkeit und Akkustand auf dem Laufenden. Geeignet für Körpergrößen von 160 bis 200 cm bei einer maximalen Zuladung von 120 kg.'
+        ],
+        price: 419,
+        // askForAvailability: true,
+        stripeCheckoutUrl: 'https://buy.stripe.com/9B6eV5dKX22Ze686em3oA0O',
+        folder: 'products/C14',
+        imageFiles: [
+            '1.jpg','224a213f-a1d0-4c28-bb65-285358b98595.jpg','28a2731d-12e4-442a-a71c-57913bb4994a.jpg','31ada009-84c4-45bb-927b-d69a854aeeb7.jpg','68a7680b-7f0e-475c-bc10-ee4202b37428.jpg','bf716fc8-d102-4ced-8f58-93d7ec6f45cf.jpg','c60a0862-4df7-4d80-9b38-3c84ff058781.jpg','d9afe4ad-1f02-4584-80cb-8a9fc3dd19aa.jpg','dc3acf4a-a781-4779-82a9-7bcbe94584d6.jpg','f5216c2e-d775-44dc-a82f-885d6c5a5437.jpg'
+        ],
+        hasVideo: false
+    },
+    {
+        id: 'T10',
+        brand: 'OOTD',
+        category: ['scooter'],
+        rangeKm: 40,
+        motorW: 500,
+        battery: '48V 13.5Ah',
+        name: 'OOTD T10 E-Scooter',
+        description: 'Faltbarer All-Terrain-E-Scooter mit 11-Zoll-Reifen, 48-V-500-W-Motor (Peak 900 W) und einer Reichweite von 35–45 km – ideal für Stadt und Gelände.',
+        longDescription: [
+            'Der OOTD T10 ist ein faltbarer All-Terrain-E-Scooter für den urbanen Alltag und Offroad-Abenteuer. Der 48-V-500-W-Motor (Peak 900 W) bewältigt Steigungen von bis zu 35° und erreicht im entriegelten Modus bis zu 55 km/h.',
+            'Der 48-V-13,5-Ah-Akku sorgt für eine Reichweite von 35–45 km und ist in 4–5 Stunden vollständig geladen. Die 11-Zoll-Straßenreifen, die Scheibenbremsen vorne und hinten sowie die IPX4-Wasserdichtigkeit machen den T10 zu einem zuverlässigen Begleiter für jeden Einsatz.'
+        ],
+        price: 429,
+        stripeCheckoutUrl: 'https://buy.stripe.com/7sY3cn7mzcHD9PS8mu3oA0P',
+        folder: 'products/T10',
+        imageFiles: [
+            '1.jpg','s-l1600 (1).jpg','s-l1600 (10).jpg','s-l1600 (11).jpg','s-l1600 (12).jpg','s-l1600 (13).jpg','s-l1600 (2).jpg','s-l1600 (3).jpg','s-l1600 (4).jpg','s-l1600 (5).jpg','s-l1600 (6).jpg','s-l1600 (7).jpg','s-l1600 (8).jpg','s-l1600 (9).jpg','s-l1600.jpg'
+        ],
+        hasVideo: false
     }
 ];
 
@@ -920,7 +963,8 @@ const CATEGORY_META = {
     mountain: { label: 'E-Mountainbike', order: 1, heroImage: 'products/OT08Pro/images/Weiß/19.jpg' },
     city: { label: 'City / Urban', order: 2, heroImage: 'products/C29L/images/28.jpg' },
     folding: { label: 'Faltbar', order: 3, heroImage: 'products/OT02/images/Grün/22.jpg' },
-    moto: { label: 'Moto-Style', order: 4, heroImage: 'products/OT08Pro/images/Weiß/16.jpg' }
+    moto: { label: 'Moto-Style', order: 4, heroImage: 'products/OT08Pro/images/Weiß/16.jpg' },
+    scooter: { label: 'E-Scooter', order: 5, heroImage: 'products/C14/images/1.jpg' }
 };
 
 function getCategoryHeroImage(categoryId) {
@@ -1081,7 +1125,7 @@ function createProductCard(product) {
 function showEmptyState(productsList) {
     const emptyState = document.createElement('div');
     emptyState.className = 'empty-state';
-    emptyState.innerHTML = '<p>Keine E-Bikes gefunden. Bitte passen Sie Ihre Filter an.</p>';
+    emptyState.innerHTML = '<p>Keine Produkte gefunden. Bitte passen Sie Ihre Filter an.</p>';
     productsList.appendChild(emptyState);
 }
 

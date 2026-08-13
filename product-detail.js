@@ -43,7 +43,7 @@ async function loadProductDetails() {
     renderProductPrice(product);
     const productDescription = document.getElementById('productDescription');
     if (productDescription) {
-        productDescription.textContent = product.description || 'Entdecken Sie dieses hochwertige E-Bike mit modernem Design, starker Reichweite und komfortabler Ausstattung.';
+        productDescription.textContent = product.description || 'Entdecken Sie dieses hochwertige Elektrofahrzeug mit modernem Design, starker Reichweite und komfortabler Ausstattung.';
     }
 
     renderLongDescription(product);
@@ -1075,6 +1075,35 @@ function getBasicSpecs(product) {
         specs['Steigfähigkeit'] = 'Max. 30°';
         specs['Konnektivität'] = 'App (Smart Connection)';
         specs['Wasserdicht'] = 'IPX4';
+    } else if (product.id === 'C14') {
+        specs['Modell'] = 'C14';
+        specs['Typ'] = 'E-Scooter';
+        specs['Reichweite'] = 'Max. 40–50 km bei 25 km/h';
+        specs['Motor'] = '48V 500 W (Peak 900 W, 25,55 N·m)';
+        specs['Akku'] = '48V 15Ah';
+        specs['Max. Geschwindigkeit'] = '25 km/h';
+        specs['Display'] = 'LED Digitalanzeige';
+        specs['Rahmen'] = 'Eisenrahmen';
+        specs['Reifen'] = '14 Zoll';
+        specs['Steigfähigkeit'] = 'Max. 30°';
+        specs['Geeignete Körpergröße'] = '160–200 cm';
+        specs['Maximale Zuladung'] = '120 kg';
+    } else if (product.id === 'T10') {
+        specs['Modell'] = 'T10';
+        specs['Typ'] = 'E-Scooter';
+        specs['Reichweite'] = 'Ca. 35–45 km';
+        specs['Motor'] = '48V 500 W (Peak 900 W)';
+        specs['Akku'] = '48V 13,5Ah';
+        specs['Max. Geschwindigkeit'] = '55 km/h (max.) / 20 km/h (limitiert)';
+        specs['Schaltung'] = '3 Geschwindigkeitsstufen (Eco/Low/High)';
+        specs['Ladezeit'] = '4–5 Stunden';
+        specs['Rahmen'] = 'Eisen + Aluminiumlegierung (faltbar)';
+        specs['Federung'] = 'Vorder- und Hinterrad-Federung';
+        specs['Bremsen'] = 'Scheibenbremsen vorne und hinten';
+        specs['Reifen'] = '11 Zoll Straßen-Vakuumreifen';
+        specs['Steigfähigkeit'] = 'Max. 35°';
+        specs['Wasserdicht'] = 'IPX4';
+        specs['Gewicht'] = '52 kg';
     }
     
     if (product.outOfStock) {
