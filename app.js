@@ -14,7 +14,8 @@ const products = [
             'Der starke 750-W-Motor meistert Steigungen von bis zu 30° mühelos und bringt Sie sicher und schnell ans Ziel. Das robuste Design, die hochwertige Federung und die zuverlässigen Bremsen sorgen für ein stabiles und komfortables Fahrgefühl – ob im Wald, auf Feldwegen oder in der Stadt.'
         ],
         price: 1199,
-        stripeCheckoutUrl: 'https://buy.stripe.com/00w3cncGTfTPgegfOW3oA0g',
+        askForAvailability: true,
+        // stripeCheckoutUrl: 'https://buy.stripe.com/00w3cncGTfTPgegfOW3oA0g',
         folder: 'products/C29k',
         imageFiles: [
             '1.JPG','2.JPG','3.JPG','4.JPG','5.JPG','6.JPG','7.JPG','8.JPG','9.JPG','10.JPG','11.JPG','12.JPG','13.JPG','14.JPG','15.JPG','16.JPG','17.JPG','18.JPG','19.JPG','20.JPG','21.JPG','22.JPG','23.JPG','24.jpg','25.jpg','26.jpg','27.jpg'
@@ -55,7 +56,8 @@ const products = [
             'Die hydraulischen Scheibenbremsen, die Frontfederung und der robuste Aluminiumrahmen sorgen für ein stabiles und komfortables Fahrerlebnis. Mit bis zu 52 km/h (auf 25 km/h begrenzt) und App-Anbindung ist das C29L ein vielseitiger Begleiter für jede Fahrt.'
         ],
         price: 859,
-        stripeCheckoutUrl: 'https://buy.stripe.com/fZu14f0Yb8rne687iq3oA0d',
+        askForAvailability: true,
+        // stripeCheckoutUrl: 'https://buy.stripe.com/fZu14f0Yb8rne687iq3oA0d',
         folder: 'products/C29L',
         imageFiles: ['1.JPG','2.jpg','3.jpg','4.jpg','5.jpg','6.jpg','7.jpg','8.jpg','9.jpg','10.jpg','11.jpg','12.jpg','13.jpg','14.jpg','15.jpg','16.jpg','17.jpg','18.jpg','19.jpg','20.jpg','21.jpg','22.jpg','23.jpg','24.jpg','25.jpg','26.jpg','27.jpg','28.jpg'],
         variants: [
@@ -97,7 +99,8 @@ const products = [
             'Mit einer Reichweite von bis zu 100 km und einem starken 650-W-Motor sind Sie flexibel unterwegs, ganz ohne Reichweitenangst. Die hochwertige Ausstattung und die kompakte Bauweise machen das OT01 zu einem zuverlässigen Begleiter für jeden Tag.'
         ],
         price: 999,
-        stripeCheckoutUrl: 'https://buy.stripe.com/aFa6oz5er0YV2nqcCK3oA02',
+        askForAvailability: true,
+        // stripeCheckoutUrl: 'https://buy.stripe.com/aFa6oz5er0YV2nqcCK3oA02',
         folder: 'products/OT01',
         imageFiles: [
             '1.JPG','2.JPG','3.JPG','4.JPG','5.JPG','6.JPG','7.JPG','8.JPG','9.JPG','10.JPG','11.JPG','12.JPG','13.JPG','14.JPG','15.JPG','16.JPG','17.JPG','18.JPG','19.JPG','20.jpg','21.jpg','22.jpg','23.jpg','24.jpg','25.jpg','26.jfif','27.jfif','28.jfif','29.jfif','30.jfif','31.jfif','32.jfif','33.jfif','34.jpg','35.jpg','36.jpg'
@@ -232,7 +235,8 @@ const products = [
         imageFiles: [
             '1.JPG','2.JPG','3.JPG','4.JPG','5.JPG','6.JPG','7.JPG','8.JPG','9.JPG','10.jpg','11.jpg','12.jpg','13.jpg','14.jpg','15.jpg','16.jpg','17.jpg','18.jpg','19.jpg','20.jpg','21.jpg'
         ],
-        stripeCheckoutUrl: 'https://buy.stripe.com/fZueV57mz9vr4vygT03oA0b',
+        askForAvailability: true,
+        // stripeCheckoutUrl: 'https://buy.stripe.com/fZueV57mz9vr4vygT03oA0b',
         hasVideo: false
     },
     {
@@ -291,7 +295,8 @@ const products = [
             'Die hydraulischen ZooM-Scheibenbremsen, die Vollfederung und die breiten 20 x 4,0 Zoll Fat-Tire-Reifen sorgen für ein komfortables und sicheres Fahrerlebnis. Mit bis zu 40 km/h (auf 25 km/h begrenzt) und der Smart-Connection-App hält Sie das F20 über alle wichtigen Fahrdaten auf dem Laufenden.'
         ],
         price: 1169,
-        stripeCheckoutUrl: 'https://buy.stripe.com/28E3cnfT522Z5zCeKS3oA0f',
+        askForAvailability: true,
+        // stripeCheckoutUrl: 'https://buy.stripe.com/28E3cnfT522Z5zCeKS3oA0f',
         folder: 'products/F20',
         imageFiles: ['1.JPG','2.JPG','3.JPG','4.JPG','5.JPG','6.JPG','7.jpg','8.jpg','9.jpg','10.jpg','11.jpg','12.jpg','13.jpg','14.jpg','15.jpg','16.jpg','17.JPG','18.JPG','19.JPG','20.JPG'],
         hasVideo: false
@@ -310,7 +315,8 @@ const products = [
             'Die breiten 26 x 4,0 Zoll Fat-Reifen, die hydraulischen Scheibenbremsen und die Frontgabel-Federung sorgen für Komfort und Sicherheit auf jedem Untergrund. Mit bis zu 50 km/h (auf 25 km/h begrenzt), dem Geschwindigkeitssensor und der Smart-Connection-App für alle wichtigen Fahrdaten ist das F26Lite ein idealer Begleiter für jeden Tag.'
         ],
         price: 1149,
-        stripeCheckoutUrl: 'https://buy.stripe.com/28EcMX4an4b74vy9qy3oA0i',
+        askForAvailability: true,
+        // stripeCheckoutUrl: 'https://buy.stripe.com/28EcMX4an4b74vy9qy3oA0i',
         folder: 'products/F26Lite',
         variants: [
             {
@@ -319,7 +325,8 @@ const products = [
                 price: 1149,
                 folder: 'products/F26Lite/images/Schwarz',
                 coverImage: 'products/F26Lite/images/Schwarz/1.jpg',
-                stripeCheckoutUrl: 'https://buy.stripe.com/28EcMX4an4b74vy9qy3oA0i',
+                askForAvailability: true,
+                // stripeCheckoutUrl: 'https://buy.stripe.com/28EcMX4an4b74vy9qy3oA0i',
                 imageFiles: ['1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','6.jpg','7.jpg','8.jpg','9.jpg','10.jpg','11.jpg']
             },
             {
@@ -328,7 +335,8 @@ const products = [
                 price: 1149,
                 folder: 'products/F26Lite/images/Silber',
                 coverImage: 'products/F26Lite/images/Silber/1.jpg',
-                stripeCheckoutUrl: 'https://buy.stripe.com/14A00bbCP3732nqdGO3oA0h',
+                askForAvailability: true,
+                // stripeCheckoutUrl: 'https://buy.stripe.com/14A00bbCP3732nqdGO3oA0h',
                 imageFiles: ['1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','6.jpg','7.jpg','8.jpg']
             }
         ],
@@ -348,7 +356,8 @@ const products = [
             'Die Vollfederung, die hydraulischen ZooM-Scheibenbremsen, die breiten 26 x 4,0 Zoll Fat-Tire-Reifen und der Geschwindigkeitssensor sorgen für ein komfortables und sicheres Fahrerlebnis. Mit bis zu 45 km/h (auf 25 km/h begrenzt) und der Smart-Connection-App für alle wichtigen Fahrdaten ist das N26 ein vielseitiger Begleiter für Stadt und Offroad.'
         ],
         price: 1299,
-        stripeCheckoutUrl: 'https://buy.stripe.com/3cI3cnayL5fb7HK8mu3oA0k',
+        askForAvailability: true,
+        // stripeCheckoutUrl: 'https://buy.stripe.com/3cI3cnayL5fb7HK8mu3oA0k',
         folder: 'products/N26',
         coverImage: 'products/N26/images/Weiss-Blau/1.jpg',
         variants: [
@@ -359,7 +368,7 @@ const products = [
                 folder: 'products/N26/images/Rot',
                 coverImage: 'products/N26/images/Rot/1.jpg',
                 askForAvailability: true,
-                stripeCheckoutUrl: 'https://buy.stripe.com/3cI3cnayL5fb7HK8mu3oA0k',
+                // stripeCheckoutUrl: 'https://buy.stripe.com/3cI3cnayL5fb7HK8mu3oA0k',
                 imageFiles: ['1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','6.jpg','7.jpg','8.jpg']
             },
             {
@@ -368,7 +377,8 @@ const products = [
                 price: 1299,
                 folder: 'products/N26/images/Weiss-Blau',
                 coverImage: 'products/N26/images/Weiss-Blau/1.jpg',
-                stripeCheckoutUrl: 'https://buy.stripe.com/cNiaEPfT5bDzfacgT03oA0j',
+                askForAvailability: true,
+                // stripeCheckoutUrl: 'https://buy.stripe.com/cNiaEPfT5bDzfacgT03oA0j',
                 imageFiles: ['1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','6.jpg','7.jpg','8.jpg']
             }
         ],
@@ -388,7 +398,8 @@ const products = [
             'Die Vollfederung, die hydraulischen Scheibenbremsen, die breiten 26 x 4,0 Zoll Fat-Tire-Reifen und die Shimano-7-Gang-Schaltung sorgen für ein komfortables und sicheres Fahrerlebnis. Das Display mit Bluetooth-Anbindung an die Duotts-App und die Wahl zwischen Single- und Dual-Drive-Modus machen das S26 Pro zum vielseitigen Begleiter für Stadt und Offroad.'
         ],
         price: 1299,
-        stripeCheckoutUrl: 'https://buy.stripe.com/3cI8wH6iv0YVgegdGO3oA0l',
+        askForAvailability: true,
+        // stripeCheckoutUrl: 'https://buy.stripe.com/3cI8wH6iv0YVgegdGO3oA0l',
         folder: 'products/S26Pro',
         coverImage: 'products/S26Pro/images/1.jpg',
         imageFiles: ['1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','6.jpg','7.jpg','8.jpg','9.jpg','10.jpg','11.jpg','12.jpg','13.jpg','14.jpg','15.jpg','16.jpg','17.jpg','18.jpg','19.jpg','20.jpg'],
@@ -408,7 +419,8 @@ const products = [
             'Die DNM-Luftfederung vorne und hinten, die TEKTRO-4-Kolben-Hydraulikbremsen und die breiten 26 x 4,0 Zoll Fat-Tire-Reifen sorgen für ein komfortables und sicheres Fahrgefühl – ob auf Trails, Feldwegen oder in der Stadt. Der zentrale Drehmomentsensor liefert ein natürliches Fahrgefühl, und die Smart-Connection-App hält Sie über alle wichtigen Fahrdaten auf dem Laufenden.'
         ],
         price: 1999,
-        stripeCheckoutUrl: 'https://buy.stripe.com/8x2dR18qD8rn8LO0U23oA0m',
+        askForAvailability: true,
+        // stripeCheckoutUrl: 'https://buy.stripe.com/8x2dR18qD8rn8LO0U23oA0m',
         folder: 'products/E26',
         coverImage: 'products/E26/images/Blau/1.jpg',
         variants: [
@@ -418,7 +430,8 @@ const products = [
                 price: 1999,
                 folder: 'products/E26/images/Blau',
                 coverImage: 'products/E26/images/Blau/1.jpg',
-                stripeCheckoutUrl: 'https://buy.stripe.com/8x2dR18qD8rn8LO0U23oA0m',
+                askForAvailability: true,
+                // stripeCheckoutUrl: 'https://buy.stripe.com/8x2dR18qD8rn8LO0U23oA0m',
                 imageFiles: ['1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','6.jpg','7.jpg']
             },
             {
@@ -428,7 +441,7 @@ const products = [
                 folder: 'products/E26/images/Grün',
                 coverImage: 'products/E26/images/Grün/1.jpg',
                 askForAvailability: true,
-                stripeCheckoutUrl: 'https://buy.stripe.com/eVq8wHayL4b70fi5ai3oA0n',
+                // stripeCheckoutUrl: 'https://buy.stripe.com/eVq8wHayL4b70fi5ai3oA0n',
                 imageFiles: ['1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','6.jpg','7.jpg','8.jpg','9.jpg']
             }
         ],
@@ -448,7 +461,8 @@ const products = [
             'Optional ist das C29 Pro auch mit Dual-Batterie-System (2x 48V 15Ah) erhältlich, das Reichweiten von bis zu 170 km ermöglicht. Das 2,4-Zoll-HD-Display mit Bluetooth-Anbindung an die Duotts-App, die Scheibenbremsen und die 29-Zoll-Reifen sorgen für ein komfortables und sicheres Fahrerlebnis.'
         ],
         price: 799,
-        stripeCheckoutUrl: 'https://buy.stripe.com/aFacMXfT5373bY00U23oA0p',
+        askForAvailability: true,
+        // stripeCheckoutUrl: 'https://buy.stripe.com/aFacMXfT5373bY00U23oA0p',
         folder: 'products/C29Pro',
         coverImage: 'products/C29Pro/images/1.jpg',
         imageFiles: ['1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','6.jpg','7.jpg','8.jpg','9.jpg','10.jpg','11.jpg','12.jpg','13.jpg','14.jpg','15.jpg','16.jpg','17.jpg','18.jpg','19.jpg','20.jpg','21.jpg','22.jpg','23.jpg','24.jpg','25.jpg','26.jpg','27.jpg','28.jpg','29.jpg','30.jpg','31.jpg','32.jpg'],
@@ -460,7 +474,7 @@ const products = [
                 folder: 'products/C29Pro/images',
                 coverImage: 'products/C29Pro/images/1.jpg',
                 askForAvailability: true,
-                stripeCheckoutUrl: 'https://buy.stripe.com/aFacMXfT5373bY00U23oA0p',
+                // stripeCheckoutUrl: 'https://buy.stripe.com/aFacMXfT5373bY00U23oA0p',
                 imageFiles: ['1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','6.jpg','7.jpg','8.jpg','9.jpg','10.jpg','11.jpg','12.jpg','13.jpg','14.jpg','15.jpg','16.jpg','17.jpg','18.jpg','19.jpg','20.jpg','21.jpg','22.jpg','23.jpg','24.jpg','25.jpg','26.jpg','27.jpg','28.jpg','29.jpg','30.jpg','31.jpg','32.jpg']
             },
             {
@@ -469,7 +483,8 @@ const products = [
                 price: 1039,
                 folder: 'products/C29Pro/images',
                 coverImage: 'products/C29Pro/images/1.jpg',
-                stripeCheckoutUrl: 'https://buy.stripe.com/6oUcMX5er22Z3ru0U23oA0o',
+                askForAvailability: true,
+                // stripeCheckoutUrl: 'https://buy.stripe.com/6oUcMX5er22Z3ru0U23oA0o',
                 imageFiles: ['1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','6.jpg','7.jpg','8.jpg','9.jpg','10.jpg','11.jpg','12.jpg','13.jpg','14.jpg','15.jpg','16.jpg','17.jpg','18.jpg','19.jpg','20.jpg','21.jpg','22.jpg','23.jpg','24.jpg','25.jpg','26.jpg','27.jpg','28.jpg','29.jpg','30.jpg','31.jpg','32.jpg'],
                 specOverrides: {
                     'Akku': '2x 48V 15Ah (18650-Zellen, Dual-Batterie)',
