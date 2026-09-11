@@ -47,23 +47,6 @@ const products = [
                     text: 'Scheibenbremsen vorne und hinten erfüllen höchste Sicherheitsanforderungen. So bleiben Sie in jeder Situation sicher und zuverlässig unterwegs.'
                 }
             ],
-            features: [
-                { title: 'Helle Frontleuchte', text: 'Das helle Licht führt Sie sicher durch die Dunkelheit.' },
-                { title: 'Höhenverstellbarer Sattel', text: 'Passt sich unterschiedlichen Körpergrößen an.' },
-                { title: 'LCD-Display', text: 'Der Akkustand wird übersichtlich auf dem LCD-Display angezeigt.' },
-                { title: 'Verschleißfeste Reifen', text: 'Langlebige Reifen, zusätzlich pannensicher ausgelegt.' },
-                { title: 'Platzsparend faltbar', text: 'Leicht und klein – überallhin mitnehmen.' },
-                { title: '36-V-10-Ah-Lithium-Akku', text: 'Bis zu 50 km Reichweite mit einer einzigen Akkuladung.' }
-            ],
-            inTheBox: [
-                '1× DYU D3S Falt-E-Bike',
-                '1× 36V 10Ah Lithium-Ionen-Akku',
-                '1× Ladegerät mit Kabel',
-                '1× Gebrauchsanleitung',
-                '1× Garantiekarte',
-                '1× Satz Pedale',
-                'Werkzeug für die Montage'
-            ],
             faqs: [
                 {
                     question: 'Wie hoch ist die Reichweite des D3S?',

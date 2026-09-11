@@ -684,49 +684,6 @@ function renderExtendedContent(product) {
         container.appendChild(sectionsWrap);
     }
 
-    // Feature-Grid
-    if (content.features?.length) {
-        const grid = document.createElement('div');
-        grid.className = 'ext-features';
-
-        content.features.forEach((feature) => {
-            const card = document.createElement('div');
-            card.className = 'ext-feature-card';
-
-            const heading = document.createElement('h4');
-            heading.textContent = feature.title;
-
-            const text = document.createElement('p');
-            text.textContent = feature.text;
-
-            card.appendChild(heading);
-            card.appendChild(text);
-            grid.appendChild(card);
-        });
-
-        container.appendChild(grid);
-    }
-
-    // Lieferumfang
-    if (content.inTheBox?.length) {
-        const box = document.createElement('div');
-        box.className = 'ext-inthebox';
-
-        const heading = document.createElement('h3');
-        heading.textContent = 'Lieferumfang';
-
-        const list = document.createElement('ul');
-        content.inTheBox.forEach((itemText) => {
-            const li = document.createElement('li');
-            li.textContent = itemText;
-            list.appendChild(li);
-        });
-
-        box.appendChild(heading);
-        box.appendChild(list);
-        container.appendChild(box);
-    }
-
     // FAQ-Akkordeon
     if (content.faqs?.length) {
         const faqsWrap = document.createElement('div');
