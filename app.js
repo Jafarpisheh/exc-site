@@ -11,17 +11,18 @@ const products = [
         description: 'Leichtes und kompaktes Mini-Falt-E-Bike mit 14-Zoll-Reifen, 250-W-Motor und bis zu 50 km Reichweite – ideal für den urbanen Alltag.',
         longDescription: [
             'Das DYU D3S ist ein kompaktes Mini-Falt-E-Bike, das sich in nur drei Schritten zusammenklappen lässt und so problemlos in Bahn, Bus oder Kofferraum passt. Die 14-Zoll-Reifen machen es wendig und platzsparend im Stadtverkehr.',
-            'Der leise 250-W-Hecknabenmotor (maximale Leistung 500 W) unterstützt Sie bis zu 25 km/h. Der integrierte 36-V-10-Ah-Lithium-Ionen-Akku ermöglicht im Pedal-Assist-Modus eine Reichweite von bis zu 50 km und ist in ca. 5–6 Stunden vollständig geladen.',
-            'Die vorderen und hinteren Scheibenbremsen, das Frontlicht, das Rücklicht sowie das LCD-Display mit Akkustandanzeige sorgen für Komfort und Sicherheit. Mit nur 19 kg Gewicht, 120 kg Zuladung und IP54-Schutz ist das D3S ein zuverlässiger Begleiter für jeden Tag.'
+            'Der 250-W-Motor (maximale Leistung 500 W) unterstützt Sie bis zu 25 km/h. Der integrierte 36-V-10-Ah-Lithium-Ionen-Akku ermöglicht im Pedal-Assist-Modus eine Reichweite von bis zu 50 km und ist in ca. 5–6 Stunden vollständig geladen.',
+            'Die vorderen und hinteren Scheibenbremsen, das Frontlicht, das Rücklicht sowie das LCD-Display mit Akkustandanzeige sorgen für Komfort und Sicherheit. Mit nur 17 kg Gewicht, 120 kg Zuladung und IP54-Schutz ist das D3S ein zuverlässiger Begleiter für jeden Tag.'
         ],
         price: 439,
         stripeCheckoutUrl: 'https://buy.stripe.com/dRm3cnayL6jf6DGfOW3oA0R',
         folder: 'products/D3S',
         coverImage: 'products/D3S/images/1.jpg',
         imageFiles: [
-            '1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','6.jpg','7.jpg','8.jpg','9.jpg','10.jpg'
+            '1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','6.jpg','7.jpg','8.jpg','9.jpg','10.jpg','11.jpg'
         ],
         hasVideo: false,
+        dimensionsImage: 'products/D3S/Dimensions/Dimensions.JPG',
         extendedContent: {
             sections: [
                 {
@@ -62,11 +63,247 @@ const products = [
                 },
                 {
                     question: 'Wie schwer ist das D3S und wie viel kann es zuladen?',
-                    answer: 'Das D3S wiegt nur 19 kg und kann bis zu 120 kg belastet werden. Dank des kompakten Faltmechanismus passt es problemlos in Bus, Bahn oder den Kofferraum.'
+                    answer: 'Das D3S wiegt nur 17 kg und kann bis zu 120 kg belastet werden. Dank des kompakten Faltmechanismus passt es problemlos in Bus, Bahn oder den Kofferraum.'
                 },
                 {
                     question: 'Welche Garantie gibt es auf das D3S?',
                     answer: 'Auf das D3S erhalten Sie eine Herstellergarantie. Details zu Umfang und Ablauf finden Sie auf unserer Garantieseite.'
+                }
+            ]
+        }
+    },
+    {
+        id: 'A1FPro',
+        brand: 'DYU',
+        category: ['folding'],
+        rangeKm: 60,
+        motorW: 250,
+        battery: '36V 7.5Ah',
+        name: 'DYU A1F Pro 16 Zoll Falt-E-Bike',
+        description: 'Kompaktes vollfaltbares 16-Zoll-E-Bike mit 250-W-Motor, 36-V-7,5-Ah-Akku und bis zu 60 km Reichweite – ideal für Pendler und Stadtfahrten.',
+        longDescription: [
+            'Das DYU A1F Pro ist ein vollfaltbares 16-Zoll-E-Bike, das sich in wenigen Sekunden zusammenklappen lässt und sich damit perfekt für Pendler, die Stadt und öffentliche Verkehrsmittel eignet. Der hochfeste Stahlrahmen trägt ein Gesamtgewicht von bis zu 120 kg.',
+            'Der kraftvolle 250-W-Motor (maximale Leistung 500 W) unterstützt Sie bis zu 25 km/h. Der integrierte 36-V-7,5-Ah-Lithium-Ionen-Akku liefert im Pedal-Assist-Modus eine Reichweite von bis zu 60 km und ist in ca. 3–4 Stunden vollständig geladen.',
+            'Zur Ausstattung gehören ein großer Frontkorb, ein Gepäckträger, Scheibenbremsen vorne und hinten, ein helles Frontlicht sowie ein LED-Display mit Gangschaltung und Akkustandanzeige. Mit nur 21,2 kg Gewicht und IP54-Schutz ist das A1F Pro ein zuverlässiger Begleiter für jeden Tag.'
+        ],
+        price: 589,
+        stripeCheckoutUrl: 'https://buy.stripe.com/00w8wH5er8rnd247iq3oA0S',
+        folder: 'products/A1F Pro',
+        coverImage: 'products/A1F Pro/images/1.jpg',
+        imageFiles: [
+            '1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','6.jpg','7.jpg','8.jpg','9.jpg','10.jpg','11.jpg'
+        ],
+        hasVideo: false,
+        dimensionsImage: 'products/A1F Pro/Dimensions/Dimensions.JPG',
+        extendedContent: {
+            sections: [
+                {
+                    type: 'fullwidth',
+                    image: 'products/A1F Pro/extended/1.jpg'
+                },
+                {
+                    align: 'right',
+                    image: 'products/A1F Pro/extended/2.jpg',
+                    title: 'Starker 250-W-Motor',
+                    text: 'Der 250-W-Hochleistungsmotor erreicht eine Spitzenleistung von bis zu 500 W und ermöglicht ein müheloses und komfortables Fahren auf jeder Stadtstraße.'
+                },
+                {
+                    align: 'left',
+                    image: 'products/A1F Pro/extended/3.jpg',
+                    title: 'Akku für den Alltag',
+                    text: 'Der hochintegrierte 36-V-7,5-Ah-Lithium-Ionen-Akku deckt bequem den täglichen Pendelbedarf ab – mit bis zu 60 km Reichweite im Pedal-Assist-Modus.'
+                },
+                {
+                    align: 'right',
+                    image: 'products/A1F Pro/extended/4.jpg',
+                    title: 'Sicherer und robuster Rahmen',
+                    text: 'Nach mehr als tausend Tests steht die Rahmenfestigkeit für maximale Sicherheit. Der hochfeste Stahlrahmen ist besonders stabil und langlebig.'
+                },
+                {
+                    type: 'fullwidth',
+                    image: 'products/A1F Pro/extended/5.jpg'
+                }
+            ],
+            faqs: [
+                {
+                    question: 'Wie hoch ist die Reichweite des A1F Pro?',
+                    answer: 'Im Pedal-Assist-Modus erreichen Sie mit dem 36-V-7,5-Ah-Akku bis zu 60 km Reichweite, im reinen Gas-Modus bis zu 30 km. Die tatsächliche Reichweite hängt von Gewicht, Gelände und gewählter Unterstützungsstufe ab.'
+                },
+                {
+                    question: 'Ist das A1F Pro für den Straßenverkehr zugelassen?',
+                    answer: 'Ja. Mit 250 W Nennleistung und maximal 25 km/h ist das A1F Pro als Elektrofahrrad EU-zugelassen und darf auf öffentlichen Straßen gefahren werden. Bitte beachten Sie die lokalen Vorschriften zur Nutzung.'
+                },
+                {
+                    question: 'Wie lange dauert das Aufladen des Akkus?',
+                    answer: 'Der Akku ist in ca. 3–4 Stunden vollständig geladen. Das integrierte Batteriemanagement (BMS) lädt den Akku dabei sicher und schonend.'
+                },
+                {
+                    question: 'Wie schwer ist das A1F Pro und wie viel kann es zuladen?',
+                    answer: 'Das A1F Pro wiegt nur 21,2 kg und kann bis zu 120 kg belastet werden. Der Gepäckträger nimmt zusätzlich bis zu 25 kg auf. Dank des kompakten Faltmechanismus passt es problemlos in Bus, Bahn oder den Kofferraum.'
+                },
+                {
+                    question: 'Welche Garantie gibt es auf das A1F Pro?',
+                    answer: 'Auf das A1F Pro erhalten Sie eine Herstellergarantie. Details zu Umfang und Ablauf finden Sie auf unserer Garantieseite.'
+                }
+            ]
+        }
+    },
+    {
+        id: 'C6',
+        brand: 'DYU',
+        category: ['city'],
+        rangeKm: 60,
+        motorW: 250,
+        battery: '36V 12.5Ah',
+        name: 'DYU C6 26 Zoll City-E-Bike',
+        description: 'Retro-elegantes 26-Zoll-Stadt-E-Bike mit 250-W-Motor, herausnehmbarem 36-V-12,5-Ah-Akku und bis zu 60 km Reichweite – mit Frontkorb, Gepäckträger und Shimano-6-Gang-Schaltung.',
+        longDescription: [
+            'Das DYU C6 ist ein elegant-retro gestaltetes City-E-Bike mit klassischem Stahlrahmen, das im Stadtverkehr ebenso stilvoll wie zuverlässig unterwegs ist. Der hochfeste Stahlrahmen und die 26-Zoll-Reifen sorgen für eine stabilen und komfortablen Fahrkomfort auf jedem Untergrund.',
+            'Der kraftvolle 250-W-Motor (maximale Leistung 500 W) unterstützt Sie bis zu 25 km/h. Der herausnehmbare 36-V-12,5-Ah-Lithium-Ionen-Akku liefert im Pedal-Assist-Modus eine Reichweite von bis zu 60 km und lässt sich bequem zuhause oder im Büro aufladen – gesichert durch ein integriertes Sicherheitsschloss.',
+            'Die Federgabel vorne und die gefederte Sattelstütze dämpfen Unebenheiten, während die Shimano-6-Gang-Schaltung und die Scheibenbremsen vorne und hinten für sicheres und flexibles Fahren sorgen. Der große Frontkorb und der Gepäckträger bieten reichlich Stauraum für Einkäufe, Arbeit und Alltag.'
+        ],
+        price: 859,
+        stripeCheckoutUrl: 'https://buy.stripe.com/bJebIT0Yb4b72nq7iq3oA0T',
+        folder: 'products/C6',
+        coverImage: 'products/C6/White/1.jpg',
+        variants: [
+            {
+                id: 'White',
+                name: 'Weiß',
+                folder: 'products/C6/White',
+                coverImage: 'products/C6/White/1.jpg',
+                stripeCheckoutUrl: 'https://buy.stripe.com/bJebIT0Yb4b72nq7iq3oA0T',
+                imageFiles: [
+                    '1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg', '6.jpg', '7.jpg', '8.jpg'
+                ]
+            },
+            {
+                id: 'Black',
+                name: 'Schwarz',
+                folder: 'products/C6/Black',
+                coverImage: 'products/C6/Black/1.jpg',
+                stripeCheckoutUrl: 'https://buy.stripe.com/4gM8wH22fcHD6DG46e3oA0U',
+                imageFiles: [
+                    '1.jpg', '2.jpg', '3.jpg', '4.jpg', '4b.jpg', '5.jpg', '5b.jpg', '6.jpg', '6b.jpg', '7.jpg', '8.jpg', '9.jpg'
+                ]
+            }
+        ],
+        hasVideo: false,
+        dimensionsImage: 'products/C6/Dimensions/Dimensions.JPG',
+        extendedContent: {
+            sections: [
+                {
+                    type: 'fullwidth',
+                    image: 'products/C6/extended/1.jpg'
+                },
+                {
+                    align: 'right',
+                    image: 'products/C6/extended/2.jpg',
+                    title: 'Starker 250-W-Motor',
+                    text: 'Der 250-W-Hochleistungsmotor erreicht eine Spitzenleistung von bis zu 500 W und bewältigt so mühelos den Stadtverkehr sowie Steigungen von bis zu 15°.'
+                },
+                {
+                    align: 'left',
+                    image: 'products/C6/extended/3.jpg',
+                    title: 'Akku für den Alltag',
+                    text: 'Der herausnehmbare 36-V-12,5-Ah-Lithium-Ionen-Akku liefert im Pedal-Assist-Modus bis zu 60 km Reichweite. Dank Sicherheitsschloss können Sie den Akku überall sicher abstellen und bequem aufladen.'
+                },
+                {
+                    align: 'right',
+                    image: 'products/C6/extended/4.jpg',
+                    title: 'Robuster Rahmen & sichere Bremsen',
+                    text: 'Der hochfeste Stahlrahmen trägt zuverlässig bis zu 120 kg Zuladung. Die Scheibenbremsen vorne und hinten sorgen für eine starke und sichere Verzögerung in jeder Situation.'
+                },
+                {
+                    type: 'fullwidth',
+                    image: 'products/C6/extended/5.jpg'
+                }
+            ],
+            faqs: [
+                {
+                    question: 'Wie hoch ist die Reichweite des DYU C6?',
+                    answer: 'Im Pedal-Assist-Modus erreichen Sie mit dem 36-V-12,5-Ah-Akku bis zu 60 km Reichweite, im reinen Gas-Modus bis zu 43 km. Die tatsächliche Reichweite hängt von Gewicht, Gelände und gewählter Unterstützungsstufe ab.'
+                },
+                {
+                    question: 'Ist das DYU C6 für den Straßenverkehr zugelassen?',
+                    answer: 'Ja. Mit 250 W Nennleistung (max. 500 W) und maximal 25 km/h ist das C6 als Elektrofahrrad EU-zugelassen und darf auf öffentlichen Straßen gefahren werden. Bitte beachten Sie die lokalen Vorschriften zur Nutzung.'
+                },
+                {
+                    question: 'Wie lange dauert das Aufladen des Akkus?',
+                    answer: 'Der herausnehmbare Akku ist in ca. 6–8 Stunden vollständig geladen. Das integrierte Batteriemanagement (BMS) lädt den Akku dabei sicher und schonend.'
+                },
+                {
+                    question: 'Wie schwer ist das C6 und wie viel kann es zuladen?',
+                    answer: 'Das C6 wiegt 27 kg und kann bis zu 120 kg belastet werden. Der Gepäckträger und der große Frontkorb bieten zusätzlich reichlich Stauraum für Einkäufe und Alltagsgegenstände.'
+                },
+                {
+                    question: 'Welche Garantie gibt es auf das DYU C6?',
+                    answer: 'Auf das DYU C6 erhalten Sie eine Herstellergarantie von 12–24 Monaten. Details zu Umfang und Ablauf finden Sie auf unserer Garantieseite.'
+                }
+            ]
+        }
+    },
+    {
+        id: 'UX',
+        brand: 'DYU',
+        category: ['city'],
+        rangeKm: 80,
+        motorW: 250,
+        battery: '48V 13Ah',
+        name: 'DYU UX BMX 20 Zoll Fat-Tire E-Bike',
+        description: 'Agiles BMX-Style-Fat-Tire-E-Bike mit 250-W-Motor, herausnehmbarem 48-V-13-Ah-Akku und bis zu 80 km Reichweite – perfekt für City, Gravel und Trails.',
+        longDescription: [
+            'Das DYU UX vereint den wendigen Look eines BMX mit der Stabilität breiter Fat-Tire-Reifen. Die 20 x 3,0 Zoll Reifen absorbieren Unebenheiten zuverlässig und sorgen auf Asphalt, Kies oder Trails für maximale Stabilität.',
+            'Der kraftvolle 250-W-Motor erreicht eine Spitzenleistung von bis zu 500 W und unterstützt Sie bis zu 25 km/h. Der herausnehmbare 48-V-13-Ah-Lithium-Ionen-Akku liefert im Pedal-Assist-Modus eine Reichweite von bis zu 80 km und lässt sich dank Plug-and-Play bequem zuhause oder im Büro aufladen.',
+            'Zur Ausstattung gehören doppelte Scheibenbremsen vorne und hinten, ein LCD-Display mit Akkustandanzeige, ein helles Frontlicht, ein Rücklicht sowie ein verstellbarer Sitz. Mit 25,8 kg Gewicht und bis zu 120 kg Zuladung ist das UX ein zuverlässiger Begleiter für den täglichen Weg zur Arbeit und das nächste Wochenendabenteuer.'
+        ],
+        price: 899,
+        stripeCheckoutUrl: 'https://buy.stripe.com/bJe14ffT5azv2nq5ai3oA0V',
+        folder: 'products/UX',
+        coverImage: 'products/UX/images/1.jpg',
+        imageFiles: [
+            '1.jpg','2.jpg','4.jpg','5.jpg','6.jpg','7.jpg','8.jpg','9.jpg'
+        ],
+        hasVideo: false,
+        extendedContent: {
+            sections: [
+                {
+                    type: 'fullwidth',
+                    image: 'products/UX/extended/1.webp'
+                },
+                {
+                    align: 'right',
+                    image: 'products/UX/extended/2.webp',
+                    title: 'Starker 250-W-Motor',
+                    text: 'Der 250-W-Hochleistungsmotor erreicht eine Spitzenleistung von bis zu 500 W und ermöglicht ein müheloses und kraftvolles Fahren – ob in der Stadt, auf Kies oder im Gelände.'
+                },
+                {
+                    align: 'left',
+                    image: 'products/UX/extended/3.webp',
+                    title: 'Stabile Fat-Tire-Reifen',
+                    text: 'Die 20 x 3,0 Zoll Fat-Tire-Reifen absorbieren Stöße und Unebenheiten und sorgen für maximale Stabilität und Traktion auf jedem Untergrund.'
+                }
+            ],
+            faqs: [
+                {
+                    question: 'Wie hoch ist die Reichweite des DYU UX?',
+                    answer: 'Im Pedal-Assist-Modus erreichen Sie mit dem 48-V-13-Ah-Akku 60–80 km Reichweite, im Gas-Modus 50–65 km. Die tatsächliche Reichweite hängt von Gewicht, Gelände, Temperatur und gewählter Unterstützungsstufe ab.'
+                },
+                {
+                    question: 'Ist das DYU UX für den Straßenverkehr zugelassen?',
+                    answer: 'Ja. Mit 250 W Nennleistung (max. 500 W) und maximal 25 km/h ist das UX als Elektrofahrrad EU-zugelassen und darf auf öffentlichen Straßen gefahren werden. Bitte beachten Sie die lokalen Vorschriften zur Nutzung.'
+                },
+                {
+                    question: 'Lässt sich der Akku abnehmen und aufladen?',
+                    answer: 'Ja. Der 48-V-13-Ah-Lithium-Ionen-Akku ist herausnehmbar und wird über das mitgelieferte Ladegerät bequem zuhause oder im Büro aufgeladen.'
+                },
+                {
+                    question: 'Wie schwer ist das DYU UX und wie viel kann es zuladen?',
+                    answer: 'Das DYU UX wiegt 25,8 kg und kann bis zu 120 kg belastet werden. Der verstellbare Sitz ist für Fahrer von ca. 165 bis 188 cm Körpergröße geeignet.'
+                },
+                {
+                    question: 'Welche Garantie gibt es auf das DYU UX?',
+                    answer: 'Auf das DYU UX erhalten Sie eine Herstellergarantie von 12–24 Monaten. Details zu Umfang und Ablauf finden Sie auf unserer Garantieseite.'
                 }
             ]
         }
@@ -129,7 +366,7 @@ function getProductPreviewImagePath(product) {
 
 const CATEGORY_META = {
     mountain: { label: 'E-Mountainbike', order: 1 },
-    city: { label: 'City / Urban', order: 2 },
+    city: { label: 'City / Urban', order: 2, heroImage: 'products/C6/White/1.jpg' },
     folding: { label: 'Faltbar', order: 3, heroImage: 'products/D3S/images/1.jpg' },
     moto: { label: 'Moto-Style', order: 4 },
     scooter: { label: 'E-Scooter', order: 5 }
@@ -145,13 +382,8 @@ function getCategoryHeroImage(categoryId) {
 }
 
 const catalogState = {
-    category: 'all',
-    brand: 'all'
+    category: 'all'
 };
-
-function getCatalogBrands() {
-    return [...new Set(products.map(p => p.brand).filter(Boolean))].sort();
-}
 
 function getCatalogCategories() {
     const present = new Set();
@@ -193,49 +425,11 @@ function buildCategoryCards() {
     });
 }
 
-function buildFilterChips(containerId, items) {
-    const container = document.getElementById(containerId);
-    if (!container) return;
-
-    container.innerHTML = '';
-
-    const allChip = document.createElement('button');
-    allChip.type = 'button';
-    allChip.className = 'filter-chip active';
-    allChip.textContent = 'Alle';
-    allChip.dataset.filter = 'all';
-    allChip.addEventListener('click', () => {
-        catalogState.brand = 'all';
-        updateChips();
-        loadProducts();
-    });
-    container.appendChild(allChip);
-
-    items.forEach(item => {
-        const chip = document.createElement('button');
-        chip.type = 'button';
-        chip.className = 'filter-chip';
-        chip.textContent = item.label;
-        chip.dataset.filter = item.id;
-        chip.addEventListener('click', () => {
-            catalogState.brand = item.id;
-            updateChips();
-            loadProducts();
-        });
-        container.appendChild(chip);
-    });
-}
-
 function updateChips() {
     document.querySelectorAll('#categoryCards .category-card').forEach(card => {
         const isActive = catalogState.category === card.dataset.filter;
         card.classList.toggle('active', isActive);
         card.setAttribute('aria-pressed', isActive);
-    });
-    document.querySelectorAll('#brandFilter .filter-chip').forEach(chip => {
-        const isActive = catalogState.brand === chip.dataset.filter;
-        chip.classList.toggle('active', isActive);
-        chip.setAttribute('aria-pressed', isActive);
     });
 }
 
@@ -244,7 +438,6 @@ function getVisibleProducts() {
 
     return products.filter(product => {
         if (s.category !== 'all' && !(product.category || []).includes(s.category)) return false;
-        if (s.brand !== 'all' && product.brand !== s.brand) return false;
 
         return true;
     });
@@ -321,7 +514,6 @@ function setupCatalogFilters() {
     if (!document.getElementById('productsList')) return;
 
     buildCategoryCards();
-    buildFilterChips('brandFilter', getCatalogBrands().map(brand => ({ id: brand, label: brand })));
     updateChips();
 }
 

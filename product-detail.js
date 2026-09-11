@@ -61,6 +61,8 @@ async function loadProductDetails() {
     
     // Erweiterte Produktinformationen laden
     renderExtendedContent(product);
+    renderFaq(product);
+    renderDimensions(product);
     
     // Anfrageformular einrichten
     setupInquiryForm(product);
@@ -553,6 +555,16 @@ function closeImageModal() {
     document.body.style.overflow = 'auto';
 }
 
+// Spezifikationen nach Kategorien
+const SPEC_CATEGORIES = {
+    'Allgemein': ['Modell', 'Typ', 'Preis', 'Status', 'Verfügbarkeit'],
+    'Antrieb': ['Reichweite', 'Motor', 'Akku', 'Max. Geschwindigkeit'],
+    'Laden': ['Ladezeit', 'Ladegerät'],
+    'Fahrwerk': ['Rahmen', 'Bremsen', 'Reifen'],
+    'Ausstattung': ['Display', 'Beleuchtung', 'Wasserdicht'],
+    'Maße & Gewicht': ['Gewicht', 'Zuladung', 'Abmessungen (L x B x H)', 'Faltmaße']
+};
+
 // Produktspezifikationen laden
 function loadProductSpecs(product) {
     const specsContainer = document.getElementById('specsContainer');
@@ -567,16 +579,40 @@ function loadProductSpecs(product) {
     }
     
     let specsHTML = '';
+    const assignedKeys = new Set();
     
-    // Übliche Spezifikationen anzeigen
-    Object.entries(basicSpecs).forEach(([key, value]) => {
+    Object.entries(SPEC_CATEGORIES).forEach(([category, keys]) => {
+        const entries = keys.filter(k => k in basicSpecs);
+        if (!entries.length) return;
+        entries.forEach(k => assignedKeys.add(k));
+        
         specsHTML += `
-            <div class="spec-item">
-                <span class="spec-label">${key}</span>
-                <span class="spec-value">${value}</span>
+            <div class="spec-category">
+                <h4 class="spec-category-title">${category}</h4>
+                ${entries.map(key => `
+                    <div class="spec-item">
+                        <span class="spec-label">${key}</span>
+                        <span class="spec-value">${basicSpecs[key]}</span>
+                    </div>
+                `).join('')}
             </div>
         `;
     });
+    
+    // Nicht-zugeordnete Specs (z.B. aus specOverrides) am Ende anzeigen
+    const remaining = Object.entries(basicSpecs).filter(([k]) => !assignedKeys.has(k));
+    if (remaining.length) {
+        specsHTML += `
+            <div class="spec-category">
+                ${remaining.map(([key, value]) => `
+                    <div class="spec-item">
+                        <span class="spec-label">${key}</span>
+                        <span class="spec-value">${value}</span>
+                    </div>
+                `).join('')}
+            </div>
+        `;
+    }
     
     specsContainer.innerHTML = specsHTML;
 }
@@ -605,11 +641,64 @@ function getBasicSpecs(product) {
         specs['Reifen'] = '14 Zoll';
         specs['Display'] = 'LCD-Display mit Akkustandanzeige';
         specs['Beleuchtung'] = 'Frontlicht & Rücklicht';
-        specs['Gewicht'] = '19 kg';
+        specs['Gewicht'] = '17 kg';
         specs['Zuladung'] = '120 kg';
         specs['Wasserdicht'] = 'IP54';
         specs['Abmessungen (L x B x H)'] = '1170 x 500 x 990 mm';
         specs['Faltmaße'] = '1170 x 200 x 720 mm';
+    } else if (product.id === 'A1FPro') {
+        specs['Modell'] = 'A1F Pro';
+        specs['Typ'] = 'Falt-E-Bike';
+        specs['Reichweite'] = 'Bis 60 km (Pedalunterstützung)';
+        specs['Motor'] = '36V 250 W (max. 500 W)';
+        specs['Akku'] = '36V 7.5Ah Lithium-Ionen';
+        specs['Max. Geschwindigkeit'] = '25 km/h';
+        specs['Ladezeit'] = '3–4 Stunden';
+        specs['Ladegerät'] = 'DC42V (AC 220V)';
+        specs['Rahmen'] = 'Metall (faltbar)';
+        specs['Bremsen'] = 'Scheibenbremsen vorne und hinten';
+        specs['Reifen'] = '16 Zoll';
+        specs['Display'] = 'LED-Display mit Gangschaltung und Akkustandanzeige';
+        specs['Beleuchtung'] = 'Frontlicht & Rücklichter';
+        specs['Gewicht'] = '21,2 kg';
+        specs['Zuladung'] = '120 kg';
+        specs['Wasserdicht'] = 'IP54';
+        specs['Abmessungen (L x B x H)'] = '1170 x 500 x 990 mm';
+        specs['Faltmaße'] = '1405 x 420 x 640 mm';
+    } else if (product.id === 'C6') {
+        specs['Modell'] = 'C6';
+        specs['Typ'] = 'City-E-Bike';
+        specs['Reichweite'] = 'Bis 60 km (Pedalunterstützung) / 43 km (Gas-Modus)';
+        specs['Motor'] = '36V 250 W (max. 500 W)';
+        specs['Akku'] = '36V 12.5Ah Lithium-Ionen (herausnehmbar)';
+        specs['Max. Geschwindigkeit'] = '25 km/h';
+        specs['Schaltung'] = 'Shimano 6-Gang';
+        specs['Ladezeit'] = '6–8 Stunden';
+        specs['Ladegerät'] = 'AC 100–220V';
+        specs['Rahmen'] = 'Hochfester Stahl';
+        specs['Federung'] = 'Federgabel vorne & gefederte Sattelstütze';
+        specs['Bremsen'] = 'Scheibenbremsen vorne und hinten';
+        specs['Reifen'] = '26 Zoll';
+        specs['Beleuchtung'] = 'LED-Frontlicht & Rücklicht';
+        specs['Gewicht'] = '27 kg';
+        specs['Zuladung'] = '120 kg';
+        specs['Steigfähigkeit'] = '15°';
+        specs['Besonderheiten'] = 'Vorderer Korb, Gepäckträger, herausnehmbarer Akku mit Schloss';
+    } else if (product.id === 'UX') {
+        specs['Modell'] = 'UX';
+        specs['Typ'] = 'BMX-E-Bike';
+        specs['Reichweite'] = '60–80 km (Pedalunterstützung) / 50–65 km (Gas-Modus)';
+        specs['Motor'] = '48V 250 W (max. 500 W)';
+        specs['Akku'] = '48V 13Ah Lithium-Ionen (herausnehmbar)';
+        specs['Max. Geschwindigkeit'] = '25 km/h';
+        specs['Rahmen'] = 'Hochkohlenstoff-Stahl';
+        specs['Bremsen'] = 'Doppelte Scheibenbremsen vorne und hinten';
+        specs['Reifen'] = '20 x 3,0 Zoll';
+        specs['Display'] = 'LCD-Display mit Akkustandanzeige';
+        specs['Beleuchtung'] = 'High-Brightness Frontlicht & Rücklicht';
+        specs['Gewicht'] = '25,8 kg';
+        specs['Zuladung'] = '120 kg';
+        specs['Abmessungen (L x B x H)'] = '1550 x 630 x 1000 mm';
     }
     
     if (product.outOfStock) {
@@ -623,14 +712,20 @@ function getBasicSpecs(product) {
 // Erweiterte Produktinformationen rendern
 function renderExtendedContent(product) {
     const container = document.getElementById('extendedContent');
-    if (!container) return;
+    const tab = document.getElementById('detailsTab');
+    if (!container || !tab) return;
 
     const content = product.extendedContent;
-    if (!content) {
+    if (!content?.sections?.length) {
         container.style.display = 'none';
+        tab.style.display = 'none';
+        if (tab.classList.contains('active')) {
+            activateDetailTab('specsPanel');
+        }
         return;
     }
     container.style.display = 'block';
+    tab.style.display = '';
     container.innerHTML = '';
 
     // Feature-Sektionen (alternierend Bild/Text)
@@ -683,43 +778,70 @@ function renderExtendedContent(product) {
 
         container.appendChild(sectionsWrap);
     }
+}
 
-    // FAQ-Akkordeon
-    if (content.faqs?.length) {
-        const faqsWrap = document.createElement('div');
-        faqsWrap.className = 'ext-faq';
+function renderFaq(product) {
+    const container = document.getElementById('faqContainer');
+    const tab = document.getElementById('faqTab');
+    if (!container || !tab) return;
 
-        const heading = document.createElement('h3');
-        heading.textContent = 'Häufige Fragen';
-        faqsWrap.appendChild(heading);
+    const faqs = product.extendedContent?.faqs;
+    if (!faqs?.length) {
+        container.style.display = 'none';
+        tab.style.display = 'none';
+        return;
+    }
 
-        content.faqs.forEach((faq) => {
-            const item = document.createElement('div');
-            item.className = 'ext-faq-item';
+    container.style.display = '';
+    tab.style.display = '';
+    container.innerHTML = '';
 
-            const button = document.createElement('button');
-            button.type = 'button';
-            button.className = 'ext-faq-question';
-            button.setAttribute('aria-expanded', 'false');
-            button.innerHTML = `<span>${faq.question}</span><span class="ext-faq-icon" aria-hidden="true">+</span>`;
+    const heading = document.createElement('h3');
+    heading.textContent = 'Häufige Fragen';
+    container.appendChild(heading);
 
-            const answer = document.createElement('div');
-            answer.className = 'ext-faq-answer';
-            answer.textContent = faq.answer;
+    faqs.forEach((faq) => {
+        const item = document.createElement('div');
+        item.className = 'ext-faq-item';
 
-            button.addEventListener('click', () => {
-                const isOpen = item.classList.contains('open');
-                item.classList.toggle('open');
-                button.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
-            });
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'ext-faq-question';
+        button.setAttribute('aria-expanded', 'false');
+        button.innerHTML = `<span>${faq.question}</span><span class="ext-faq-icon" aria-hidden="true">+</span>`;
 
-            item.appendChild(button);
-            item.appendChild(answer);
-            faqsWrap.appendChild(item);
+        const answer = document.createElement('div');
+        answer.className = 'ext-faq-answer';
+        answer.textContent = faq.answer;
+
+        button.addEventListener('click', () => {
+            const isOpen = item.classList.contains('open');
+            item.classList.toggle('open');
+            button.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
         });
 
-        container.appendChild(faqsWrap);
+        item.appendChild(button);
+        item.appendChild(answer);
+        container.appendChild(item);
+    });
+}
+
+function renderDimensions(product) {
+    const panel = document.getElementById('dimensionsPanel');
+    const tab = document.getElementById('dimensionsTab');
+    const img = document.getElementById('dimensionsImage');
+    if (!panel || !tab || !img) return;
+
+    if (!product.dimensionsImage) {
+        panel.style.display = 'none';
+        tab.style.display = 'none';
+        return;
     }
+
+    panel.style.display = '';
+    tab.style.display = '';
+    img.src = product.dimensionsImage;
+    img.alt = 'Abmessungen – ' + product.name;
 }
 
 // Anfrageformular einrichten

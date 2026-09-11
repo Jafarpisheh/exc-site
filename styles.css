@@ -149,46 +149,11 @@ body {
     box-shadow: 0 6px 18px rgba(17, 24, 39, 0.05);
 }
 
-.filter-group {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
 .filter-label {
     font-size: 13px;
     font-weight: 700;
     color: #111111;
     letter-spacing: 0.02em;
-}
-
-.filter-chips {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-}
-
-.filter-chip {
-    border: 1px solid #d5d9d9;
-    background-color: #ffffff;
-    color: #111111;
-    padding: 8px 16px;
-    border-radius: 999px;
-    cursor: pointer;
-    font-weight: 600;
-    font-size: 14px;
-    transition: all 0.2s ease;
-}
-
-.filter-chip:hover {
-    background-color: #f0f2f2;
-    border-color: #007185;
-}
-
-.filter-chip.active {
-    background-color: #1e3a8a;
-    border-color: #1e3a8a;
-    color: #ffffff;
 }
 
 /* ============================================
@@ -751,16 +716,6 @@ body {
     gap: 16px;
 }
 
-.product-brand {
-    display: inline-block;
-    color: #007185;
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    margin-bottom: 6px;
-}
-
 .product-summary-card h2 {
     color: #111111;
     font-size: 28px;
@@ -997,6 +952,25 @@ body {
 .spec-value {
     color: #565959;
     text-align: right;
+}
+
+.spec-category {
+    margin-bottom: 20px;
+}
+
+.spec-category:last-child {
+    margin-bottom: 0;
+}
+
+.spec-category-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: #007185;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 0 0 8px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #007185;
 }
 
 /* Inquiry Form */
@@ -1504,6 +1478,12 @@ body {
 
 .legal-card h2:first-child {
     margin-top: 0;
+}
+
+.legal-card h3 {
+    color: var(--color-dark-blue);
+    font-size: 16px;
+    margin: 20px 0 8px;
 }
 
 .legal-card p,
@@ -2136,6 +2116,22 @@ body {
     margin: 0;
 }
 
+/* Dimensions */
+.dimensions-container {
+    display: flex;
+    justify-content: center;
+    background: #f8fafc;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    padding: 24px;
+}
+
+.dimensions-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
 /* FAQ */
 .ext-faq {
     display: flex;
@@ -2223,32 +2219,6 @@ body {
 
 #detailsPanel .ext-feature-body p {
     color: #d1d5db;
-}
-
-#detailsPanel .ext-faq h3 {
-    color: #ffffff;
-}
-
-#detailsPanel .ext-faq-item {
-    background: #111827;
-    border-color: #1f2937;
-}
-
-#detailsPanel .ext-faq-question {
-    color: #ffffff;
-}
-
-#detailsPanel .ext-faq-question:hover {
-    background: #1f2937;
-}
-
-#detailsPanel .ext-faq-icon {
-    background: #1f2937;
-    color: #22d3ee;
-}
-
-#detailsPanel .ext-faq-answer {
-    color: #9ca3af;
 }
 
 /* Responsive */

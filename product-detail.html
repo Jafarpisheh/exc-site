@@ -85,6 +85,8 @@
                 <div class="detail-tabs" role="tablist" aria-label="Produktinformationen">
                     <button class="detail-tab active" role="tab" aria-selected="true" aria-controls="detailsPanel" id="detailsTab" data-target="detailsPanel">Highlights</button>
                     <button class="detail-tab" role="tab" aria-selected="false" aria-controls="specsPanel" id="specsTab" data-target="specsPanel">Technische Daten</button>
+                    <button class="detail-tab" role="tab" aria-selected="false" aria-controls="dimensionsPanel" id="dimensionsTab" data-target="dimensionsPanel">Dimensions</button>
+                    <button class="detail-tab" role="tab" aria-selected="false" aria-controls="faqPanel" id="faqTab" data-target="faqPanel">Häufige Fragen</button>
                     <button class="detail-tab" role="tab" aria-selected="false" aria-controls="inquiryPanel" id="inquiryTab" data-target="inquiryPanel">Produktanfrage</button>
                 </div>
 
@@ -99,6 +101,18 @@
                         <div class="product-specs" id="specsContainer">
                             <!-- Technische Daten erscheinen hier -->
                         </div>
+                    </div>
+                </div>
+
+                <div id="dimensionsPanel" class="detail-panel" role="tabpanel" aria-labelledby="dimensionsTab" hidden>
+                    <div class="dimensions-container">
+                        <img id="dimensionsImage" src="" alt="Abmessungen">
+                    </div>
+                </div>
+
+                <div id="faqPanel" class="detail-panel" role="tabpanel" aria-labelledby="faqTab" hidden>
+                    <div id="faqContainer" class="ext-faq">
+                        <!-- FAQ-Akkordeon wird dynamisch geladen -->
                     </div>
                 </div>
 
