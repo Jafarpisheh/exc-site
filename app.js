@@ -21,7 +21,72 @@ const products = [
         imageFiles: [
             '1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','6.jpg','7.jpg','8.jpg','9.jpg','10.jpg'
         ],
-        hasVideo: false
+        hasVideo: false,
+        extendedContent: {
+            sections: [
+                {
+                    type: 'fullwidth',
+                    image: 'products/D3S/extended/1.webp'
+                },
+                {
+                    align: 'right',
+                    image: 'products/D3S/extended/2.webp',
+                    title: 'Keine Reichweiten-Sorgen',
+                    text: 'Der hochintegrierte 36-V-10-Ah-Lithium-Ionen-Akku liefert Energie für den gesamten Alltag: Bis zu 50 km Reichweite im Pedal-Assist-Modus, in nur 5–6 Stunden wieder vollständig geladen.'
+                },
+                {
+                    align: 'left',
+                    image: 'products/D3S/extended/3.webp',
+                    title: 'Hochfeste, pannensichere Reifen',
+                    text: 'Die robusten 14-Zoll-Reifen sind so konstruiert, dass scharfe Gegenstände sie kaum beschädigen. Das erhöht die Sicherheit und verlängert die Lebensdauer deutlich.'
+                },
+                {
+                    align: 'right',
+                    image: 'products/D3S/extended/4.webp',
+                    title: 'Sicheres Bremssystem',
+                    text: 'Scheibenbremsen vorne und hinten erfüllen höchste Sicherheitsanforderungen. So bleiben Sie in jeder Situation sicher und zuverlässig unterwegs.'
+                }
+            ],
+            features: [
+                { title: 'Helle Frontleuchte', text: 'Das helle Licht führt Sie sicher durch die Dunkelheit.' },
+                { title: 'Höhenverstellbarer Sattel', text: 'Passt sich unterschiedlichen Körpergrößen an.' },
+                { title: 'LCD-Display', text: 'Der Akkustand wird übersichtlich auf dem LCD-Display angezeigt.' },
+                { title: 'Verschleißfeste Reifen', text: 'Langlebige Reifen, zusätzlich pannensicher ausgelegt.' },
+                { title: 'Platzsparend faltbar', text: 'Leicht und klein – überallhin mitnehmen.' },
+                { title: '36-V-10-Ah-Lithium-Akku', text: 'Bis zu 50 km Reichweite mit einer einzigen Akkuladung.' }
+            ],
+            inTheBox: [
+                '1× DYU D3S Falt-E-Bike',
+                '1× 36V 10Ah Lithium-Ionen-Akku',
+                '1× Ladegerät mit Kabel',
+                '1× Gebrauchsanleitung',
+                '1× Garantiekarte',
+                '1× Satz Pedale',
+                'Werkzeug für die Montage'
+            ],
+            faqs: [
+                {
+                    question: 'Wie hoch ist die Reichweite des D3S?',
+                    answer: 'Im Pedal-Assist-Modus erreichen Sie mit dem 36-V-10-Ah-Akku bis zu 50 km Reichweite. Die tatsächliche Reichweite hängt von Gewicht, Gelände und gewählter Unterstützungsstufe ab.'
+                },
+                {
+                    question: 'Ist das D3S für den Straßenverkehr zugelassen?',
+                    answer: 'Ja. Mit 250 W Nennleistung und maximal 25 km/h ist das D3S als Pedelec EU-zugelassen und darf auf öffentlichen Straßen gefahren werden. Es bietet reine Tretunterstützung (kein Gasdrehgriff).'
+                },
+                {
+                    question: 'Wie lange dauert das Aufladen des Akkus?',
+                    answer: 'Der Akku ist in ca. 5–6 Stunden vollständig geladen. Die integrierte Batteriemanagement-Funktion (BMS) lädt den Akku dabei sicher und schonend.'
+                },
+                {
+                    question: 'Wie schwer ist das D3S und wie viel kann es zuladen?',
+                    answer: 'Das D3S wiegt nur 19 kg und kann bis zu 120 kg belastet werden. Dank des kompakten Faltmechanismus passt es problemlos in Bus, Bahn oder den Kofferraum.'
+                },
+                {
+                    question: 'Welche Garantie gibt es auf das D3S?',
+                    answer: 'Auf das D3S erhalten Sie eine Herstellergarantie. Details zu Umfang und Ablauf finden Sie auf unserer Garantieseite.'
+                }
+            ]
+        }
     }
 ];
 

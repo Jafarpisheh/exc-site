@@ -59,6 +59,9 @@ async function loadProductDetails() {
     // Spezifikationen laden
     loadProductSpecs(product);
     
+    // Erweiterte Produktinformationen laden
+    renderExtendedContent(product);
+    
     // Anfrageformular einrichten
     setupInquiryForm(product);
 }
@@ -615,6 +618,151 @@ function getBasicSpecs(product) {
     }
     
     return specs;
+}
+
+// Erweiterte Produktinformationen rendern
+function renderExtendedContent(product) {
+    const container = document.getElementById('extendedContent');
+    if (!container) return;
+
+    const content = product.extendedContent;
+    if (!content) {
+        container.style.display = 'none';
+        return;
+    }
+    container.style.display = 'block';
+    container.innerHTML = '';
+
+    // Feature-Sektionen (alternierend Bild/Text)
+    if (content.sections?.length) {
+        const sectionsWrap = document.createElement('div');
+        sectionsWrap.className = 'ext-feature-sections';
+
+        content.sections.forEach((section) => {
+            let item;
+
+            if (section.type === 'fullwidth') {
+                item = document.createElement('div');
+                item.className = 'ext-feature-banner';
+
+                const bannerImg = document.createElement('img');
+                bannerImg.className = 'ext-feature-banner-image';
+                bannerImg.src = section.image;
+                bannerImg.loading = 'lazy';
+                bannerImg.alt = section.title || 'DYU D3S';
+
+                item.appendChild(bannerImg);
+            } else {
+                item = document.createElement('div');
+                item.className = 'ext-feature-section';
+                item.classList.add(section.align === 'right' ? 'ext-feature-reverse' : 'ext-feature-normal');
+
+                const img = document.createElement('img');
+                img.className = 'ext-feature-image';
+                img.src = section.image;
+                img.loading = 'lazy';
+                img.alt = section.title;
+
+                const body = document.createElement('div');
+                body.className = 'ext-feature-body';
+
+                const heading = document.createElement('h3');
+                heading.textContent = section.title;
+
+                const text = document.createElement('p');
+                text.textContent = section.text;
+
+                body.appendChild(heading);
+                body.appendChild(text);
+                item.appendChild(img);
+                item.appendChild(body);
+            }
+
+            sectionsWrap.appendChild(item);
+        });
+
+        container.appendChild(sectionsWrap);
+    }
+
+    // Feature-Grid
+    if (content.features?.length) {
+        const grid = document.createElement('div');
+        grid.className = 'ext-features';
+
+        content.features.forEach((feature) => {
+            const card = document.createElement('div');
+            card.className = 'ext-feature-card';
+
+            const heading = document.createElement('h4');
+            heading.textContent = feature.title;
+
+            const text = document.createElement('p');
+            text.textContent = feature.text;
+
+            card.appendChild(heading);
+            card.appendChild(text);
+            grid.appendChild(card);
+        });
+
+        container.appendChild(grid);
+    }
+
+    // Lieferumfang
+    if (content.inTheBox?.length) {
+        const box = document.createElement('div');
+        box.className = 'ext-inthebox';
+
+        const heading = document.createElement('h3');
+        heading.textContent = 'Lieferumfang';
+
+        const list = document.createElement('ul');
+        content.inTheBox.forEach((itemText) => {
+            const li = document.createElement('li');
+            li.textContent = itemText;
+            list.appendChild(li);
+        });
+
+        box.appendChild(heading);
+        box.appendChild(list);
+        container.appendChild(box);
+    }
+
+    // FAQ-Akkordeon
+    if (content.faqs?.length) {
+        const faqsWrap = document.createElement('div');
+        faqsWrap.className = 'ext-faq';
+
+        const heading = document.createElement('h3');
+        heading.textContent = 'Häufige Fragen';
+        faqsWrap.appendChild(heading);
+
+        content.faqs.forEach((faq) => {
+            const item = document.createElement('div');
+            item.className = 'ext-faq-item';
+
+            const button = document.createElement('button');
+            button.type = 'button';
+            button.className = 'ext-faq-question';
+            button.setAttribute('aria-expanded', 'false');
+            button.innerHTML = `<span>${faq.question}</span><span class="ext-faq-icon" aria-hidden="true">+</span>`;
+
+            const answer = document.createElement('div');
+            answer.className = 'ext-faq-answer';
+            answer.textContent = faq.answer;
+
+            button.addEventListener('click', () => {
+                const isOpen = item.classList.contains('open');
+                item.classList.toggle('open');
+                button.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+            });
+
+            item.appendChild(button);
+            item.appendChild(answer);
+            faqsWrap.appendChild(item);
+        });
+
+        container.appendChild(faqsWrap);
+    }
 }
 
 // Anfrageformular einrichten

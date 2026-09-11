@@ -2062,3 +2062,235 @@ body {
         padding: 22px;
     }
 }
+
+/* ============================================
+   EXTENDED PRODUCT CONTENT
+   ============================================ */
+
+.extended-content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+/* Feature-Sektionen */
+.ext-feature-sections {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+}
+
+.ext-feature-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    align-items: center;
+}
+
+.ext-feature-reverse .ext-feature-image {
+    order: 2;
+}
+
+.ext-feature-image {
+    width: 100%;
+    border-radius: 16px;
+    border: 1px solid #e6e6e6;
+    background-color: #f7f7f7;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+.ext-feature-banner {
+    width: 100%;
+}
+
+.ext-feature-banner-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 16px;
+    border: 1px solid #e6e6e6;
+    background-color: #f7f7f7;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+.ext-feature-body h3 {
+    color: #111111;
+    font-size: 26px;
+    line-height: 1.25;
+    margin: 0 0 12px;
+}
+
+.ext-feature-body p {
+    color: #565959;
+    font-size: 16px;
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* Feature-Grid */
+.ext-features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.ext-feature-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    padding: 24px;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.ext-feature-card:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
+}
+
+.ext-feature-card h4 {
+    color: #007185;
+    font-size: 15px;
+    margin: 0 0 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.ext-feature-card p {
+    color: #565959;
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Lieferumfang */
+.ext-inthebox {
+    background: #f8fafc;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    padding: 28px 32px;
+}
+
+.ext-inthebox h3,
+.ext-faq h3 {
+    color: #111111;
+    font-size: 24px;
+    margin: 0 0 16px;
+}
+
+.ext-inthebox ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px 24px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.ext-inthebox li {
+    color: #232f3e;
+    font-size: 15px;
+    padding-left: 24px;
+    position: relative;
+    line-height: 1.6;
+}
+
+.ext-inthebox li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #007185;
+    font-weight: 700;
+}
+
+/* FAQ */
+.ext-faq {
+    display: flex;
+    flex-direction: column;
+}
+
+.ext-faq-item {
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    overflow: hidden;
+    background: #ffffff;
+}
+
+.ext-faq-question {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 20px;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    text-align: left;
+    font-size: 16px;
+    font-weight: 700;
+    color: #111111;
+}
+
+.ext-faq-question:hover {
+    background: #f3f4f6;
+}
+
+.ext-faq-icon {
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #f0f2f2;
+    color: #007185;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 700;
+    transition: transform 0.2s ease;
+}
+
+.ext-faq-item.open .ext-faq-icon {
+    transform: rotate(45deg);
+}
+
+.ext-faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 20px;
+    color: #565959;
+    font-size: 15px;
+    line-height: 1.7;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.ext-faq-item.open .ext-faq-answer {
+    max-height: 320px;
+    padding: 0 20px 18px;
+}
+
+/* Responsive */
+@media (max-width: 860px) {
+    .ext-feature-section {
+        grid-template-columns: 1fr;
+    }
+
+    .ext-features {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 560px) {
+    .ext-features {
+        grid-template-columns: 1fr;
+    }
+
+    .ext-inthebox ul {
+        grid-template-columns: 1fr;
+    }
+
+    .ext-feature-body h3 {
+        font-size: 22px;
+    }
+}
