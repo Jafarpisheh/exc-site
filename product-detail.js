@@ -560,7 +560,7 @@ const SPEC_CATEGORIES = {
     'Allgemein': ['Modell', 'Typ', 'Preis', 'Status', 'Verfügbarkeit'],
     'Antrieb': ['Reichweite', 'Motor', 'Akku', 'Max. Geschwindigkeit'],
     'Laden': ['Ladezeit', 'Ladegerät'],
-    'Fahrwerk': ['Rahmen', 'Bremsen', 'Reifen'],
+    'Fahrwerk': ['Rahmen', 'Federung', 'Bremsen', 'Reifen', 'Steigfähigkeit'],
     'Ausstattung': ['Display', 'Beleuchtung', 'Wasserdicht'],
     'Maße & Gewicht': ['Gewicht', 'Zuladung', 'Abmessungen (L x B x H)', 'Faltmaße']
 };
@@ -699,6 +699,27 @@ function getBasicSpecs(product) {
         specs['Gewicht'] = '25,8 kg';
         specs['Zuladung'] = '120 kg';
         specs['Abmessungen (L x B x H)'] = '1550 x 630 x 1000 mm';
+    } else if (product.id === 'C9') {
+        specs['Modell'] = 'C9';
+        specs['Typ'] = 'Falt-E-Bike';
+        specs['Reichweite'] = 'Bis 150 km (Pedalunterstützung) / 70–80 km (Gas-Modus)';
+        specs['Motor'] = '48V 250 W';
+        specs['Akku'] = '48V 15.6Ah Power-Lithium (herausnehmbar)';
+        specs['Max. Geschwindigkeit'] = '25 km/h';
+        specs['Ladezeit'] = '7–8 Stunden';
+        specs['Ladegerät'] = 'DC54.6V (AC 100–240V)';
+        specs['Rahmen'] = 'Aluminiumlegierung (faltbar)';
+        specs['Federung'] = 'Vordere Stoßdämpfung';
+        specs['Bremsen'] = 'Hydraulische Scheibenbremsen vorne und hinten';
+        specs['Reifen'] = '20 x 3,0 Zoll';
+        specs['Display'] = 'LED-Display mit Akkustandanzeige';
+        specs['Beleuchtung'] = 'Frontlicht & Rücklicht';
+        specs['Wasserdicht'] = 'IP54';
+        specs['Gewicht'] = '30 kg';
+        specs['Zuladung'] = '120 kg';
+        specs['Abmessungen (L x B x H)'] = '1720 x 645 x 1140–1285 mm';
+        specs['Faltmaße'] = '970 x 465 x 760 mm';
+        specs['Steigfähigkeit'] = '15°';
     }
     
     if (product.outOfStock) {

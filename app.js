@@ -307,6 +307,117 @@ const products = [
                 }
             ]
         }
+    },
+    {
+        id: 'C9',
+        brand: 'DYU',
+        category: ['folding'],
+        rangeKm: 150,
+        motorW: 250,
+        battery: '48V 15.6Ah',
+        name: 'DYU C9 20 Zoll Langstrecken-E-Bike',
+        description: 'Leistungsstarkes faltbares 20-Zoll-E-Bike mit Fat-Tire-Reifen, 48-V-15,6-Ah-Akku, hydraulischen Scheibenbremsen und bis zu 150 km Reichweite – perfekt für Pendler und Touren.',
+        longDescription: [
+            'Das DYU C9 ist ein faltbares 20-Zoll-E-Bike mit breiten Fat-Tire-Reifen (20 x 3,0 Zoll), das sich in nur drei Schritten zusammenklappen und bequem verstauen lässt. Der hochfeste Aluminiumrahmen und die vordere Stoßdämpfung sorgen auf jedem Untergrund für Komfort und Stabilität.',
+            'Der kraftvolle 250-W-Motor unterstützt Sie bis zu 25 km/h und bewältigt mühelos Steigungen von bis zu 15°. Der herausnehmbare 48-V-15,6-Ah-Power-Lithium-Akku liefert im Pedal-Assist-Modus eine beeindruckende Reichweite von bis zu 150 km und ist in ca. 7–8 Stunden vollständig geladen.',
+            'Hydraulische Scheibenbremsen vorne und hinten, ein helles Frontlicht, das LED-Display mit Akkustandanzeige sowie ein hinterer Gepäckträger machen das C9 zum vielseitigen Begleiter für Stadt und Alltag. Mit 30 kg Gewicht und bis zu 120 kg Zuladung ist es für Fahrer von ca. 160 bis 195 cm Körpergröße geeignet.'
+        ],
+        price: 949,
+        stripeCheckoutUrl: 'https://buy.stripe.com/28E4gr6iv22Z2nq6em3oA0W',
+        folder: 'products/C9',
+        coverImage: 'products/C9/Grün/1.jpg',
+        variants: [
+            {
+                id: 'Grün',
+                name: 'Grün',
+                folder: 'products/C9/Grün',
+                coverImage: 'products/C9/Grün/1.jpg',
+                stripeCheckoutUrl: 'https://buy.stripe.com/28E4gr6iv22Z2nq6em3oA0W',
+                imageFiles: [
+                    '1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg', '11.jpg', '12.jpg'
+                ]
+            },
+            {
+                id: 'Weiss',
+                name: 'Weiß',
+                folder: 'products/C9/Weiss',
+                coverImage: 'products/C9/Weiss/1.jpg',
+                stripeCheckoutUrl: 'https://buy.stripe.com/28E8wH6iv22Z2nq5ai3oA0X',
+                imageFiles: [
+                    '1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg', '6.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg'
+                ]
+            }
+        ],
+        hasVideo: false,
+        dimensionsImage: 'products/C9/Dimensions/Dimensions.JPG',
+        extendedContent: {
+            sections: [
+                {
+                    type: 'fullwidth',
+                    image: 'products/C9/extended/1.webp'
+                },
+                {
+                    align: 'right',
+                    image: 'products/C9/extended/2.webp',
+                    title: 'Kraftvoller 250-W-Motor',
+                    text: 'Der 250-W-Motor liefert starke Leistung, hervorragende Bergsteigfähigkeit und schnelle Beschleunigung – für ein reibungsloses und effizientes Fahrerlebnis auf verschiedenen Geländen.'
+                },
+                {
+                    align: 'left',
+                    image: 'products/C9/extended/3.webp',
+                    title: 'Bis zu 150 km Reichweite',
+                    text: 'Der herausnehmbare 48-V-15,6-Ah-Power-Lithium-Akku bietet eine enorme Reichweite von bis zu 150 km und sorgt für lange Fahrzeiten im täglichen Pendelverkehr und auf Touren.'
+                },
+                {
+                    align: 'right',
+                    image: 'products/C9/extended/4.webp',
+                    title: 'Schnell & einfach faltbar',
+                    text: 'Das C9 lässt sich in nur drei Schritten zusammenklappen: Vorbau absenken, Pedale einklappen und Rahmen zusammenlegen. Perfekt für die Stadt, Bus, Bahn oder enge Räume.'
+                },
+                {
+                    align: 'left',
+                    image: 'products/C9/extended/5.webp',
+                    title: 'Perfekt gedämpft',
+                    text: 'Das fortschrittliche Federungssystem mit vorderer Stoßdämpfung absorbiert Stöße effektiv und sorgt für eine ruhige und komfortable Fahrt auf unterschiedlichen Straßen.'
+                },
+                {
+                    align: 'right',
+                    image: 'products/C9/extended/6.webp',
+                    title: 'Hydraulische Scheibenbremsen',
+                    text: 'Das hydraulische Scheibenbremssystem vorne und hinten bietet präzise und starke Bremsleistung für maximale Sicherheit und Stabilität unterwegs.'
+                },
+                {
+                    type: 'fullwidth',
+                    image: 'products/C9/extended/7.webp'
+                }
+            ],
+            faqs: [
+                {
+                    question: 'Wie hoch ist die Reichweite des DYU C9?',
+                    answer: 'Im Pedal-Assist-Modus erreichen Sie mit dem 48-V-15,6-Ah-Akku bis zu 150 km Reichweite, im Gas-Modus 70–80 km. Die tatsächliche Reichweite hängt von Gewicht, Gelände, Temperatur und gewählter Unterstützungsstufe ab.'
+                },
+                {
+                    question: 'Ist das DYU C9 für den Straßenverkehr zugelassen?',
+                    answer: 'Ja. Mit 250 W Nennleistung und maximal 25 km/h ist das C9 als Elektrofahrrad EU-zugelassen und darf auf öffentlichen Straßen gefahren werden. Bitte beachten Sie die lokalen Vorschriften zur Nutzung.'
+                },
+                {
+                    question: 'Wie lange dauert das Aufladen des Akkus?',
+                    answer: 'Der herausnehmbare Akku ist in ca. 7–8 Stunden vollständig geladen. Das integrierte Batteriemanagement (BMS) lädt den Akku dabei sicher und schonend.'
+                },
+                {
+                    question: 'Wie schwer ist das DYU C9 und wie viel kann es zuladen?',
+                    answer: 'Das C9 wiegt 30 kg und kann bis zu 120 kg belastet werden. Der hintere Gepäckträger bietet zusätzlich Stauraum für Einkäufe und Gepäck. Geeignet für Fahrer von ca. 160 bis 195 cm Körpergröße.'
+                },
+                {
+                    question: 'Wie lässt sich das DYU C9 falten und transportieren?',
+                    answer: 'In nur drei Schritten: Vorbau absenken, Pedale einklappen und Rahmen zusammenlegen. Gefaltet ist es kompakt (970 x 465 x 760 mm) und passt problemlos in Bus, Bahn oder den Kofferraum.'
+                },
+                {
+                    question: 'Welche Garantie gibt es auf das DYU C9?',
+                    answer: 'Auf das DYU C9 erhalten Sie eine Herstellergarantie von 12–24 Monaten. Details zu Umfang und Ablauf finden Sie auf unserer Garantieseite.'
+                }
+            ]
+        }
     }
 ];
 
