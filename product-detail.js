@@ -720,6 +720,27 @@ function getBasicSpecs(product) {
         specs['Abmessungen (L x B x H)'] = '1720 x 645 x 1140–1285 mm';
         specs['Faltmaße'] = '970 x 465 x 760 mm';
         specs['Steigfähigkeit'] = '15°';
+    } else if (product.id === 'C2') {
+        specs['Modell'] = 'C2';
+        specs['Typ'] = 'Falt-E-Bike';
+        specs['Reichweite'] = '40–50 km (Gas-Modus)';
+        specs['Motor'] = '48V 250 W (max. 500 W)';
+        specs['Akku'] = '48V 7.5Ah Power-Lithium';
+        specs['Max. Geschwindigkeit'] = '25 km/h';
+        specs['Ladezeit'] = '4–5 Stunden';
+        specs['Ladegerät'] = 'AC 100–240V (Ausgang 54.6V/1.5A)';
+        specs['Rahmen'] = 'Magnesiumlegierung (faltbar)';
+        specs['Federung'] = 'Mittlere Stoßdämpfung & hintere Federung';
+        specs['Bremsen'] = 'Scheibenbremsen vorne und hinten';
+        specs['Reifen'] = '16 x 2,5 Zoll';
+        specs['Display'] = 'Digitales Display mit Akkustandanzeige';
+        specs['Beleuchtung'] = 'Frontlicht & Rücklicht';
+        specs['Wasserdicht'] = 'IP54';
+        specs['Gewicht'] = '30,5 kg';
+        specs['Zuladung'] = '120 kg';
+        specs['Steigfähigkeit'] = '15°';
+        specs['Abmessungen (L x B x H)'] = '1420 x 525 x 1080 mm';
+        specs['Faltmaße'] = '815 x 435 x 565 mm';
     }
     
     if (product.outOfStock) {

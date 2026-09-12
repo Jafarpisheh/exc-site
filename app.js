@@ -418,6 +418,92 @@ const products = [
                 }
             ]
         }
+    },
+    {
+        id: 'C2',
+        brand: 'DYU',
+        category: ['folding'],
+        rangeKm: 40,
+        motorW: 250,
+        battery: '48V 7.5Ah',
+        name: 'DYU C2 16 Zoll Falt-E-Bike',
+        description: 'Kompaktes vollfaltbares 16-Zoll-E-Bike mit Magnesium-Rahmen, 250-W-Motor, mittlerer Stoßdämpfung und bis zu 50 km Reichweite – ideal für den urbanen Alltag.',
+        longDescription: [
+            'Das DYU C2 ist ein vollfaltbares 16-Zoll-E-Bike im eleganten Doppelfisch-Design aus ultraleichter Magnesiumlegierung. In nur zwei Schritten lässt es sich zusammenklappen und in wenigen Sekunden tragen, verstauen oder in Bahn, Bus und Kofferraum mitnehmen.',
+            'Der kraftvolle 250-W-Motor erreicht eine Spitzenleistung von bis zu 500 W und meistert mühelos Steigungen von bis zu 15°. Der integrierte 48-V-7,5-Ah-Power-Lithium-Akku liefert im Gas-Modus eine Reichweite von bis zu 50 km und ist in ca. 4–5 Stunden vollständig geladen.',
+            'Die mittlere Stoßdämpfung und die hintere Federung absorbieren Vibrationen zuverlässig, während die 16 x 2,5 Zoll Reifen starken Grip auf jedem Untergrund bieten. Scheibenbremsen vorne und hinten, ein helles Front- und Rücklicht, ein digitales Display sowie der vergrößerte Gepäckträger machen das C2 zum vielseitigen Begleiter für jeden Tag.'
+        ],
+        price: 509,
+        stripeCheckoutUrl: 'https://buy.stripe.com/7sY5kvbCPazv5zC32a3oA0Y',
+        folder: 'products/C2',
+        coverImage: 'products/C2/images/1.jpg',
+        imageFiles: [
+            '1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','6.jpg','7.jpg','8.jpg','9.jpg'
+        ],
+        hasVideo: false,
+        dimensionsImage: 'products/C2/Dimensions/Dimensions.JPG',
+        extendedContent: {
+            sections: [
+                {
+                    type: 'fullwidth',
+                    image: 'products/C2/extended/1.webp'
+                },
+                {
+                    align: 'right',
+                    image: 'products/C2/extended/2.webp',
+                    title: 'Kraftvoller 250-W-Motor',
+                    text: 'Der 250-W-Hochleistungsmotor erreicht eine Spitzenleistung von bis zu 500 W und meistert Steigungen von bis zu 15° mühelos – für ein zügiges und effizientes Fahrerlebnis in der Stadt.'
+                },
+                {
+                    align: 'left',
+                    image: 'products/C2/extended/3.webp',
+                    title: 'Leichter Magnesium-Rahmen',
+                    text: 'Der Rahmen aus ultraleichter Magnesiumlegierung im einzigartigen DYU-Doppelfisch-Design ist stabil und leicht zugleich. In nur zwei Schritten ist das C2 gefaltet und binnen Sekunden einsatzbereit.'
+                },
+                {
+                    align: 'right',
+                    image: 'products/C2/extended/4.webp',
+                    title: 'Akku für den Alltag',
+                    text: 'Der integrierte 48-V-7,5-Ah-Power-Lithium-Akku liefert im Gas-Modus eine Reichweite von bis zu 50 km und ist in ca. 4–5 Stunden wieder vollständig geladen.'
+                },
+                {
+                    align: 'left',
+                    image: 'products/C2/extended/5.webp',
+                    title: 'Komfort perfekt gedämpft',
+                    text: 'Das mittlere Stoßdämpfungssystem absorbiert die meisten Fahrbahnvibrationen. Die 16 x 2,5 Zoll Reifen mit starkem Grip sorgen dafür, dass sich jedes Terrain glatt und stabil anfühlt.'
+                },
+                {
+                    type: 'fullwidth',
+                    image: 'products/C2/extended/6.webp'
+                }
+            ],
+            faqs: [
+                {
+                    question: 'Wie hoch ist die Reichweite des DYU C2?',
+                    answer: 'Im Gas-Modus erreichen Sie mit dem 48-V-7,5-Ah-Akku eine Reichweite von bis zu 50 km (40–50 km je nach Fahrweise). Die tatsächliche Reichweite hängt von Gewicht, Gelände, Temperatur und gewählter Unterstützungsstufe ab.'
+                },
+                {
+                    question: 'Ist das DYU C2 für den Straßenverkehr zugelassen?',
+                    answer: 'Ja. Mit 250 W Nennleistung und maximal 25 km/h ist das C2 als Elektrofahrrad EU-zugelassen und darf auf öffentlichen Straßen gefahren werden. Bitte beachten Sie die lokalen Vorschriften zur Nutzung.'
+                },
+                {
+                    question: 'Wie lange dauert das Aufladen des Akkus?',
+                    answer: 'Der Akku ist mit dem mitgelieferten Ladegerät (AC 100–240V) in ca. 4–5 Stunden vollständig geladen. Das integrierte Batteriemanagement (BMS) lädt den Akku dabei sicher und schonend.'
+                },
+                {
+                    question: 'Wie schwer ist das DYU C2 und wie viel kann es zuladen?',
+                    answer: 'Das C2 wiegt ca. 30,5 kg und kann bis zu 120 kg belastet werden. Der vergrößerte Gepäckträger bietet zusätzlich reichlich Stauraum für Einkäufe, Gepäck und den Alltag.'
+                },
+                {
+                    question: 'Wie lässt sich das DYU C2 falten und transportieren?',
+                    answer: 'In nur zwei Schritten: Rahmen zusammenklappen und Vorbau absenken. Gefaltet ist es mit nur 815 x 435 x 565 mm kompakt und passt problemlos in Bahn, Bus, Aufzug oder den Kofferraum.'
+                },
+                {
+                    question: 'Welche Garantie gibt es auf das DYU C2?',
+                    answer: 'Auf das DYU C2 erhalten Sie eine Herstellergarantie von 12–24 Monaten. Details zu Umfang und Ablauf finden Sie auf unserer Garantieseite.'
+                }
+            ]
+        }
     }
 ];
 
