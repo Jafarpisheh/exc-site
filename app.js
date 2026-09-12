@@ -518,7 +518,21 @@ function getProductCheckoutUrl(product, variant) {
     return (product.stripeCheckoutUrl || '').trim();
 }
 
-function createCheckoutButton(product, extraClass = '', variant = null) {
+function createPaymentMethodsMarkup() {
+    return `
+        <div class="payment-methods" aria-label="Verfügbare Zahlungsarten über Stripe">
+            <span class="payment-logo payment-logo--visa" aria-label="Visa">VISA</span>
+            <span class="payment-logo payment-logo--mastercard" aria-label="Mastercard"><span></span><span></span><b>mastercard</b></span>
+            <span class="payment-logo payment-logo--amex" aria-label="American Express">AMEX</span>
+            <span class="payment-logo payment-logo--apple" aria-label="Apple Pay">Apple Pay</span>
+            <span class="payment-logo payment-logo--google" aria-label="Google Pay">G Pay</span>
+            <span class="payment-logo payment-logo--klarna" aria-label="Klarna">Klarna.</span>
+            <span class="payment-logo payment-logo--sepa" aria-label="SEPA-Lastschrift">SEPA</span>
+        </div>
+    `;
+}
+
+function createCheckoutButton(product, extraClass = '', variant = null, showPaymentMethods = false) {
     const checkoutUrl = getProductCheckoutUrl(product, variant);
     const outOfStock = variant ? variant.outOfStock : product.outOfStock;
     if (outOfStock) {
@@ -533,7 +547,8 @@ function createCheckoutButton(product, extraClass = '', variant = null) {
     }
 
     const classes = ['checkout-btn', extraClass].filter(Boolean).join(' ');
-    return `<a href="${checkoutUrl}" class="${classes}" target="_blank" rel="noopener noreferrer">Jetzt kaufen</a>`;
+    const paymentMethods = showPaymentMethods ? createPaymentMethodsMarkup() : '';
+    return `<div class="checkout-action-group"><a href="${checkoutUrl}" class="${classes}" target="_blank" rel="noopener noreferrer">Jetzt kaufen</a>${paymentMethods}</div>`;
 }
 
 function createAvailabilityButton(product, extraClass = '', variant = null) {

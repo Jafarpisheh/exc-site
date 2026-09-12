@@ -135,7 +135,7 @@ function renderProductActions(product) {
 
     const activeVariant = product.variants?.find(variant => variant.id === galleryState.activeVariantId);
     container.style.display = 'flex';
-    container.innerHTML = createCheckoutButton(product, 'checkout-btn--detail', activeVariant);
+    container.innerHTML = createCheckoutButton(product, 'checkout-btn--detail', activeVariant, true);
     if (!container.innerHTML) {
         container.style.display = 'none';
     }
