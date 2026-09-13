@@ -586,6 +586,65 @@ const products = [
                 }
             ]
         }
+    },
+    {
+        id: 'M20',
+        brand: 'DYU',
+        category: ['moto'],
+        rangeKm: 100,
+        motorW: 250,
+        battery: '48V 18.2Ah',
+        name: 'DYU M20 20 Zoll All-Terrain Moto-E-Bike',
+        description: 'Kraftvolles All-Terrain-Moto-E-Bike mit breiten 20-Zoll-Fat-Tire-Reifen, 48-V-18,2-Ah-Akku und bis zu 100 km Reichweite – für Gelände, Sand und anspruchsvolle Trails.',
+        longDescription: [
+            'Das DYU M20 ist ein kraftvolles All-Terrain-E-Bike im Moto-Style mit breiten 20 x 4,0 Zoll Fat-Tire-Reifen und einer vorderen Stoßdämpfung. Es meistert zuverlässig raue Trails, sandige Dünen und verschneite Wege und macht auf jedem Untergrund eine gute Figur.',
+            'Der kraftvolle 250-W-Motor erreicht eine Spitzenleistung von bis zu 1000 W und unterstützt Sie bis 25 km/h ebenso wie beim Überwinden steilerer Steigungen. Der Lithium-Ionen-Akku mit 48 V und 18,2 Ah liefert im Pedal-Assist-Modus eine Reichweite von bis zu 100 km und im Gas-Modus bis zu 70 km – in ca. 7–8 Stunden ist er vollständig geladen.',
+            'Für Sicherheit sorgen die hochwertigen Dual-Actuated-Scheibenbremsen vorne und hinten sowie das helle Frontlicht und das Rücklicht am Gepäckträger. Das LED-Display mit Akkustandanzeige zeigt jederzeit den Ladezustand. Mit 40 kg Gewicht, bis zu 120 kg Zuladung und IP54-Schutz ist das M20 ein robuster Begleiter für jedes Abenteuer.'
+        ],
+        price: 1049,
+        stripeCheckoutUrl: 'https://buy.stripe.com/14A14f36j0YVd2446e3oA10',
+        folder: 'products/M20',
+        coverImage: 'products/M20/images/1.jpg',
+        imageFiles: [
+            '1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','6.jpg','7.jpg','8.jpg','9.jpg','10.jpg'
+        ],
+        hasVideo: false,
+        extendedContent: {
+            sections: [
+                {
+                    type: 'fullwidth',
+                    image: 'products/M20/extended/1.webp'
+                },
+                {
+                    align: 'right',
+                    image: 'products/M20/extended/2.webp',
+                    title: 'Voller All-Terrain-Antrieb',
+                    text: 'Die 20 x 4,0 Zoll Fat-Tire-Reifen, die vordere Stoßdämpfung und der kraftvolle 250-W-Motor (max. 1000 W) sorgen für Grip, Komfort und jede Menge Power – auf Trails, Sand und Schnee gleichermaßen.'
+                }
+            ],
+            faqs: [
+                {
+                    question: 'Wie hoch ist die Reichweite des DYU M20?',
+                    answer: 'Mit dem 48-V-18,2-Ah-Akku erreichen Sie im Pedal-Assist-Modus bis zu 100 km, im Gas-Modus bis zu 70 km Reichweite. Die tatsächliche Reichweite hängt von Gewicht, Gelände, Temperatur und gewählter Unterstützungsstufe ab.'
+                },
+                {
+                    question: 'Ist das DYU M20 für den Straßenverkehr zugelassen?',
+                    answer: 'Mit 250 W Nennleistung, maximal 1000 W Spitzenleistung und 25 km/h fällt das M20 in die EU-Klasse der E-Bikes. Bitte prüfen Sie für die Nutzung auf öffentlichen Straßen die lokalen Vorschriften.'
+                },
+                {
+                    question: 'Wie lange dauert das Aufladen des Akkus?',
+                    answer: 'Der Akku ist mit dem mitgelieferten Ladegerät (DC54,6 V, AC 100–240 V) in ca. 7–8 Stunden vollständig geladen. Das integrierte Batteriemanagement (BMS) lädt den Akku dabei sicher und schonend.'
+                },
+                {
+                    question: 'Wie schwer ist das DYU M20 und wie viel kann es zuladen?',
+                    answer: 'Das M20 wiegt 40 kg und kann bis zu 120 kg belastet werden. Der Gepäckträger nimmt zusätzlich Gepäck auf und das Rücklicht erhöht die Sicherheit bei Fahrten in der Dunkelheit.'
+                },
+                {
+                    question: 'Welche Garantie gibt es auf das DYU M20?',
+                    answer: 'Auf das DYU M20 erhalten Sie eine Herstellergarantie von 12–24 Monaten. Details zu Umfang und Ablauf finden Sie auf unserer Garantieseite.'
+                }
+            ]
+        }
     }
 ];
 

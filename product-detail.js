@@ -756,6 +756,26 @@ function getBasicSpecs(product) {
         specs['Beleuchtung'] = 'OSRAM LED-Front- und Rückleuchte (StVZO)';
         specs['Gewicht'] = '14 kg';
         specs['Faltmaße'] = '700 x 450 x 620 mm';
+    } else if (product.id === 'M20') {
+        specs['Modell'] = 'M20';
+        specs['Typ'] = 'All-Terrain Moto-E-Bike';
+        specs['Reichweite'] = 'Bis 100 km (Pedalunterstützung) / 70 km (Gas-Modus)';
+        specs['Motor'] = '48V 250 W (max. 1000 W)';
+        specs['Akku'] = '48V 18.2Ah Lithium-Ionen';
+        specs['Max. Geschwindigkeit'] = '25 km/h';
+        specs['Ladezeit'] = '7–8 Stunden';
+        specs['Ladegerät'] = 'DC54,6 V (AC 100–240 V)';
+        specs['Rahmen'] = 'Aluminium';
+        specs['Federung'] = 'Vordere Stoßdämpfung';
+        specs['Bremsen'] = 'Dual-Actuated-Scheibenbremsen vorne und hinten';
+        specs['Reifen'] = '20 x 4,0 Zoll';
+        specs['Display'] = 'LED-Display mit Akkustandanzeige';
+        specs['Beleuchtung'] = 'Frontlicht & Rücklicht';
+        specs['Wasserdicht'] = 'IP54';
+        specs['Gewicht'] = '40 kg';
+        specs['Zuladung'] = '120 kg';
+        specs['Steigfähigkeit'] = '15°';
+        specs['Abmessungen (L x B x H)'] = '1800 x 690 x 1140 mm';
     }
     
     if (product.outOfStock) {
