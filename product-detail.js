@@ -560,7 +560,7 @@ const SPEC_CATEGORIES = {
     'Allgemein': ['Modell', 'Typ', 'Preis', 'Status', 'Verfügbarkeit'],
     'Antrieb': ['Reichweite', 'Motor', 'Akku', 'Max. Geschwindigkeit'],
     'Laden': ['Ladezeit', 'Ladegerät'],
-    'Fahrwerk': ['Rahmen', 'Federung', 'Bremsen', 'Reifen', 'Steigfähigkeit'],
+    'Fahrwerk': ['Rahmen', 'Federung', 'Schaltung', 'Bremsen', 'Reifen', 'Steigfähigkeit'],
     'Ausstattung': ['Display', 'Beleuchtung', 'Wasserdicht'],
     'Maße & Gewicht': ['Gewicht', 'Zuladung', 'Abmessungen (L x B x H)', 'Faltmaße']
 };
@@ -776,6 +776,26 @@ function getBasicSpecs(product) {
         specs['Zuladung'] = '120 kg';
         specs['Steigfähigkeit'] = '15°';
         specs['Abmessungen (L x B x H)'] = '1800 x 690 x 1140 mm';
+    } else if (product.id === 'T1') {
+        specs['Modell'] = 'T1';
+        specs['Typ'] = 'Falt-E-Bike';
+        specs['Reichweite'] = 'Bis 60 km (Pedalunterstützung)';
+        specs['Motor'] = '36V 250 W';
+        specs['Akku'] = '36V 10Ah Lithium-Ionen (herausnehmbar)';
+        specs['Max. Geschwindigkeit'] = '25 km/h';
+        specs['Schaltung'] = 'Shimano 7-Gang';
+        specs['Ladezeit'] = '5–6 Stunden';
+        specs['Ladegerät'] = 'AC 100–220V';
+        specs['Rahmen'] = 'Magnesiumlegierung (faltbar)';
+        specs['Bremsen'] = 'Scheibenbremsen vorne und hinten (Shimano)';
+        specs['Reifen'] = '20 Zoll';
+        specs['Beleuchtung'] = 'Frontlicht';
+        specs['Wasserdicht'] = 'IP54';
+        specs['Gewicht'] = '22,5 kg';
+        specs['Zuladung'] = '120 kg';
+        specs['Steigfähigkeit'] = '15°';
+        specs['Abmessungen (L x B x H)'] = '1520 x 541 x 1087 mm';
+        specs['Faltmaße'] = '885 x 445 x 875 mm';
     }
     
     if (product.outOfStock) {

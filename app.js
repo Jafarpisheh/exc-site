@@ -645,6 +645,84 @@ const products = [
                 }
             ]
         }
+    },
+    {
+        id: 'T1',
+        brand: 'DYU',
+        category: ['folding'],
+        rangeKm: 60,
+        motorW: 250,
+        battery: '36V 10Ah',
+        name: 'DYU T1 20 Zoll Falt-E-Bike',
+        description: 'Leichtes 20-Zoll-Falt-E-Bike mit Magnesium-Rahmen, Drehmomentsensor, Shimano-7-Gang-Schaltung und bis zu 60 km Reichweite – ideal für den urbanen Alltag.',
+        longDescription: [
+            'Das DYU T1 ist ein kompaktes 20-Zoll-Falt-E-Bike mit einem Rahmen aus Magnesiumlegierung, der sich in drei einfachen Schritten zusammenklappen lässt und so problemlos in Bahn, Bus oder Kofferraum passt. Die 20-Zoll-Reifen machen es agil und komfortabel im Stadtverkehr.',
+            'Der 250-W-Motor unterstützt Sie mit einem Drehmomentsensor (max. 35 Nm) bis zu 25 km/h. Der herausnehmbare 36-V-10-Ah-Lithium-Ionen-Akku ermöglicht eine Reichweite von bis zu 60 km und ist in ca. 5–6 Stunden vollständig geladen.',
+            'Die Shimano-7-Gang-Schaltung, die Scheibenbremsen vorne und hinten sowie das helle Frontlicht sorgen für Komfort und Sicherheit. Mit nur 22,5 kg Gewicht, 120 kg Zuladung und IP54-Schutz ist das T1 mit seinem Gepäckträger ein zuverlässiger Begleiter für jeden Tag.'
+        ],
+        price: 759,
+        stripeCheckoutUrl: 'https://buy.stripe.com/4gM00b7mz22Z5zCbyG3oA11',
+        folder: 'products/T1',
+        coverImage: 'products/T1/images/1.jpg',
+        imageFiles: [
+            '1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','6.jpg','7.jpg','8.jpg','9.jpg','10.jpg','11.jpg','12.jpg'
+        ],
+        hasVideo: false,
+        dimensionsImage: 'products/T1/Dimensions/Dimensions.JPG',
+        extendedContent: {
+            sections: [
+                {
+                    type: 'fullwidth',
+                    image: 'products/T1/extended/1.webp'
+                },
+                {
+                    align: 'right',
+                    image: 'products/T1/extended/2.webp',
+                    title: 'Drehmomentsensor für natürliches Fahrgefühl',
+                    text: 'Der Drehmomentsensor mit einem maximalen Drehmoment von 35 Nm bietet eine sanfte und besonders natürliche Tretunterstützung – sparsam im Verbrauch und angenehm in jeder Situation.'
+                },
+                {
+                    align: 'left',
+                    image: 'products/T1/extended/3.webp',
+                    title: 'Leichter Magnesium-Rahmen',
+                    text: 'Der im Druckgussverfahren gefertigte Rahmen aus Magnesiumlegierung mit matter Oberfläche reduziert das Gewicht deutlich und macht das T1 zu einem edlen und zugleich leichten Begleiter.'
+                },
+                {
+                    align: 'right',
+                    image: 'products/T1/extended/4.webp',
+                    title: 'Reichweite für den ganzen Tag',
+                    text: 'Der herausnehmbare 36-V-10-Ah-Akku verfügt über einen Diebstahlschutz und lässt sich per Schlüssel entnehmen. Im Pedal-Assist-Modus bringt Sie eine Ladung bis zu 60 km weit.'
+                },
+                {
+                    align: 'left',
+                    image: 'products/T1/extended/5.webp',
+                    title: 'Flexibel und erweiterbar',
+                    text: 'Die Kombination aus Drehmomentsensor und Gepäckträger steigert Komfort und Zuladung – das T1 lässt sich optimal an Ihre täglichen Anforderungen anpassen.'
+                }
+            ],
+            faqs: [
+                {
+                    question: 'Wie hoch ist die Reichweite des DYU T1?',
+                    answer: 'Im Pedal-Assist-Modus erreichen Sie mit dem 36-V-10-Ah-Akku bis zu 60 km Reichweite. Die tatsächliche Reichweite hängt von Gewicht, Gelände und gewählter Unterstützungsstufe ab.'
+                },
+                {
+                    question: 'Ist das DYU T1 für den Straßenverkehr zugelassen?',
+                    answer: 'Ja. Mit 250 W Nennleistung und maximal 25 km/h ist das DYU T1 als Pedelec EU-zugelassen und darf auf öffentlichen Straßen gefahren werden. Es bietet reine Tretunterstützung (kein Gasdrehgriff).'
+                },
+                {
+                    question: 'Wie lange dauert das Aufladen des Akkus?',
+                    answer: 'Der Akku ist mit dem mitgelieferten Ladegerät (AC 100–220V) in ca. 5–6 Stunden vollständig geladen. Das integrierte Batteriemanagement (BMS) lädt den Akku dabei sicher und schonend.'
+                },
+                {
+                    question: 'Wie schwer ist das DYU T1 und wie viel kann es zuladen?',
+                    answer: 'Das T1 wiegt nur 22,5 kg und kann bis zu 120 kg belastet werden. Dank des kompakten Faltmechanismus und der 20-Zoll-Reifen passt es problemlos in Bahn, Bus oder den Kofferraum.'
+                },
+                {
+                    question: 'Welche Garantie gibt es auf das DYU T1?',
+                    answer: 'Auf das DYU T1 erhalten Sie eine Herstellergarantie von 12–24 Monaten. Details zu Umfang und Ablauf finden Sie auf unserer Garantieseite.'
+                }
+            ]
+        }
     }
 ];
 
@@ -719,9 +797,9 @@ function getProductPreviewImagePath(product) {
 
 const CATEGORY_META = {
     mountain: { label: 'E-Mountainbike', order: 1 },
-    city: { label: 'City / Urban', order: 2, heroImage: 'products/C6/White/1.jpg' },
-    folding: { label: 'Faltbar', order: 3, heroImage: 'products/D3S/images/1.jpg' },
-    moto: { label: 'Moto-Style', order: 4, heroImage: 'products/M20/images/1.jpg' },
+    city: { label: 'City / Urban', order: 2, heroImage: 'Categories/City-Urban.jpg' },
+    folding: { label: 'Faltbar', order: 3, heroImage: 'Categories/Faltbar.jpg' },
+    moto: { label: 'Moto-Style', order: 4, heroImage: 'Categories/Moto-Style.jpg' },
     scooter: { label: 'E-Scooter', order: 5 }
 };
 
