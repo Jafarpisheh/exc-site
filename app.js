@@ -721,7 +721,7 @@ const CATEGORY_META = {
     mountain: { label: 'E-Mountainbike', order: 1 },
     city: { label: 'City / Urban', order: 2, heroImage: 'products/C6/White/1.jpg' },
     folding: { label: 'Faltbar', order: 3, heroImage: 'products/D3S/images/1.jpg' },
-    moto: { label: 'Moto-Style', order: 4 },
+    moto: { label: 'Moto-Style', order: 4, heroImage: 'products/M20/images/1.jpg' },
     scooter: { label: 'E-Scooter', order: 5 }
 };
 
