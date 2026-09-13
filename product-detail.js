@@ -741,6 +741,21 @@ function getBasicSpecs(product) {
         specs['Steigfähigkeit'] = '15°';
         specs['Abmessungen (L x B x H)'] = '1420 x 525 x 1080 mm';
         specs['Faltmaße'] = '815 x 435 x 565 mm';
+    } else if (product.id === 'SP1') {
+        specs['Modell'] = 'SP1';
+        specs['Typ'] = 'Falt-E-Bike';
+        specs['Reichweite'] = '25–30 km (Pedalunterstützung)';
+        specs['Motor'] = '24V 250 W BLDC';
+        specs['Akku'] = '24V 5Ah LG Lithium-Ionen (entnehmbare Powerbank)';
+        specs['Max. Geschwindigkeit'] = '25 km/h';
+        specs['Ladezeit'] = 'Ca. 3–4 Stunden';
+        specs['Ladegerät'] = 'Linearregler, DC 25,2 V / 1,5 A (AC 100–240 V)';
+        specs['Rahmen'] = 'Aluminiumlegierung (faltbar)';
+        specs['Bremsen'] = 'TR 160 mm Scheibenbremsen vorne und hinten';
+        specs['Reifen'] = '20 Zoll';
+        specs['Beleuchtung'] = 'OSRAM LED-Front- und Rückleuchte (StVZO)';
+        specs['Gewicht'] = '14 kg';
+        specs['Faltmaße'] = '700 x 450 x 620 mm';
     }
     
     if (product.outOfStock) {

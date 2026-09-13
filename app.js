@@ -504,6 +504,88 @@ const products = [
                 }
             ]
         }
+    },
+    {
+        id: 'SP1',
+        brand: 'DYU',
+        category: ['folding'],
+        rangeKm: 30,
+        motorW: 250,
+        battery: '24V 5Ah',
+        name: 'DYU SP1 20 Zoll Falt-E-Bike',
+        description: 'Ultraleichtes 20-Zoll-Falt-E-Bike aus Aluminium mit 250-W-Motor, herausnehmbarer 24-V-Powerbank und nur 14 kg Gewicht – ideal für Pendler, Bahn und Flugzeug.',
+        longDescription: [
+            'Das DYU SP1 ist ein ultraleichtes 20-Zoll-Falt-E-Bike, das mit nur 14 kg Gewicht Maßstäbe setzt. Die innovative Aluminiumlegierung mit 3D-Schmiedetechnologie macht den Rahmen extrem stabil und dennoch so leicht, dass er sich bequem tragen, verstauen und auf Reisen mitnehmen lässt.',
+            'Der bürstenlose 250-W-Gleichstrommotor unterstützt Sie bis zu 25 km/h. Die entnehmbare Powerbank aus LG-Lithium-Ionen-Zellen (24 V, 5 Ah) liefert im Pedal-Assist-Modus eine Reichweite von bis zu 30 km und lässt sich dank cleverem Design ideal zum Laden von Smartphones und Tablets unterwegs mitnehmen.',
+            'Zur Ausstattung gehören TR-160-mm-Scheibenbremsen vorne und hinten, eine StVZO-zugelassene OSRAM-LED-Front- und Rückleuchte, die über USB aufgeladen wird, sowie ein Faltmechanismus, der das SP1 auf kompakte 700 x 450 x 620 mm zusammengeklappt. Dadurch ist es vollkommen konform für die Mitnahme in U-Bahn, Bahn und Flugzeug.'
+        ],
+        price: 1199,
+        stripeCheckoutUrl: 'https://buy.stripe.com/8x228jgX9fTP1jmfOW3oA0Z',
+        folder: 'products/SP1',
+        coverImage: 'products/SP1/images/1.jpg',
+        imageFiles: [
+            '1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','6.jpg','7.jpg','8.jpg','9.jpg','10.jpg','11.jpg'
+        ],
+        hasVideo: false,
+        dimensionsImage: 'products/SP1/Dimensions/Dimensions.JPG',
+        extendedContent: {
+            sections: [
+                {
+                    type: 'fullwidth',
+                    image: 'products/SP1/extended/2.webp'
+                },
+                {
+                    align: 'right',
+                    image: 'products/SP1/extended/3.webp',
+                    title: 'Entnehmbare Powerbank',
+                    text: 'Die herausnehmbare Powerbank aus LG-Lithium-Ionen-Zellen liefert die Energie für den gesamten Alltag – und lädt nebenbei auch Smartphone und Tablet unterwegs.'
+                },
+                {
+                    align: 'left',
+                    image: 'products/SP1/extended/4.webp',
+                    title: 'Ultra-leicht & faltbar',
+                    text: 'Mit nur 14 kg Gewicht ist das SP1 ein echtes Leichtgewicht. Kompakt zusammengeklappt passt es problemlos in U-Bahn, Bahn, Flugzeug oder den Kofferraum.'
+                },
+                {
+                    align: 'right',
+                    image: 'products/SP1/extended/5.webp',
+                    title: 'High-Tech-Aluminiumrahmen',
+                    text: 'Die 20-Zoll-Aluminiumlegierung mit innovativer 3D-Schmiedetechnologie bietet maximale Stabilität bei minimalem Gewicht.'
+                },
+                {
+                    align: 'left',
+                    image: 'products/SP1/extended/6.webp',
+                    title: 'Sicher & gut beleuchtet',
+                    text: 'TR-160-mm-Scheibenbremsen vorne und hinten sowie die StVZO-zugelassene OSRAM-LED-Beleuchtung sorgen zu jeder Tageszeit für sichere Fahrten.'
+                }
+            ],
+            faqs: [
+                {
+                    question: 'Wie hoch ist die Reichweite des SP1?',
+                    answer: 'Im Pedal-Assist-Modus erreichen Sie mit der 24-V-5-Ah-Powerbank 25–30 km Reichweite. Die tatsächliche Reichweite hängt von Gewicht, Gelände und gewählter Unterstützungsstufe ab.'
+                },
+                {
+                    question: 'Ist das SP1 für den Straßenverkehr zugelassen?',
+                    answer: 'Ja. Mit 250 W Nennleistung und maximal 25 km/h ist das SP1 als Elektrofahrrad EU-zugelassen und darf auf öffentlichen Straßen gefahren werden. Bitte beachten Sie die lokalen Vorschriften zur Nutzung.'
+                },
+                {
+                    question: 'Wie lange dauert das Aufladen des Akkus?',
+                    answer: 'Die entnehmbare Powerbank ist mit dem mitgelieferten Ladegerät (DC 25,2 V / 1,5 A, AC 100–240 V) in ca. 3–4 Stunden vollständig geladen.'
+                },
+                {
+                    question: 'Wie schwer ist das SP1 und wie viel kann es zuladen?',
+                    answer: 'Das SP1 wiegt nur 14 kg und ist damit eines der leichtesten Falt-E-Bikes seiner Klasse. Dadurch lässt es sich bequem tragen und in U-Bahn, Bahn oder Flugzeug mitnehmen.'
+                },
+                {
+                    question: 'Wie lässt sich das SP1 falten und transportieren?',
+                    answer: 'Der Faltmechanismus klappt das SP1 auf kompakte 700 x 450 x 620 mm zusammen. Somit passt es problemlos in enge Räume, Aufzüge, Bahnen und den Kofferraum.'
+                },
+                {
+                    question: 'Welche Garantie gibt es auf das SP1?',
+                    answer: 'Auf das SP1 erhalten Sie eine Herstellergarantie von 12–24 Monaten. Details zu Umfang und Ablauf finden Sie auf unserer Garantieseite.'
+                }
+            ]
+        }
     }
 ];
 
