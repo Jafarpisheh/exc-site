@@ -11,6 +11,7 @@
 html {
     scroll-behavior: smooth;
     height: 100%;
+    overflow-x: hidden;
 }
 
 img,
@@ -29,6 +30,7 @@ body {
     min-height: 100%;
     display: flex;
     flex-direction: column;
+    overflow-x: hidden;
 }
 
 :root {
@@ -555,7 +557,7 @@ body {
     .catalog-wrap {
         flex-direction: column;
         align-items: stretch;
-        padding: 0 10%;
+        padding: 0;
     }
 
     .catalog-toolbar {
@@ -2607,6 +2609,36 @@ body {
 
     .contact .inquiry-section {
         padding: 22px;
+    }
+}
+
+@media (max-width: 640px) {
+    .products-grid {
+        padding: 0;
+    }
+
+    .products {
+        padding: 48px 0 32px;
+    }
+
+    .product-banner {
+        flex-direction: column;
+    }
+
+    .product-banner__gallery {
+        flex: none;
+        width: 100%;
+        min-height: 240px;
+    }
+
+    .product-banner__info {
+        padding: 22px 18px;
+        border-left: none;
+        border-top: 1px solid #eef2f7;
+    }
+
+    .product-image {
+        height: 220px;
     }
 }
 
