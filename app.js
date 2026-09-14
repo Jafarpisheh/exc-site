@@ -1046,11 +1046,27 @@ function openImageLightbox(imagePaths, startIndex, productName) {
                 <div class="image-counter" data-lb-counter></div>
             </div>
             ${total > 1 ? '<button class="modal-nav-btn next" data-lb-next aria-label="Nächstes Bild">❯</button>' : ''}
+            ${total > 1 ? '<div class="modal-thumbnails" data-lb-thumbnails></div>' : ''}
         </div>
     `;
 
     const img = lightbox.querySelector('[data-lb-image]');
     const counter = lightbox.querySelector('[data-lb-counter]');
+    const thumbnailsEl = lightbox.querySelector('[data-lb-thumbnails]');
+
+    if (thumbnailsEl) {
+        imagePaths.forEach((path, index) => {
+            const thumbDiv = document.createElement('div');
+            thumbDiv.className = 'modal-thumbnail';
+            thumbDiv.dataset.index = index;
+            thumbDiv.innerHTML = `<img src="${path}" alt="${productName} – Bild ${index + 1}">`;
+            thumbDiv.addEventListener('click', () => {
+                currentIndex = index;
+                render();
+            });
+            thumbnailsEl.appendChild(thumbDiv);
+        });
+    }
 
     function render() {
         img.src = imagePaths[currentIndex];
@@ -1060,6 +1076,11 @@ function openImageLightbox(imagePaths, startIndex, productName) {
         };
         if (counter) {
             counter.textContent = `${currentIndex + 1} / ${total}`;
+        }
+        if (thumbnailsEl) {
+            thumbnailsEl.querySelectorAll('.modal-thumbnail').forEach((thumb, index) => {
+                thumb.classList.toggle('active', index === currentIndex);
+            });
         }
     }
 
