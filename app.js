@@ -723,6 +723,68 @@ const products = [
                 }
             ]
         }
+    },
+    {
+        id: 'Campx',
+        brand: 'DYU',
+        category: ['wagon'],
+        rangeKm: 0,
+        motorW: 1200,
+        battery: '36V 8Ah',
+        name: 'DYU CampX Faltbarer Elektrischer Bollerwagen',
+        description: 'Kompakter faltbarer elektrischer Bollerwagen mit 1200-W-Doppelantrieb, LiFePO₄-Akku und 350 kg Zuladung – ideal für Camping, Garten und Alltag.',
+        longDescription: [
+            'Der DYU CampX ist ein faltbarer elektrischer Bollerwagen, der mit seinem 1200-W-Heck-Dualantrieb und der vollständigen Ackermann-Lenkgeometrie sanfte und stabile Kraftübertragung auf jedem Gelände bietet. Dank der 4-Wege-Kompaktfaltung ist er ultraslim für die Aufbewahrung im Kofferraum und Schrank.',
+            'Der LiFePO₄-Akku mit 9-Schicht-BMS sorgt für höhere Sicherheit und längere Lebensdauer. Mit einer Maximalgeschwindigkeit von 12 km/h und einer Tragfähigkeit von bis zu 350 kg bewältigt der CampX selbst schwere Lasten mühelos.',
+            'Das dreifache Bremssystem inklusive Rekuperationsbremse sorgt für Sicherheit unter Last und bei Bergabfahrten. Der 1,5-Zoll-Digitall Display zeigt alle wichtigen Informationen auf einen Blick. Der CampX ist ausschließlich für den Geländeeinsatz geeignet (Campingplätze, Parks und Privatgrundstücke).'
+        ],
+        price: 999,
+        stripeCheckoutUrl: 'https://buy.stripe.com/8x23cngX9gXT1jmbyG3oA12',
+        folder: 'products/Campx',
+        coverImage: 'products/Campx/Images/1.jpg',
+        imageFiles: [
+            '1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','6.jpg','7.jpg','8.jpg','9.jpg','10.jpg','11.jpg','12.jpg','13.jpg','14.jpg','15.jpg','16.jpg'
+        ],
+        hasVideo: false,
+        extendedContent: {
+            sections: [
+                { type: 'fullwidth', image: 'products/Campx/extended/1.webp' },
+                { type: 'fullwidth', image: 'products/Campx/extended/2.webp' },
+                { type: 'fullwidth', image: 'products/Campx/extended/3.webp' },
+                { type: 'fullwidth', image: 'products/Campx/extended/4.webp' },
+                { type: 'fullwidth', image: 'products/Campx/extended/6.webp' },
+                { type: 'fullwidth', image: 'products/Campx/extended/7.webp' },
+                { type: 'fullwidth', image: 'products/Campx/extended/8.webp' },
+                { type: 'fullwidth', image: 'products/Campx/extended/9.webp' },
+                { type: 'fullwidth', image: 'products/Campx/extended/10.webp' }
+            ],
+            faqs: [
+                {
+                    question: 'Welche Zahlungsmethoden werden akzeptiert?',
+                    answer: 'Wir akzeptieren Shop Pay für Ratenzahlungen sowie alle gängigen Kreditkarten, PayPal und Klarna. Eine Bezahlung per Nachnahme wird aktuell nicht angeboten.'
+                },
+                {
+                    question: 'Habe ich eine Garantie beim Einkauf?',
+                    answer: 'Ja. Wir unterstützen Rückgabe und Umtausch innerhalb von 14 Tagen und garantieren Ihnen eine sichere Zahlung. Details zu Umfang und Ablauf finden Sie auf unserer Garantieseite.'
+                },
+                {
+                    question: 'Ist der CampX für den Straßenverkehr zugelassen?',
+                    answer: 'Nein. Der CampX ist ausschließlich für den Geländeeinsatz geeignet (Campingplätze, Parks und Privatgrundstücke) und nicht für öffentliche Straßen vorgesehen.'
+                },
+                {
+                    question: 'Wie viel kann der CampX laden?',
+                    answer: 'Der CampX hat eine maximale Tragfähigkeit von 350 kg (772 lbs). Das Fassungsvermögen beträgt 183 Liter (ca. 92 x 48 x 33 cm).'
+                },
+                {
+                    question: 'Wie schnell lädt sich der Akku?',
+                    answer: 'Der LiFePO₄-Akku ist in ca. 3 Stunden vollständig geladen. Das integrierte 9-Schicht-BMS sorgt für sicheres und schonendes Laden.'
+                },
+                {
+                    question: 'Wie faltet sich der CampX?',
+                    answer: 'Der CampX verfügt über eine 4-Wege-Kompaktfaltung (Converging Fold). Gefaltet misst er nur 48 x 29 x 75 cm und passt so kompakt in Kofferräume und Schränke.'
+                }
+            ]
+        }
     }
 ];
 
@@ -742,11 +804,11 @@ function createPaymentMethodsMarkup() {
         <div class="detail-side-card payment-methods-card">
             <h3>Zahlungsmethoden</h3>
             <div class="payment-methods" aria-label="Verfügbare Zahlungsarten">
+                <span class="payment-tile" title="Kreditkarte (Visa, Mastercard)" aria-label="Kreditkarte (Visa, Mastercard)"><img src="payment-logos/visa.svg" alt="Visa" class="payment-tile-img payment-tile-img--small"><img src="payment-logos/mastercard.svg" alt="Mastercard" class="payment-tile-img payment-tile-img--small"></span>
                 <span class="payment-tile" title="Apple Pay"><img src="payment-logos/applepay.svg" alt="Apple Pay" class="payment-tile-img"></span>
                 <span class="payment-tile" title="Link"><img src="payment-logos/link.svg" alt="Link" class="payment-tile-img"></span>
                 <span class="payment-tile" title="Klarna"><img src="payment-logos/klarna.svg" alt="Klarna" class="payment-tile-img"></span>
                 <span class="payment-tile" title="Amazon Pay"><img src="payment-logos/amazonpay.svg" alt="Amazon Pay" class="payment-tile-img"></span>
-                <span class="payment-tile" title="Kreditkarte (Visa, Mastercard)" aria-label="Kreditkarte (Visa, Mastercard)"><img src="payment-logos/visa.svg" alt="Visa" class="payment-tile-img payment-tile-img--small"><img src="payment-logos/mastercard.svg" alt="Mastercard" class="payment-tile-img payment-tile-img--small"></span>
                 <span class="payment-tile" title="Bancontact"><img src="payment-logos/bancontact.svg" alt="Bancontact" class="payment-tile-img"></span>
                 <span class="payment-tile" title="MB WAY"><img src="payment-logos/mbway.svg" alt="MB WAY" class="payment-tile-img"></span>
                 <span class="payment-tile" title="EPS"><img src="payment-logos/eps.svg" alt="EPS" class="payment-tile-img"></span>
@@ -809,7 +871,8 @@ const CATEGORY_META = {
     city: { label: 'City / Urban', order: 2, heroImage: 'Categories/City-Urban.jpg' },
     folding: { label: 'Faltbar', order: 3, heroImage: 'Categories/Faltbar.jpg' },
     moto: { label: 'Moto-Style', order: 4, heroImage: 'Categories/Moto-Style.jpg' },
-    scooter: { label: 'E-Scooter', order: 5 }
+    scooter: { label: 'E-Scooter', order: 5 },
+    wagon: { label: 'E-Wagon', order: 6 }
 };
 
 function getCategoryHeroImage(categoryId) {

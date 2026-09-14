@@ -796,6 +796,21 @@ function getBasicSpecs(product) {
         specs['Steigfähigkeit'] = '15°';
         specs['Abmessungen (L x B x H)'] = '1520 x 541 x 1087 mm';
         specs['Faltmaße'] = '885 x 445 x 875 mm';
+    } else if (product.id === 'Campx') {
+        specs['Modell'] = 'CampX';
+        specs['Typ'] = 'Elektrischer Bollerwagen';
+        specs['Motor'] = '1200W Heck-Dualantrieb';
+        specs['Akku'] = '36V 8Ah LiFePO₄ (abnehmbar, 9-Schicht-BMS)';
+        specs['Max. Geschwindigkeit'] = '12 km/h';
+        specs['Ladezeit'] = '3 Stunden';
+        specs['Ladegerät'] = 'AC 100–240V';
+        specs['Rahmen'] = 'Faltbar (4-Wege-Kompaktfaltung)';
+        specs['Bremsen'] = 'Dreifach-Bremssystem + Rekuperationsbremse';
+        specs['Display'] = '1,5-Zoll-Digitall Display';
+        specs['Gewicht'] = '14,2 kg (mit Akku)';
+        specs['Zuladung'] = '350 kg';
+        specs['Abmessungen (L x B x H)'] = '120 x 59 x 58 cm (ausgeklappt)';
+        specs['Faltmaße'] = '48 x 29 x 75 cm';
     }
     
     if (product.outOfStock) {
