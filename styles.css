@@ -116,21 +116,180 @@ body {
    ============================================ */
 
 .products {
-    padding: 80px 20px;
+    padding: 80px 0 40px;
     background-color: white;
 }
 
 .products .container h2 {
     text-align: center;
     font-size: 36px;
-    margin-bottom: 50px;
+    margin-bottom: 28px;
     color: var(--color-dark-blue);
 }
 
 .products-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    width: 100%;
+    padding: 0 10%;
+}
+
+/* ============================================
+   PRODUCT BANNER (Bild links / Technik rechts)
+   ============================================ */
+
+.product-banner {
+    display: flex;
+    align-items: stretch;
+    width: 100%;
+    background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+    border: 1px solid #e5e7eb;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 10px 26px rgba(17, 24, 39, 0.08);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    cursor: pointer;
+}
+
+.product-banner:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 32px rgba(17, 24, 39, 0.12);
+    border-color: #007185;
+}
+
+.product-banner__gallery {
+    flex: 0 0 20%;
+    min-width: 0;
+    position: relative;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.banner-main-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    background: #ffffff;
+}
+
+.banner-gallery-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid #d5d9d9;
+    background: rgba(255, 255, 255, 0.92);
+    color: #111111;
+    font-size: 24px;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 2;
+    box-shadow: 0 2px 8px rgba(17, 24, 39, 0.12);
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.banner-gallery-btn:hover {
+    background: #ffffff;
+    transform: translateY(-50%) scale(1.06);
+}
+
+.banner-gallery-btn:focus-visible {
+    outline: 3px solid #fbbf24;
+    outline-offset: 2px;
+}
+
+.banner-gallery-btn--prev {
+    left: 8px;
+}
+
+.banner-gallery-btn--next {
+    right: 8px;
+}
+
+.banner-image-counter {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    background: rgba(0, 0, 0, 0.55);
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 7px;
+    border-radius: 999px;
+    z-index: 2;
+}
+
+.product-banner__info {
+    flex: 1 1 auto;
+    min-width: 0;
+    padding: 28px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-left: 1px solid #eef2f7;
+}
+
+.product-banner__name {
+    color: #111111;
+    font-size: 26px;
+    line-height: 1.2;
+    margin-bottom: 4px;
+}
+
+.product-banner__desc {
+    color: #565959;
+    font-size: 15px;
+    line-height: 1.5;
+    margin-bottom: 0;
+}
+
+.product-banner__price {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    margin: 4px 0 2px;
+}
+
+.product-banner__price-amount {
+    color: #b12704;
+    font-size: 28px;
+    font-weight: 800;
+}
+
+.product-banner__actions {
+    margin: 4px 0 10px;
+    display: flex;
+    align-items: center;
+}
+
+.product-banner__details-link {
+    align-self: flex-start;
+    background: none;
+    border: none;
+    padding: 4px 0;
+    color: #007185;
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.product-banner__details-link:hover {
+    text-decoration: underline;
+}
+
+.product-banner__details-link:focus-visible {
+    outline: 3px solid #fbbf24;
+    outline-offset: 2px;
 }
 
 /* ============================================
@@ -145,7 +304,7 @@ body {
     border: 1px solid #e5e7eb;
     border-radius: 16px;
     padding: 18px 20px;
-    margin-bottom: 28px;
+    margin-bottom: 36px;
     box-shadow: 0 6px 18px rgba(17, 24, 39, 0.05);
 }
 
@@ -645,6 +804,37 @@ body {
     color: #007185;
     font-weight: 600;
     text-align: right;
+}
+
+.product-banner__specs {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    margin-top: auto;
+}
+
+.spec-group {
+    background-color: #f8fafc;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 12px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    min-width: 0;
+}
+
+.spec-group-title {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: #007185;
+    margin: 0 0 2px;
+}
+
+.spec-group .spec-key {
+    min-width: 0;
 }
 
 
@@ -2027,6 +2217,22 @@ body {
    RESPONSIVE DESIGN
    ============================================ */
 
+@media (max-width: 900px) {
+    .product-banner__gallery {
+        flex: 0 0 22%;
+    }
+
+    .product-banner__info {
+        padding: 22px 24px;
+    }
+
+    .banner-gallery-btn {
+        width: 32px;
+        height: 32px;
+        font-size: 20px;
+    }
+}
+
 @media (max-width: 768px) {
     .header .container {
         flex-direction: column;
@@ -2058,12 +2264,12 @@ body {
         font-size: 15px;
     }
 
-    .products-grid {
-        grid-template-columns: 1fr;
-    }
-
     .product-detail {
         padding: 30px 16px;
+    }
+
+    .product-banner__specs {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .thumbnails {
@@ -2131,6 +2337,32 @@ body {
 
     .product-card-content h3 {
         font-size: 18px;
+    }
+
+    .product-banner__info {
+        padding: 24px 20px;
+    }
+
+    .product-banner__name {
+        font-size: 20px;
+    }
+
+    .product-banner__gallery {
+        flex: 0 0 28%;
+    }
+
+    .product-banner__specs {
+        grid-template-columns: 1fr;
+    }
+
+    .banner-gallery-btn {
+        width: 28px;
+        height: 28px;
+        font-size: 16px;
+    }
+
+    .banner-image-counter {
+        display: none;
     }
 
     .product-info h2 {

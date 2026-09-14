@@ -874,44 +874,129 @@ function getVisibleProducts() {
     });
 }
 
+function getBannerImagePaths(product) {
+    const variant = product.variants?.length ? product.variants[0] : null;
+    if (variant) {
+        if (variant.imageFiles?.length) {
+            return variant.imageFiles.map(filename => `${variant.folder}/${filename}`);
+        }
+        if (variant.coverImage) {
+            return [variant.coverImage];
+        }
+    }
+    if (product.imageFiles?.length) {
+        return product.imageFiles.map(filename => `${product.folder}/images/${filename}`);
+    }
+    if (product.coverImage) {
+        return [product.coverImage];
+    }
+    return [`${product.folder}/images/1.jpg`];
+}
+
+const IMAGE_FALLBACK = "data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22250%22%3E%3Crect fill=%22%23ddd%22 width=%22400%22 height=%22250%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22Arial%22 font-size=%2224%22 fill=%22%23999%22%3EBild nicht verfügbar%3C/text%3E%3C/svg%3E";
+
 function createProductCard(product) {
-    const firstImagePath = getProductPreviewImagePath(product);
-    const specs = getBasicSpecs(product);
+    const specGroups = getSpecGroups(product);
+    const imagePaths = getBannerImagePaths(product);
+    let currentIndex = 0;
 
-    const productCard = document.createElement('div');
-    productCard.className = 'product-card';
-    productCard.dataset.productId = product.id;
-    productCard.onclick = () => goToProduct(product.id);
+    const banner = document.createElement('div');
+    banner.className = 'product-banner';
+    banner.dataset.productId = product.id;
+    banner.setAttribute('role', 'button');
+    banner.setAttribute('tabindex', '0');
+    banner.setAttribute('aria-label', `${product.name} ansehen`);
 
-    let specsHTML = '';
-    Object.entries(specs).forEach(([key, value]) => {
-        specsHTML += `<div class="card-spec"><span class="spec-key">${key}:</span> <span class="spec-val">${value}</span></div>`;
+    banner.addEventListener('click', (event) => {
+        if (event.target.closest('.checkout-btn') ||
+            event.target.closest('.banner-gallery-btn') ||
+            event.target.closest('.product-banner__details-link')) {
+            return;
+        }
+        goToProduct(product.id);
     });
 
-    productCard.innerHTML = `
-        <img src="${firstImagePath}" alt="${product.name}" class="product-image" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22250%22%3E%3Crect fill=%22%23ddd%22 width=%22400%22 height=%22250%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22Arial%22 font-size=%2224%22 fill=%22%23999%22%3EBild nicht verfügbar%3C/text%3E%3C/svg%3E'">
-        <div class="product-card-content">
-            <h3>${product.name}</h3>
-            <p>${product.description}</p>
-            <p class="product-card-price">${formatPrice(product.price)} <span class="product-card-vat-note">(MwSt-befreit)</span></p>
+    banner.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            goToProduct(product.id);
+        }
+    });
+
+    const imgFallback = `onerror="this.onerror=null;this.src='${IMAGE_FALLBACK}'"`;
+
+    const showNav = imagePaths.length > 1 ? `
+        <button type="button" class="banner-gallery-btn banner-gallery-btn--prev" aria-hidden="true" tabindex="-1">&lsaquo;</button>
+        <button type="button" class="banner-gallery-btn banner-gallery-btn--next" aria-hidden="true" tabindex="-1">&rsaquo;</button>
+        <span class="banner-image-counter">1 / ${imagePaths.length}</span>` : '';
+
+    let groupsHTML = '';
+    specGroups.forEach(group => {
+        let rowsHTML = '';
+        Object.entries(group.rows).forEach(([key, value]) => {
+            rowsHTML += `<div class="card-spec"><span class="spec-key">${key}:</span> <span class="spec-val">${value}</span></div>`;
+        });
+        groupsHTML += `
+        <div class="spec-group">
+            <h4 class="spec-group-title">${group.title}</h4>
+            ${rowsHTML}
+        </div>`;
+    });
+
+    banner.innerHTML = `
+        <div class="product-banner__gallery">
+            <img class="banner-main-image" src="${imagePaths[0] || ''}" alt="${product.name}" ${imgFallback}>
+            ${showNav}
+        </div>
+        <div class="product-banner__info">
+            <h3 class="product-banner__name">${product.name}</h3>
+            <p class="product-banner__desc">${product.description}</p>
+            <div class="product-banner__price">
+                <span class="product-banner__price-amount">${formatPrice(product.price)}</span>
+                <span class="product-card-vat-note">(MwSt-befreit)</span>
+            </div>
             <p class="product-card-shipping-note">Kostenloser Versand</p>
-            <div class="product-card-actions">
+            <div class="product-banner__actions">
                 ${createCheckoutButton(product)}
             </div>
-            <div class="card-specs">
-                ${specsHTML}
+            <div class="product-banner__specs">
+                ${groupsHTML}
             </div>
+            <button type="button" class="product-banner__details-link">Mehr Details ansehen &rsaquo;</button>
         </div>
     `;
 
-    const buyButton = productCard.querySelector('.checkout-btn');
+    const mainImage = banner.querySelector('.banner-main-image');
+    const counterEl = banner.querySelector('.banner-image-counter');
+
+    function showImage(index) {
+        if (!imagePaths.length) return;
+        currentIndex = (index + imagePaths.length) % imagePaths.length;
+        mainImage.src = imagePaths[currentIndex];
+        counterEl.textContent = `${currentIndex + 1} / ${imagePaths.length}`;
+    }
+
+    const prevBtn = banner.querySelector('.banner-gallery-btn--prev');
+    const nextBtn = banner.querySelector('.banner-gallery-btn--next');
+    if (prevBtn) prevBtn.addEventListener('click', () => showImage(currentIndex - 1));
+    if (nextBtn) nextBtn.addEventListener('click', () => showImage(currentIndex + 1));
+
+    const buyButton = banner.querySelector('.checkout-btn');
     if (buyButton) {
         buyButton.addEventListener('click', (event) => {
             event.stopPropagation();
         });
     }
 
-    return productCard;
+    const detailsLink = banner.querySelector('.product-banner__details-link');
+    if (detailsLink) {
+        detailsLink.addEventListener('click', (event) => {
+            event.stopPropagation();
+            goToProduct(product.id);
+        });
+    }
+
+    return banner;
 }
 
 function showEmptyState(productsList) {
@@ -959,7 +1044,7 @@ function scrollToReturnedProduct() {
     const productId = params.get('product');
     if (!productId) return;
 
-    const cards = document.querySelectorAll('#productsList .product-card');
+    const cards = document.querySelectorAll('#productsList .product-banner');
     const card = Array.from(cards).find(c => c.dataset.productId === productId);
     if (card) {
         card.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -982,6 +1067,121 @@ function getBasicSpecs(product) {
     };
 
     return specs;
+}
+
+// Zusätzliche technische Daten je Produkt
+const EXTRA_SPECS = {
+    D3S: {
+        Schaltung: 'Stufenlos',
+        Bremsen: 'Scheibenbremsen vorn + hinten',
+        Ladezeit: 'ca. 5–6 h',
+        Gewicht: '17 kg',
+        Zuladung: '120 kg',
+        Reifen: '14 Zoll',
+        Schutzklasse: 'IP54'
+    },
+    A1FPro: {
+        Bremsen: 'Scheibenbremsen vorn + hinten',
+        Ladezeit: 'ca. 3–4 h',
+        Gewicht: '21,2 kg',
+        Zuladung: '120 kg',
+        Reifen: '16 Zoll',
+        Schutzklasse: 'IP54',
+        Ausstattung: 'Frontkorb + Gepäckträger'
+    },
+    C6: {
+        Schaltung: 'Shimano 6-Gang',
+        Bremsen: 'Scheibenbremsen vorn + hinten',
+        Reifen: '26 Zoll',
+        Federung: 'Federgabel vorn, gefederte Sattelstütze',
+        Ausstattung: 'Frontkorb + Gepäckträger'
+    },
+    UX: {
+        Bremsen: 'Doppelte Scheibenbremsen vorn + hinten',
+        Gewicht: '25,8 kg',
+        Zuladung: '120 kg',
+        Ausstattung: 'LCD-Display, Front-/Rücklicht, verstellbarer Sitz'
+    },
+    C9: {
+        Bremsen: 'Hydraulische Scheibenbremsen',
+        Ladezeit: 'ca. 7–8 h',
+        Gewicht: '30 kg',
+        Zuladung: '120 kg',
+        Fahrergröße: '160–195 cm',
+        Ausstattung: 'Gepäckträger hinten'
+    },
+    C2: {
+        Bremsen: 'Scheibenbremsen vorn + hinten',
+        Ladezeit: 'ca. 4–5 h',
+        Reifen: '16 x 2,5 Zoll',
+        Federung: 'Stoßdämpfung + hintere Federung',
+        Ausstattung: 'Gepäckträger, digitales Display'
+    },
+    SP1: {
+        Bremsen: 'TR-160-mm-Scheibenbremsen',
+        Beleuchtung: 'StVZO OSRAM LED (USB)',
+        Faltmaß: '700 x 450 x 620 mm'
+    },
+    M20: {
+        Bremsen: 'Dual-Actuated-Scheibenbremsen',
+        Ladezeit: 'ca. 7–8 h',
+        Gewicht: '40 kg',
+        Zuladung: '120 kg',
+        Schutzklasse: 'IP54',
+        Ausstattung: 'LED-Display, Front-/Rücklicht'
+    },
+    T1: {
+        Schaltung: 'Shimano 7-Gang',
+        Bremsen: 'Scheibenbremsen vorn + hinten',
+        Ladezeit: 'ca. 5–6 h',
+        Gewicht: '22,5 kg',
+        Zuladung: '120 kg',
+        Drehmoment: 'max. 35 Nm',
+        Schutzklasse: 'IP54',
+        Ausstattung: 'Gepäckträger'
+    }
+};
+
+// Spezifikationen als mehrere, nebeneinander liegende Tabellen
+function getSpecGroups(product) {
+    const extras = EXTRA_SPECS[product.id] || {};
+
+    const groups = [
+        {
+            title: 'Antrieb',
+            rows: {
+                'Motorleistung': `${product.motorW} W`,
+                'Max. Geschwindigkeit': '25 km/h',
+                ...(extras.Schaltung ? { 'Schaltung': extras.Schaltung } : {}),
+                ...(extras.Bremsen ? { 'Bremsen': extras.Bremsen } : {}),
+                ...(extras.Drehmoment ? { 'Drehmoment': extras.Drehmoment } : {})
+            }
+        },
+        {
+            title: 'Akku & Reichweite',
+            rows: {
+                'Akku': product.battery,
+                'Reichweite': `Bis ${product.rangeKm} km`,
+                ...(extras.Ladezeit ? { 'Ladezeit': extras.Ladezeit } : {})
+            }
+        },
+        {
+            title: 'Details',
+            rows: {
+                ...(extras.Gewicht ? { 'Gewicht': extras.Gewicht } : {}),
+                ...(extras.Zuladung ? { 'Zuladung': extras.Zuladung } : {}),
+                ...(extras.Reifen ? { 'Reifen': extras.Reifen } : {}),
+                ...(extras.Schutzklasse ? { 'Schutzklasse': extras.Schutzklasse } : {}),
+                ...(extras.Fahrergröße ? { 'Fahrergröße': extras.Fahrergröße } : {}),
+                ...(extras.Beleuchtung ? { 'Beleuchtung': extras.Beleuchtung } : {}),
+                ...(extras.Faltmaß ? { 'Faltmaß': extras.Faltmaß } : {}),
+                ...(extras.Federung ? { 'Federung': extras.Federung } : {}),
+                ...(extras.Ausstattung ? { 'Ausstattung': extras.Ausstattung } : {})
+            }
+        }
+    ];
+
+    return groups;
 }
 
 // Initialisierung beim Laden der Seite
