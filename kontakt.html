@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt - MRADO</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
+</head>
+<body>
+    <!-- Kopfzeile -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html"><img src="logo/Logo.png" alt="MRADO" class="site-logo"></a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Kontaktbereich -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Kontakt</h2>
+            <p>Haben Sie Fragen? Schreiben Sie uns Ihre Anfrage über das Formular.</p>
+
+            <div class="inquiry-section">
+                <h3>Anfrage senden</h3>
+                <form id="inquiryForm" class="inquiry-form" action="https://formsubmit.co/ea2e661910e6d62498bce0022bd85aac " method="POST">
+                    <input type="hidden" name="_subject" value="Neue Anfrage von Ihrer Website">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_honey" value="">
+                    <input type="hidden" name="productId" id="productId" value="">
+                    <input type="hidden" name="productName" id="productName" value="">
+                    <input type="hidden" name="sourcePage" id="sourcePage" value="kontakt">
+
+                    <div class="form-group">
+                        <label for="name">Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">E-Mail *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Telefon *</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="company">Firma</label>
+                        <input type="text" id="company" name="company">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Nachricht *</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Beschreiben Sie Ihre Anfrage..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Anfrage senden</button>
+                    <p class="form-note">* Pflichtfelder</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fußzeile -->
+    <footer class="footer">
+        <div class="container">
+            <nav class="footer-links" aria-label="Rechtliches">
+                <a href="impressum.html">Impressum</a>
+                <a href="datenschutz.html">Datenschutzerklärung</a>
+                <a href="agb.html">AGB</a>
+                <a href="widerruf.html">Widerrufsbelehrung</a>
+                <a href="garantie.html">Herstellergarantie</a>
+            </nav>
+            <p>&copy; 2026 MRADO. Alle Rechte vorbehalten.</p>
+        </div>
+    </footer>
+
+    <script src="app.js?v=5"></script>
+</body>
+</html>

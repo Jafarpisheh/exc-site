@@ -813,7 +813,23 @@ function getCategoryHeroImage(categoryId) {
 }
 
 const catalogState = {
-    category: 'all'
+    category: 'all',
+    sort: 'price-asc'
+};
+
+function getBatteryCapacityWh(battery) {
+    if (!battery) return 0;
+    const v = parseFloat(battery.match(/(\d+(?:\.\d+)?)\s*V/i)?.[1]);
+    const ah = parseFloat(battery.match(/(\d+(?:\.\d+)?)\s*Ah/i)?.[1]);
+    if (!v || !ah) return 0;
+    return v * ah;
+}
+
+const SORT_OPTIONS = {
+    'price-asc': (a, b) => a.price - b.price,
+    'price-desc': (a, b) => b.price - a.price,
+    'range-desc': (a, b) => (b.rangeKm || 0) - (a.rangeKm || 0),
+    'battery-desc': (a, b) => getBatteryCapacityWh(b.battery) - getBatteryCapacityWh(a.battery)
 };
 
 function getCatalogCategories() {
@@ -910,6 +926,7 @@ function createProductCard(product) {
     banner.addEventListener('click', (event) => {
         if (event.target.closest('.checkout-btn') ||
             event.target.closest('.banner-gallery-btn') ||
+            event.target.closest('.banner-main-image') ||
             event.target.closest('.product-banner__details-link')) {
             return;
         }
@@ -934,6 +951,7 @@ function createProductCard(product) {
     specGroups.forEach(group => {
         let rowsHTML = '';
         Object.entries(group.rows).forEach(([key, value]) => {
+            if (value === undefined || value === null || value === '') return;
             rowsHTML += `<div class="card-spec"><span class="spec-key">${key}:</span> <span class="spec-val">${value}</span></div>`;
         });
         groupsHTML += `
@@ -969,6 +987,11 @@ function createProductCard(product) {
     const mainImage = banner.querySelector('.banner-main-image');
     const counterEl = banner.querySelector('.banner-image-counter');
 
+    mainImage.addEventListener('click', (event) => {
+        event.stopPropagation();
+        openImageLightbox(imagePaths, currentIndex, product.name);
+    });
+
     function showImage(index) {
         if (!imagePaths.length) return;
         currentIndex = (index + imagePaths.length) % imagePaths.length;
@@ -999,6 +1022,92 @@ function createProductCard(product) {
     return banner;
 }
 
+function openImageLightbox(imagePaths, startIndex, productName) {
+    const existing = document.getElementById('homeImageLightbox');
+    if (existing) existing.remove();
+
+    const total = imagePaths.length;
+    if (!total) return;
+    let currentIndex = ((startIndex % total) + total) % total;
+
+    const lightbox = document.createElement('div');
+    lightbox.id = 'homeImageLightbox';
+    lightbox.className = 'image-modal';
+    lightbox.setAttribute('role', 'dialog');
+    lightbox.setAttribute('aria-modal', 'true');
+    lightbox.setAttribute('aria-label', `${productName} – Bildergalerie`);
+
+    lightbox.innerHTML = `
+        <div class="modal-content">
+            <button class="modal-close" data-lb-close aria-label="Schließen">✕</button>
+            ${total > 1 ? '<button class="modal-nav-btn prev" data-lb-prev aria-label="Vorheriges Bild">❮</button>' : ''}
+            <div class="modal-image-container">
+                <img data-lb-image src="" alt="${productName} – Bild vergrößert">
+                <div class="image-counter" data-lb-counter></div>
+            </div>
+            ${total > 1 ? '<button class="modal-nav-btn next" data-lb-next aria-label="Nächstes Bild">❯</button>' : ''}
+        </div>
+    `;
+
+    const img = lightbox.querySelector('[data-lb-image]');
+    const counter = lightbox.querySelector('[data-lb-counter]');
+
+    function render() {
+        img.src = imagePaths[currentIndex];
+        img.onerror = () => {
+            img.onerror = null;
+            img.src = IMAGE_FALLBACK;
+        };
+        if (counter) {
+            counter.textContent = `${currentIndex + 1} / ${total}`;
+        }
+    }
+
+    function closeLightbox() {
+        lightbox.remove();
+        document.body.style.overflow = '';
+        document.removeEventListener('keydown', handleKey);
+    }
+
+    function handleKey(event) {
+        if (event.key === 'Escape') {
+            closeLightbox();
+        } else if (event.key === 'ArrowLeft') {
+            currentIndex = (currentIndex - 1 + total) % total;
+            render();
+        } else if (event.key === 'ArrowRight') {
+            currentIndex = (currentIndex + 1) % total;
+            render();
+        }
+    }
+
+    lightbox.querySelector('[data-lb-close]').addEventListener('click', closeLightbox);
+
+    const prevBtn = lightbox.querySelector('[data-lb-prev]');
+    const nextBtn = lightbox.querySelector('[data-lb-next]');
+    if (prevBtn) prevBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + total) % total;
+        render();
+    });
+    if (nextBtn) nextBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % total;
+        render();
+    });
+
+    // Klick außerhalb des Overlays schließt die Ansicht
+    lightbox.addEventListener('click', (event) => {
+        if (event.target === lightbox) {
+            closeLightbox();
+        }
+    });
+
+    document.addEventListener('keydown', handleKey);
+
+    document.body.appendChild(lightbox);
+    document.body.style.overflow = 'hidden';
+    render();
+}
+
 function showEmptyState(productsList) {
     const emptyState = document.createElement('div');
     emptyState.className = 'empty-state';
@@ -1013,15 +1122,18 @@ function loadProducts() {
     if (!productsList) return; // Not on home page
 
     const visibleProducts = getVisibleProducts();
+    const sortedProducts = [...visibleProducts].sort(
+        SORT_OPTIONS[catalogState.sort] || SORT_OPTIONS['price-asc']
+    );
 
     productsList.innerHTML = '';
 
-    if (!visibleProducts.length) {
+    if (!sortedProducts.length) {
         showEmptyState(productsList);
         return;
     }
 
-    visibleProducts.forEach(product => {
+    sortedProducts.forEach(product => {
         productsList.appendChild(createProductCard(product));
     });
 }
@@ -1031,6 +1143,14 @@ function setupCatalogFilters() {
 
     buildCategoryCards();
     updateChips();
+
+    const sortSelect = document.getElementById('sortSelect');
+    if (sortSelect) {
+        sortSelect.addEventListener('change', () => {
+            catalogState.sort = sortSelect.value;
+            loadProducts();
+        });
+    }
 }
 
 // Zur Produktdetailseite navigieren
@@ -1070,81 +1190,75 @@ function getBasicSpecs(product) {
 }
 
 // Zusätzliche technische Daten je Produkt
+// Felder werden nur angezeigt, wenn sie für das jeweilige Bike vorhanden sind.
 const EXTRA_SPECS = {
     D3S: {
-        Schaltung: 'Stufenlos',
         Bremsen: 'Scheibenbremsen vorn + hinten',
-        Ladezeit: 'ca. 5–6 h',
         Gewicht: '17 kg',
-        Zuladung: '120 kg',
         Reifen: '14 Zoll',
-        Schutzklasse: 'IP54'
+        Ladezeit: '5–6 Std.'
     },
     A1FPro: {
         Bremsen: 'Scheibenbremsen vorn + hinten',
-        Ladezeit: 'ca. 3–4 h',
         Gewicht: '21,2 kg',
-        Zuladung: '120 kg',
         Reifen: '16 Zoll',
-        Schutzklasse: 'IP54',
-        Ausstattung: 'Frontkorb + Gepäckträger'
+        Ladezeit: '3–4 Std.'
     },
     C6: {
-        Schaltung: 'Shimano 6-Gang',
         Bremsen: 'Scheibenbremsen vorn + hinten',
+        Gewicht: '27 kg',
         Reifen: '26 Zoll',
-        Federung: 'Federgabel vorn, gefederte Sattelstütze',
-        Ausstattung: 'Frontkorb + Gepäckträger'
+        Ladezeit: '6–8 Std.'
     },
     UX: {
         Bremsen: 'Doppelte Scheibenbremsen vorn + hinten',
         Gewicht: '25,8 kg',
-        Zuladung: '120 kg',
-        Ausstattung: 'LCD-Display, Front-/Rücklicht, verstellbarer Sitz'
+        Reifen: '20 x 3,0 Zoll'
     },
     C9: {
         Bremsen: 'Hydraulische Scheibenbremsen',
-        Ladezeit: 'ca. 7–8 h',
         Gewicht: '30 kg',
-        Zuladung: '120 kg',
-        Fahrergröße: '160–195 cm',
-        Ausstattung: 'Gepäckträger hinten'
+        Reifen: '20 x 3,0 Zoll',
+        Ladezeit: '7–8 Std.'
     },
     C2: {
         Bremsen: 'Scheibenbremsen vorn + hinten',
-        Ladezeit: 'ca. 4–5 h',
+        Gewicht: '30,5 kg',
         Reifen: '16 x 2,5 Zoll',
-        Federung: 'Stoßdämpfung + hintere Federung',
-        Ausstattung: 'Gepäckträger, digitales Display'
+        Ladezeit: '4–5 Std.'
     },
     SP1: {
         Bremsen: 'TR-160-mm-Scheibenbremsen',
-        Beleuchtung: 'StVZO OSRAM LED (USB)',
-        Faltmaß: '700 x 450 x 620 mm'
+        Gewicht: '14 kg',
+        Reifen: '20 Zoll',
+        Ladezeit: 'Ca. 3–4 Std.'
     },
     M20: {
         Bremsen: 'Dual-Actuated-Scheibenbremsen',
-        Ladezeit: 'ca. 7–8 h',
         Gewicht: '40 kg',
-        Zuladung: '120 kg',
-        Schutzklasse: 'IP54',
-        Ausstattung: 'LED-Display, Front-/Rücklicht'
+        Reifen: '20 x 4,0 Zoll',
+        Ladezeit: '7–8 Std.'
     },
     T1: {
-        Schaltung: 'Shimano 7-Gang',
         Bremsen: 'Scheibenbremsen vorn + hinten',
-        Ladezeit: 'ca. 5–6 h',
         Gewicht: '22,5 kg',
-        Zuladung: '120 kg',
-        Drehmoment: 'max. 35 Nm',
-        Schutzklasse: 'IP54',
-        Ausstattung: 'Gepäckträger'
+        Reifen: '20 Zoll',
+        Ladezeit: '5–6 Std.'
     }
 };
 
 // Spezifikationen als mehrere, nebeneinander liegende Tabellen
+// Jede Produktkarte zeigt dieselben Felder – Felder ohne Daten werden weggelassen.
 function getSpecGroups(product) {
     const extras = EXTRA_SPECS[product.id] || {};
+
+    const akkuRows = {
+        'Akku': product.battery,
+        'Reichweite': `Bis ${product.rangeKm} km`
+    };
+    if (extras.Ladezeit) {
+        akkuRows['Ladezeit'] = extras.Ladezeit;
+    }
 
     const groups = [
         {
@@ -1152,31 +1266,18 @@ function getSpecGroups(product) {
             rows: {
                 'Motorleistung': `${product.motorW} W`,
                 'Max. Geschwindigkeit': '25 km/h',
-                ...(extras.Schaltung ? { 'Schaltung': extras.Schaltung } : {}),
-                ...(extras.Bremsen ? { 'Bremsen': extras.Bremsen } : {}),
-                ...(extras.Drehmoment ? { 'Drehmoment': extras.Drehmoment } : {})
+                'Bremsen': extras.Bremsen
             }
         },
         {
             title: 'Akku & Reichweite',
-            rows: {
-                'Akku': product.battery,
-                'Reichweite': `Bis ${product.rangeKm} km`,
-                ...(extras.Ladezeit ? { 'Ladezeit': extras.Ladezeit } : {})
-            }
+            rows: akkuRows
         },
         {
             title: 'Details',
             rows: {
-                ...(extras.Gewicht ? { 'Gewicht': extras.Gewicht } : {}),
-                ...(extras.Zuladung ? { 'Zuladung': extras.Zuladung } : {}),
-                ...(extras.Reifen ? { 'Reifen': extras.Reifen } : {}),
-                ...(extras.Schutzklasse ? { 'Schutzklasse': extras.Schutzklasse } : {}),
-                ...(extras.Fahrergröße ? { 'Fahrergröße': extras.Fahrergröße } : {}),
-                ...(extras.Beleuchtung ? { 'Beleuchtung': extras.Beleuchtung } : {}),
-                ...(extras.Faltmaß ? { 'Faltmaß': extras.Faltmaß } : {}),
-                ...(extras.Federung ? { 'Federung': extras.Federung } : {}),
-                ...(extras.Ausstattung ? { 'Ausstattung': extras.Ausstattung } : {})
+                'Gewicht': extras.Gewicht,
+                'Reifen': extras.Reifen
             }
         }
     ];

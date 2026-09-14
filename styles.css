@@ -296,6 +296,16 @@ body {
    CATALOG TOOLBAR (Filter / Suche / Sortierung)
    ============================================ */
 
+.catalog-wrap {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 0 10%;
+    margin-bottom: 36px;
+}
+
 .catalog-toolbar {
     display: flex;
     flex-direction: column;
@@ -304,7 +314,7 @@ body {
     border: 1px solid #e5e7eb;
     border-radius: 16px;
     padding: 18px 20px;
-    margin-bottom: 36px;
+    flex: 1 1 auto;
     box-shadow: 0 6px 18px rgba(17, 24, 39, 0.05);
 }
 
@@ -433,8 +443,55 @@ body {
 
 .sort-group {
     display: flex;
-    flex-direction: column;
-    gap: 8px;
+    flex-direction: column-reverse;
+    align-items: flex-end;
+    gap: 2px;
+    flex: 0 0 auto;
+}
+
+.sort-group .filter-label {
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.09em;
+    color: #6b7280;
+}
+
+.sort-group .catalog-select {
+    appearance: none;
+    -webkit-appearance: none;
+    min-width: 220px;
+    padding: 11px 40px 11px 14px;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: inherit;
+    color: #111827;
+    background-color: #ffffff;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%236b7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    background-size: 12px;
+    box-shadow: 0 2px 6px rgba(17, 24, 39, 0.06);
+    cursor: pointer;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.sort-group .catalog-select:hover {
+    border-color: #d1d5db;
+    box-shadow: 0 4px 14px rgba(17, 24, 39, 0.1);
+}
+
+.sort-group .catalog-select:focus {
+    outline: none;
+    border-color: var(--color-dark-blue);
+    box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.15);
+}
+
+.products-area {
+    width: 100%;
+    margin-bottom: 0;
 }
 
 .catalog-input {
@@ -495,8 +552,18 @@ body {
 }
 
 @media (max-width: 640px) {
+    .catalog-wrap {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 0 10%;
+    }
+
     .catalog-toolbar {
         padding: 14px;
+    }
+
+    .sort-group {
+        align-self: flex-end;
     }
 
     .filter-row {
