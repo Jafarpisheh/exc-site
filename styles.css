@@ -910,10 +910,15 @@ body {
    ============================================ */
 
 .product-detail {
-    padding: 32px 20px 64px;
+    padding: 32px 8px 64px;
     background: linear-gradient(180deg, #f6f7fb 0%, #ffffff 100%);
     min-height: calc(100vh - 200px);
     overflow-x: hidden;
+}
+
+.product-detail .container {
+    max-width: 1440px;
+    padding: 0 6px;
 }
 
 .back-link {
@@ -932,13 +937,14 @@ body {
 
 .detail-layout {
     display: grid;
-    grid-template-columns: 1.3fr 0.9fr;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr) minmax(0, 0.8fr);
     gap: 24px;
     align-items: start;
 }
 
 .detail-gallery-card,
 .product-summary-card,
+.product-main-col,
 .detail-side-card,
 .product-specs-card,
 .inquiry-section {
@@ -946,11 +952,115 @@ body {
     border: 0;
     border-radius: 0;
     box-shadow: none;
+    min-width: 0;
 }
 
 .detail-gallery-card {
     padding: 0;
     min-width: 0;
+}
+
+.product-main-col {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.detail-buy-box {
+    position: sticky;
+    top: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 22px;
+    background: #ffffff;
+    border: 1px solid #e6e6e6;
+    border-radius: 16px;
+    box-shadow: 0 6px 24px rgba(17, 24, 39, 0.06);
+}
+
+.detail-buy-box .product-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+}
+
+.detail-buy-box .checkout-action-group {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+}
+
+.detail-buy-box .checkout-btn--detail,
+.detail-buy-box .availability-btn,
+.detail-buy-box .out-of-stock-badge {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.detail-buy-box .payment-methods-card {
+    border-top: 1px solid #f0f0f0;
+    padding-top: 16px;
+}
+
+.detail-buy-box .payment-methods-card h3 {
+    margin: 0 0 10px;
+}
+
+.detail-buy-box .payment-methods {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 6px;
+}
+
+.detail-buy-box .payment-tile {
+    height: 24px;
+    min-height: 24px;
+    padding: 2px 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    border-radius: 5px;
+    border: 1px solid #e6e8eb;
+    background: #ffffff;
+    box-sizing: border-box;
+    min-width: 0;
+    overflow: hidden;
+}
+
+.detail-buy-box .payment-tile-img {
+    height: 13px;
+    max-width: 88%;
+    width: auto;
+    object-fit: contain;
+}
+
+.detail-buy-box .payment-tile-img--small {
+    height: 11px;
+}
+
+.payment-return-note {
+    margin: 0;
+    font-size: 11px;
+    color: #565959;
+    line-height: 1.4;
+}
+
+.payment-return-note a {
+    color: #1b6ef3;
+    text-decoration: underline;
+}
+
+.detail-buy-box .product-delivery-card h3 {
+    margin-top: 0;
+}
+
+.detail-buy-box .product-delivery-card {
+    border-top: 1px solid #f0f0f0;
+    padding-top: 16px;
 }
 
 .product-badges {
@@ -1451,6 +1561,22 @@ body {
     }
 }
 
+@media (max-width: 1120px) {
+    .detail-layout {
+        grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+    }
+
+    .detail-buy-box {
+        grid-column: 1 / -1;
+        position: static;
+    }
+
+    .detail-buy-box .checkout-btn--detail,
+    .detail-buy-box .availability-btn {
+        width: fit-content;
+    }
+}
+
 @media (max-width: 960px) {
     .detail-layout {
         grid-template-columns: 1fr;
@@ -1459,15 +1585,21 @@ body {
 
 @media (max-width: 640px) {
     .product-detail {
-        padding: 24px 16px 48px;
+        padding: 24px 10px 48px;
     }
 
     .detail-gallery-card,
     .product-summary-card,
+    .product-main-col,
     .detail-side-card,
+    .detail-buy-box,
     .product-specs-card,
     .inquiry-section {
         border-radius: 14px;
+    }
+
+    .detail-buy-box {
+        padding: 18px;
     }
 
     .main-image {
@@ -2332,7 +2464,11 @@ body {
     }
 
     .product-detail {
-        padding: 30px 16px;
+        padding: 30px 10px;
+    }
+
+    .product-detail .container {
+        padding: 0 4px;
     }
 
     .product-banner__specs {
@@ -2437,7 +2573,11 @@ body {
     }
 
     .product-detail {
-        padding: 22px 14px;
+        padding: 22px 8px;
+    }
+
+    .product-detail .container {
+        padding: 0 4px;
     }
 
     .product-detail-fullwidth,

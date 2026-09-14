@@ -739,14 +739,19 @@ function getProductCheckoutUrl(product, variant) {
 
 function createPaymentMethodsMarkup() {
     return `
-        <div class="payment-methods" aria-label="Verfügbare Zahlungsarten über Stripe">
-            <span class="payment-logo payment-logo--visa" aria-label="Visa">VISA</span>
-            <span class="payment-logo payment-logo--mastercard" aria-label="Mastercard"><span></span><span></span><b>mastercard</b></span>
-            <span class="payment-logo payment-logo--amex" aria-label="American Express">AMEX</span>
-            <span class="payment-logo payment-logo--apple" aria-label="Apple Pay">Apple Pay</span>
-            <span class="payment-logo payment-logo--google" aria-label="Google Pay">G Pay</span>
-            <span class="payment-logo payment-logo--klarna" aria-label="Klarna">Klarna.</span>
-            <span class="payment-logo payment-logo--sepa" aria-label="SEPA-Lastschrift">SEPA</span>
+        <div class="detail-side-card payment-methods-card">
+            <h3>Zahlungsmethoden</h3>
+            <div class="payment-methods" aria-label="Verfügbare Zahlungsarten">
+                <span class="payment-tile" title="Apple Pay"><img src="payment-logos/applepay.svg" alt="Apple Pay" class="payment-tile-img"></span>
+                <span class="payment-tile" title="Link"><img src="payment-logos/link.svg" alt="Link" class="payment-tile-img"></span>
+                <span class="payment-tile" title="Klarna"><img src="payment-logos/klarna.svg" alt="Klarna" class="payment-tile-img"></span>
+                <span class="payment-tile" title="Amazon Pay"><img src="payment-logos/amazonpay.svg" alt="Amazon Pay" class="payment-tile-img"></span>
+                <span class="payment-tile" title="Kreditkarte (Visa, Mastercard)" aria-label="Kreditkarte (Visa, Mastercard)"><img src="payment-logos/visa.svg" alt="Visa" class="payment-tile-img payment-tile-img--small"><img src="payment-logos/mastercard.svg" alt="Mastercard" class="payment-tile-img payment-tile-img--small"></span>
+                <span class="payment-tile" title="Bancontact"><img src="payment-logos/bancontact.svg" alt="Bancontact" class="payment-tile-img"></span>
+                <span class="payment-tile" title="MB WAY"><img src="payment-logos/mbway.svg" alt="MB WAY" class="payment-tile-img"></span>
+                <span class="payment-tile" title="EPS"><img src="payment-logos/eps.svg" alt="EPS" class="payment-tile-img"></span>
+                <span class="payment-tile" title="Satispay"><img src="payment-logos/satispay.svg" alt="Satispay" class="payment-tile-img"></span>
+            </div>
         </div>
     `;
 }
@@ -766,8 +771,9 @@ function createCheckoutButton(product, extraClass = '', variant = null, showPaym
     }
 
     const classes = ['checkout-btn', extraClass].filter(Boolean).join(' ');
+    const returnNote = '<p class="payment-return-note">14 Tage Rückgaberecht – Details finden Sie in unserer <a href="widerruf.html">Widerrufsbelehrung</a>.</p>';
     const paymentMethods = showPaymentMethods ? createPaymentMethodsMarkup() : '';
-    return `<div class="checkout-action-group"><a href="${checkoutUrl}" class="${classes}" target="_blank" rel="noopener noreferrer">Jetzt kaufen</a>${paymentMethods}</div>`;
+    return `<div class="checkout-action-group"><a href="${checkoutUrl}" class="${classes}" target="_blank" rel="noopener noreferrer">Jetzt kaufen</a>${returnNote}${paymentMethods}</div>`;
 }
 
 function createAvailabilityButton(product, extraClass = '', variant = null) {
