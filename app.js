@@ -773,7 +773,10 @@ function createCheckoutButton(product, extraClass = '', variant = null, showPaym
     const classes = ['checkout-btn', extraClass].filter(Boolean).join(' ');
     const returnNote = '<p class="payment-return-note">14 Tage Rückgaberecht – Details finden Sie in unserer <a href="widerruf.html">Widerrufsbelehrung</a>.</p>';
     const paymentMethods = showPaymentMethods ? createPaymentMethodsMarkup() : '';
-    return `<div class="checkout-action-group"><a href="${checkoutUrl}" class="${classes}" target="_blank" rel="noopener noreferrer">Jetzt kaufen</a>${returnNote}${paymentMethods}</div>`;
+    const price = variant?.price ?? product.price;
+    const priceTag = showPaymentMethods ? `<div class="checkout-price-tag">${formatPrice(price)}</div>` : '';
+    const vatNote = showPaymentMethods ? '<p class="checkout-price-vat-note">Umsatzsteuerbefreit nach § 19 UStG.</p>' : '';
+    return `<div class="checkout-action-group">${priceTag}<a href="${checkoutUrl}" class="${classes}" target="_blank" rel="noopener noreferrer">Jetzt kaufen</a>${vatNote}${returnNote}${paymentMethods}</div>`;
 }
 
 function createAvailabilityButton(product, extraClass = '', variant = null) {
