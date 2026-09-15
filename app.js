@@ -785,6 +785,30 @@ const products = [
                 }
             ]
         }
+    },
+    {
+        id: 'ZX3',
+        brand: 'Zonveer',
+        category: ['moto'],
+        rangeKm: 95,
+        motorW: 2800,
+        battery: '48V 25Ah',
+        name: 'Zonveer ZX3 19 Zoll E-Dirt-Bike',
+        description: 'Kraftvolles E-Dirt-Bike mit 2800-W-Hubmotor, 110 Nm Drehmoment, 48-V-25-Ah-Akku und bis zu 95 km Reichweite – mit NFC+PIN-Diebstahlschutz, hydraulischen Scheibenbremsen und 19-Zoll-Stahlrahmen.',
+        longDescription: [
+            'Das Zonveer ZX3 ist ein leistungsstarkes E-Dirt-Bike mit einem robusten 19-Zoll-High-Carbon-Stahl-Rahmen, das sowohl auf Trails als auch auf Straßen überzeugt. Der kraftvolle 2800-W-Hubmotor (Nennleistung 1500 W) liefert ein Drehmoment von 110 Nm und ermöglicht Spitzengeschwindigkeiten von bis zu 60 km/h.',
+            'Der leistungsstarke 48-V-25-Ah-Lithium-Ionen-Akku (1200 Wh) bietet im Pedalunterstützungsmodus eine Reichweite von bis zu 75–95 km und lädt sich über das mitgelieferte Ladegerät wieder auf. Die innovative NFC+PIN-Diebstahlssicherung lässt sich per Tap-to-Lock und Tap-to-Ride bedienen.',
+            'Hydraulische Scheibenbremsen vorne und hinten, Frontlicht, Rücklicht, Blinker, Hupe und Spiegel sorgen für Sicherheit und Straßenzulassung. Mit 59 kg Eigengewicht und einer maximalen Zuladung von 120 kg ist das ZX3 ein vielseitiges E-Dirt-Bike für anspruchsvolle Fahrer.'
+        ],
+        price: 1699,
+        stripeCheckoutUrl: 'https://buy.stripe.com/dRm6oz0Yb0YV7HK6em3oA13',
+        folder: 'products/ZX3',
+        coverImage: 'products/ZX3/Images/1.jpg',
+        imageFiles: [
+            '1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','6.jpg','7.jpg','8.jpg','9.jpg','10.jpg','11.jpg','12.jpg','13.jpg','14.jpg'
+        ],
+        hasVideo: false,
+        dimensionsImage: 'products/ZX3/Dimensions/Dimensions.JPG'
     }
 ];
 
@@ -872,7 +896,7 @@ const CATEGORY_META = {
     folding: { label: 'Faltbar', order: 3, heroImage: 'Categories/Faltbar.jpg' },
     moto: { label: 'Moto-Style', order: 4, heroImage: 'Categories/Moto-Style.jpg' },
     scooter: { label: 'E-Scooter', order: 5 },
-    wagon: { label: 'E-Wagon', order: 6 }
+    wagon: { label: 'E-Wagon', order: 6, heroImage: 'Categories/E-Wagon.webp' }
 };
 
 function getCategoryHeroImage(categoryId) {

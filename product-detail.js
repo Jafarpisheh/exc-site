@@ -558,7 +558,7 @@ function closeImageModal() {
 // Spezifikationen nach Kategorien
 const SPEC_CATEGORIES = {
     'Allgemein': ['Modell', 'Typ', 'Preis', 'Status', 'Verfügbarkeit'],
-    'Antrieb': ['Reichweite', 'Motor', 'Akku', 'Max. Geschwindigkeit'],
+    'Antrieb': ['Reichweite', 'Motor', 'Akku', 'Max. Geschwindigkeit', 'Drehmoment'],
     'Laden': ['Ladezeit', 'Ladegerät'],
     'Fahrwerk': ['Rahmen', 'Federung', 'Schaltung', 'Bremsen', 'Reifen', 'Steigfähigkeit'],
     'Ausstattung': ['Display', 'Beleuchtung', 'Wasserdicht'],
@@ -811,6 +811,18 @@ function getBasicSpecs(product) {
         specs['Zuladung'] = '350 kg';
         specs['Abmessungen (L x B x H)'] = '120 x 59 x 58 cm (ausgeklappt)';
         specs['Faltmaße'] = '48 x 29 x 75 cm';
+    } else if (product.id === 'ZX3') {
+        specs['Modell'] = 'ZX3';
+        specs['Typ'] = 'E-Dirt-Bike';
+        specs['Reichweite'] = '75–95 km (Pedalunterstützung)';
+        specs['Motor'] = '48V 1500 W (max. 2800 W) Hubmotor';
+        specs['Akku'] = '48V 25Ah (1200 Wh) Lithium-Ionen';
+        specs['Max. Geschwindigkeit'] = '60 km/h';
+        specs['Drehmoment'] = '110 Nm';
+        specs['Rahmen'] = '19" High-Carbon-Stahl (Dirt-Bike-Rahmen)';
+        specs['Bremsen'] = 'Hydraulische Scheibenbremsen vorne und hinten';
+        specs['Gewicht'] = '59 kg';
+        specs['Zuladung'] = '120 kg';
     }
     
     if (product.outOfStock) {
