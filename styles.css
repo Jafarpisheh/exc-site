@@ -71,6 +71,11 @@ body {
     gap: 20px;
 }
 
+.header .container.header-top {
+    max-width: none;
+    padding: 0 10%;
+}
+
 .logo {
     display: flex;
     align-items: center;
@@ -2613,6 +2618,10 @@ body {
 }
 
 @media (max-width: 640px) {
+    .header .container.header-top {
+        padding: 0;
+    }
+
     .products-grid {
         padding: 0;
     }
