@@ -2161,7 +2161,7 @@ body {
     color: var(--color-white);
 }
 
-.brand-section {
+.legal-card .brand-section {
     margin-top: 40px;
     padding-top: 26px;
     border-top: 3px solid var(--color-dark-blue);

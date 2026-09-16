@@ -809,6 +809,100 @@ const products = [
         ],
         hasVideo: false,
         dimensionsImage: 'products/ZX3/Dimensions/Dimensions.JPG'
+    },
+    {
+        id: 'OT16-2',
+        brand: 'OneSport',
+        category: ['folding'],
+        rangeKm: 120,
+        motorW: 250,
+        battery: '48V 17Ah',
+        name: 'OneSport OT16-2 20 Zoll Falt-E-Bike',
+        description: 'Kraftvolles faltbares 20-Zoll-E-Bike mit 250-W-Motor, 48-V-17-Ah-Akku und bis zu 120 km Reichweite – mit mechanischen Scheibenbremsen, Front-Stoßdämpfung und faltbarem Eisenrahmen.',
+        longDescription: [
+            'Das OneSport OT16-2 ist ein faltbares 20-Zoll-E-Bike mit robustem Eisenrahmen und breiten 20 x 3,0 Zoll Reifen. Der faltbare Rahmen lässt sich kompakt zusammenklappen und ermöglicht so einfachen Transport und Stauraum – ideal für Pendler, Bahn und Kofferraum.',
+            'Der kraftvolle 48-V-250-W-Hubmotor mit 40 Nm Drehmoment unterstützt Sie bis zu 25 km/h und bewältigt Steigungen von bis zu 30° mühelos. Der leistungsstarke 48-V-17-Ah-Lithium-Ionen-Akku liefert im Pedalunterstützungsmodus eine beeindruckende Reichweite von bis zu 120 km und ist in ca. 8–10 Stunden vollständig geladen.',
+            'Mechanische Scheibenbremsen vorne und hinten, eine vordere Gabel-Stoßdämpfung sowie Front- und Rücklicht sorgen für Komfort und Sicherheit. Mit IPX6-Schutzklasse, 150 kg Zuladung und nur ca. 30 kg Eigengewicht ist das OT16-2 ein zuverlässiger Begleiter für Stadt und Tour.'
+        ],
+        price: 729,
+        stripeCheckoutUrl: 'https://buy.stripe.com/cNi8wH7mz373gegdGO3oA08',
+        folder: 'products/OT16-2',
+        coverImage: 'products/OT16-2/images/Schwarz/1.jpg',
+        variants: [
+            {
+                id: 'Schwarz',
+                name: 'Schwarz',
+                folder: 'products/OT16-2/images/Schwarz',
+                coverImage: 'products/OT16-2/images/Schwarz/1.jpg',
+                stripeCheckoutUrl: 'https://buy.stripe.com/cNi8wH7mz373gegdGO3oA08',
+                imageFiles: [
+                    '1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','6.jpg','7.jpg','8.jpg','9.jpg','10.jpg','11.jpg','12.jpg','13.jpg'
+                ]
+            },
+            {
+                id: 'Weiß',
+                name: 'Weiß',
+                folder: 'products/OT16-2/images/Weiß',
+                coverImage: 'products/OT16-2/images/Weiß/1.jpg',
+                stripeCheckoutUrl: 'https://buy.stripe.com/7sYbIT4anazv4vybyG3oA09',
+                imageFiles: [
+                    '1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','6.jpg','7.jpg','8.jpg','9.jpg','10.jpg','11.jpg','12.jpg','13.jpg','16.jpg'
+                ]
+            }
+        ],
+        hasVideo: false,
+        extendedContent: {
+            sections: [
+                {
+                    type: 'fullwidth',
+                    image: 'products/OT16-2/extended/1.jpg'
+                },
+                {
+                    align: 'right',
+                    image: 'products/OT16-2/extended/9.jpg',
+                    title: 'Kraftvoller 48-V-250-W-Motor',
+                    text: 'Der leistungsstarke Hubmotor mit 40 Nm Drehmoment unterstützt Sie bis zu 25 km/h und bewältigt Steigungen von bis zu 30° mühelos – für ein kraftvolles und effizientes Fahrerlebnis auf jedem Terrain.'
+                },
+                {
+                    align: 'left',
+                    image: 'products/OT16-2/extended/11.jpg',
+                    title: 'Bis zu 120 km Reichweite',
+                    text: 'Der leistungsstarke 48-V-17-Ah-Lithium-Ionen-Akku liefert im Pedalunterstützungsmodus eine beeindruckende Reichweite von bis zu 120 km – ideal für lange Pendelwege und ausgedehnte Touren.'
+                },
+                {
+                    align: 'right',
+                    image: 'products/OT16-2/extended/12.JPG',
+                    title: 'Komfort & Sicherheit',
+                    text: 'Die vordere Gabel-Stoßdämpfung absorbiert Unebenheiten zuverlässig, während mechanische Scheibenbremsen vorne und hinten für sichere Verzögerung sorgen. IPX6-Schutzklasse macht das OT16-2 wetterfest.'
+                }
+            ],
+            faqs: [
+                {
+                    question: 'Wie hoch ist die Reichweite des OneSport OT16-2?',
+                    answer: 'Im Pedalunterstützungsmodus erreichen Sie mit dem 48-V-17-Ah-Akku eine Reichweite von bis zu 120 km. Die tatsächliche Reichweite hängt von Gewicht, Gelände, Temperatur und gewählter Unterstützungsstufe ab.'
+                },
+                {
+                    question: 'Ist das OneSport OT16-2 für den Straßenverkehr zugelassen?',
+                    answer: 'Ja. Mit 250 W Nennleistung und maximal 25 km/h ist das OT16-2 als Elektrofahrrad EU-zugelassen und darf auf öffentlichen Straßen gefahren werden. Bitte beachten Sie die lokalen Vorschriften zur Nutzung.'
+                },
+                {
+                    question: 'Wie lange dauert das Aufladen des Akkus?',
+                    answer: 'Der Akku ist mit dem mitgelieferten Ladegerät in ca. 8–10 Stunden vollständig geladen. Das integrierte Batteriemanagement (BMS) lädt den Akku sicher und schonend.'
+                },
+                {
+                    question: 'Wie schwer ist das OT16-2 und wie viel kann es zuladen?',
+                    answer: 'Das OT16-2 wiegt ca. 30 kg und kann bis zu 150 kg belastet werden. Der faltbare Eisenrahmen bietet Stabilität und Robustheit für den täglichen Einsatz.'
+                },
+                {
+                    question: 'Wie lässt sich das OT16-2 falten und transportieren?',
+                    answer: 'Der faltbare Rahmen lässt sich kompakt zusammenklappen (895 x 380 x 750 mm) und passt problemlos in Bahn, Bus, Aufzug oder den Kofferraum.'
+                },
+                {
+                    question: 'Welche Garantie gibt es auf das OneSport OT16-2?',
+                    answer: 'Auf das OT16-2 erhalten Sie eine Herstellergarantie von 12–24 Monaten. Details zu Umfang und Ablauf finden Sie auf unserer Garantieseite.'
+                }
+            ]
+        }
     }
 ];
 
@@ -1383,6 +1477,12 @@ const EXTRA_SPECS = {
         Gewicht: '22,5 kg',
         Reifen: '20 Zoll',
         Ladezeit: '5–6 Std.'
+    },
+    'OT16-2': {
+        Bremsen: 'Mechanische Scheibenbremsen vorn + hinten',
+        Gewicht: '30 kg',
+        Reifen: '20 x 3,0 Zoll',
+        Ladezeit: '8–10 Std.'
     }
 };
 

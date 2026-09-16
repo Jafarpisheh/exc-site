@@ -838,6 +838,26 @@ function getBasicSpecs(product) {
         specs['Bremsen'] = 'Hydraulische Scheibenbremsen vorne und hinten';
         specs['Gewicht'] = '59 kg';
         specs['Zuladung'] = '120 kg';
+    } else if (product.id === 'OT16-2') {
+        specs['Modell'] = 'OT16-2';
+        specs['Typ'] = 'Falt-E-Bike';
+        specs['Reichweite'] = 'Bis 120 km (Pedalunterstützung)';
+        specs['Motor'] = '48V 250 W (40 Nm)';
+        specs['Akku'] = '48V 17Ah Lithium-Ionen';
+        specs['Max. Geschwindigkeit'] = '25 km/h';
+        specs['Ladezeit'] = '8–10 Stunden';
+        specs['Ladegerät'] = '36V 2A';
+        specs['Rahmen'] = 'Eisen (faltbar)';
+        specs['Federung'] = 'Vordere Gabel-Stoßdämpfung';
+        specs['Bremsen'] = 'Mechanische Scheibenbremsen vorne und hinten';
+        specs['Reifen'] = '20 x 3,0 Zoll';
+        specs['Beleuchtung'] = 'Frontlicht & Rücklicht';
+        specs['Wasserdicht'] = 'IPX6';
+        specs['Gewicht'] = '30,13 kg';
+        specs['Zuladung'] = '150 kg';
+        specs['Steigfähigkeit'] = '30°';
+        specs['Abmessungen (L x B x H)'] = '1640 x 560 x 1050–1190 mm';
+        specs['Faltmaße'] = '895 x 380 x 750 mm';
     }
     
     if (product.outOfStock) {
