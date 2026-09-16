@@ -910,6 +910,7 @@ function getCategoryHeroImage(categoryId) {
 
 const catalogState = {
     category: 'all',
+    brand: 'all',
     sort: 'price-asc'
 };
 
@@ -935,6 +936,12 @@ function getCatalogCategories() {
         .filter(([id]) => present.has(id))
         .sort((a, b) => a[1].order - b[1].order)
         .map(([id, meta]) => ({ id, label: meta.label }));
+}
+
+function getBrands() {
+    const brands = new Set();
+    products.forEach(p => { if (p.brand) brands.add(p.brand); });
+    return Array.from(brands).sort();
 }
 
 function buildCategoryCards() {
@@ -981,6 +988,7 @@ function getVisibleProducts() {
 
     return products.filter(product => {
         if (s.category !== 'all' && !(product.category || []).includes(s.category)) return false;
+        if (s.brand !== 'all' && product.brand !== s.brand) return false;
 
         return true;
     });
@@ -1260,6 +1268,20 @@ function setupCatalogFilters() {
 
     buildCategoryCards();
     updateChips();
+
+    const brandSelect = document.getElementById('brandSelect');
+    if (brandSelect) {
+        getBrands().forEach(brand => {
+            const opt = document.createElement('option');
+            opt.value = brand;
+            opt.textContent = brand;
+            brandSelect.appendChild(opt);
+        });
+        brandSelect.addEventListener('change', () => {
+            catalogState.brand = brandSelect.value;
+            loadProducts();
+        });
+    }
 
     const sortSelect = document.getElementById('sortSelect');
     if (sortSelect) {

@@ -317,6 +317,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 14px;
+    flex: 1 1 auto;
     background: #f8fafc;
     border: 1px solid #e5e7eb;
     border-radius: 16px;
@@ -412,6 +413,64 @@ body {
 .category-card:focus-visible {
     outline: 3px solid #fbbf24;
     outline-offset: 2px;
+}
+
+/* ============================================
+   BRAND FILTER
+   ============================================ */
+
+.catalog-filters {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+    flex: 0 0 auto;
+}
+
+.brand-section {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-end;
+    gap: 2px;
+}
+
+.brand-section .filter-label {
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.09em;
+    color: #6b7280;
+}
+
+.brand-section .catalog-select {
+    appearance: none;
+    -webkit-appearance: none;
+    min-width: 160px;
+    padding: 11px 40px 11px 14px;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: inherit;
+    color: #111827;
+    background-color: #ffffff;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%236b7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    background-size: 12px;
+    box-shadow: 0 2px 6px rgba(17, 24, 39, 0.06);
+    cursor: pointer;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.brand-section .catalog-select:hover {
+    border-color: #d1d5db;
+}
+
+.brand-section .catalog-select:focus {
+    outline: none;
+    border-color: #1e3a8a;
+    box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.15);
 }
 
 .filter-row {
@@ -2009,6 +2068,12 @@ body {
     margin: 20px 0 8px;
 }
 
+.legal-card h4 {
+    color: var(--color-dark-blue);
+    font-size: 15px;
+    margin: 16px 0 6px;
+}
+
 .legal-card p,
 .legal-card li {
     color: var(--color-grey);
@@ -2070,6 +2135,41 @@ body {
 .legal-card table code,
 .legal-card table a {
     color: var(--color-dark-blue);
+}
+
+.brand-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 18px 0 24px;
+}
+
+.brand-nav a {
+    display: inline-block;
+    padding: 8px 18px;
+    border: 1px solid var(--color-dark-blue);
+    border-radius: 999px;
+    color: var(--color-dark-blue);
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.brand-nav a:hover {
+    background-color: var(--color-dark-blue);
+    color: var(--color-white);
+}
+
+.brand-section {
+    margin-top: 40px;
+    padding-top: 26px;
+    border-top: 3px solid var(--color-dark-blue);
+}
+
+.legal-card .brand-title {
+    font-size: 24px;
+    margin-top: 0;
 }
 
 .legal-placeholder {

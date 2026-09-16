@@ -37,6 +37,12 @@ async function loadProductDetails() {
     if (backLink) {
         backLink.href = `index.html?product=${encodeURIComponent(product.id)}`;
     }
+
+    // Herstellergarantie-Link zur passenden Marke setzen
+    const garantieLink = document.querySelector('.highlight-link[href="garantie.html"]');
+    if (garantieLink) {
+        garantieLink.href = getGarantieLink(product.brand);
+    }
     
     // Set product name, price and supporting copy
     document.getElementById('productName').textContent = product.name;
@@ -66,6 +72,15 @@ async function loadProductDetails() {
     
     // Anfrageformular einrichten
     setupInquiryForm(product);
+}
+
+function getGarantieLink(brand) {
+    const brandAnchors = {
+        'DUOTTS': '#duotts',
+        'OneSport': '#onesport',
+        'DYU': '#dyu'
+    };
+    return brandAnchors[brand] ? `garantie.html${brandAnchors[brand]}` : 'garantie.html';
 }
 
 function getInitialVariantId(product) {
