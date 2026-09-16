@@ -573,7 +573,7 @@ function closeImageModal() {
 // Spezifikationen nach Kategorien
 const SPEC_CATEGORIES = {
     'Allgemein': ['Modell', 'Typ', 'Preis', 'Status', 'Verfügbarkeit'],
-    'Antrieb': ['Reichweite', 'Motor', 'Akku', 'Max. Geschwindigkeit', 'Drehmoment'],
+    'Antrieb': ['Reichweite', 'Motor', 'Akku', 'Max. Geschwindigkeit', 'Drehmoment', 'Sensor'],
     'Laden': ['Ladezeit', 'Ladegerät'],
     'Fahrwerk': ['Rahmen', 'Federung', 'Schaltung', 'Bremsen', 'Reifen', 'Steigfähigkeit'],
     'Ausstattung': ['Display', 'Beleuchtung', 'Wasserdicht'],
@@ -858,6 +858,27 @@ function getBasicSpecs(product) {
         specs['Steigfähigkeit'] = '30°';
         specs['Abmessungen (L x B x H)'] = '1640 x 560 x 1050–1190 mm';
         specs['Faltmaße'] = '895 x 380 x 750 mm';
+    } else if (product.id === 'OT02') {
+        specs['Modell'] = 'OT02';
+        specs['Typ'] = 'Falt-E-Bike';
+        specs['Reichweite'] = 'Bis 25 km (Pedalunterstützung)';
+        specs['Motor'] = '36V 250 W (30 Nm)';
+        specs['Akku'] = '36V 5.2Ah Lithium-Ionen (herausnehmbar, Flaschen-Akku)';
+        specs['Max. Geschwindigkeit'] = 'Bis 25 km/h';
+        specs['Sensor'] = 'Torque-Sensor';
+        specs['Ladezeit'] = '2,5–3 Stunden';
+        specs['Ladegerät'] = '42V 2A';
+        specs['Rahmen'] = 'Chromoly-Stahl (faltbar)';
+        specs['Bremsen'] = 'V-Bremsen vorne und hinten';
+        specs['Reifen'] = '16 x 1,35 Zoll';
+        specs['Steigfähigkeit'] = '30°';
+        specs['Display'] = '3-stufig LCD-Display mit Akkustandanzeige';
+        specs['Beleuchtung'] = 'Frontlicht';
+        specs['Wasserdicht'] = 'IPX4';
+        specs['Gewicht'] = '14,5 kg (netto) / 19,51 kg (brutto)';
+        specs['Zuladung'] = '80 kg';
+        specs['Abmessungen (L x B x H)'] = '1300 x 548 x 1065 mm';
+        specs['Faltmaße'] = '820 x 370 x 580 mm (Paketmaße)';
     }
     
     if (product.outOfStock) {

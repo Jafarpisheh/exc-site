@@ -851,6 +851,7 @@ const products = [
             }
         ],
         hasVideo: false,
+        dimensionsImage: 'products/OT16-2/Dimensions.webp',
         extendedContent: {
             sections: [
                 {
@@ -903,6 +904,102 @@ const products = [
                 }
             ]
         }
+    },
+    {
+        id: 'OT02',
+        brand: 'OneSport',
+        category: ['folding'],
+        rangeKm: 25,
+        motorW: 250,
+        battery: '36V 5.2Ah',
+        name: 'OneSport OT02 16 Zoll Falt-E-Bike',
+        description: 'Leichtes faltbares 16-Zoll-E-Bike mit 250-W-Motor, 36-V-5,2-Ah-Flaschen-Akku und bis zu 25 km Reichweite – mit nur 14,5 kg besonders leicht und in Sekunden zusammenfaltbar.',
+        longDescription: [
+            'Das OneSport OT02 ist ein besonders leichtes Falt-E-Bike mit 16-Zoll-Reifen und robustem Chromoly-Stahlrahmen. Mit nur 14,5 kg Netto-Gewicht lässt es sich bequem tragen, in Bus oder Bahn mitnehmen und platzsparend unter dem Schreibtisch verstauen – ideal für Pendler und den urbanen Alltag.',
+            'Der leise 250-W-Ananda-Hinterradmotor mit Torque-Sensor und 30 Nm Drehmoment unterstützt Sie bis zu 25 km/h und macht Steigungen und längere Strecken mühelos. Der herausnehmbare 36-V-5,2-Ah-Flaschen-Akku sorgt für eine Reichweite von bis zu 25 km und ist in ca. 2,5–3 Stunden vollständig geladen.',
+            'V-Bremsen, ein helles Frontlicht sowie ein 3-stufiges LCD-Display mit Akkustandanzeige sorgen für Komfort und Sicherheit. Mit einer maximalen Zuladung von 80 kg und IPX4-Schutzklasse ist das OT02 ein zuverlässiger Begleiter für den täglichen Weg zur Arbeit.'
+        ],
+        price: 599,
+        outOfStock: true,
+        stripeCheckoutUrl: 'https://buy.stripe.com/8x2dR1eP1cHD4vyeKS3oA05',
+        folder: 'products/OT02',
+        coverImage: 'products/OT02/images/Grün/1.jpg',
+        variants: [
+            {
+                id: 'Grün',
+                name: 'Grün',
+                folder: 'products/OT02/images/Grün',
+                coverImage: 'products/OT02/images/Grün/1.jpg',
+                stripeCheckoutUrl: 'https://buy.stripe.com/8x2dR1eP1cHD4vyeKS3oA05',
+                imageFiles: [
+                    '1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','6.jpg','7.jpg','8.jpg','9.jpg','10.jpg','11.jpg','12.jpg','13.jpg','14.jpg','15.jpg','16.jpg','17.jpg','18.jpg','19.jpg','20.jpg','21.jpg','22.jpg','23.jpg'
+                ]
+            },
+            {
+                id: 'Röt',
+                name: 'Röt',
+                folder: 'products/OT02/images/Röt',
+                coverImage: 'products/OT02/images/Röt/1.jpg',
+                stripeCheckoutUrl: 'https://buy.stripe.com/fZubITfT54b7geg0U23oA04',
+                imageFiles: [
+                    '1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','6.jpg','7.jpg','8.jpg','9.jpg','10.jpg','11.jpg','12.jpg','13.jpg','14.jpg','15.jpg','16.jpg'
+                ]
+            }
+        ],
+        hasVideo: false,
+        dimensionsImage: 'products/OT02/Dimensions.webp',
+        extendedContent: {
+            sections: [
+                {
+                    type: 'fullwidth',
+                    image: 'products/OT02/extended/1.jpg'
+                },
+                {
+                    align: 'right',
+                    image: 'products/OT02/extended/11.jpg',
+                    title: 'Faltet in Sekunden',
+                    text: 'Der klassische Faltmechanismus aus Chromoly-Stahl macht das OT02 im Handumdrehen kompakt. So passt es überall hin – in Bus, Bahn, Aufzug, den Kofferraum oder unter den Schreibtisch.'
+                },
+                {
+                    align: 'left',
+                    image: 'products/OT02/extended/13.jpg',
+                    title: 'Leiser 250-W-Motor',
+                    text: 'Der 250-W-Ananda-Hinterradmotor mit Torque-Sensor liefert sanfte, agile und zugleich kraftvolle Unterstützung bis 25 km/h – für ein reibungsloses Fahrerlebnis im Stadtverkehr.'
+                },
+                {
+                    align: 'right',
+                    image: 'products/OT02/extended/23.jpg',
+                    title: '36-V-5,2-Ah-Flaschen-Akku',
+                    text: 'Der herausnehmbare Flaschen-Akku ist elegant im Rahmen integriert, liefert eine Reichweite von bis zu 25 km und ist in nur ca. 2,5–3 Stunden vollständig geladen.'
+                }
+            ],
+            faqs: [
+                {
+                    question: 'Wie hoch ist die Reichweite des OneSport OT02?',
+                    answer: 'Mit dem 36-V-5,2-Ah-Akku erreichen Sie im Pedalunterstützungsmodus eine Reichweite von bis zu 25 km. Die tatsächliche Reichweite hängt von Gewicht, Gelände, Temperatur und gewählter Unterstützungsstufe ab.'
+                },
+                {
+                    question: 'Ist das OneSport OT02 für den Straßenverkehr zugelassen?',
+                    answer: 'Ja. Mit 250 W Nennleistung und maximal 25 km/h ist das OT02 als Elektrofahrrad EU-zugelassen und darf auf öffentlichen Straßen gefahren werden. Bitte beachten Sie die lokalen Vorschriften zur Nutzung.'
+                },
+                {
+                    question: 'Wie lange dauert das Aufladen des Akkus?',
+                    answer: 'Der herausnehmbare Flaschen-Akku ist mit dem mitgelieferten 42V-2A-Ladegerät in ca. 2,5–3 Stunden vollständig geladen. Das integrierte Batteriemanagement (BMS) lädt den Akku sicher und schonend.'
+                },
+                {
+                    question: 'Wie schwer ist das OneSport OT02 und wie viel kann es zuladen?',
+                    answer: 'Das OT02 wiegt nur ca. 14,5 kg (netto) und kann bis zu 80 kg belastet werden. Der Chromoly-Stahlrahmen bietet dabei eine gute Balance aus Stabilität und geringem Gewicht.'
+                },
+                {
+                    question: 'Wie lässt sich das OneSport OT02 falten und transportieren?',
+                    answer: 'Der faltbare Rahmen lässt sich in Sekunden kompakt zusammenklappen. Gefaltet passt das OT02 problemlos in Bus, Bahn, Aufzug oder den Kofferraum und lässt sich dank des geringen Gewichts bequem tragen.'
+                },
+                {
+                    question: 'Welche Garantie gibt es auf das OneSport OT02?',
+                    answer: 'Auf das OT02 erhalten Sie eine Herstellergarantie von 12–24 Monaten. Details zu Umfang und Ablauf finden Sie auf unserer Garantieseite.'
+                }
+            ]
+        }
     }
 ];
 
@@ -938,7 +1035,7 @@ function createPaymentMethodsMarkup() {
 
 function createCheckoutButton(product, extraClass = '', variant = null, showPaymentMethods = false) {
     const checkoutUrl = getProductCheckoutUrl(product, variant);
-    const outOfStock = variant ? variant.outOfStock : product.outOfStock;
+    const outOfStock = product.outOfStock || variant?.outOfStock;
     if (outOfStock) {
         const classes = ['out-of-stock-badge', extraClass].filter(Boolean).join(' ');
         return `<span class="${classes}">Ausverkauft</span>`;
@@ -1483,6 +1580,12 @@ const EXTRA_SPECS = {
         Gewicht: '30 kg',
         Reifen: '20 x 3,0 Zoll',
         Ladezeit: '8–10 Std.'
+    },
+    OT02: {
+        Bremsen: 'V-Bremsen vorn + hinten',
+        Gewicht: '14,5 kg',
+        Reifen: '16 x 1,35 Zoll',
+        Ladezeit: '2,5–3 Std.'
     }
 };
 
