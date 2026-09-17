@@ -923,6 +923,28 @@ function getBasicSpecs(product) {
         specs['Gewicht'] = '28 kg (netto)';
         specs['Zuladung'] = '100 kg';
         specs['Abmessungen (L x B x H)'] = '1800 x 680 x 1100 mm';
+    } else if (product.id === 'OT05Pro') {
+        specs['Modell'] = 'OT05 Pro';
+        specs['Typ'] = 'City-E-Bike';
+        specs['Reichweite'] = 'Bis 140 km (Pedalunterstützung)';
+        specs['Motor'] = '36V 250 W (40 Nm)';
+        specs['Akku'] = '36V 22.5Ah Lithium-Ionen (21700, herausnehmbar)';
+        specs['Max. Geschwindigkeit'] = '25 km/h';
+        specs['Sensor'] = 'Torque-Sensor';
+        specs['Ladezeit'] = '6–8 Stunden';
+        specs['Ladegerät'] = '42V 3A';
+        specs['Rahmen'] = 'Aluminium, 27,5 Zoll';
+        specs['Schaltung'] = 'Shimano 7-Gang';
+        specs['Federung'] = 'Vordere Stoßdämpfergabel';
+        specs['Bremsen'] = 'Hydraulische Scheibenbremsen vorne und hinten';
+        specs['Reifen'] = '27,5 x 2,25 Zoll';
+        specs['Steigfähigkeit'] = '30°';
+        specs['Display'] = 'LCD-Display mit Bluetooth & Smart-Connection-App';
+        specs['Beleuchtung'] = 'Front- & Rücklicht';
+        specs['Wasserdicht'] = 'IPX6';
+        specs['Gewicht'] = '29 kg (netto)';
+        specs['Zuladung'] = '100 kg';
+        specs['Abmessungen (L x B x H)'] = '1900 x 670 x 1150 mm';
     }
     
     if (product.outOfStock) {

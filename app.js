@@ -1127,6 +1127,39 @@ const products = [
             }
         ],
         hasVideo: false
+    },
+    {
+        id: 'OT05Pro',
+        brand: 'OneSport',
+        category: ['city'],
+        rangeKm: 130,
+        motorW: 250,
+        battery: '36V 22.5Ah',
+        name: 'OneSport OT05 Pro 27,5 Zoll City-E-Bike',
+        description: 'Leistungsstarkes 27,5-Zoll-City-E-Bike mit 250-W-Motor (40 Nm) mit Torque-Sensor, großem 36-V-22,5-Ah-Akku und bis zu 140 km Reichweite – mit Shimano 7-Gang, hydraulischen Scheibenbremsen und IPX6-Schutzklasse.',
+        longDescription: [
+            'Das OneSport OT05 Pro ist ein kraftvolles City-E-Bike mit robustem 27,5-Zoll-Aluminiumrahmen und aufrechter, komfortabler Geometrie für den urbanen Alltag. Mit den luftigen 27,5 x 2,25 Zoll Reifen, dem bequemen Sattel und Schutzblechen eignet es sich ideal für Arbeitswege, Einkäufe und ausgedehnte Stadtrundfahrten.',
+            'Der leise 250-W-Hinterradmotor von Ananda mit Drehmomentsensor liefert bis zu 40 Nm Drehmoment und unterstützt Sie sanft und natürlich bis 25 km/h. Der große herausnehmbare 36-V-22,5-Ah-Lithium-Ionen-Akku (21700) sorgt für eine Reichweite von bis zu 130–140 km mit Pedalunterstützung und ist mit dem 42V-3A-Ladegerät in ca. 6–8 Stunden vollständig geladen.',
+            'Die hydraulischen Scheibenbremsen vorne und hinten sorgen für zuverlässige Verzögerung auch bei Regen, während die Shimano 7-Gang-Schaltung für Flexibilität in jeder Situation sorgt. Das LCD-Display mit Bluetooth und Smart-Connection-App, Front- und Rücklicht sowie die vordere Stoßdämpfergabel runden das Ausstattungspaket mit IPX6-Schutzklasse ab.'
+        ],
+        price: 1149,
+        stripeCheckoutUrl: 'https://buy.stripe.com/bJeaEPeP1azv1jm6em3oA0J',
+        folder: 'products/OT05Pro',
+        coverImage: 'products/OT05Pro/Dunkelgrau/1.jpg',
+        variants: [
+            {
+                id: 'Dunkelgrau',
+                name: 'Dunkelgrau',
+                folder: 'products/OT05Pro/Dunkelgrau',
+                coverImage: 'products/OT05Pro/Dunkelgrau/1.jpg',
+                stripeCheckoutUrl: 'https://buy.stripe.com/bJeaEPeP1azv1jm6em3oA0J',
+                imageFiles: [
+                    '1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','6.jpg','7.jpg','8.jpg','9.jpg','10.jpg'
+                ]
+            }
+        ],
+        hasVideo: false,
+        dimensionsImage: 'products/OT05Pro/Dimensions.webp'
     }
 ];
 
