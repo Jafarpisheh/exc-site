@@ -1000,6 +1000,101 @@ const products = [
                 }
             ]
         }
+    },
+    {
+        id: 'OT02Pro',
+        brand: 'OneSport',
+        category: ['folding'],
+        rangeKm: 25,
+        motorW: 250,
+        battery: '36V 5.2Ah',
+        name: 'OneSport OT02 Pro 20 Zoll Falt-E-Bike',
+        description: 'Leichtes faltbares 20-Zoll-E-Bike mit 250-W-Motor, Torque-Sensor, Shimano 7-Gang und mechanischen Scheibenbremsen – mit nur ca. 17,18 kg Gewicht und bis zu 25 km Reichweite.',
+        longDescription: [
+            'Das OneSport OT02 Pro verbindet Retro-Design mit moderner Technik: Der robuste Chromoly-Stahlrahmen ist faltbar und lässt sich platzsparend in Bus, Bahn oder Kofferraum verstauen. Mit ca. 17,18 kg Netto-Gewicht und den agilen 20-Zoll-Reifen ist es der ideale Begleiter für Pendler und urbane Alltagsfahrten.',
+            'Der leise 250-W-Hinterradmotor mit Torque-Sensor liefert bis zu 30 Nm Drehmoment und unterstützt Sie bis 25 km/h. In Kombination mit der Shimano 7-Gang-Schaltung meistern Sie Steigungen bis 30° mühelos. Der herausnehmbare 36-V-5,2-Ah-Lithium-Ionen-Akku sorgt für eine Reichweite von bis zu 25 km und ist in ca. 2,5–3 Stunden vollständig geladen.',
+            'Mechanische Scheibenbremsen vorne und hinten, ein LCD-Display und ein helles Frontlicht sorgen für Komfort und Sicherheit. Mit einer maximalen Zuladung von 80 kg und IPX4-Schutzklasse ist das OT02 Pro ein zuverlässiger Begleiter für den täglichen Weg zur Arbeit.'
+        ],
+        price: 629,
+        stripeCheckoutUrl: 'https://buy.stripe.com/6oU5kvfT5fTPgegcCK3oA0F',
+        folder: 'products/OT02Pro',
+        coverImage: 'products/OT02Pro/Grün/1.jpg',
+        variants: [
+            {
+                id: 'Grün',
+                name: 'Grün',
+                folder: 'products/OT02Pro/Grün',
+                coverImage: 'products/OT02Pro/Grün/1.jpg',
+                stripeCheckoutUrl: 'https://buy.stripe.com/6oU5kvfT5fTPgegcCK3oA0F',
+                imageFiles: [
+                    '1.jpg','2.jpg','L01.jpg','L02.jpg','L03.jpg','L04.jpg','L05.jpg','L06.jpg','L07.jpg','L08.jpg','L09.jpg','OT02Pro-L.13.jpg','OT02Pro-L.14.jpg','OT02Pro-L.15.jpg','OT02Pro-L.16.jpg','OT02Pro-L.17.jpg','OT02Pro-L.19.jpg','OT02Pro-L.20.jpg','OT02Pro-L.21.jpg','OT02Pro-L.22.jpg','OT02Pro-L.23.jpg','OT02Pro-L.24.jpg','OT02Pro-L.25.jpg','OT02Pro-L.26.jpg','OT02Pro-L.5.jpg','OT02Pro-L.9.jpg','OT02Pro-ZD.4.jpg','OT02Pro-ZD.6.jpg'
+                ]
+            },
+            {
+                id: 'Rot',
+                name: 'Rot',
+                folder: 'products/OT02Pro/Rot',
+                coverImage: 'products/OT02Pro/Rot/1.jpg',
+                stripeCheckoutUrl: 'https://buy.stripe.com/14A8wHcGTgXT1jm9qy3oA0E',
+                imageFiles: [
+                    '1.jpg','2 (2).jpg','2.jpg','2b.jpg','4 (2).jpg','H01.jpg','H02.jpg','H03.jpg','H04.jpg','H05.jpg','H06.jpg','H07.jpg','H08.jpg','H09.jpg','OT02Pro-H.13.jpg','OT02Pro-H.14.jpg','OT02Pro-H.15.jpg','OT02Pro-H.17.jpg','OT02Pro-H.19.jpg','OT02Pro-H.21.jpg','OT02Pro-H.22.jpg','OT02Pro-H.23.jpg','OT02Pro-H.24.jpg','OT02Pro-H.25.jpg','OT02Pro-H.26.jpg','OT02Pro-H.5.jpg','OT02Pro-H.9.jpg','OT02Pro-ZD.1.jpg'
+                ]
+            }
+        ],
+        hasVideo: false,
+        dimensionsImage: 'products/OT02Pro/Dimensions/Dimensions.jpg',
+        extendedContent: {
+            sections: [
+                {
+                    type: 'fullwidth',
+                    image: 'products/OT02Pro/extended/1.webp'
+                },
+                {
+                    align: 'right',
+                    image: 'products/OT02Pro/extended/H07.jpg',
+                    title: 'Leiser 250-W-Motor mit Torque-Sensor',
+                    text: 'Der 250-W-Hinterradmotor mit Drehmomentsensor liefert bis zu 30 Nm und passt die Unterstützung sanft und linear an Ihre Tretkraft an – für ein natürliches Fahrgefühl bis 25 km/h.'
+                },
+                {
+                    align: 'left',
+                    image: 'products/OT02Pro/extended/L05.jpg',
+                    title: 'Shimano 7-Gang für jede Situation',
+                    text: 'Die Shimano 7-Gang-Schaltung macht das OT02 Pro vielseitig: Ob entspannt durch die Stadt, über Steigungen oder auf längeren Strecken – Sie schalten immer im passenden Gang.'
+                },
+                {
+                    align: 'right',
+                    image: 'products/OT02Pro/extended/L09.jpg',
+                    title: '36-V-5,2-Ah-Akku',
+                    text: 'Der herausnehmbare Flaschen-Akku liefert eine Reichweite von bis zu 25 km und ist mit dem mitgelieferten 42-V-2-A-Ladegerät in nur ca. 2,5–3 Stunden wieder vollständig geladen.'
+                }
+            ],
+            faqs: [
+                {
+                    question: 'Wie hoch ist die Reichweite des OneSport OT02 Pro?',
+                    answer: 'Mit dem 36-V-5,2-Ah-Akku erreichen Sie in der Unterstützungsstufe eine Reichweite von bis zu 25 km. Die tatsächliche Reichweite hängt von Gewicht, Gelände, Temperatur und gewählter Unterstützungsstufe ab.'
+                },
+                {
+                    question: 'Ist das OneSport OT02 Pro für den Straßenverkehr zugelassen?',
+                    answer: 'Ja. Mit 250 W Nennleistung und maximal 25 km/h ist das OT02 Pro als Elektrofahrrad EU-zugelassen und darf auf öffentlichen Straßen gefahren werden. Bitte beachten Sie die lokalen Vorschriften zur Nutzung.'
+                },
+                {
+                    question: 'Wie lange dauert das Aufladen des Akkus?',
+                    answer: 'Der herausnehmbare Flaschen-Akku ist mit dem mitgelieferten 42V-2A-Ladegerät in ca. 2,5–3 Stunden vollständig geladen. Das integrierte Batteriemanagement (BMS) lädt den Akku sicher und schonend.'
+                },
+                {
+                    question: 'Wie schwer ist das OneSport OT02 Pro und wie viel kann es zuladen?',
+                    answer: 'Das OT02 Pro wiegt ca. 17,18 kg (netto) und kann bis zu 80 kg belastet werden. Der Chromoly-Stahlrahmen bietet dabei eine gute Balance aus Stabilität und geringem Gewicht.'
+                },
+                {
+                    question: 'Wie lässt sich das OneSport OT02 Pro falten und transportieren?',
+                    answer: 'Der faltbare Rahmen lässt sich in wenigen Schritten kompakt zusammenklappen. Gefaltet passt das OT02 Pro problemlos in Bus, Bahn, Aufzug oder den Kofferraum und lässt sich dank des geringen Gewichts bequem tragen.'
+                },
+                {
+                    question: 'Welche Garantie gibt es auf das OneSport OT02 Pro?',
+                    answer: 'Auf das OT02 Pro erhalten Sie eine Herstellergarantie von 12–24 Monaten. Details zu Umfang und Ablauf finden Sie auf unserer Garantieseite.'
+                }
+            ]
+        }
     }
 ];
 
@@ -1585,6 +1680,12 @@ const EXTRA_SPECS = {
         Bremsen: 'V-Bremsen vorn + hinten',
         Gewicht: '14,5 kg',
         Reifen: '16 x 1,35 Zoll',
+        Ladezeit: '2,5–3 Std.'
+    },
+    OT02Pro: {
+        Bremsen: 'Mechanische Scheibenbremsen vorn + hinten',
+        Gewicht: '17,18 kg',
+        Reifen: '20 x 1,35 Zoll',
         Ladezeit: '2,5–3 Std.'
     }
 };

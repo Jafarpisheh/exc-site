@@ -879,6 +879,28 @@ function getBasicSpecs(product) {
         specs['Zuladung'] = '80 kg';
         specs['Abmessungen (L x B x H)'] = '1300 x 548 x 1065 mm';
         specs['Faltmaße'] = '820 x 370 x 580 mm (Paketmaße)';
+    } else if (product.id === 'OT02Pro') {
+        specs['Modell'] = 'OT02 Pro';
+        specs['Typ'] = 'Falt-E-Bike';
+        specs['Reichweite'] = 'Bis 25 km (Pedalunterstützung)';
+        specs['Motor'] = '36V 250 W (30 Nm)';
+        specs['Akku'] = '36V 5.2Ah Lithium-Ionen (herausnehmbar, Flaschen-Akku)';
+        specs['Max. Geschwindigkeit'] = 'Bis 25 km/h';
+        specs['Sensor'] = 'Torque-Sensor';
+        specs['Ladezeit'] = '2,5–3 Stunden';
+        specs['Ladegerät'] = '42V 2A';
+        specs['Rahmen'] = 'Chromoly-Stahl (faltbar)';
+        specs['Schaltung'] = 'Shimano 7-Gang';
+        specs['Bremsen'] = 'Mechanische Scheibenbremsen vorne und hinten';
+        specs['Reifen'] = '20 x 1,35 Zoll';
+        specs['Steigfähigkeit'] = 'Max 30°';
+        specs['Display'] = 'LCD-Display mit 3 Tasten';
+        specs['Beleuchtung'] = 'Frontlicht';
+        specs['Wasserdicht'] = 'IPX4';
+        specs['Gewicht'] = '17,18 kg (netto) / 21,8 kg (brutto)';
+        specs['Zuladung'] = '80 kg';
+        specs['Abmessungen (L x B x H)'] = '1500 x 550 x 1120 mm';
+        specs['Faltmaße'] = '840 x 380 x 640 mm (Paketmaße)';
     }
     
     if (product.outOfStock) {
