@@ -211,6 +211,36 @@ Key rules:
   `imageFiles`) as used by the other variant products.
 - End with `hasVideo: false`.
 
+### 4a. Update EXTRA_SPECS in app.js (main-page card data)
+
+Do **not** forget this — the missing `EXTRA_SPECS` entry makes the main-page
+product card (index.html) blank out Bremsen, Gewicht, Reifen and Ladezeit in
+its "Antrieb" / "Akku & Reichweite" / "Details" groups.
+
+In `app.js`, the `EXTRA_SPECS` map (right after the `products` array, around
+`app.js:1651`) maps each product `id` to the exactly four German keys that
+`getSpecGroups(product)` reads for the card:
+
+- `Bremsen` — e.g. 'Hydraulische Scheibenbremsen vorn + hinten'
+- `Gewicht` — e.g. '28 kg'
+- `Reifen` — e.g. '27,5 x 2,25 Zoll'
+- `Ladezeit` — e.g. '8–10 Std.'
+
+Add a new entry for the product, derived from the same spec data used in
+Step 5 (never invent values):
+
+```js
+    OT05: {   // <--- product id, matching the folder/id
+        Bremsen: 'Hydraulische Scheibenbremsen vorn + hinten',
+        Gewicht: '28 kg',
+        Reifen: '27,5 x 2,25 Zoll',
+        Ladezeit: '8–10 Std.'
+    }
+```
+
+If a field is genuinely absent from the specs, omit that key rather than making
+up a value — `getSpecGroups` skips undefined entries.
+
 ## 5. Add the specs block to product-detail.js
 
 The `Technische Daten` tab groups specs into sections (Allgemein, Antrieb,
@@ -297,6 +327,23 @@ console.log('all imageFiles exist:', ok);
 
 3. For variant products, check each variant's `imageFiles` instead of
    `images/`, as documented for earlier products.
+
+4. Confirm the product has an `EXTRA_SPECS` entry in `app.js` (the main-page
+   card reads Bremsen/Gewicht/Reifen/Ladezeit from it — a missing entry
+   silently blanks those fields on the card):
+
+```bash
+node -e "
+const fs = require('fs');
+let src = fs.readFileSync('app.js','utf8');
+const m = src.match(/const EXTRA_SPECS = (\{[\s\S]*?\});\n\n/);
+let extra;
+eval('extra = ' + src.slice(src.indexOf('const EXTRA_SPECS') + 'const EXTRA_SPECS = '.length, src.indexOf('};', src.indexOf('const EXTRA_SPECS')) + 2));
+const s = extra['<ID>'] || {};
+console.log('EXTRA_SPECS <ID>:', !!extra['<ID>']);
+console.log('Bremsen:', s.Bremsen, '| Gewicht:', s.Gewicht, '| Reifen:', s.Reifen, '| Ladezeit:', s.Ladezeit);
+"
+```
 
 ## Notes / hand-offs
 

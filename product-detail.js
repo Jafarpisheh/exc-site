@@ -901,6 +901,28 @@ function getBasicSpecs(product) {
         specs['Zuladung'] = '80 kg';
         specs['Abmessungen (L x B x H)'] = '1500 x 550 x 1120 mm';
         specs['Faltmaße'] = '840 x 380 x 640 mm (Paketmaße)';
+    } else if (product.id === 'OT05') {
+        specs['Modell'] = 'OT05';
+        specs['Typ'] = 'City-E-Bike';
+        specs['Reichweite'] = 'Bis 120 km (Pedalunterstützung) / 60 km (Motor-Modus)';
+        specs['Motor'] = '36V 250 W (40 Nm)';
+        specs['Akku'] = '36V 18.2Ah Lithium-Ionen (18650)';
+        specs['Max. Geschwindigkeit'] = '25 km/h';
+        specs['Sensor'] = 'Torque-Sensor';
+        specs['Ladezeit'] = '8–10 Stunden';
+        specs['Ladegerät'] = '42V 2A';
+        specs['Rahmen'] = 'Aluminium, 27,5 Zoll';
+        specs['Schaltung'] = 'Shimano 7-Gang';
+        specs['Federung'] = 'Vordere Stoßdämpfergabel';
+        specs['Bremsen'] = 'Hydraulische Scheibenbremsen vorne und hinten';
+        specs['Reifen'] = '27,5 x 2,25 Zoll';
+        specs['Steigfähigkeit'] = '20°';
+        specs['Display'] = '3-stufiges LCD-Display mit Bluetooth';
+        specs['Beleuchtung'] = 'Front- & Rücklicht';
+        specs['Wasserdicht'] = 'IPX5';
+        specs['Gewicht'] = '28 kg (netto)';
+        specs['Zuladung'] = '100 kg';
+        specs['Abmessungen (L x B x H)'] = '1800 x 680 x 1100 mm';
     }
     
     if (product.outOfStock) {

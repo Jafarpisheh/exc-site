@@ -1095,6 +1095,38 @@ const products = [
                 }
             ]
         }
+    },
+    {
+        id: 'OT05',
+        brand: 'OneSport',
+        category: ['city'],
+        rangeKm: 120,
+        motorW: 250,
+        battery: '36V 18.2Ah',
+        name: 'OneSport OT05 27,5 Zoll City-E-Bike',
+        description: 'Komfortables 27,5-Zoll-City-E-Bike mit 250-W-Motor mit Torque-Sensor, 36-V-18,2-Ah-Akku und bis zu 120 km Reichweite – mit Shimano 7-Gang, hydraulischen Scheibenbremsen und LCD-Display mit Bluetooth.',
+        longDescription: [
+            'Das OneSport OT05 ist ein vielseitiges City-E-Bike mit robustem 27,5-Zoll-Aluminiumrahmen und ergonomischer Geometrie für ein entspanntes und aufrechtes Fahrgefühl. Mit den luftigen 27,5 x 2,25 Zoll Reifen, einem bequemen Sattel und Schutzblechen ist es ideal für den täglichen Weg zur Arbeit, Einkäufe und ausgedehnte Stadtrundfahrten.',
+            'Der leise 250-W-Hinterradmotor von Ananda mit Drehmomentsensor und 40 Nm Drehmoment unterstützt Sie sanft und natürlich bis 25 km/h und bewältigt Steigungen von bis zu 20° mühelos. Der herausnehmbare 36-V-18,2-Ah-Lithium-Ionen-Akku (18650) liefert im Pedal-assist-Modus eine Reichweite von bis zu 120 km und ist in ca. 8–10 Stunden vollständig geladen.',
+            'Die hydraulischen Scheibenbremsen vorne und hinten sorgen für zuverlässige Verzögerung, während die Shimano 7-Gang-Schaltung Sie in jeder Situation flexibel schalten lässt. Das 3-stufige LCD-Display mit Bluetooth, Front- und Rücklicht sowie die vordere Stoßdämpfergabel runden das komfortable Ausstattungspaket mit IPX5-Schutz ab.'
+        ],
+        price: 1029,
+        stripeCheckoutUrl: 'https://buy.stripe.com/5kQbITgX96jf3ru6em3oA0I',
+        folder: 'products/OT05',
+        coverImage: 'products/OT05/Weiß/1.jpg',
+        variants: [
+            {
+                id: 'Weiß',
+                name: 'Weiß',
+                folder: 'products/OT05/Weiß',
+                coverImage: 'products/OT05/Weiß/1.jpg',
+                stripeCheckoutUrl: 'https://buy.stripe.com/5kQbITgX96jf3ru6em3oA0I',
+                imageFiles: [
+                    '1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','6.jpg','7.jpg','8.jpg','13.jpg','14.jpg','15.jpg'
+                ]
+            }
+        ],
+        hasVideo: false
     }
 ];
 
@@ -1687,6 +1719,12 @@ const EXTRA_SPECS = {
         Gewicht: '17,18 kg',
         Reifen: '20 x 1,35 Zoll',
         Ladezeit: '2,5–3 Std.'
+    },
+    OT05: {
+        Bremsen: 'Hydraulische Scheibenbremsen vorn + hinten',
+        Gewicht: '28 kg',
+        Reifen: '27,5 x 2,25 Zoll',
+        Ladezeit: '8–10 Std.'
     }
 };
 
