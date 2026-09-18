@@ -787,30 +787,6 @@ const products = [
         }
     },
     {
-        id: 'ZX3',
-        brand: 'Zonveer',
-        category: ['moto'],
-        rangeKm: 95,
-        motorW: 2800,
-        battery: '48V 25Ah',
-        name: 'Zonveer ZX3 19 Zoll E-Dirt-Bike',
-        description: 'Kraftvolles E-Dirt-Bike mit 2800-W-Hubmotor, 110 Nm Drehmoment, 48-V-25-Ah-Akku und bis zu 95 km Reichweite – mit NFC+PIN-Diebstahlschutz, hydraulischen Scheibenbremsen und 19-Zoll-Stahlrahmen.',
-        longDescription: [
-            'Das Zonveer ZX3 ist ein leistungsstarkes E-Dirt-Bike mit einem robusten 19-Zoll-High-Carbon-Stahl-Rahmen, das sowohl auf Trails als auch auf Straßen überzeugt. Der kraftvolle 2800-W-Hubmotor (Nennleistung 1500 W) liefert ein Drehmoment von 110 Nm und ermöglicht Spitzengeschwindigkeiten von bis zu 60 km/h.',
-            'Der leistungsstarke 48-V-25-Ah-Lithium-Ionen-Akku (1200 Wh) bietet im Pedalunterstützungsmodus eine Reichweite von bis zu 75–95 km und lädt sich über das mitgelieferte Ladegerät wieder auf. Die innovative NFC+PIN-Diebstahlssicherung lässt sich per Tap-to-Lock und Tap-to-Ride bedienen.',
-            'Hydraulische Scheibenbremsen vorne und hinten, Frontlicht, Rücklicht, Blinker, Hupe und Spiegel sorgen für Sicherheit und Straßenzulassung. Mit 59 kg Eigengewicht und einer maximalen Zuladung von 120 kg ist das ZX3 ein vielseitiges E-Dirt-Bike für anspruchsvolle Fahrer.'
-        ],
-        price: 1699,
-        stripeCheckoutUrl: 'https://buy.stripe.com/dRm6oz0Yb0YV7HK6em3oA13',
-        folder: 'products/ZX3',
-        coverImage: 'products/ZX3/Images/1.jpg',
-        imageFiles: [
-            '1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','6.jpg','7.jpg','8.jpg','9.jpg','10.jpg','11.jpg','12.jpg','13.jpg','14.jpg'
-        ],
-        hasVideo: false,
-        dimensionsImage: 'products/ZX3/Dimensions/Dimensions.JPG'
-    },
-    {
         id: 'OT16-2',
         brand: 'OneSport',
         category: ['folding'],
@@ -1246,6 +1222,88 @@ const products = [
                 {
                     question: 'Welche Garantie gibt es auf das OneSport OT12?',
                     answer: 'Auf das OT12 erhalten Sie eine Herstellergarantie von 24 Monaten. Details zu Umfang und Ablauf finden Sie auf unserer Garantieseite.'
+                }
+            ]
+        }
+    },
+    {
+        id: 'C29Lite',
+        brand: 'Duotts',
+        category: ['city'],
+        rangeKm: 65,
+        motorW: 250,
+        battery: '36V 13Ah',
+        name: 'Duotts C29Lite 27,5 Zoll City-E-Bike',
+        description: 'Leichtes 27,5-Zoll-City-E-Bike mit 250-W-Motor (43 Nm), integriertem 36-V-13-Ah-Akku und bis zu 65 km Reichweite – mit Shimano 7-Gang-Schaltung, mechanischen Scheibenbremsen und Front-Federgabel.',
+        longDescription: [
+            'Das Duotts C29Lite ist ein wendiges 27,5-Zoll-City-E-Bike für den täglichen Weg zur Arbeit und durch die Stadt. Der Stahlrahmen, die Front-Federgabel mit 85 mm Federweg und die 27,5-Zoll-Reifen sorgen für eine stabile, komfortable Fahrt, während der Gepäckträger bis zu 25 kg Gepäck aufnimmt.',
+            'Der 250-W-Bürstenlosmotor mit 43 Nm Drehmoment unterstützt Sie angenehm und kraftvoll bis 25 km/h. Der integrierte 36-V-13-Ah-Lithium-Ionen-Akku liefert im Pedal-Assist-Modus eine Reichweite von bis zu 65 km und ist mit dem 42-V-2-A-Ladegerät in ca. 6–8 Stunden vollständig geladen.',
+            'Die Shimano 1x7-Gang-Schaltung und die mechanischen Scheibenbremsen (160 mm) vorne und hinten machen das C29Lite flexibel und sicher im Verkehr. Das integrierte Frontlicht und das Bremsrücklicht erhöhen die Sicherheit, ein Farbdisplay zeigt alle wichtigen Fahrdaten. Mit 27,8 kg Gewicht, bis zu 150 kg Zuladung und IPX4-Schutz ist es der ideale Begleiter für die Stadt.'
+        ],
+        price: 749,
+        stripeCheckoutUrl: 'https://buy.stripe.com/REPLACE_C29Lite',
+        folder: 'products/C29Lite',
+        coverImage: 'products/C29Lite/images/1.jpg',
+        imageFiles: [
+            '1.jpg','2.jpg','4.jpg','9.jpg','13.jpg','14.jpg','15.jpg','16.jpg','17.jpg','18.jpg','19.jpg','20.jpg','21.jpg','22.jpg','23.jpg','24.jpg','25.jpg','26.jpg','27.jpg','28.jpg','29.jpg','30.jpg','31.jpg','32.jpg','33.jpg','34.jpg','40.jpg','41.jpg','42.jpg','43.jpg','44.jpg','47.jpg','48.jpg','49.jpg'
+        ],
+        hasVideo: false,
+        dimensionsImage: 'products/C29Lite/Dimensions.webp',
+        extendedContent: {
+            sections: [
+                {
+                    type: 'fullwidth',
+                    image: 'products/C29Lite/extended/1.jpg'
+                },
+                {
+                    align: 'right',
+                    image: 'products/C29Lite/extended/2.jpg',
+                    title: 'Starker 250-W-Motor, sanfte Unterstützung',
+                    text: 'Der hocheffiziente 36-V-250-W-Bürstenlosmotor liefert mit 43 Nm Drehmoment eine gleichmäßige und kraftvolle Unterstützung – für zügiges Anfahren und souveränes Klettern.'
+                },
+                {
+                    align: 'left',
+                    image: 'products/C29Lite/extended/3.jpg',
+                    title: 'Smarte Tretunterstützung für die Stadt',
+                    text: 'Das Pedal-Assist-System mit Speed-Sensor und 4 Stufen passt die Unterstützung präzise an Ihre Trittfrequenz an und erreicht bis zu 25 km/h – ideal für den Stadtverkehr nach EU-Norm.'
+                },
+                {
+                    align: 'right',
+                    image: 'products/C29Lite/extended/4.jpg',
+                    title: 'Komfort durch Front-Federgabel',
+                    text: 'Die vordere Federgabel mit 85 mm Federweg dämpft Unebenheiten und Schläge zuverlässig. Das erhöht den Komfort und reduziert die Ermüdung auf längeren Fahrten.'
+                },
+                {
+                    align: 'left',
+                    image: 'products/C29Lite/extended/5.jpg',
+                    title: 'Sicheres mechanisches Bremssystem',
+                    text: 'Mechanische Scheibenbremsen mit 160-mm-Rotoren vorne und hinten sorgen für eine starke und zuverlässige Verzögerung – auch auf längeren Bergabfahrten.'
+                }
+            ],
+            faqs: [
+                {
+                    question: 'Wie hoch ist die Reichweite des Duotts C29Lite?',
+                    answer: 'Im Pedal-Assist-Modus erreichen Sie mit dem 36-V-13-Ah-Akku eine Reichweite von bis zu 65 km. Die tatsächliche Reichweite hängt von Gewicht, Gelände, Temperatur und gewählter Unterstützungsstufe ab.'
+                },
+                {
+                    question: 'Ist das Duotts C29Lite für den Straßenverkehr zugelassen?',
+                    answer: 'Ja. Mit 250 W Nennleistung und maximal 25 km/h ist das C29Lite als Pedelec EU-zugelassen und darf auf öffentlichen Straßen gefahren werden. Bitte beachten Sie die lokalen Vorschriften zur Nutzung.'
+                },
+                {
+                    question: 'Wie lange dauert das Aufladen des Akkus?',
+                    answer: 'Der integrierte 36-V-13-Ah-Akku ist mit dem mitgelieferten 42-V-2-A-Ladegerät in ca. 6–8 Stunden vollständig geladen. Das integrierte Batteriemanagement (BMS) lädt den Akku dabei sicher und schonend.'
+                },
+                {
+                    question: 'Wie schwer ist das C29Lite und wie viel kann es zuladen?',
+                    answer: 'Das C29Lite wiegt 27,8 kg (netto) und kann mit bis zu 150 kg belastet werden. Der stabile Gepäckträger nimmt zusätzlich bis zu 25 kg Gepäck auf.'
+                },
+                {
+                    question: 'Für welche Körpergröße ist das Duotts C29Lite geeignet?',
+                    answer: 'Das C29Lite ist für Fahrer von ca. 170 bis 200 cm Körpergröße geeignet. Die Sitzhöhe lässt sich zwischen 80 cm und 100 cm einstellen.'
+                },
+                {
+                    question: 'Welche Garantie gibt es auf das Duotts C29Lite?',
+                    answer: 'Auf das C29Lite erhalten Sie eine Herstellergarantie von 24 Monaten. Details zu Umfang und Ablauf finden Sie auf unserer Garantieseite.'
                 }
             ]
         }
@@ -1853,6 +1911,18 @@ const EXTRA_SPECS = {
         Gewicht: '27,8 kg',
         Reifen: '27,5 x 2,25 Zoll',
         Ladezeit: '6–8 Std.'
+    },
+    C29Lite: {
+        Bremsen: 'Mechanische Scheibenbremsen vorn + hinten',
+        Gewicht: '27,8 kg',
+        Reifen: '27,5 x 2,25 Zoll',
+        Ladezeit: '6–8 Std.'
+    },
+    OT05: {
+        Bremsen: 'Hydraulische Scheibenbremsen vorn + hinten',
+        Gewicht: '28 kg',
+        Reifen: '27,5 x 2,25 Zoll',
+        Ladezeit: '8–10 Std.'
     }
 };
 

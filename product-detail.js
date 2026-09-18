@@ -966,6 +966,28 @@ function getBasicSpecs(product) {
         specs['Gewicht'] = '27,8 kg (netto) / 34 kg (brutto)';
         specs['Zuladung'] = '100 kg';
         specs['Abmessungen (L x B x H)'] = '1800 x 680 x 1100 mm';
+    } else if (product.id === 'C29Lite') {
+        specs['Modell'] = 'C29Lite';
+        specs['Typ'] = 'City-E-Bike';
+        specs['Reichweite'] = 'Bis 65 km (Pedalunterstützung)';
+        specs['Motor'] = '36V 250 W (43 Nm)';
+        specs['Akku'] = '36V 13Ah Lithium-Ionen';
+        specs['Max. Geschwindigkeit'] = 'Bis 25 km/h';
+        specs['Sensor'] = 'Speed-Sensor';
+        specs['Ladezeit'] = '6–8 Stunden';
+        specs['Ladegerät'] = '42V 2A';
+        specs['Rahmen'] = 'Stahl, 27,5 Zoll (nicht faltbar)';
+        specs['Federung'] = 'Front-Federgabel (85 mm Federweg)';
+        specs['Schaltung'] = 'Shimano 1x7-Gang';
+        specs['Bremsen'] = 'Mechanische Scheibenbremsen vorne und hinten (160 mm)';
+        specs['Reifen'] = '27,5 x 2,25 Zoll';
+        specs['Steigfähigkeit'] = 'Max. 30°';
+        specs['Display'] = '3-Tasten-Multifunktions-Farbdisplay';
+        specs['Beleuchtung'] = 'Integriertes Frontlicht & Bremsrücklicht';
+        specs['Wasserdicht'] = 'IPX4';
+        specs['Gewicht'] = '27,8 kg (netto) / 34 kg (brutto)';
+        specs['Zuladung'] = '150 kg';
+        specs['Abmessungen (L x B x H)'] = '1800 x 680 x 1100 mm';
     }
     
     if (product.outOfStock) {
