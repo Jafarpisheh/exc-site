@@ -1160,6 +1160,95 @@ const products = [
         ],
         hasVideo: false,
         dimensionsImage: 'products/OT05Pro/Dimensions.webp'
+    },
+    {
+        id: 'OT12',
+        brand: 'OneSport',
+        category: ['city'],
+        rangeKm: 65,
+        motorW: 250,
+        battery: '36V 13Ah',
+        name: 'OneSport OT12 27,5 Zoll City-E-Bike',
+        description: 'Komfortables 27,5-Zoll-Step-Through-City-E-Bike mit 250-W-Motor (44 Nm), integriertem 36-V-13-Ah-Akku und bis zu 65 km Reichweite – mit Shimano 7-Gang, mechanischen Scheibenbremsen und Front-Federgabel.',
+        longDescription: [
+            'Das OneSport OT12 ist ein urbanes Step-Through-City-E-Bike mit einsteigerfreundlicher Geometrie: Der tiefe Einstieg und die aufrechte Sitzposition machen das Auf- und Absteigen im Stadtverkehr besonders einfach. Mit 27,5-Zoll-Laufrädern, einer Front-Federgabel mit 85 mm Federweg und einem Gepäckträger für bis zu 25 kg ist es ideal für Pendler, Einkäufe und entspannte Alltagsfahrten.',
+            'Der leise 250-W-Hinterradmotor mit 44 Nm Drehmoment unterstützt Sie angenehm und natürlich bis 25 km/h. Der sauber im Rahmen integrierte 36-V-13-Ah-Lithium-Ionen-Akku sorgt für eine Reichweite von bis zu 65 km und ist mit dem mitgelieferten 42-V-2-A-Ladegerät in ca. 6–8 Stunden vollständig geladen.',
+            'Die Shimano 7-Gang-Schaltung macht das OT12 flexibel für unterschiedliche Strecken und Steigungen, während mechanische Scheibenbremsen vorne und hinten für zuverlässige Verzögerung sorgen. Das übersichtliche LCD-Display zeigt alle wichtigen Fahrdaten auf einen Blick, die IPX6-Schutzklasse macht das City-Bike zum wetterfesten Begleiter.'
+        ],
+        price: 729,
+        stripeCheckoutUrl: 'https://buy.stripe.com/4gM6oz8qDePL3ruauC3oA06',
+        folder: 'products/OT12',
+        coverImage: 'products/OT12/images/Schwarz/1.jpg',
+        variants: [
+            {
+                id: 'Schwarz',
+                name: 'Schwarz',
+                folder: 'products/OT12/images/Schwarz',
+                coverImage: 'products/OT12/images/Schwarz/1.jpg',
+                stripeCheckoutUrl: 'https://buy.stripe.com/4gM6oz8qDePL3ruauC3oA06',
+                imageFiles: [
+                    '1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','6.jpg','7.jpg','8.jpg','9.jpg','10.jpg','11.jpg','12.jpg','13.jpg','14.jpg','15.jpg','16.jpg','17.jpg','18.jpg','19.jpg','20.jpg','21.jpg'
+                ]
+            },
+            {
+                id: 'Weiß',
+                name: 'Weiß',
+                folder: 'products/OT12/images/Weiß',
+                coverImage: 'products/OT12/images/Weiß/1.jpg',
+                stripeCheckoutUrl: 'https://buy.stripe.com/4gM6ozayL5fbbY0fOW3oA07',
+                imageFiles: [
+                    '1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','6.jpg','7.jpg','8.jpg','9.jpg','10.jpg','11.jpg','12.jpg','13.jpg','14.jpg','15.jpg','16.jpg','17.jpg','18.jpg','19.jpg'
+                ]
+            }
+        ],
+        hasVideo: false,
+        dimensionsImage: 'products/OT12/Dimensions.webp',
+        extendedContent: {
+            sections: [
+                {
+                    type: 'fullwidth',
+                    image: 'products/OT12/extended/1.jpg'
+                },
+                {
+                    align: 'right',
+                    image: 'products/OT12/extended/DSCF3242.jpg',
+                    title: 'Step-Through für einfachen Einstieg',
+                    text: 'Der tiefe, durchstiegsfreundliche Rahmen macht das OT12 extrem zugänglich: Ob im Alltag, mit Einkäufen oder im Stadtverkehr – komfortables Auf- und Absteigen ohne Umstände.'
+                },
+                {
+                    align: 'left',
+                    image: 'products/OT12/extended/DSCF3577.jpg',
+                    title: 'Sanfte Unterstützung bis 25 km/h',
+                    text: 'Der 250-W-Hinterradmotor mit 44 Nm liefert eine ruhige, natürliche Unterstützung bis 25 km/h. In Kombination mit dem integrierten 36-V-13-Ah-Akku erreichen Sie so Reichweiten von bis zu 65 km.'
+                }
+            ],
+            faqs: [
+                {
+                    question: 'Wie hoch ist die Reichweite des OneSport OT12?',
+                    answer: 'Mit dem integrierten 36-V-13-Ah-Akku erreichen Sie im Pedalunterstützungsmodus eine Reichweite von bis zu 65 km. Die tatsächliche Reichweite hängt von Gewicht, Gelände, Temperatur und gewählter Unterstützungsstufe ab.'
+                },
+                {
+                    question: 'Ist das OneSport OT12 für den Straßenverkehr zugelassen?',
+                    answer: 'Ja. Mit 250 W Nennleistung und maximal 25 km/h ist das OT12 als Elektrofahrrad EU-zugelassen und darf auf öffentlichen Straßen gefahren werden. Bitte beachten Sie die lokalen Vorschriften zur Nutzung.'
+                },
+                {
+                    question: 'Wie lange dauert das Aufladen des Akkus?',
+                    answer: 'Der integrierte Akku ist mit dem mitgelieferten 42V-2A-Ladegerät in ca. 6–8 Stunden vollständig geladen. Das integrierte Batteriemanagement (BMS) lädt den Akku sicher und schonend.'
+                },
+                {
+                    question: 'Wie schwer ist das OneSport OT12 und wie viel kann es zuladen?',
+                    answer: 'Das OT12 wiegt ca. 27,8 kg (netto) und kann mit bis zu 100 kg belastet werden. Der Gepäckträger trägt dabei zusätzlich bis zu 25 kg Gepäck.'
+                },
+                {
+                    question: 'Welche Gangschaltung und Bremsen hat das OneSport OT12?',
+                    answer: 'Das OT12 ist mit einer Shimano 7-Gang-Schaltung ausgestattet und hält mit mechanischen Scheibenbremsen vorne und hinten sicher an. Die Front-Federgabel mit 85 mm Federweg glättet den Weg auf unebenen Stadtstrecken.'
+                },
+                {
+                    question: 'Welche Garantie gibt es auf das OneSport OT12?',
+                    answer: 'Auf das OT12 erhalten Sie eine Herstellergarantie von 24 Monaten. Details zu Umfang und Ablauf finden Sie auf unserer Garantieseite.'
+                }
+            ]
+        }
     }
 ];
 
@@ -1758,6 +1847,12 @@ const EXTRA_SPECS = {
         Gewicht: '28 kg',
         Reifen: '27,5 x 2,25 Zoll',
         Ladezeit: '8–10 Std.'
+    },
+    OT12: {
+        Bremsen: 'Mechanische Scheibenbremsen vorn + hinten',
+        Gewicht: '27,8 kg',
+        Reifen: '27,5 x 2,25 Zoll',
+        Ladezeit: '6–8 Std.'
     }
 };
 

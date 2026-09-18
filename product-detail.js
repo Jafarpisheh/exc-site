@@ -945,6 +945,27 @@ function getBasicSpecs(product) {
         specs['Gewicht'] = '29 kg (netto)';
         specs['Zuladung'] = '100 kg';
         specs['Abmessungen (L x B x H)'] = '1900 x 670 x 1150 mm';
+    } else if (product.id === 'OT12') {
+        specs['Modell'] = 'OT12';
+        specs['Typ'] = 'City-E-Bike';
+        specs['Reichweite'] = 'Bis 65 km (Pedalunterstützung)';
+        specs['Motor'] = '36V 250 W (44 Nm)';
+        specs['Akku'] = '36V 13Ah Lithium-Ionen (integriert)';
+        specs['Max. Geschwindigkeit'] = 'Bis 25 km/h';
+        specs['Sensor'] = 'Speed-Sensor';
+        specs['Ladezeit'] = '6–8 Stunden';
+        specs['Ladegerät'] = '42V 2A';
+        specs['Rahmen'] = 'Stahl, 27,5 Zoll (Step-Through)';
+        specs['Federung'] = 'Front-Federgabel (85 mm Federweg)';
+        specs['Schaltung'] = 'Shimano 7-Gang';
+        specs['Bremsen'] = 'Mechanische Scheibenbremsen vorne und hinten';
+        specs['Reifen'] = '27,5 x 2,25 Zoll';
+        specs['Steigfähigkeit'] = 'Max. 30°';
+        specs['Display'] = 'LCD-Display';
+        specs['Wasserdicht'] = 'IPX6';
+        specs['Gewicht'] = '27,8 kg (netto) / 34 kg (brutto)';
+        specs['Zuladung'] = '100 kg';
+        specs['Abmessungen (L x B x H)'] = '1800 x 680 x 1100 mm';
     }
     
     if (product.outOfStock) {
