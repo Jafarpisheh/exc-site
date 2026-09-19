@@ -1723,36 +1723,62 @@ function createProductCard(product) {
     const gallery = banner.querySelector('.product-banner__gallery');
     let touchStartX = null;
     let touchStartY = null;
+    let touchMoved = false;
 
     gallery.addEventListener('touchstart', (event) => {
+        if (imagePaths.length <= 1) return;
         const touch = event.touches[0];
         touchStartX = touch.clientX;
         touchStartY = touch.clientY;
+        touchMoved = false;
         swiped = false;
+        mainImage.style.transition = 'none';
+        mainImage.style.transform = 'translateX(0)';
     }, { passive: true });
 
     gallery.addEventListener('touchmove', (event) => {
-        if (touchStartX === null) return;
+        if (touchStartX === null || imagePaths.length <= 1) return;
         const touch = event.touches[0];
         const deltaX = touch.clientX - touchStartX;
         const deltaY = touch.clientY - touchStartY;
-        if (Math.abs(deltaX) > 24 && Math.abs(deltaX) > Math.abs(deltaY) && event.cancelable) {
-            event.preventDefault();
+        if (Math.abs(deltaX) > 10 && Math.abs(deltaX) > Math.abs(deltaY)) {
+            if (event.cancelable) event.preventDefault();
+            touchMoved = true;
+            swiped = true;
+            mainImage.style.transition = 'none';
+            mainImage.style.transform = `translateX(${deltaX}px)`;
         }
     }, { passive: false });
 
     gallery.addEventListener('touchend', (event) => {
-        if (touchStartX === null) return;
+        if (touchStartX === null || imagePaths.length <= 1) return;
         const touch = event.changedTouches[0];
         const deltaX = touch.clientX - touchStartX;
-        const deltaY = touch.clientY - touchStartY;
         touchStartX = null;
         touchStartY = null;
-        if (Math.abs(deltaX) > 40 && Math.abs(deltaX) > Math.abs(deltaY)) {
-            swiped = true;
-            if (event.cancelable) event.preventDefault();
-            if (deltaX < 0) showImage(currentIndex + 1);
-            else showImage(currentIndex - 1);
+        if (!touchMoved) return;
+        if (event.cancelable) event.preventDefault();
+
+        const width = gallery.offsetWidth || 300;
+        const threshold = Math.min(90, Math.round(width * 0.25));
+        if (Math.abs(deltaX) > threshold) {
+            const dir = deltaX < 0 ? 1 : -1;
+            mainImage.style.transition = 'transform 0.25s ease';
+            mainImage.style.transform = `translateX(${dir > 0 ? -width : width}px)`;
+            setTimeout(() => {
+                showImage(currentIndex + dir);
+                mainImage.style.transition = 'none';
+                mainImage.style.transform = `translateX(${dir > 0 ? width : -width}px)`;
+                requestAnimationFrame(() => {
+                    requestAnimationFrame(() => {
+                        mainImage.style.transition = 'transform 0.25s ease';
+                        mainImage.style.transform = 'translateX(0)';
+                    });
+                });
+            }, 260);
+        } else {
+            mainImage.style.transition = 'transform 0.3s ease';
+            mainImage.style.transform = 'translateX(0)';
         }
     }, { passive: false });
 
@@ -1879,35 +1905,61 @@ function openImageLightbox(imagePaths, startIndex, productName) {
     const imageContainer = lightbox.querySelector('.modal-image-container');
     let touchStartX = null;
     let touchStartY = null;
+    let touchMoved = false;
 
     imageContainer.addEventListener('touchstart', (event) => {
+        if (total <= 1) return;
         const touch = event.touches[0];
         touchStartX = touch.clientX;
         touchStartY = touch.clientY;
+        touchMoved = false;
+        img.style.transition = 'none';
+        img.style.transform = 'translateX(0)';
     }, { passive: true });
 
     imageContainer.addEventListener('touchmove', (event) => {
-        if (touchStartX === null) return;
+        if (touchStartX === null || total <= 1) return;
         const touch = event.touches[0];
         const deltaX = touch.clientX - touchStartX;
         const deltaY = touch.clientY - touchStartY;
-        if (Math.abs(deltaX) > 24 && Math.abs(deltaX) > Math.abs(deltaY) && event.cancelable) {
-            event.preventDefault();
+        if (Math.abs(deltaX) > 10 && Math.abs(deltaX) > Math.abs(deltaY)) {
+            if (event.cancelable) event.preventDefault();
+            touchMoved = true;
+            img.style.transition = 'none';
+            img.style.transform = `translateX(${deltaX}px)`;
         }
     }, { passive: false });
 
     imageContainer.addEventListener('touchend', (event) => {
-        if (touchStartX === null) return;
+        if (touchStartX === null || total <= 1) return;
         const touch = event.changedTouches[0];
         const deltaX = touch.clientX - touchStartX;
-        const deltaY = touch.clientY - touchStartY;
         touchStartX = null;
         touchStartY = null;
-        if (total > 1 && Math.abs(deltaX) > 40 && Math.abs(deltaX) > Math.abs(deltaY)) {
-            if (event.cancelable) event.preventDefault();
-            if (deltaX < 0) currentIndex = (currentIndex + 1) % total;
-            else currentIndex = (currentIndex - 1 + total) % total;
-            render();
+        if (!touchMoved) return;
+        if (event.cancelable) event.preventDefault();
+
+        const width = imageContainer.offsetWidth || window.innerWidth;
+        const threshold = Math.min(90, Math.round(width * 0.25));
+        if (Math.abs(deltaX) > threshold) {
+            const dir = deltaX < 0 ? 1 : -1;
+            img.style.transition = 'transform 0.25s ease';
+            img.style.transform = `translateX(${dir > 0 ? -width : width}px)`;
+            setTimeout(() => {
+                currentIndex = (currentIndex + dir + total) % total;
+                render();
+                img.style.transition = 'none';
+                img.style.transform = `translateX(${dir > 0 ? width : -width}px)`;
+                requestAnimationFrame(() => {
+                    requestAnimationFrame(() => {
+                        img.style.transition = 'transform 0.25s ease';
+                        img.style.transform = 'translateX(0)';
+                    });
+                });
+            }, 260);
+        } else {
+            img.style.transition = 'transform 0.3s ease';
+            img.style.transform = 'translateX(0)';
         }
     }, { passive: false });
 
