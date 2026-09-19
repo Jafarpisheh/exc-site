@@ -1359,7 +1359,7 @@ const products = [
             }
         ],
         hasVideo: false,
-        dimensionsImage: 'products/WT05/Dimensions.webp',
+        dimensionsImage: 'products/WT05/Dimensions.jpg',
         extendedContent: {
             sections: [
                 {
@@ -2020,6 +2020,12 @@ const EXTRA_SPECS = {
     C29Lite: {
         Bremsen: 'Mechanische Scheibenbremsen vorn + hinten',
         Gewicht: '27,8 kg',
+        Reifen: '27,5 x 2,25 Zoll',
+        Ladezeit: '6–8 Std.'
+    },
+    WT05: {
+        Bremsen: 'Hydraulische Scheibenbremsen vorn + hinten',
+        Gewicht: '28 kg',
         Reifen: '27,5 x 2,25 Zoll',
         Ladezeit: '6–8 Std.'
     },
