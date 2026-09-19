@@ -988,6 +988,28 @@ function getBasicSpecs(product) {
         specs['Gewicht'] = '27,8 kg (netto) / 34 kg (brutto)';
         specs['Zuladung'] = '150 kg';
         specs['Abmessungen (L x B x H)'] = '1800 x 680 x 1100 mm';
+    } else if (product.id === 'WT05') {
+        specs['Modell'] = 'WT05';
+        specs['Typ'] = 'City-E-Bike';
+        specs['Reichweite'] = 'Bis 120 km (Pedalunterstützung)';
+        specs['Motor'] = '36V 250 W (40 Nm)';
+        specs['Akku'] = '36V 18.2Ah Lithium-Ionen (18650, herausnehmbar)';
+        specs['Max. Geschwindigkeit'] = '25 km/h';
+        specs['Sensor'] = 'Torque-Sensor';
+        specs['Ladezeit'] = '6–8 Stunden';
+        specs['Ladegerät'] = '42V 2A';
+        specs['Rahmen'] = 'Aluminium, 27,5 Zoll';
+        specs['Federung'] = 'Front-Federgabel (80 mm Federweg)';
+        specs['Schaltung'] = 'Shimano 7-Gang';
+        specs['Bremsen'] = 'Hydraulische Scheibenbremsen vorne und hinten';
+        specs['Reifen'] = '27,5 x 2,25 Zoll';
+        specs['Steigfähigkeit'] = '30°';
+        specs['Display'] = '3-stufiges LCD-Display mit Bluetooth & App-Anbindung';
+        specs['Beleuchtung'] = 'Front- & Rücklicht';
+        specs['Wasserdicht'] = 'IPX5';
+        specs['Gewicht'] = '28 kg (netto) / 35,5 kg (brutto)';
+        specs['Zuladung'] = '100 kg';
+        specs['Abmessungen (L x B x H)'] = '1800 x 680 x 1100 mm';
     }
     
     if (product.outOfStock) {

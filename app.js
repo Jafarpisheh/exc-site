@@ -1307,6 +1307,111 @@ const products = [
                 }
             ]
         }
+    },
+    {
+        id: 'WT05',
+        brand: 'OneSport',
+        category: ['city'],
+        rangeKm: 120,
+        motorW: 250,
+        battery: '36V 18.2Ah',
+        name: 'OneSport WT05 27,5 Zoll City-E-Bike',
+        description: 'Komfortables 27,5-Zoll-City-E-Bike mit 250-W-Motor mit Torque-Sensor (40 Nm), 36-V-18,2-Ah-Akku und bis zu 120 km Reichweite – mit Shimano 7-Gang, hydraulischen Scheibenbremsen, App-Anbindung und reinem Pedal-Assist-Antrieb ohne Drossel.',
+        longDescription: [
+            'Das OneSport WT05 ist ein vielseitiges City-E-Bike mit robustem 27,5-Zoll-Aluminiumrahmen und ergonomischer Geometrie für ein entspanntes und aufrechtes Fahrgefühl. Die Front-Federgabel mit 80 mm Federweg, die luftigen 27,5 x 2,25 Zoll Reifen und Schutzbleche machen es zum idealen Begleiter für Arbeitswege, Einkäufe und ausgedehnte Stadtrundfahrten.',
+            'Der leise 250-W-Hinterradmotor mit Drehmomentsensor und 40 Nm Drehmoment unterstützt Sie sanft und natürlich bis 25 km/h. Der herausnehmbare 36-V-18,2-Ah-Lithium-Ionen-Akku (18650) sorgt mit 655 Wh Kapazität für eine Reichweite von bis zu 120 km und ist mit dem mitgelieferten 42-V-2-A-Ladegerät in ca. 6–8 Stunden vollständig geladen. Ohne Drossel erfolgt die Unterstützung ausschließlich über das Pedalieren und ist damit vollständig EU-konform.',
+            'Die hydraulischen Scheibenbremsen vorne und hinten sorgen für zuverlässige Verzögerung, während die Shimano 7-Gang-Schaltung Sie in jeder Situation flexibel schalten lässt. Das 3-stufige LCD-Display mit Bluetooth und App-Anbindung zeigt Geschwindigkeit, Reichweite und Akkustand auf einen Blick. Front- und Rücklicht sowie die IPX5-Schutzklasse runden das komfortable Ausstattungspaket ab.'
+        ],
+        price: 899,
+        stripeCheckoutUrl: 'https://buy.stripe.com/fZu7sD36jePL7HKeKS3oA14',
+        folder: 'products/WT05',
+        coverImage: 'products/WT05/Hellblau/1.jpg',
+        variants: [
+            {
+                id: 'Hellblau',
+                name: 'Hellblau',
+                folder: 'products/WT05/Hellblau',
+                coverImage: 'products/WT05/Hellblau/1.jpg',
+                stripeCheckoutUrl: 'https://buy.stripe.com/fZu7sD36jePL7HKeKS3oA14',
+                imageFiles: [
+                    '1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','6.jpg','7.jpg','8.jpg','9.jpg','10.jpeg','11.jpeg','12.jpeg','13.jpeg','14.jpeg','15.jpeg','16.jpeg','17.jpeg','18.jpeg','19.jpeg','20.jpeg','21.jpeg','22.jpeg'
+                ]
+            },
+            {
+                id: 'Grau',
+                name: 'Grau',
+                folder: 'products/WT05/Grau',
+                coverImage: 'products/WT05/Grau/1.jpg',
+                stripeCheckoutUrl: 'https://buy.stripe.com/28E8wH22f22Zfac5ai3oA16',
+                imageFiles: [
+                    '1.jpg'
+                ]
+            },
+            {
+                id: 'Weiß',
+                name: 'Weiß',
+                folder: 'products/WT05/Weiß',
+                coverImage: 'products/WT05/Weiß/1.jpg',
+                stripeCheckoutUrl: 'https://buy.stripe.com/14A5kveP1gXT9PS7iq3oA15',
+                imageFiles: [
+                    '1.jpg'
+                ]
+            }
+        ],
+        hasVideo: false,
+        dimensionsImage: 'products/WT05/Dimensions.webp',
+        extendedContent: {
+            sections: [
+                {
+                    type: 'fullwidth',
+                    image: 'products/WT05/extended/1.webp'
+                },
+                {
+                    align: 'right',
+                    image: 'products/WT05/extended/2.webp',
+                    title: 'Intelligenter Antrieb mit Torque-Sensor',
+                    text: 'Der 250-W-Hinterradmotor mit Drehmomentsensor liefert 40 Nm Drehmoment und passt die Unterstützung sanft an Ihre Tretkraft an – für ein natürliches, müheloses Fahrgefühl bis 25 km/h.'
+                },
+                {
+                    align: 'left',
+                    image: 'products/WT05/extended/3.webp',
+                    title: '655-Wh-Akku mit App-Anbindung',
+                    text: 'Der herausnehmbare 36-V-18,2-Ah-Akku (18650) liefert bis zu 120 km Reichweite. Über Bluetooth und die App behalten Sie Geschwindigkeit, Reichweite und Akkustand jederzeit im Blick.'
+                },
+                {
+                    align: 'right',
+                    image: 'products/WT05/extended/4.webp',
+                    title: 'Hydraulische Scheibenbremsen & Shimano 7-Gang',
+                    text: 'Hydraulische Scheibenbremsen vorne und hinten garantieren präzise Verzögerung auch bei Regen, während die Shimano 7-Gang-Schaltung Sie flexibel durch Stadt und Umland schalten lässt.'
+                }
+            ],
+            faqs: [
+                {
+                    question: 'Wie hoch ist die Reichweite des OneSport WT05?',
+                    answer: 'Mit dem 36-V-18,2-Ah-Akku (655 Wh) erreichen Sie in der Unterstützungsstufe eine Reichweite von bis zu 120 km. Die tatsächliche Reichweite hängt von Gewicht, Gelände, Temperatur und gewählter Unterstützungsstufe ab.'
+                },
+                {
+                    question: 'Ist das OneSport WT05 für den Straßenverkehr zugelassen?',
+                    answer: 'Ja. Mit 250 W Nennleistung, maximal 25 km/h und ausschließlicher Pedalunterstützung ohne Drossel ist das WT05 als Pedelec EU-zugelassen und darf auf öffentlichen Straßen gefahren werden. Bitte beachten Sie die lokalen Vorschriften zur Nutzung.'
+                },
+                {
+                    question: 'Wie lange dauert das Aufladen des Akkus?',
+                    answer: 'Der herausnehmbare Akku ist mit dem mitgelieferten 42-V-2-A-Ladegerät in ca. 6–8 Stunden vollständig geladen. Das integrierte Batteriemanagement (BMS) lädt den Akku dabei sicher und schonend.'
+                },
+                {
+                    question: 'Wie schwer ist das OneSport WT05 und wie viel kann es zuladen?',
+                    answer: 'Das WT05 wiegt ca. 28 kg (netto) und kann mit bis zu 100 kg belastet werden. Der Aluminiumrahmen bietet dabei eine gute Balance aus Stabilität und Wendigkeit.'
+                },
+                {
+                    question: 'Welche Funktionen bietet die App zum WT05?',
+                    answer: 'Über die Bluetooth-App lassen sich Geschwindigkeit, Reichweite und Akkustatus in Echtzeit überwachen und der Fahrtmodus anpassen. Das 3-stufige LCD-Display zeigt dieselben Informationen direkt am Lenker.'
+                },
+                {
+                    question: 'Welche Garantie gibt es auf das OneSport WT05?',
+                    answer: 'Auf das WT05 erhalten Sie eine Herstellergarantie von 12–24 Monaten. Details zu Umfang und Ablauf finden Sie auf unserer Garantieseite.'
+                }
+            ]
+        }
     }
 ];
 
