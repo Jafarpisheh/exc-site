@@ -1622,6 +1622,7 @@ function createProductCard(product) {
     const specGroups = getSpecGroups(product);
     const imagePaths = getBannerImagePaths(product);
     let currentIndex = 0;
+    let swiped = false;
 
     const banner = document.createElement('div');
     banner.className = 'product-banner';
@@ -1631,6 +1632,10 @@ function createProductCard(product) {
     banner.setAttribute('aria-label', `${product.name} ansehen`);
 
     banner.addEventListener('click', (event) => {
+        if (swiped) {
+            swiped = false;
+            return;
+        }
         if (event.target.closest('.checkout-btn') ||
             event.target.closest('.banner-gallery-btn') ||
             event.target.closest('.banner-main-image') ||
@@ -1696,6 +1701,10 @@ function createProductCard(product) {
 
     mainImage.addEventListener('click', (event) => {
         event.stopPropagation();
+        if (swiped) {
+            swiped = false;
+            return;
+        }
         openImageLightbox(imagePaths, currentIndex, product.name);
     });
 
@@ -1710,6 +1719,42 @@ function createProductCard(product) {
     const nextBtn = banner.querySelector('.banner-gallery-btn--next');
     if (prevBtn) prevBtn.addEventListener('click', () => showImage(currentIndex - 1));
     if (nextBtn) nextBtn.addEventListener('click', () => showImage(currentIndex + 1));
+
+    const gallery = banner.querySelector('.product-banner__gallery');
+    let touchStartX = null;
+    let touchStartY = null;
+
+    gallery.addEventListener('touchstart', (event) => {
+        const touch = event.touches[0];
+        touchStartX = touch.clientX;
+        touchStartY = touch.clientY;
+        swiped = false;
+    }, { passive: true });
+
+    gallery.addEventListener('touchmove', (event) => {
+        if (touchStartX === null) return;
+        const touch = event.touches[0];
+        const deltaX = touch.clientX - touchStartX;
+        const deltaY = touch.clientY - touchStartY;
+        if (Math.abs(deltaX) > 24 && Math.abs(deltaX) > Math.abs(deltaY) && event.cancelable) {
+            event.preventDefault();
+        }
+    }, { passive: false });
+
+    gallery.addEventListener('touchend', (event) => {
+        if (touchStartX === null) return;
+        const touch = event.changedTouches[0];
+        const deltaX = touch.clientX - touchStartX;
+        const deltaY = touch.clientY - touchStartY;
+        touchStartX = null;
+        touchStartY = null;
+        if (Math.abs(deltaX) > 40 && Math.abs(deltaX) > Math.abs(deltaY)) {
+            swiped = true;
+            if (event.cancelable) event.preventDefault();
+            if (deltaX < 0) showImage(currentIndex + 1);
+            else showImage(currentIndex - 1);
+        }
+    }, { passive: false });
 
     const buyButton = banner.querySelector('.checkout-btn');
     if (buyButton) {
@@ -1830,6 +1875,41 @@ function openImageLightbox(imagePaths, startIndex, productName) {
     });
 
     document.addEventListener('keydown', handleKey);
+
+    const imageContainer = lightbox.querySelector('.modal-image-container');
+    let touchStartX = null;
+    let touchStartY = null;
+
+    imageContainer.addEventListener('touchstart', (event) => {
+        const touch = event.touches[0];
+        touchStartX = touch.clientX;
+        touchStartY = touch.clientY;
+    }, { passive: true });
+
+    imageContainer.addEventListener('touchmove', (event) => {
+        if (touchStartX === null) return;
+        const touch = event.touches[0];
+        const deltaX = touch.clientX - touchStartX;
+        const deltaY = touch.clientY - touchStartY;
+        if (Math.abs(deltaX) > 24 && Math.abs(deltaX) > Math.abs(deltaY) && event.cancelable) {
+            event.preventDefault();
+        }
+    }, { passive: false });
+
+    imageContainer.addEventListener('touchend', (event) => {
+        if (touchStartX === null) return;
+        const touch = event.changedTouches[0];
+        const deltaX = touch.clientX - touchStartX;
+        const deltaY = touch.clientY - touchStartY;
+        touchStartX = null;
+        touchStartY = null;
+        if (total > 1 && Math.abs(deltaX) > 40 && Math.abs(deltaX) > Math.abs(deltaY)) {
+            if (event.cancelable) event.preventDefault();
+            if (deltaX < 0) currentIndex = (currentIndex + 1) % total;
+            else currentIndex = (currentIndex - 1 + total) % total;
+            render();
+        }
+    }, { passive: false });
 
     document.body.appendChild(lightbox);
     document.body.style.overflow = 'hidden';
